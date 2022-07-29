@@ -9,7 +9,7 @@ font_path = "res://fonts/Righteous-Regular.ttf"
 size = 50
 font_data = SubResource( 1 )
 
-[node name="Control" type="Control"]
+[node name="Principal" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
