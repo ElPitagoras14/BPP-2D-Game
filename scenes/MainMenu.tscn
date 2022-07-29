@@ -58,23 +58,24 @@ text = "Protector Del Bosque"
 
 [node name="TextureButton" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 55.0
-margin_right = 402.0
+margin_right = 100.0
 margin_bottom = 155.0
-mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
 texture_normal = ExtResource( 2 )
 
 [node name="TextureButton2" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 159.0
-margin_right = 402.0
+margin_right = 100.0
 margin_bottom = 259.0
-mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
 texture_normal = ExtResource( 3 )
 
 [node name="Enciclopedia" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 263.0
-margin_right = 402.0
+margin_right = 90.0
 margin_bottom = 353.0
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
 texture_normal = ExtResource( 7 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
