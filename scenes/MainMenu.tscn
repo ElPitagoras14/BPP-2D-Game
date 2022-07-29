@@ -112,7 +112,6 @@ size_flags_vertical = 4
 texture_normal = ExtResource( 6 )
 script = ExtResource( 10 )
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/TextureButton3" to="." method="_on_TextureButton3_pressed"]
 [connection signal="mouse_entered" from="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2/animales" to="." method="_on_animales_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2/animales" to="." method="_on_animales_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/HBoxContainer/arbol" to="." method="_on_arbol_pressed"]
