@@ -7,6 +7,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Placeholder-cabania" type="Sprite" parent="."]
-position = Vector2( 519.5, 303 )
-scale = Vector2( 0.343667, 0.506667 )
+position = Vector2( 514, 303 )
+scale = Vector2( 0.347333, 0.506667 )
 texture = ExtResource( 1 )
