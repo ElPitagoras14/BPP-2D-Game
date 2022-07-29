@@ -11,3 +11,4 @@ margin_right = 1025.0
 margin_bottom = 601.0
 texture = ExtResource( 1 )
 stretch_mode = 1
+flip_v = true
