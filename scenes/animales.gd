@@ -14,3 +14,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func _on_TextureButton4_pressed():
+	get_tree().change_scene("res://scenes/MainMenu.tscn")
+	pass # Replace with function body.
+
+
+func _on_TextureButton_pressed():
+	get_tree().change_scene("res://scenes/Controles.tscn")
+	pass # Replace with function body.
