@@ -59,6 +59,7 @@ text = "Protector Del Bosque"
 margin_top = 55.0
 margin_right = 100.0
 margin_bottom = 155.0
+mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
 texture_normal = ExtResource( 2 )
 
@@ -66,6 +67,7 @@ texture_normal = ExtResource( 2 )
 margin_top = 159.0
 margin_right = 100.0
 margin_bottom = 259.0
+mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
 texture_normal = ExtResource( 3 )
 

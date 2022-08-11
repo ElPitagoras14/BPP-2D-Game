@@ -22,8 +22,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
-margin_right = 1024.0
+margin_right = 68.0
 margin_bottom = 68.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
 texture_normal = ExtResource( 4 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
@@ -55,12 +57,14 @@ custom_constants/separation = 700
 [node name="back" type="TextureButton" parent="VBoxContainer/HBoxContainer2"]
 margin_right = 144.0
 margin_bottom = 80.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 3 )
 
 [node name="next" type="TextureButton" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 844.0
 margin_right = 988.0
 margin_bottom = 80.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 2 )
 
 [connection signal="pressed" from="VBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
