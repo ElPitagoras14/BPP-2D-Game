@@ -3,6 +3,7 @@ extends Node
 var card1
 var card2
 onready var Game = get_node("res://scenes/Cartas.tscn")
+
 signal parCartas
 signal noParCartas
 
@@ -21,9 +22,11 @@ func chooseCard(var c):
 		checkCard()
 
 func checkCard():
-	if card1.value == card2.value:
+	if card1.value == card2.value and !card1.isBack and !card2.isBack:
 		emit_signal("parCartas")
-	else:
+		card1.flip()
+		card2.flip()
+	elif !card1.isBack and !card2.isBack:
 		emit_signal("noParCartas")
 	card1.set_disabled(false)
 	card2.set_disabled(false)

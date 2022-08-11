@@ -5,6 +5,8 @@ class_name CardObj
 var suit
 var value
 var face
+var back
+var isBack
 
 func _ready():
 	set_h_size_flags(3)
@@ -17,10 +19,17 @@ func _init(var s, var v):
 	value = v
 	suit = s
 	face = load("res://assets/cards/"+str(suit)+""+str(value)+".png")
+	back = load("res://assets/cards/card_back.png")
 	set_normal_texture(face)
 
 func _pressed():
-	GameManager.chooseCard(self)
+	if !isBack:
+		GameManager.chooseCard(self)
 	
 func cartaSeleccionada():
 	print(value)
+	
+func flip():
+	set_normal_texture(back)
+	set_disabled(true)
+	isBack = true
