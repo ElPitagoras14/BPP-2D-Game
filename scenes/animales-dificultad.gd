@@ -16,15 +16,11 @@ func _ready():
 #	pass
 
 func _on_TextureButton4_pressed():
-	get_tree().change_scene("res://scenes/MainMenu.tscn")
+	get_tree().change_scene("res://scenes/animales.tscn")
 	pass # Replace with function body.
 
-
-func _on_TextureButton_pressed():
-	get_tree().change_scene("res://scenes/Controles.tscn")
-	pass # Replace with function body.
 
 
 func _on_JUGAR_pressed():
-	get_tree().change_scene("res://scenes/animales-dificultad.tscn")
+	get_tree().change_scene("res://scenes/animales-juego.tscn")
 	pass # Replace with function body.
