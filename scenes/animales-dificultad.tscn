@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/Espacio3.png" type="Texture" id=3]
 [ext_resource path="res://assets/dificil.png" type="Texture" id=4]
 [ext_resource path="res://assets/espacio.png" type="Texture" id=5]
-[ext_resource path="res://scenes/animales.gd" type="Script" id=6]
+[ext_resource path="res://scenes/animales-dificultad.gd" type="Script" id=6]
 [ext_resource path="res://assets/atras.png" type="Texture" id=7]
 [ext_resource path="res://assets/espacio2.png" type="Texture" id=8]
 [ext_resource path="res://assets/facil.png" type="Texture" id=9]
@@ -70,17 +70,17 @@ margin_bottom = 602.0
 alignment = 1
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
-margin_top = 91.0
+margin_top = 86.0
 margin_right = 679.0
-margin_bottom = 173.0
+margin_bottom = 168.0
 custom_fonts/font = SubResource( 3 )
 text = " ELIGE LA DIFICULTAD:"
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 177.0
+margin_top = 172.0
 margin_right = 679.0
-margin_bottom = 279.0
+margin_bottom = 284.0
 
 [node name="Filler3" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_right = 30.0
@@ -138,16 +138,17 @@ stretch_mode = 5
 [node name="JUGAR" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 204.0
 margin_right = 474.0
-margin_bottom = 102.0
+margin_bottom = 112.0
 hint_tooltip = "Jugar"
+mouse_default_cursor_shape = 2
 size_flags_vertical = 0
 texture_normal = ExtResource( 9 )
 stretch_mode = 5
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 283.0
+margin_top = 288.0
 margin_right = 679.0
-margin_bottom = 395.0
+margin_bottom = 400.0
 
 [node name="Filler3" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
 margin_right = 30.0
@@ -207,14 +208,15 @@ margin_left = 204.0
 margin_right = 474.0
 margin_bottom = 112.0
 hint_tooltip = "Jugar"
+mouse_default_cursor_shape = 2
 size_flags_vertical = 0
 texture_normal = ExtResource( 10 )
 stretch_mode = 5
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 399.0
+margin_top = 404.0
 margin_right = 679.0
-margin_bottom = 511.0
+margin_bottom = 516.0
 
 [node name="Filler3" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer3"]
 margin_right = 30.0
@@ -274,8 +276,10 @@ margin_left = 204.0
 margin_right = 474.0
 margin_bottom = 112.0
 hint_tooltip = "Jugar"
+mouse_default_cursor_shape = 2
 size_flags_vertical = 0
 texture_normal = ExtResource( 4 )
 stretch_mode = 5
 
 [connection signal="pressed" from="HBoxContainer/TextureButton4" to="." method="_on_TextureButton4_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer2/JUGAR" to="." method="_on_JUGAR_pressed"]

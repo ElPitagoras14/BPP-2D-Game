@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://images/placeholder-cabania - copia.png" type="Texture" id=1]
 [ext_resource path="res://fonts/Righteous-Regular.ttf" type="DynamicFontData" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/animales.gd" type="Script" id=6]
 [ext_resource path="res://assets/atras.png" type="Texture" id=7]
 [ext_resource path="res://assets/espacio2.png" type="Texture" id=8]
+[ext_resource path="res://assets/Espacio3.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -68,39 +69,55 @@ margin_bottom = 602.0
 alignment = 1
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
-margin_top = 172.0
+margin_top = 173.0
 margin_right = 705.0
-margin_bottom = 254.0
+margin_bottom = 255.0
 custom_fonts/font = SubResource( 3 )
 text = "ANIMALS AND SOUNDS"
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 258.0
+margin_top = 259.0
 margin_right = 705.0
-margin_bottom = 430.0
+margin_bottom = 428.0
 
 [node name="TextureButton2" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_right = 70.0
-margin_bottom = 172.0
+margin_bottom = 169.0
 hint_tooltip = "Jugar"
 texture_normal = ExtResource( 5 )
 stretch_mode = 5
 
-[node name="TextureButton3" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="TextureButton6" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 74.0
 margin_right = 144.0
-margin_bottom = 172.0
+margin_bottom = 169.0
 hint_tooltip = "Jugar"
 texture_normal = ExtResource( 5 )
+stretch_mode = 5
+
+[node name="TextureButton4" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 148.0
+margin_right = 178.0
+margin_bottom = 169.0
+hint_tooltip = "Jugar"
+texture_normal = ExtResource( 9 )
+stretch_mode = 5
+
+[node name="TextureButton5" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 182.0
+margin_right = 212.0
+margin_bottom = 169.0
+hint_tooltip = "Jugar"
+texture_normal = ExtResource( 9 )
 stretch_mode = 5
 
 [node name="JUGAR" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 148.0
-margin_right = 542.0
-margin_bottom = 172.0
-rect_scale = Vector2( 0.9, 0.9 )
+margin_left = 216.0
+margin_right = 465.0
+margin_bottom = 112.0
 hint_tooltip = "Jugar"
+mouse_default_cursor_shape = 2
 size_flags_vertical = 0
 texture_normal = ExtResource( 4 )
 stretch_mode = 5
@@ -119,4 +136,5 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="HBoxContainer/TextureButton4" to="." method="_on_TextureButton4_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/JUGAR" to="." method="_on_JUGAR_pressed"]
 [connection signal="pressed" from="HBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
