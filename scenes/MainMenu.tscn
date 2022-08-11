@@ -114,6 +114,7 @@ mouse_default_cursor_shape = 2
 size_flags_vertical = 4
 texture_normal = ExtResource( 6 )
 
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Enciclopedia" to="." method="_on_Enciclopedia_pressed"]
 [connection signal="mouse_entered" from="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2/animales" to="." method="_on_animales_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2/animales" to="." method="_on_animales_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/HBoxContainer/arbol" to="." method="_on_arbol_pressed"]

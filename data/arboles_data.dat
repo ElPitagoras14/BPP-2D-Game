@@ -1,0 +1,4 @@
+nombre,nom_cientifico,desc,img_arbol,img_hoja,img_semilla
+Huasango,Loxoptenygium huasango,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",arbol1,hoja1,semilla1
+Guayacan,Handroanthus chrysanthus,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",arbol2,hoja2,semilla2
+Roble,Tabebuia rosea,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",arbol3,hoja3,semilla3
