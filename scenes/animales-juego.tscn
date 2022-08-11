@@ -92,7 +92,6 @@ script = ExtResource( 8 )
 position = Vector2( 114, 475 )
 frames = SubResource( 4 )
 animation = "salto"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
