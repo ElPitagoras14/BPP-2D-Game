@@ -5,9 +5,17 @@ var deck = Array()
 func _ready():
 	fillDeck()
 	dealDeck()
+	var cartaNode = get_tree().get_root().find_node("GameManager", true, false)
+	cartaNode.connect("parCartas", self, "handlerPar")
+	cartaNode.connect("noParCartas", self, "handlerNoPar")
 	
+func handlerPar():
+	get_node("Label").text = "Encontró un par"
+
+func handlerNoPar():
+	get_node("Label").text = "Par incorrecto"
+
 func fillDeck():
-#	deck.append(CardObj.new("arbol", "1"))
 	var c = 1
 	var f = 1
 	

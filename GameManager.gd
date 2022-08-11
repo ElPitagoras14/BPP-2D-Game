@@ -2,7 +2,10 @@ extends Node
 	
 var card1
 var card2
-	
+onready var Game = get_node("res://scenes/Cartas.tscn")
+signal parCartas
+signal noParCartas
+
 func _ready():
 	pass
 	
@@ -19,9 +22,9 @@ func chooseCard(var c):
 
 func checkCard():
 	if card1.value == card2.value:
-		print('Par')
+		emit_signal("parCartas")
 	else:
-		print('No Par')
+		emit_signal("noParCartas")
 	card1.set_disabled(false)
 	card2.set_disabled(false)
 	card1 = null

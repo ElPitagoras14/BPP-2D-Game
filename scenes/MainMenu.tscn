@@ -10,12 +10,12 @@
 [ext_resource path="res://scenes/MainMenu.gd" type="Script" id=8]
 [ext_resource path="res://scenes/animales.gd" type="Script" id=9]
 
-[sub_resource type="DynamicFontData" id=1]
+[sub_resource type="DynamicFontData" id=3]
 font_path = "res://fonts/Righteous-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=2]
 size = 40
-font_data = SubResource( 1 )
+font_data = SubResource( 3 )
 
 [node name="Principal" type="Control"]
 anchor_right = 1.0
