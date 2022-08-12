@@ -187,5 +187,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 2 )
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer3/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer3/HBoxContainer/Arboles" to="." method="_on_Arboles_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer3/HBoxContainer/Animales" to="." method="_on_Animales_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/next" to="." method="_on_next_pressed"]
