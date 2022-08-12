@@ -1,4 +1,4 @@
-extends Control
+extends Node
 
 
 # Declare member variables here. Examples:
@@ -15,12 +15,16 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
 func _on_TextureButton4_pressed():
-	get_tree().change_scene("res://scenes/animales.tscn")
+	get_tree().change_scene("res://scenes/MainMenu.tscn")
 	pass # Replace with function body.
 
 
-func _on_Cerrar_pressed():
-	get_tree().change_scene("res://scenes/Cartas-principal.tscn")
+func _on_TextureButton_pressed():
+	get_tree().change_scene("res://scenes/Cartas-controles.tscn")
+	pass # Replace with function body.
+
+
+func _on_JUGAR_pressed():
+	get_tree().change_scene("res://scenes/Cartas.tscn")
 	pass # Replace with function body.

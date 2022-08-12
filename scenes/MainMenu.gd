@@ -4,7 +4,7 @@ func _ready():
 	pass
 
 func _on_arbol_pressed():
-	 get_tree().change_scene("res://scenes/Cartas.tscn")
+	 get_tree().change_scene("res://scenes/Cartas-principal.tscn")
 
 func _on_animales_pressed():
 	get_tree().change_scene("res://scenes/animales.tscn")
