@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/jugar2.png-5cb57c102f80b672546fcd3c10f8a5e8.stex"
+path="res://.import/jugar2.png-1bc55b548b2b103a1bfcb68b761d2e4c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jugar2.png"
-dest_files=[ "res://.import/jugar2.png-5cb57c102f80b672546fcd3c10f8a5e8.stex" ]
+source_file="res://assets/Botones/jugar2.png"
+dest_files=[ "res://.import/jugar2.png-1bc55b548b2b103a1bfcb68b761d2e4c.stex" ]
 
 [params]
 

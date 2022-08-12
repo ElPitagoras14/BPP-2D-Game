@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Espacio3.png-b0f112448281cf5445c62e0e2920c7e0.stex"
+path="res://.import/Espacio3.png-065eea340029e7f12a684f5ad9b66107.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Espacio3.png"
-dest_files=[ "res://.import/Espacio3.png-b0f112448281cf5445c62e0e2920c7e0.stex" ]
+source_file="res://assets/espaciadores/Espacio3.png"
+dest_files=[ "res://.import/Espacio3.png-065eea340029e7f12a684f5ad9b66107.stex" ]
 
 [params]
 

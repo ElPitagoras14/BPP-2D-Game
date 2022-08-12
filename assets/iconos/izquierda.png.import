@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/izquierda.png-19b04384297cbd13090b8938511ef8b4.stex"
+path="res://.import/izquierda.png-d0d8b13474f6ce3c0378d40902774b19.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/izquierda.png"
-dest_files=[ "res://.import/izquierda.png-19b04384297cbd13090b8938511ef8b4.stex" ]
+source_file="res://assets/iconos/izquierda.png"
+dest_files=[ "res://.import/izquierda.png-d0d8b13474f6ce3c0378d40902774b19.stex" ]
 
 [params]
 

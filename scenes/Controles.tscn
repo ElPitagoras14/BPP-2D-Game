@@ -2,10 +2,10 @@
 
 [ext_resource path="res://images/fondo-libro.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Controles.gd" type="Script" id=2]
-[ext_resource path="res://assets/salir.png" type="Texture" id=3]
+[ext_resource path="res://assets/iconos/salir.png" type="Texture" id=3]
 [ext_resource path="res://assets/controles.png" type="Texture" id=4]
-[ext_resource path="res://assets/espaciov.png" type="Texture" id=5]
-[ext_resource path="res://assets/espacio2.png" type="Texture" id=6]
+[ext_resource path="res://assets/espaciadores/espaciov.png" type="Texture" id=5]
+[ext_resource path="res://assets/espaciadores/espacio2.png" type="Texture" id=6]
 [ext_resource path="res://assets/Instrucciones.png" type="Texture" id=7]
 
 [node name="Control" type="Control"]

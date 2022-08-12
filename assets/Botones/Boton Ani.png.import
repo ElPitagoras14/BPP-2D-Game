@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Boton Ani.png-48883cde68ed75844c580778cba8c859.stex"
+path="res://.import/Boton Ani.png-fda82e8b6246d34fdc8f9227a05d90f6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Boton Ani.png"
-dest_files=[ "res://.import/Boton Ani.png-48883cde68ed75844c580778cba8c859.stex" ]
+source_file="res://assets/Botones/Boton Ani.png"
+dest_files=[ "res://.import/Boton Ani.png-fda82e8b6246d34fdc8f9227a05d90f6.stex" ]
 
 [params]
 

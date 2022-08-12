@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Boton Arb.png-2f50def70c27a4a5825dfb599940660c.stex"
+path="res://.import/Boton Arb.png-582736dddbda97a1989c3293a88e1f11.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Boton Arb.png"
-dest_files=[ "res://.import/Boton Arb.png-2f50def70c27a4a5825dfb599940660c.stex" ]
+source_file="res://assets/Botones/Boton Arb.png"
+dest_files=[ "res://.import/Boton Arb.png-582736dddbda97a1989c3293a88e1f11.stex" ]
 
 [params]
 

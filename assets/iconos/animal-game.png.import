@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/animal-game.png-835d544935811b71b292e69bb43a26f1.stex"
+path="res://.import/animal-game.png-79ca49835493feaebf79ef5f869ad2d3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animal-game.png"
-dest_files=[ "res://.import/animal-game.png-835d544935811b71b292e69bb43a26f1.stex" ]
+source_file="res://assets/iconos/animal-game.png"
+dest_files=[ "res://.import/animal-game.png-79ca49835493feaebf79ef5f869ad2d3.stex" ]
 
 [params]
 

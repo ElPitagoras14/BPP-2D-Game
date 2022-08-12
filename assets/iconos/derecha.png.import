@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/derecha.png-8f15a5a3d4d47df2ba96bbe7f051b99a.stex"
+path="res://.import/derecha.png-66ac9dcfde22e75961b5980355f03702.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/derecha.png"
-dest_files=[ "res://.import/derecha.png-8f15a5a3d4d47df2ba96bbe7f051b99a.stex" ]
+source_file="res://assets/iconos/derecha.png"
+dest_files=[ "res://.import/derecha.png-66ac9dcfde22e75961b5980355f03702.stex" ]
 
 [params]
 

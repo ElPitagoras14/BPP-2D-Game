@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tree-game.png-cfc0cee2f6096cb2a44b91fc4e6d5ae7.stex"
+path="res://.import/tree-game.png-efef3c46b2e69045f34c7c082e753d8f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tree-game.png"
-dest_files=[ "res://.import/tree-game.png-cfc0cee2f6096cb2a44b91fc4e6d5ae7.stex" ]
+source_file="res://assets/iconos/tree-game.png"
+dest_files=[ "res://.import/tree-game.png-efef3c46b2e69045f34c7c082e753d8f.stex" ]
 
 [params]
 

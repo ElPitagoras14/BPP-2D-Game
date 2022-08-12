@@ -33,7 +33,7 @@ func handlerNoPar():
 	else:
 		var corazon = get_node("MarginContainer/HBoxContainer/HBoxContainer/Corazon"+str(vidas))
 		var image = Image.new()
-		image.load("res://assets/heart_border.png")
+		image.load("res://assets/iconos/heart_border.png")
 		var texture = ImageTexture.new()
 		texture.create_from_image(image)
 		corazon.set_texture(texture)

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/facil.png-294813d93a8274a0920ef42695d525ac.stex"
+path="res://.import/facil.png-f5311f17d7a9a978a849090600e692c1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/facil.png"
-dest_files=[ "res://.import/facil.png-294813d93a8274a0920ef42695d525ac.stex" ]
+source_file="res://assets/Botones/facil.png"
+dest_files=[ "res://.import/facil.png-f5311f17d7a9a978a849090600e692c1.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/trash can-game.png-e043002323e812fb4d55c1c0045d2900.stex"
+path="res://.import/trash can-game.png-40250d302d45b547e72486ae704d1e48.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/trash can-game.png"
-dest_files=[ "res://.import/trash can-game.png-e043002323e812fb4d55c1c0045d2900.stex" ]
+source_file="res://assets/iconos/trash can-game.png"
+dest_files=[ "res://.import/trash can-game.png-40250d302d45b547e72486ae704d1e48.stex" ]
 
 [params]
 

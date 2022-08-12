@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arboles.png-bf4411d573223225156df8e06b22d503.stex"
+path="res://.import/arboles.png-2f90e3737345277ca304d09a4743ce59.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/arboles.png"
-dest_files=[ "res://.import/arboles.png-bf4411d573223225156df8e06b22d503.stex" ]
+source_file="res://assets/iconos/arboles.png"
+dest_files=[ "res://.import/arboles.png-2f90e3737345277ca304d09a4743ce59.stex" ]
 
 [params]
 
