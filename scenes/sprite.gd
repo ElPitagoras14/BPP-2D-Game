@@ -12,28 +12,37 @@ extends KinematicBody2D
 #func _process(delta):
 #	pass
 
-var speed = 150
-const JUMP_FORCE = 500
+const GRAVITY = 600
+const WALK_SPEED = 200
+var velocity = Vector2()
+const JUMP_FORCE = 350
 var screen_size
 onready var _animated_sprite = $AnimatedSprite
 
 func _ready():
 	screen_size = get_viewport_rect().size
 
-func _process(_delta):
-	if Input.is_action_pressed("ui_right"):
-		_animated_sprite.play("run")
-		get_node( "AnimatedSprite" ).set_flip_h( false )
-		position.x += speed * _delta
-	elif Input.is_action_pressed("ui_left"):
-		_animated_sprite.play("run")
+func _physics_process(delta):
+	velocity.y += delta * GRAVITY
+	
+	if Input.is_action_pressed("ui_left"):
+		if is_on_floor():
+			_animated_sprite.play("run")
 		get_node( "AnimatedSprite" ).set_flip_h( true )
-		position.x -= speed * _delta
+		velocity.x = -WALK_SPEED
+	elif Input.is_action_pressed("ui_right"):
+		if is_on_floor():
+			_animated_sprite.play("run")
+		get_node( "AnimatedSprite" ).set_flip_h( false )
+		velocity.x = WALK_SPEED
+	elif Input.is_action_pressed("ui_up") and is_on_floor():
+		velocity.y = -JUMP_FORCE
+	elif !is_on_floor():
+		_animated_sprite.play("jump")
 	else:
+		# velocity.x = 0
+		# smoothen the stop
+		velocity.x = lerp(velocity.x, 0, 0.1)
 		_animated_sprite.stop()
-	
-	 #if Input.is_action_pressed("ui_up") and is_on_floor():
-		#velocity.y = -JUMP_FORCE
-	
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
+	 
+	velocity = move_and_slide(velocity, Vector2.UP)
