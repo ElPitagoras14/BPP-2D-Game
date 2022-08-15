@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://juegoreciclaje/enemy/Trash.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juegoreciclaje/enemy/GreenTrash.png" type="Texture" id=2]
+[ext_resource path="res://juegoreciclaje/enemy/GreenTrash.gd" type="Script" id=3]
+
+[node name="GreenTrash" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+VerticalSpeed = 20.0
+pointsGiven = 20
+trashColor = "green"
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )

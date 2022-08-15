@@ -11,3 +11,7 @@ func _on_animales_pressed():
 
 func _on_Enciclopedia_pressed():
 	get_tree().change_scene("res://scenes/Enciclopedia.tscn")
+
+
+func _on_reciclaje_pressed():
+	get_tree().change_scene("res://juegoreciclaje/HUD/TitleScreen.tscn")
