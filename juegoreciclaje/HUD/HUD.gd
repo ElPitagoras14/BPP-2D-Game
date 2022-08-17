@@ -11,7 +11,6 @@ var comboExclamation: String = ""
 var maxCombo: int = 0
 var yellowTrash = true
 var blackTrash = true
-var coins: int = 0
 
 
 func _ready():
@@ -72,3 +71,7 @@ func _on_game_over():
 
 func _on_pauseButton_pressed():
 	Signals.emit_signal("pausePressed")
+	
+func _obtainMedal():
+	if combo >= 50 or score >= 500:
+		pass

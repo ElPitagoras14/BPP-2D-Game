@@ -33,6 +33,16 @@ config/icon="res://icon.png"
 [autoload]
 
 GameManager="*res://GameManager.gd"
+<<<<<<< HEAD
+=======
+Signals="*res://juegoreciclaje/Autoloads/Signals.gd"
+
+[display]
+
+window/dpi/allow_hidpi=true
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+>>>>>>> 9512e09d326d51ba3cbf1a3d801a3a480c6e0ee6
 
 [input]
 

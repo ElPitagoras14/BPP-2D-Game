@@ -10,7 +10,7 @@ var preloadedTrash := [
 	preload("res://juegoreciclaje/enemy/BlackTrash.tscn")
 	]
 
-var nextSpawnTime := 3.5
+var nextSpawnTime := 4.5
 var sizeRemover: int = 2
 var lastTrash: int = 9
 var currentTrash: int = 9

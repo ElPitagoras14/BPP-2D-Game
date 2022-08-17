@@ -1,22 +1,31 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://juegoreciclaje/HUD/GAMEOVER.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Righteous-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://images/moneda.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 83
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 21
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 22
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 22
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 2 )
 
 [node name="GameOverHUD" type="Control"]
@@ -58,10 +67,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -93.0
-margin_top = 59.5
-margin_right = 93.0
-margin_bottom = 100.5
+margin_left = -92.5
+margin_top = 76.5
+margin_right = 93.5
+margin_bottom = 117.5
 custom_fonts/font = SubResource( 2 )
 text = "REINTENTAR"
 
@@ -73,7 +82,7 @@ margin_top = 153.0
 margin_right = 344.4
 margin_bottom = 167.7
 custom_fonts/font = SubResource( 3 )
-text = "Score: "
+text = "Puntaje: "
 
 [node name="MaxComboLabel" type="Label" parent="."]
 anchor_left = 0.5
@@ -85,7 +94,28 @@ margin_top = -84.5
 margin_right = 168.5
 margin_bottom = -56.5
 custom_fonts/font = SubResource( 4 )
-text = "Max Combo:"
+text = "Combo Max:"
+
+[node name="Moneda" type="TextureRect" parent="."]
+margin_left = 307.0
+margin_top = 197.0
+margin_right = 352.0
+margin_bottom = 242.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="MonedaLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -95.5
+margin_top = -34.5
+margin_right = 29.5
+margin_bottom = -6.5
+custom_fonts/font = SubResource( 4 )
+text = "x"
 
 [connection signal="pressed" from="TitleButton" to="." method="_on_TitleButton_pressed"]
 [connection signal="pressed" from="RetryButton" to="." method="_on_RetryButton_pressed"]
