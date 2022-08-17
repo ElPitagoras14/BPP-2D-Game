@@ -66,12 +66,14 @@ custom_constants/separation = 15
 [node name="Arboles" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer3/HBoxContainer"]
 margin_right = 196.0
 margin_bottom = 75.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 8 )
 
 [node name="Animales" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer3/HBoxContainer"]
 margin_left = 211.0
 margin_right = 407.0
 margin_bottom = 75.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 7 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
@@ -100,7 +102,7 @@ custom_fonts/font = SubResource( 2 )
 text = "Nombre de arbol"
 align = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer2"]
+[node name="Arbol" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer2"]
 margin_top = 36.0
 margin_right = 319.0
 margin_bottom = 186.0
