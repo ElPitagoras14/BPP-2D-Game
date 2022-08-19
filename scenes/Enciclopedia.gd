@@ -73,6 +73,10 @@ func _on_next_pressed():
 
 func mostrarInfo():
 	if vistaActual == "Arboles":
+		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer.visible = true
+		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2.visible = true
+		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3.visible = true
+		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4.visible = true
 		sonido.visible = false
 		Tipo.visible = false
 		Familia.visible = false
@@ -111,10 +115,10 @@ func mostrarInfo():
 		Tipo.visible = true
 		Familia.visible = true
 		
-		hoja.visible = false
-		fruto.visible = false
-		flor.visible = false
-		semilla.visible = false
+		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer.visible = false
+		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2.visible = false
+		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3.visible = false
+		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4.visible = false
 		
 		var imagenPrincipal = load("res://assets/animales/"+str(list_data_animales[indice][5])+".png")
 		nombre.text = String(list_data_animales[indice][0])
