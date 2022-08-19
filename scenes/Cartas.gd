@@ -5,8 +5,19 @@ var pares = 0
 var puntaje = 0
 var vidas = 3
 var totalPares
+var arboles = Array()
 
 func _ready():
+	var fileArboles = File.new()
+	fileArboles.open("res://data/arboles_data.dat", fileArboles.READ)
+	
+	while !fileArboles.eof_reached():
+		var data = fileArboles.get_csv_line()
+		if data.size() > 2:
+			arboles.append(data[0])
+	arboles.remove(0)
+	fileArboles.close()
+	
 	fillDeck()
 	dealDeck()
 	var cartaNode = get_tree().get_root().find_node("GameManager", true, false)
@@ -42,17 +53,20 @@ func handlerNoPar():
 func fillDeck():
 	var c = 1
 	var f = 1
+	var i = 0
 	
-	while f < 5:
+	while f <= 3:
 		c = 1
 		while c <= 2:
-			deck.append(CardObj.new("arbol", c))
-			deck.append(CardObj.new("hoja", c))
+			deck.append(CardObj.new("arbol", arboles[i]))
+			deck.append(CardObj.new("hoja", arboles[i]))
+			i+=1
 			c += 1
 		f += 1
 	
 func dealDeck():
 	var c = 0
+	deck.shuffle()
 	while c < deck.size():
 		$grid.add_child(deck[c])
 		c += 1
