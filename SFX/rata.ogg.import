@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/rata.ogg-724acf3e71c1845b53308fd7041ea2b9.oggstr"
+
+[deps]
+
+source_file="res://SFX/rata.ogg"
+dest_files=[ "res://.import/rata.ogg-724acf3e71c1845b53308fd7041ea2b9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

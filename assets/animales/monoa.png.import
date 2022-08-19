@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/animal2.png-bda4430fafdf0ff8dd06e461a733e00c.stex"
+path="res://.import/monoa.png-f99ac1f37c1d27c14f58e336fedabd1b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animales/animal2.png"
-dest_files=[ "res://.import/animal2.png-bda4430fafdf0ff8dd06e461a733e00c.stex" ]
+source_file="res://assets/animales/monoa.png"
+dest_files=[ "res://.import/monoa.png-f99ac1f37c1d27c14f58e336fedabd1b.stex" ]
 
 [params]
 

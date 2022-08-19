@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/animal9.png-54d2d1cf24b5522f19480e689b04eece.stex"
+path="res://.import/venado.png-74c6031beab4f1294a584fd9bb66fe5c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animales/animal9.png"
-dest_files=[ "res://.import/animal9.png-54d2d1cf24b5522f19480e689b04eece.stex" ]
+source_file="res://assets/animales/venado.png"
+dest_files=[ "res://.import/venado.png-74c6031beab4f1294a584fd9bb66fe5c.stex" ]
 
 [params]
 

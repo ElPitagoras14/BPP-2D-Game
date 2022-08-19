@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/jaguar.ogg-073bee7fb6802f86745e75faeb2802b2.oggstr"
+
+[deps]
+
+source_file="res://SFX/jaguar.ogg"
+dest_files=[ "res://.import/jaguar.ogg-073bee7fb6802f86745e75faeb2802b2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

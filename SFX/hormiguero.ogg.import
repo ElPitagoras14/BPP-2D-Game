@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hormiguero.ogg-66a379871d3ed6402f7fe7f1a3b7f5bb.oggstr"
+
+[deps]
+
+source_file="res://SFX/hormiguero.ogg"
+dest_files=[ "res://.import/hormiguero.ogg-66a379871d3ed6402f7fe7f1a3b7f5bb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

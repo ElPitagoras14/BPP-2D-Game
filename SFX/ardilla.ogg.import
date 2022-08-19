@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ardilla.ogg-9261bf0b2cbbd0b736f3a36f33c9e8ed.oggstr"
+
+[deps]
+
+source_file="res://SFX/ardilla.ogg"
+dest_files=[ "res://.import/ardilla.ogg-9261bf0b2cbbd0b736f3a36f33c9e8ed.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

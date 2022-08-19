@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/buho.ogg-d312ae76e997b8f59f7c866948877e8e.oggstr"
+
+[deps]
+
+source_file="res://SFX/buho.ogg"
+dest_files=[ "res://.import/buho.ogg-d312ae76e997b8f59f7c866948877e8e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

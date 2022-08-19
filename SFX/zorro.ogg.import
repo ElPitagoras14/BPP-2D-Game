@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/zorro.ogg-122c1d58ea5204f9b75ed91bd72cae6a.oggstr"
+
+[deps]
+
+source_file="res://SFX/zorro.ogg"
+dest_files=[ "res://.import/zorro.ogg-122c1d58ea5204f9b75ed91bd72cae6a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

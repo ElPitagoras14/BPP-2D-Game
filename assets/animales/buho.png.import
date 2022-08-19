@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/animal8.png-95c905b6c675d16cb90a830bc46a034a.stex"
+path="res://.import/buho.png-e711501bf98964e8fb370f02ee7dc80e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animales/animal8.png"
-dest_files=[ "res://.import/animal8.png-95c905b6c675d16cb90a830bc46a034a.stex" ]
+source_file="res://assets/animales/buho.png"
+dest_files=[ "res://.import/buho.png-e711501bf98964e8fb370f02ee7dc80e.stex" ]
 
 [params]
 

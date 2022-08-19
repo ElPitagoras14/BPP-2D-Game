@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://images/fondo-libro.png" type="Texture" id=1]
 [ext_resource path="res://assets/iconos/derecha.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/Botones/Boton Arb.png" type="Texture" id=8]
 [ext_resource path="res://assets/iconos/sonido.png" type="Texture" id=9]
 [ext_resource path="res://assets/iconos/sonido-block.png" type="Texture" id=10]
+[ext_resource path="res://SFX/ardilla.ogg" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://fonts/Righteous-Regular.ttf"
@@ -219,8 +220,12 @@ texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 10 )
 texture_disabled = ExtResource( 10 )
 
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer3/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer3/HBoxContainer/Arboles" to="." method="_on_Arboles_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer3/HBoxContainer/Animales" to="." method="_on_Animales_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Sonido" to="." method="_on_Sonido_pressed"]

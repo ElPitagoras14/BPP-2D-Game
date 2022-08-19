@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/monoa.ogg-c7c65b15ce05e52990f7447809f6e2e1.oggstr"
+
+[deps]
+
+source_file="res://SFX/monoa.ogg"
+dest_files=[ "res://.import/monoa.ogg-c7c65b15ce05e52990f7447809f6e2e1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -6,6 +6,7 @@ var list_data_animales = []
 
 var vistaActual = "Arboles"
 onready var sonido = get_node("Sonido")
+onready var sfx = get_node("SFX")
 onready var nombre = get_node("MarginContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer2/Nombre")
 onready var nombreCientifico = get_node("MarginContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer2/NombreCientifico")
 onready var descripcion = get_node("MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/RichTextLabel")
@@ -49,6 +50,9 @@ func load_data():
 func _on_back_pressed():
 	if indice > 0:
 		indice -= 1
+		if(rep%2 == 0):
+			rep = rep+1
+			sfx.stop()
 		mostrarInfo()
 
 func _on_next_pressed():
@@ -59,6 +63,9 @@ func _on_next_pressed():
 	else:
 		if indice < list_data_animales.size() - 1:
 			indice += 1
+			if(rep%2 == 0):
+				rep = rep+1
+				sfx.stop()
 			mostrarInfo()
 
 func mostrarInfo():
@@ -75,7 +82,6 @@ func mostrarInfo():
 		sonido.visible = true
 		Tipo.visible = true
 		Familia.visible = true
-		print(str(list_data_animales[indice][3]))
 		var imagenPrincipal = load("res://assets/animales/"+str(list_data_animales[indice][5])+".png")
 		nombre.text = String(list_data_animales[indice][0])
 		Tipo.text = String(list_data_animales[indice][1])
@@ -86,6 +92,9 @@ func mostrarInfo():
 
 
 func _on_Arboles_pressed():
+	if(rep%2 == 0):
+			rep = rep+1
+			sfx.stop()
 	vistaActual = "Arboles"
 	btnArboles.disabled = true
 	btnAnimales.disabled = false
@@ -94,8 +103,21 @@ func _on_Arboles_pressed():
 
 
 func _on_Animales_pressed():
+	if(rep%2 == 0):
+			rep = rep+1
+			sfx.stop()
 	vistaActual = "Animales"
 	btnAnimales.disabled = true
 	btnArboles.disabled = false
 	indice = 0
 	mostrarInfo()
+
+var rep=1
+func _on_Sonido_pressed():
+	rep = rep+1
+	sfx.stream = load("res://SFX/"+str(list_data_animales[indice][5])+".ogg")
+	if(rep%2 == 0):
+		sfx.play()
+	else:
+		sfx.stop()
+	pass # Replace with function body.

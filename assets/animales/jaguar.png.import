@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/animal10.png-75532362d265e3e6ba0d15a248916631.stex"
+path="res://.import/jaguar.png-b16b672a514af65f24d70a754d972c3f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animales/animal10.png"
-dest_files=[ "res://.import/animal10.png-75532362d265e3e6ba0d15a248916631.stex" ]
+source_file="res://assets/animales/jaguar.png"
+dest_files=[ "res://.import/jaguar.png-b16b672a514af65f24d70a754d972c3f.stex" ]
 
 [params]
 
