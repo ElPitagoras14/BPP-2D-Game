@@ -16,7 +16,6 @@ onready var btnAnimales = get_node("MarginContainer/VBoxContainer/HBoxContainer3
 onready var Tipo = get_node("MarginContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer2/Tipo")
 onready var Familia = get_node("MarginContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer2/Familia")
 
-
 func _ready():
 	load_data()
 	btnArboles.disabled = true
@@ -33,7 +32,7 @@ func load_data():
 	
 	while !fileArboles.eof_reached():
 		var data = fileArboles.get_csv_line()
-		if data.size() > 3:
+		if data.size() > 2:
 			list_data_arboles.append(data)
 			
 	while !fileAnimales.eof_reached():
@@ -73,7 +72,7 @@ func mostrarInfo():
 		sonido.visible = false
 		Tipo.visible = false
 		Familia.visible = false
-		var imagenPrincipal = load("res://assets/cards/"+str(list_data_arboles[indice][3])+".png")
+		var imagenPrincipal = load("res://assets/cards/"+str(list_data_arboles[indice][0])+"/arbol.png")
 		nombre.text = String(list_data_arboles[indice][0])
 		nombreCientifico.text = String(list_data_arboles[indice][1])
 		descripcion.text = String(list_data_arboles[indice][2])

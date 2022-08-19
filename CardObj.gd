@@ -18,7 +18,7 @@ func _ready():
 func _init(var s, var v):
 	value = v
 	suit = s
-	face = load("res://assets/cards/"+str(suit)+""+str(value)+".png")
+	face = load("res://assets/cards/"+str(value)+"/"+str(suit)+".png")
 	back = load("res://assets/cards/card_back.png")
 	set_normal_texture(face)
 
