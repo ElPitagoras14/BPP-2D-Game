@@ -5,7 +5,7 @@
 
 [node name="yellowTrash" instance=ExtResource( 1 )]
 VerticalSpeed = 34.0
-pointsGiven = 20
+pointsGiven = 10
 trashColor = "yellow"
 
 [node name="Sprite" parent="." index="0"]

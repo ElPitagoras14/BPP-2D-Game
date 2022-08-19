@@ -19,7 +19,7 @@ func _on_blacktrash_spawn():
 	
 func _on_yellowtrash_spawn():
 	var yellowT = preYellowTrashCan.instance()
-	yellowT.position = Vector2(655,44)
+	yellowT.position = Vector2(665,44)
 	yellowT.set_collision_layer_bit(0, false)
 	yellowT.set_collision_mask_bit(0, false)
 	yellowT.set_collision_layer_bit(4, true)

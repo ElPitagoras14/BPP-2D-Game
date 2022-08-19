@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const WALK_FORCE = 600
-const WALK_MAX_SPEED = 200
+const WALK_MAX_SPEED = 260
 const STOP_FORCE = 1300
 const JUMP_SPEED = 350
 
@@ -11,8 +11,8 @@ var Points: int = 0
 export var life: int = 6
 var velocity = Vector2()
 
-onready var gravity = 500
-onready var sprite = $Sprite
+onready var gravity = 400
+onready var _animated_sprite = $sprite
 onready var position2D = $Position2D
 
 
@@ -22,10 +22,18 @@ func _ready():
 func _physics_process(delta):
 	# Horizontal movement code. First, get the player's input.
 	var walk = WALK_FORCE * (Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"))
+	if walk == 600:
+		_animated_sprite.play("run")
+		_animated_sprite.set_flip_h( false )
+	elif walk == -600:
+		_animated_sprite.play("run")
+		_animated_sprite.set_flip_h( true )
+		
 	# Slow down the player if they're not trying to move.
 	if abs(walk) < WALK_FORCE * 0.2:
 		# The velocity, slowed down a bit, and then reassigned.
 		velocity.x = move_toward(velocity.x, 0, STOP_FORCE * delta)
+		_animated_sprite.stop()
 	else:
 		velocity.x += walk * delta
 	# Clamp to the maximum horizontal movement speed.
@@ -33,13 +41,14 @@ func _physics_process(delta):
 
 	# Vertical movement code. Apply gravity.
 	velocity.y += gravity * delta
-
+	
 	# Move based on the velocity and snap to the ground.
 	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
-	print(position.x)
 	# Check for jumping. is_on_floor() must be called after movement code.
 	if is_on_floor() and Input.is_action_just_pressed("ui_up"):
 		velocity.y = -JUMP_SPEED
+		_animated_sprite.play("jump")
+
 
 func damage():
 	life -= 1

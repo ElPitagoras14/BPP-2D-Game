@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/princess.png-3e0d265df0a1d889b67b05cb51b0ea7d.stex"
+path="res://.import/yellowtrashbin.png-445f433469c0ddb1bea6b63e10290e12.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://juegoreciclaje/level/princess.png"
-dest_files=[ "res://.import/princess.png-3e0d265df0a1d889b67b05cb51b0ea7d.stex" ]
+source_file="res://juegoreciclaje/trashcans/trashbinimages/yellowtrashbin.png"
+dest_files=[ "res://.import/yellowtrashbin.png-445f433469c0ddb1bea6b63e10290e12.stex" ]
 
 [params]
 

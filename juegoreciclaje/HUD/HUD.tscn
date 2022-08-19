@@ -26,10 +26,16 @@ anchor_bottom = 1.0
 script = ExtResource( 2 )
 
 [node name="LifeContainer" type="HBoxContainer" parent="."]
-margin_left = 54.0
-margin_top = 74.0
-margin_right = 263.0
-margin_bottom = 102.0
+margin_left = 43.0
+margin_top = 61.0
+margin_right = 452.0
+margin_bottom = 104.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 409, 43 )
+rect_pivot_offset = Vector2( 2, 0 )
+size_flags_horizontal = 2
+size_flags_vertical = 4
 
 [node name="Score" type="Label" parent="."]
 anchor_right = 1.0

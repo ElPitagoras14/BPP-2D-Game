@@ -13,8 +13,9 @@ var yellowTrash = true
 var blackTrash = true
 
 
+
 func _ready():
-	setLives(8)
+	setLives(6)
 	Signals.connect("on_player_life_changed", self, "_on_player_life_changed")
 	Signals.connect("on_score_increment", self, "_on_score_increment")
 	Signals.connect("on_combo_increment",self, "_on_combo_increment")

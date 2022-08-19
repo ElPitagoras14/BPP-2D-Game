@@ -10,7 +10,7 @@ script/source = "extends Trash
 [node name="BlueTrash" instance=ExtResource( 1 )]
 script = SubResource( 1 )
 VerticalSpeed = 27.0
-pointsGiven = 20
+pointsGiven = 10
 trashColor = "blue"
 
 [node name="Sprite" parent="." index="0"]
