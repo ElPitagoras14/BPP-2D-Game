@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/aniaml3.jpeg-7b73efa116821d51d8f20cfa596cb009.stex"
+path="res://.import/diamante.png-3832221d880efe0aa8abfabb432717b7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animales/aniaml3.jpeg"
-dest_files=[ "res://.import/aniaml3.jpeg-7b73efa116821d51d8f20cfa596cb009.stex" ]
+source_file="res://assets/Medallas/diamante.png"
+dest_files=[ "res://.import/diamante.png-3832221d880efe0aa8abfabb432717b7.stex" ]
 
 [params]
 

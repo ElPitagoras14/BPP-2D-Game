@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/animal1.jpeg-6058690ef610aa8ea69afacb0549dc14.stex"
+path="res://.import/Oro.png-ff3997204639b6a68f0b57d0a1046f6a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animales/animal1.jpeg"
-dest_files=[ "res://.import/animal1.jpeg-6058690ef610aa8ea69afacb0549dc14.stex" ]
+source_file="res://assets/Medallas/Oro.png"
+dest_files=[ "res://.import/Oro.png-ff3997204639b6a68f0b57d0a1046f6a.stex" ]
 
 [params]
 

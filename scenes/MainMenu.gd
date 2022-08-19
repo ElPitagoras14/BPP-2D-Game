@@ -15,3 +15,7 @@ func _on_Enciclopedia_pressed():
 
 func _on_reciclaje_pressed():
 	get_tree().change_scene("res://juegoreciclaje/HUD/TitleScreen.tscn")
+
+
+func _on_TextureButton2_pressed():
+	get_tree().change_scene("res://scenes/Perfil.tscn")

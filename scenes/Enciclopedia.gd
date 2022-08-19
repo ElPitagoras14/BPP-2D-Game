@@ -5,12 +5,16 @@ var list_data_arboles = []
 var list_data_animales = []
 
 var vistaActual = "Arboles"
+onready var sonido = get_node("Sonido")
 onready var nombre = get_node("MarginContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer2/Nombre")
 onready var nombreCientifico = get_node("MarginContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer2/NombreCientifico")
 onready var descripcion = get_node("MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/RichTextLabel")
 onready var imagenArbol = get_node("MarginContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer2/Arbol")
 onready var btnArboles = get_node("MarginContainer/VBoxContainer/HBoxContainer3/HBoxContainer/Arboles")
 onready var btnAnimales = get_node("MarginContainer/VBoxContainer/HBoxContainer3/HBoxContainer/Animales")
+onready var Tipo = get_node("MarginContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer2/Tipo")
+onready var Familia = get_node("MarginContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer2/Familia")
+
 
 func _ready():
 	load_data()
@@ -59,15 +63,26 @@ func _on_next_pressed():
 
 func mostrarInfo():
 	if vistaActual == "Arboles":
+		sonido.visible = false
+		Tipo.visible = false
+		Familia.visible = false
 		var imagenPrincipal = load("res://assets/cards/"+str(list_data_arboles[indice][3])+".png")
 		nombre.text = String(list_data_arboles[indice][0])
 		nombreCientifico.text = String(list_data_arboles[indice][1])
 		descripcion.text = String(list_data_arboles[indice][2])
 		imagenArbol.texture = imagenPrincipal
 	else:
+		sonido.visible = true
+		Tipo.visible = true
+		Familia.visible = true
+		print(str(list_data_animales[indice][3]))
+		var imagenPrincipal = load("res://assets/animales/"+str(list_data_animales[indice][5])+".png")
 		nombre.text = String(list_data_animales[indice][0])
-		nombreCientifico.text = String(list_data_animales[indice][1])
-		descripcion.text = String(list_data_animales[indice][2])
+		Tipo.text = String(list_data_animales[indice][1])
+		Familia.text = String(list_data_animales[indice][2])
+		nombreCientifico.text = String(list_data_animales[indice][3])
+		descripcion.text = String(list_data_animales[indice][4])
+		imagenArbol.texture = imagenPrincipal
 
 
 func _on_Arboles_pressed():
