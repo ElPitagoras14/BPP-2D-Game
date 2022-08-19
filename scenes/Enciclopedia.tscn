@@ -292,7 +292,7 @@ texture_disabled = ExtResource( 10 )
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
-volume_db = -3.545
+volume_db = -4.727
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer3/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer3/HBoxContainer/Arboles" to="." method="_on_Arboles_pressed"]
