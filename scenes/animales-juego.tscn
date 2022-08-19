@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://images/placeholder-cabania.png" type="Texture" id=1]
 [ext_resource path="res://assets/Sprites/Imagen47.svg" type="Texture" id=2]
@@ -8,7 +8,19 @@
 [ext_resource path="res://assets/Sprites/Imagen45.svg" type="Texture" id=6]
 [ext_resource path="res://assets/Sprites/jugador.png" type="Texture" id=7]
 [ext_resource path="res://scenes/sprite.gd" type="Script" id=8]
-[ext_resource path="res://assets/espaciadores/Espacio3.png" type="Texture" id=9]
+[ext_resource path="res://assets/iconos/pause.png" type="Texture" id=9]
+[ext_resource path="res://assets/animales/ardilla.png" type="Texture" id=10]
+[ext_resource path="res://scenes/animales-juego.gd" type="Script" id=11]
+[ext_resource path="res://SFX/ardilla.ogg" type="AudioStream" id=12]
+[ext_resource path="res://SFX/buho.ogg" type="AudioStream" id=13]
+[ext_resource path="res://SFX/jaguar.ogg" type="AudioStream" id=14]
+[ext_resource path="res://SFX/monoa.ogg" type="AudioStream" id=15]
+[ext_resource path="res://SFX/hormiguero.ogg" type="AudioStream" id=16]
+[ext_resource path="res://SFX/zorro.ogg" type="AudioStream" id=17]
+[ext_resource path="res://.import/murcielago.ogg-be072029d5b6c9a151e82f005961a0f7.oggstr" type="AudioStream" id=18]
+[ext_resource path="res://SFX/venado.ogg" type="AudioStream" id=19]
+[ext_resource path="res://SFX/rata.ogg" type="AudioStream" id=20]
+[ext_resource path="res://SFX/perezoso.ogg" type="AudioStream" id=21]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -16,7 +28,7 @@
 font_data = SubResource( 1 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 98.5, 101 )
+extents = Vector2( 51.125, 50.375 )
 
 [sub_resource type="SpriteFrames" id=4]
 resource_local_to_scene = true
@@ -42,14 +54,49 @@ extents = Vector2( 521.5, 15 )
 [sub_resource type="SegmentShape2D" id=7]
 a = Vector2( -1, 607 )
 
+[sub_resource type="DynamicFontData" id=9]
+font_path = "res://fonts/Righteous-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=10]
+size = 30
+font_data = SubResource( 9 )
+
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 11 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 3000.0
 margin_bottom = 1200.0
 texture = ExtResource( 1 )
+
+[node name="Ayuda" type="TextureButton" parent="."]
+margin_left = 19.0
+margin_right = 119.0
+margin_bottom = 100.0
+rect_pivot_offset = Vector2( 310, 41 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+action_mode = 0
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": "Ayuda"
+}
+
+[node name="Ayuda2" type="TextureButton" parent="."]
+margin_left = 914.0
+margin_right = 1005.0
+margin_bottom = 91.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+action_mode = 0
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_editor_description_": "Ayuda"
+}
 
 [node name="Label" type="Label" parent="."]
 margin_left = 61.0
@@ -60,45 +107,51 @@ custom_fonts/font = SubResource( 2 )
 text = "AKJWBDKAW"
 
 [node name="GridContainer" type="GridContainer" parent="."]
-margin_left = 101.0
-margin_top = 134.0
-margin_right = 920.0
-margin_bottom = 333.0
+margin_left = 36.0
+margin_top = 161.0
+margin_right = 1000.0
+margin_bottom = 360.0
+columns = 4
 
-[node name="StaticBody2D" type="StaticBody2D" parent="GridContainer"]
+[node name="Animal1" type="Area2D" parent="GridContainer"]
+position = Vector2( 75, 100 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GridContainer/StaticBody2D"]
-position = Vector2( 104, 100 )
+[node name="Sprite" type="Sprite" parent="GridContainer/Animal1"]
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GridContainer/Animal1"]
+position = Vector2( -1.125, -4.625 )
 shape = SubResource( 8 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_right = 134.0
-margin_bottom = 100.0
+[node name="Animal2" type="Area2D" parent="GridContainer"]
+position = Vector2( 325, 100 )
 
-[node name="TextureButton5" type="TextureButton" parent="HBoxContainer"]
-margin_right = 30.0
-margin_bottom = 47.0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-action_mode = 0
-texture_normal = ExtResource( 9 )
-__meta__ = {
-"_editor_description_": "Ayuda"
-}
+[node name="Sprite" type="Sprite" parent="GridContainer/Animal2"]
+texture = ExtResource( 10 )
 
-[node name="TextureButton" type="TextureButton" parent="HBoxContainer"]
-margin_left = 34.0
-margin_right = 134.0
-margin_bottom = 100.0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-action_mode = 0
-texture_normal = ExtResource( 3 )
-__meta__ = {
-"_editor_description_": "Ayuda"
-}
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GridContainer/Animal2"]
+position = Vector2( -1.125, -4.625 )
+shape = SubResource( 8 )
+
+[node name="Animal3" type="Area2D" parent="GridContainer"]
+position = Vector2( 600, 100 )
+
+[node name="Sprite" type="Sprite" parent="GridContainer/Animal3"]
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GridContainer/Animal3"]
+position = Vector2( -1.125, -4.625 )
+shape = SubResource( 8 )
+
+[node name="Animal4" type="Area2D" parent="GridContainer"]
+position = Vector2( 875, 100 )
+
+[node name="Sprite" type="Sprite" parent="GridContainer/Animal4"]
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GridContainer/Animal4"]
+position = Vector2( -1.125, -4.625 )
+shape = SubResource( 8 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 script = ExtResource( 8 )
@@ -130,4 +183,66 @@ shape = SubResource( 7 )
 position = Vector2( 1024, 0 )
 shape = SubResource( 7 )
 
-[connection signal="pressed" from="HBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
+[node name="Puntos" type="Label" parent="."]
+margin_left = 408.0
+margin_top = 23.0
+margin_right = 519.0
+margin_bottom = 61.0
+custom_fonts/font = SubResource( 10 )
+text = "Puntos:"
+
+[node name="Puntaje" type="Label" parent="."]
+margin_left = 529.0
+margin_top = 23.0
+margin_right = 529.0
+margin_bottom = 61.0
+custom_fonts/font = SubResource( 10 )
+
+[node name="Node" type="Node" parent="."]
+
+[node name="ardilla" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource( 12 )
+volume_db = -13.0
+
+[node name="buho" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource( 13 )
+volume_db = -13.0
+
+[node name="hormiguero" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource( 16 )
+volume_db = -13.0
+
+[node name="jaguar" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource( 14 )
+volume_db = -13.0
+
+[node name="monoa" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource( 15 )
+volume_db = -13.0
+
+[node name="murcielago" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource( 18 )
+volume_db = -13.0
+
+[node name="perezoso" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource( 21 )
+volume_db = -13.0
+
+[node name="rata" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource( 20 )
+volume_db = -13.0
+
+[node name="venado" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource( 19 )
+volume_db = -13.0
+
+[node name="zorro" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource( 17 )
+volume_db = -13.0
+
+[connection signal="pressed" from="Ayuda" to="." method="_on_Ayuda_pressed"]
+[connection signal="pressed" from="Ayuda2" to="." method="_on_Ayuda_pressed"]
+[connection signal="body_entered" from="GridContainer/Animal1" to="." method="_on_Animal1_body_entered"]
+[connection signal="body_entered" from="GridContainer/Animal2" to="." method="_on_Animal2_body_entered"]
+[connection signal="body_entered" from="GridContainer/Animal3" to="." method="_on_Animal3_body_entered"]
+[connection signal="body_entered" from="GridContainer/Animal4" to="." method="_on_Animal4_body_entered"]

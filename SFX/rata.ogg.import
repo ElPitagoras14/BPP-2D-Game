@@ -11,5 +11,5 @@ dest_files=[ "res://.import/rata.ogg-724acf3e71c1845b53308fd7041ea2b9.oggstr" ]
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

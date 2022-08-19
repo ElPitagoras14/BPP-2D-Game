@@ -11,5 +11,5 @@ dest_files=[ "res://.import/jaguar.ogg-073bee7fb6802f86745e75faeb2802b2.oggstr" 
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

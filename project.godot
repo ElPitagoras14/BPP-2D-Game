@@ -43,6 +43,12 @@ window/dpi/allow_hidpi=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
+[importer_defaults]
+
+ogg_vorbis={
+"loop": false
+}
+
 [input]
 
 ui_left={

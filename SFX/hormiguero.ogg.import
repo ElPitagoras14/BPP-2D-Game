@@ -11,5 +11,5 @@ dest_files=[ "res://.import/hormiguero.ogg-66a379871d3ed6402f7fe7f1a3b7f5bb.oggs
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/ardilla.ogg-9261bf0b2cbbd0b736f3a36f33c9e8ed.oggstr"
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

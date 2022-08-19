@@ -11,5 +11,5 @@ dest_files=[ "res://.import/venado.ogg-ec4b331009bb9bb2ee571a0af8641c6e.oggstr" 
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

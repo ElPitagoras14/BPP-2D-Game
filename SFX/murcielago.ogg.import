@@ -11,5 +11,5 @@ dest_files=[ "res://.import/murcielago.ogg-be072029d5b6c9a151e82f005961a0f7.oggs
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

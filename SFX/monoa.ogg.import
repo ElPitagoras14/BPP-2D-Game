@@ -11,5 +11,5 @@ dest_files=[ "res://.import/monoa.ogg-c7c65b15ce05e52990f7447809f6e2e1.oggstr" ]
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
