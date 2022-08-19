@@ -116,6 +116,7 @@ var rep=1
 func _on_Sonido_pressed():
 	rep = rep+1
 	sfx.stream = load("res://SFX/"+str(list_data_animales[indice][5])+".ogg")
+	#AudioStreamOGGVorbis
 	if(rep%2 == 0):
 		sfx.play()
 	else:
