@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://images/bg.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Cartas.gd" type="Script" id=2]
 [ext_resource path="res://scenes/ParEncontrado.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/iconos/heart.png" type="Texture" id=4]
 [ext_resource path="res://scenes/PopUpGana.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/ParNoEncontrado.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://fonts/Righteous-Regular.ttf"
@@ -17,6 +18,8 @@ font_data = SubResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
+
+[node name="ParNoEncontrado" parent="." instance=ExtResource( 6 )]
 
 [node name="ParEncontrado" parent="." instance=ExtResource( 3 )]
 

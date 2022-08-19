@@ -33,10 +33,10 @@ func handlerPar(var value):
 	GameManager.isPopUp = true
 	
 	if totalPares == pares:
-		$Gana/Popup/VBoxContainer/Label.text = "¡Felicidades, ha ganado!"
+		GameManager.ganaArbol = true
 		$Gana/Popup/VBoxContainer/HBoxContainer/Puntaje.text  = str(puntaje)
-		$ParEncontrado/Popup.popup()
 		$Gana/Popup.popup()
+		
 	else:
 		var arbol = load("res://assets/cards/"+str(value)+"/arbol.png")
 		$ParEncontrado/Popup/VBoxContainer/HBoxContainer/Puntos.text = "+50 puntos"
@@ -46,7 +46,10 @@ func handlerPar(var value):
 
 func handlerNoPar(var suit1, var suit2):
 	if vidas == 0:
-		get_tree().change_scene("res://scenes/MainMenu.tscn")
+		GameManager.ganaArbol = true
+		$ParNoEncontrado/Popup/VBoxContainer/Label.text = "Perdiste todas tus vidas"
+		$ParNoEncontrado/Popup/VBoxContainer/HBoxContainer.visible = false
+		$ParNoEncontrado/Popup.popup()
 	else:
 		var corazon = get_node("MarginContainer/HBoxContainer/HBoxContainer/Corazon"+str(vidas))
 		var image = Image.new()
@@ -54,6 +57,7 @@ func handlerNoPar(var suit1, var suit2):
 		var texture = ImageTexture.new()
 		texture.create_from_image(image)
 		corazon.set_texture(texture)
+		$ParNoEncontrado/Popup.popup()
 		vidas -= 1
 
 func fillDeck():
