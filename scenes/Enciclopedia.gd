@@ -73,8 +73,8 @@ func mostrarInfo():
 		Tipo.visible = false
 		Familia.visible = false
 		var imagenPrincipal = load("res://assets/cards/"+str(list_data_arboles[indice][0])+"/arbol.png")
-		nombre.text = String(list_data_arboles[indice][0])
-		nombreCientifico.text = String(list_data_arboles[indice][1])
+		nombre.text = String(list_data_arboles[indice][0]).capitalize()
+		nombreCientifico.text = String(list_data_arboles[indice][1]).capitalize()
 		descripcion.text = String(list_data_arboles[indice][2])
 		imagenArbol.texture = imagenPrincipal
 	else:
