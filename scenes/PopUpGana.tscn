@@ -31,6 +31,7 @@ margin_left = -20.0
 margin_top = -20.0
 margin_right = 20.0
 margin_bottom = 20.0
+input_pass_on_modal_close_click = false
 script = ExtResource( 2 )
 
 [node name="TextureRect" type="TextureRect" parent="Popup"]

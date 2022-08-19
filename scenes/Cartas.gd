@@ -26,19 +26,25 @@ func _ready():
 	totalPares = deck.size() / 2
 	nuevoPuntaje()
 	
-func handlerPar():
+func handlerPar(var value):
 	pares += 1
-	puntaje += 10
+	puntaje += 50
 	nuevoPuntaje()
+	GameManager.isPopUp = true
 	
 	if totalPares == pares:
 		$Gana/Popup/VBoxContainer/Label.text = "¡Felicidades, ha ganado!"
 		$Gana/Popup/VBoxContainer/HBoxContainer/Puntaje.text  = str(puntaje)
+		$ParEncontrado/Popup.popup()
 		$Gana/Popup.popup()
 	else:
-		$Control/Popup.popup()
+		var arbol = load("res://assets/cards/"+str(value)+"/arbol.png")
+		$ParEncontrado/Popup/VBoxContainer/HBoxContainer/Puntos.text = "+50 puntos"
+		$ParEncontrado/Popup/VBoxContainer/HBoxContainer/HBoxContainer/ArbolEncontrado.text = str(value).capitalize()
+		$ParEncontrado/Popup/VBoxContainer/ArbolEncontradoImg.texture = arbol
+		$ParEncontrado/Popup.popup()
 
-func handlerNoPar():
+func handlerNoPar(var suit1, var suit2):
 	if vidas == 0:
 		get_tree().change_scene("res://scenes/MainMenu.tscn")
 	else:
