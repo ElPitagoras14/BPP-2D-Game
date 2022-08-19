@@ -7,4 +7,4 @@ func _on_Button_pressed():
 	get_tree().change_scene("res://scenes/MainMenu.tscn")
 
 func close():
-	pass
+	GameManager.isPopUp = false
