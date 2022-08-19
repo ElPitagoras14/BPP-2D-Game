@@ -216,7 +216,6 @@ flat = true
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Enciclopedia" to="." method="_on_Enciclopedia_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2/reciclaje" to="." method="_on_reciclaje_pressed"]
-[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2/animales" to="." method="_on_animales_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2/animales" to="." method="_on_animales_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/HBoxContainer/arbol" to="." method="_on_arbol_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

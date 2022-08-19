@@ -2,7 +2,7 @@ extends Node
 	
 var card1
 var card2
-onready var Game = get_node("res://scenes/Cartas.tscn")
+
 var isPopUp = false
 var ganaArbol = false
 

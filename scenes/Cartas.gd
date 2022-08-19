@@ -8,6 +8,8 @@ var totalPares
 var arboles = Array()
 
 func _ready():
+	GameManager.ganaArbol = false
+	GameManager.isPopUp = false
 	var fileArboles = File.new()
 	fileArboles.open("res://data/arboles_data.dat", fileArboles.READ)
 	
