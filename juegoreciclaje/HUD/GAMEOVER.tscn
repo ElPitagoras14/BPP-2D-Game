@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://juegoreciclaje/HUD/GAMEOVER.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Righteous-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://images/moneda.png" type="Texture" id=3]
+[ext_resource path="res://SFX/Clapping.mp3" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 83
@@ -116,6 +117,15 @@ margin_right = 29.5
 margin_bottom = -6.5
 custom_fonts/font = SubResource( 4 )
 text = "x"
+
+[node name="medallaImg" type="TextureRect" parent="."]
+margin_left = 530.0
+margin_top = 195.0
+margin_right = 570.0
+margin_bottom = 235.0
+
+[node name="ClappingSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 
 [connection signal="pressed" from="TitleButton" to="." method="_on_TitleButton_pressed"]
 [connection signal="pressed" from="RetryButton" to="." method="_on_RetryButton_pressed"]

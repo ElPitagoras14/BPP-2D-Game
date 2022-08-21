@@ -6,7 +6,7 @@
 
 [node name="GreenTrash" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
-VerticalSpeed = 20.0
+VerticalSpeed = 19.0
 pointsGiven = 10
 trashColor = "green"
 

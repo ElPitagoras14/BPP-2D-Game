@@ -14,6 +14,8 @@ var velocity = Vector2()
 onready var gravity = 400
 onready var _animated_sprite = $sprite
 onready var position2D = $Position2D
+onready var collected = $collected
+onready var miss = $miss
 
 
 func _ready():
@@ -51,6 +53,7 @@ func _physics_process(delta):
 
 
 func damage():
+	miss.play()
 	life -= 1
 	Signals.emit_signal("on_player_life_changed", life)
 	if life <=0:
@@ -58,7 +61,7 @@ func damage():
 	
 
 func addPoints(amount: int):
-
+	collected.play()
 	Points += amount
 	
 func _on_game_over():

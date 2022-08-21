@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/13. respuestacorreta1.mp3-a01963b8d75abb02c52a861a57f88dfa.mp3str"
+
+[deps]
+
+source_file="res://SFX/13. respuestacorreta1.mp3"
+dest_files=[ "res://.import/13. respuestacorreta1.mp3-a01963b8d75abb02c52a861a57f88dfa.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
