@@ -9,6 +9,32 @@ var ganaArbol = false
 signal parCartas
 signal noParCartas
 
+const userFile = "res://userData.json"
+
+# player contiene toda la informacion dentro del json
+# para que se carguen los datos en la variable player debes llamar a loadJson()
+var player
+
+func saveJson(var playerConfig):
+	var file = File.new()
+	file.open(userFile, File.WRITE)
+	file.store_string(to_json(playerConfig))
+	file.close()
+
+func loadJson():
+	var file = File.new()
+	if file.file_exists(userFile):
+		file.open(userFile, File.READ)
+		var data = parse_json(file.get_as_text())
+		file.close()
+		if typeof(data) == TYPE_DICTIONARY:
+			player = data
+		else:
+			printerr("Corrupted data!")
+	else:
+		printerr("No saved data!")
+
+
 func _ready():
 	pass
 	
