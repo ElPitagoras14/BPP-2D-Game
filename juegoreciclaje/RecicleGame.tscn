@@ -43,9 +43,16 @@ extents = Vector2( 81, 9 )
 [node name="World" type="Node"]
 script = ExtResource( 7 )
 
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2( 246, 14 )
+script = ExtResource( 6 )
+
+[node name="SpawnTimer" type="Timer" parent="Spawner"]
+
 [node name="TrashContainer" type="Node2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="."]
+show_behind_parent = true
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 63
@@ -55,6 +62,7 @@ tile_data = PoolIntArray( 65522, 0, 0, 65523, 0, 0, 65524, 0, 0, 65525, 0, 0, 65
 script = ExtResource( 10 )
 
 [node name="OneWayTile" type="TileMap" parent="."]
+show_behind_parent = true
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 show_collision = true
@@ -75,6 +83,7 @@ shape = SubResource( 3 )
 one_way_collision = true
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="OneWayTile"]
+show_behind_parent = true
 collision_layer = 63
 collision_mask = 63
 
@@ -84,6 +93,7 @@ shape = SubResource( 3 )
 one_way_collision = true
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="OneWayTile"]
+show_behind_parent = true
 collision_layer = 63
 collision_mask = 63
 
@@ -93,7 +103,8 @@ shape = SubResource( 3 )
 one_way_collision = true
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 134, 445 )
+show_behind_parent = true
+position = Vector2( -26, 438 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, 7 )
@@ -101,34 +112,32 @@ offset = Vector2( 265, 230 )
 current = true
 zoom = Vector2( 0.874, 0.79 )
 
-[node name="Spawner" type="Node2D" parent="."]
-position = Vector2( 246, 14 )
-script = ExtResource( 6 )
-
-[node name="SpawnTimer" type="Timer" parent="Spawner"]
-
 [node name="TrashCanContainer" type="Node2D" parent="."]
 position = Vector2( 655, 44 )
 
 [node name="RedTrashCan" parent="." instance=ExtResource( 1 )]
-position = Vector2( 370, 440 )
+show_behind_parent = true
+position = Vector2( 361, 434 )
 collision_layer = 2
 collision_mask = 2
 mass = 1.0
 
 [node name="GreenTrashCan" parent="." instance=ExtResource( 2 )]
-position = Vector2( -117, 436 )
+show_behind_parent = true
+position = Vector2( 140, 435 )
 collision_layer = 8
 collision_mask = 8
 mass = 1.0
 
 [node name="BlueTrashCan" parent="." instance=ExtResource( 4 )]
-position = Vector2( 268, 437 )
+show_behind_parent = true
+position = Vector2( 247, 433 )
 collision_layer = 4
 collision_mask = 4
 mass = 1.0
 
 [node name="HUD" parent="." instance=ExtResource( 5 )]
+show_behind_parent = true
 margin_left = -199.0
 margin_top = -24.0
 margin_right = -327.0
