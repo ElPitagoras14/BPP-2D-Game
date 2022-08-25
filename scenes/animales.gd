@@ -26,5 +26,5 @@ func _on_TextureButton_pressed():
 
 
 func _on_JUGAR_pressed():
-	get_tree().change_scene("res://scenes/animales-dificultad.tscn")
+	get_tree().change_scene("res://scenes/animales-tema.tscn")
 	pass # Replace with function body.

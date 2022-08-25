@@ -1,6 +1,6 @@
 extends Node
 
-
+var fileCong = File.new()
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -15,12 +15,22 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _on_TextureButton4_pressed():
-	get_tree().change_scene("res://scenes/animales.tscn")
-	pass # Replace with function body.
+func _on_salirmain_pressed():
+	get_tree().change_scene("res://scenes/animales-tema.tscn")
 
 
 
-func _on_JUGAR_pressed():
+func _on_NORMAL_pressed():
+	leer()
+	fileCong.store_string("NORMAL")
+	fileCong.close()
 	get_tree().change_scene("res://scenes/animales-juego.tscn")
-	pass # Replace with function body.
+
+func _on_TRIVIA_pressed():
+	#get_tree().change_scene("res://scenes/animales-tema.tscn")
+	leer()
+	fileCong.store_string("TRIVIA")
+	fileCong.close()
+
+func leer():
+	fileCong.open("res://data/juego_animales.dat", fileCong.READ_WRITE)

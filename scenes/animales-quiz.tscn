@@ -1,10 +1,16 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://images/placeholder-cabania.png" type="Texture" id=1]
+[ext_resource path="res://assets/Sprites/Imagen47.svg" type="Texture" id=2]
 [ext_resource path="res://assets/iconos/help.png" type="Texture" id=3]
+[ext_resource path="res://assets/Sprites/Imagen44.svg" type="Texture" id=4]
+[ext_resource path="res://assets/Sprites/Imagen46.svg" type="Texture" id=5]
+[ext_resource path="res://assets/Sprites/Imagen45.svg" type="Texture" id=6]
+[ext_resource path="res://assets/Sprites/jugador.png" type="Texture" id=7]
+[ext_resource path="res://scenes/sprite.gd" type="Script" id=8]
 [ext_resource path="res://assets/iconos/pause.png" type="Texture" id=9]
 [ext_resource path="res://assets/animales/ardilla.png" type="Texture" id=10]
-[ext_resource path="res://scenes/animales-juego.gd" type="Script" id=11]
+[ext_resource path="res://scenes/animales-quiz.gd" type="Script" id=11]
 [ext_resource path="res://SFX/ardilla.ogg" type="AudioStream" id=12]
 [ext_resource path="res://SFX/buho.ogg" type="AudioStream" id=13]
 [ext_resource path="res://SFX/jaguar.ogg" type="AudioStream" id=14]
@@ -23,6 +29,24 @@ font_data = SubResource( 1 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 51.125, 50.375 )
+
+[sub_resource type="SpriteFrames" id=4]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 2 ) ],
+"loop": false,
+"name": "jump",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "run",
+"speed": 7.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 77.0
+height = 68.0
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 521.5, 15 )
@@ -43,7 +67,7 @@ anchor_bottom = 1.0
 script = ExtResource( 11 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 2975.0
+margin_right = 3000.0
 margin_bottom = 1200.0
 texture = ExtResource( 1 )
 
@@ -82,45 +106,65 @@ margin_bottom = 64.0
 custom_fonts/font = SubResource( 2 )
 text = "AKJWBDKAW"
 
-[node name="Animal1" type="Area2D" parent="."]
-position = Vector2( 191, 464 )
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_left = 36.0
+margin_top = 161.0
+margin_right = 1000.0
+margin_bottom = 360.0
+columns = 4
 
-[node name="Sprite" type="Sprite" parent="Animal1"]
+[node name="Animal1" type="Area2D" parent="GridContainer"]
+position = Vector2( 75, 100 )
+
+[node name="Sprite" type="Sprite" parent="GridContainer/Animal1"]
 texture = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Animal1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GridContainer/Animal1"]
 position = Vector2( -1.125, -4.625 )
 shape = SubResource( 8 )
 
-[node name="Animal2" type="Area2D" parent="."]
-position = Vector2( 453, 497 )
+[node name="Animal2" type="Area2D" parent="GridContainer"]
+position = Vector2( 325, 100 )
 
-[node name="Sprite" type="Sprite" parent="Animal2"]
+[node name="Sprite" type="Sprite" parent="GridContainer/Animal2"]
 texture = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Animal2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GridContainer/Animal2"]
 position = Vector2( -1.125, -4.625 )
 shape = SubResource( 8 )
 
-[node name="Animal3" type="Area2D" parent="."]
-position = Vector2( 631, 528 )
+[node name="Animal3" type="Area2D" parent="GridContainer"]
+position = Vector2( 600, 100 )
 
-[node name="Sprite" type="Sprite" parent="Animal3"]
+[node name="Sprite" type="Sprite" parent="GridContainer/Animal3"]
 texture = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Animal3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GridContainer/Animal3"]
 position = Vector2( -1.125, -4.625 )
 shape = SubResource( 8 )
 
-[node name="Animal4" type="Area2D" parent="."]
-position = Vector2( 914, 502 )
+[node name="Animal4" type="Area2D" parent="GridContainer"]
+position = Vector2( 875, 100 )
 
-[node name="Sprite" type="Sprite" parent="Animal4"]
+[node name="Sprite" type="Sprite" parent="GridContainer/Animal4"]
 texture = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Animal4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GridContainer/Animal4"]
 position = Vector2( -1.125, -4.625 )
 shape = SubResource( 8 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 110, 490 )
+frames = SubResource( 4 )
+animation = "jump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+visible = false
+position = Vector2( 110, 477 )
+shape = SubResource( 5 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -198,7 +242,7 @@ volume_db = -13.0
 
 [connection signal="pressed" from="Ayuda" to="." method="_on_Ayuda_pressed"]
 [connection signal="pressed" from="Ayuda2" to="." method="_on_Ayuda_pressed"]
-[connection signal="body_entered" from="Animal1" to="." method="_on_Animal1_body_entered"]
-[connection signal="body_entered" from="Animal2" to="." method="_on_Animal2_body_entered"]
-[connection signal="body_entered" from="Animal3" to="." method="_on_Animal3_body_entered"]
-[connection signal="body_entered" from="Animal4" to="." method="_on_Animal4_body_entered"]
+[connection signal="body_entered" from="GridContainer/Animal1" to="." method="_on_Animal1_body_entered"]
+[connection signal="body_entered" from="GridContainer/Animal2" to="." method="_on_Animal2_body_entered"]
+[connection signal="body_entered" from="GridContainer/Animal3" to="." method="_on_Animal3_body_entered"]
+[connection signal="body_entered" from="GridContainer/Animal4" to="." method="_on_Animal4_body_entered"]
