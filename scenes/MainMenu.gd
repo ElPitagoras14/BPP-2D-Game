@@ -1,7 +1,8 @@
 extends Control
 
 func _ready():
-	pass
+	GameManager.loadJson()
+	print(str(GameManager.player.cartas.pts))
 
 func _on_arbol_pressed():
 	 get_tree().change_scene("res://scenes/Cartas-principal.tscn")

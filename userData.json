@@ -1,0 +1,15 @@
+{
+  "cartas": {
+    "pts": 100,
+    "medallas": 1
+  },
+  "animales": {
+    "pts": 200,
+    "medallas": 2
+  },
+  "reciclaje": {
+    "pts": 300,
+    "medallas": 3
+  },
+  "ptsTotales": 600
+}
