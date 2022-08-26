@@ -39,11 +39,11 @@ func _ready():
 	pass
 	
 func chooseCard(var c):
-	if card1 == null and !isPopUp:
+	if card1 == null: #and !isPopUp:
 		card1 = c
 		card1.cartaSeleccionada()
 		card1.set_disabled(true)
-	elif card2 == null and !isPopUp:
+	elif card2 == null: #and !isPopUp:
 		card2 = c
 		card2.cartaSeleccionada()
 		card2.set_disabled(true)

@@ -19,19 +19,19 @@ font_path = "res://fonts/Righteous-Regular.ttf"
 size = 40
 font_data = SubResource( 3 )
 
-[sub_resource type="DynamicFontData" id=1]
+[sub_resource type="DynamicFontData" id=7]
 font_path = "res://fonts/Righteous-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=4]
 size = 30
-font_data = SubResource( 1 )
+font_data = SubResource( 7 )
 
-[sub_resource type="DynamicFontData" id=5]
+[sub_resource type="DynamicFontData" id=8]
 font_path = "res://fonts/Righteous-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=6]
 size = 20
-font_data = SubResource( 5 )
+font_data = SubResource( 8 )
 
 [node name="Principal" type="Control"]
 anchor_right = 1.0
@@ -143,10 +143,12 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 10 )
 
 [node name="Popup" type="Popup" parent="."]
+visible = true
 margin_left = 344.0
 margin_top = 198.0
 margin_right = 671.0
 margin_bottom = 421.0
+popup_exclusive = true
 
 [node name="TextureRect" type="TextureRect" parent="Popup"]
 anchor_left = 0.5

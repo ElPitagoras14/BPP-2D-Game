@@ -36,8 +36,8 @@ func handlerPar(var value):
 	
 	if totalPares == pares:
 		GameManager.ganaArbol = true
-		$Gana/Popup/VBoxContainer/HBoxContainer/Puntaje.text  = str(puntaje)
-		$Gana/Popup.popup()
+		$PopupGana/VBoxContainer/HBoxContainer/Puntaje.text  = str(puntaje)
+		$PopupGana.popup()
 		
 	else:
 		var arbol = load("res://assets/cards/"+str(value)+"/arbol.png")
@@ -85,3 +85,7 @@ func dealDeck():
 
 func nuevoPuntaje():
 	$MarginContainer/HBoxContainer/Puntaje.text = String(puntaje)
+
+
+func _on_Button2_pressed():
+	$PopupGana.hide()

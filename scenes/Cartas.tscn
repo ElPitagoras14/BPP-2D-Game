@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://images/bg.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Cartas.gd" type="Script" id=2]
 [ext_resource path="res://scenes/ParEncontrado.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/iconos/heart.png" type="Texture" id=4]
-[ext_resource path="res://scenes/PopUpGana.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/PopUp.png" type="Texture" id=5]
 [ext_resource path="res://scenes/ParNoEncontrado.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFontData" id=3]
@@ -14,16 +14,30 @@ font_path = "res://fonts/Righteous-Regular.ttf"
 size = 30
 font_data = SubResource( 3 )
 
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://fonts/Righteous-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 20
+font_data = SubResource( 5 )
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://fonts/Righteous-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=9]
+size = 20
+font_data = SubResource( 8 )
+
 [node name="Control2" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
 
 [node name="ParNoEncontrado" parent="." instance=ExtResource( 6 )]
+visible = false
 
 [node name="ParEncontrado" parent="." instance=ExtResource( 3 )]
-
-[node name="Gana" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -97,3 +111,84 @@ margin_top = 100.0
 margin_right = -40.0
 margin_bottom = -40.0
 columns = 5
+
+[node name="PopupGana" type="Popup" parent="."]
+visible = true
+margin_left = 219.0
+margin_top = 166.0
+margin_right = 784.0
+margin_bottom = 477.0
+input_pass_on_modal_close_click = false
+popup_exclusive = true
+
+[node name="TextureRect" type="TextureRect" parent="PopupGana"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -150.0
+margin_right = 200.0
+margin_bottom = 150.0
+texture = ExtResource( 5 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupGana"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -185.5
+margin_top = -110.5
+margin_right = 191.5
+margin_bottom = 119.5
+custom_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="PopupGana/VBoxContainer"]
+margin_top = 38.0
+margin_right = 377.0
+margin_bottom = 93.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "¡Felicidades, encontró todos los 
+pares!"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopupGana/VBoxContainer"]
+margin_top = 113.0
+margin_right = 377.0
+margin_bottom = 139.0
+custom_constants/separation = 10
+
+[node name="Puntos" type="Label" parent="PopupGana/VBoxContainer/HBoxContainer"]
+margin_right = 162.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "Total de puntos:"
+
+[node name="Puntaje" type="Label" parent="PopupGana/VBoxContainer/HBoxContainer"]
+margin_left = 172.0
+margin_right = 172.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+
+[node name="Button2" type="Button" parent="PopupGana/VBoxContainer"]
+light_mask = 0
+margin_left = 135.0
+margin_top = 159.0
+margin_right = 241.0
+margin_bottom = 191.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 4
+custom_colors/font_color_focus = Color( 1, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.403922, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+enabled_focus_mode = 0
+text = "Siguiente"
+flat = true
+
+[connection signal="pressed" from="PopupGana/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
