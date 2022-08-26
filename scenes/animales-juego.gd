@@ -42,10 +42,10 @@ func generate_elec():
 	var imagen2 = load("res://assets/animales/"+str(list_data_animales[1][5])+".png")
 	var imagen3 = load("res://assets/animales/"+str(list_data_animales[2][5])+".png")
 	var imagen4 = load("res://assets/animales/"+str(list_data_animales[3][5])+".png")
-	$GridContainer/Animal1/Sprite.texture = imagen1
-	$GridContainer/Animal2/Sprite.texture = imagen2
-	$GridContainer/Animal3/Sprite.texture = imagen3
-	$GridContainer/Animal4/Sprite.texture = imagen4
+	$Animal1/Sprite.texture = imagen1
+	$Animal2/Sprite.texture = imagen2
+	$Animal3/Sprite.texture = imagen3
+	$Animal4/Sprite.texture = imagen4
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

@@ -86,10 +86,11 @@ text = "AKJWBDKAW"
 position = Vector2( 191, 464 )
 
 [node name="Sprite" type="Sprite" parent="Animal1"]
+position = Vector2( 86, -39 )
 texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animal1"]
-position = Vector2( -1.125, -4.625 )
+position = Vector2( 84.875, -43.625 )
 shape = SubResource( 8 )
 
 [node name="Animal2" type="Area2D" parent="."]
