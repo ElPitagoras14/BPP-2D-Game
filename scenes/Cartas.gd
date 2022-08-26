@@ -6,8 +6,11 @@ var puntaje = 0
 var vidas = 3
 var totalPares
 var arboles = Array()
+var gameMode = "hoja"
+onready var gridPane = $grid
 
 func _ready():
+	gameMode = "hoja"
 	GameManager.ganaArbol = false
 	GameManager.isPopUp = false
 	var fileArboles = File.new()
@@ -71,7 +74,7 @@ func fillDeck():
 		c = 1
 		while c <= 2:
 			deck.append(CardObj.new("arbol", arboles[i]))
-			deck.append(CardObj.new("hoja", arboles[i]))
+			deck.append(CardObj.new(gameMode, arboles[i]))
 			i+=1
 			c += 1
 		f += 1
@@ -80,7 +83,7 @@ func dealDeck():
 	var c = 0
 	deck.shuffle()
 	while c < deck.size():
-		$grid.add_child(deck[c])
+		gridPane.add_child(deck[c])
 		c += 1
 
 func nuevoPuntaje():
@@ -88,4 +91,29 @@ func nuevoPuntaje():
 
 
 func _on_Button2_pressed():
-	$PopupGana.hide()
+	if gameMode == "hoja":
+		cleanGrid()
+		pares = 0
+		gameMode = "semilla"
+		GameManager.ganaArbol = false
+		GameManager.isPopUp = false
+		fillDeck()
+		dealDeck()
+		$PopupGana.hide()
+	elif gameMode == "semilla":
+		cleanGrid()
+		pares = 0
+		gameMode = "flor"
+		GameManager.ganaArbol = false
+		GameManager.isPopUp = false
+		fillDeck()
+		dealDeck()
+		$PopupGana.hide()
+	else:
+		$PopupGana.hide()
+		get_tree().change_scene("res://scenes/MainMenu.tscn")
+		
+func cleanGrid():
+	for n in gridPane.get_children():
+			gridPane.remove_child(n)
+			n.queue_free()
