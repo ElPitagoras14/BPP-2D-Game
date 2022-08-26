@@ -1,6 +1,6 @@
 tipobasura,descripcion,imagen
-plastico,"En este tacho de basura van residuos de plastico, tales como botellas plasticas, envases, tarrinas plasticas, todo lo cual este hecho de plastico.",greentrashbin
-papel,"En este tacho van residuos de papel, tales como hojas de cuaderno, periodicos, libros rotos, y envases o desechos hechos de papel. ",bluetrashbin
-organico,"En este tacho van residuos orgánicos, tales como restos de comida, tierra, entre otros. ",blacktrashbin
-vidrio,"En este tacho van residuos de vidrio, tales como botellas usadas, vidrios rotos, entre otros items hechos de vidrio.",redtrashbin
-metal,"En este tacho van residuos de metal, tales como latas de comida, herramientas de metal, y otros items hechos de metal. ",yellowtrashbin
+Plastico,"En este tacho de basura van residuos de plastico, tales como botellas plasticas, envases, tarrinas plasticas, todo lo cual este hecho de plastico.",greentrashbin,botellaplastica
+Papel,"En este tacho van residuos de papel, tales como hojas de cuaderno, periodicos, libros rotos, y envases o desechos hechos de papel. ",bluetrashbin,periodico
+Organico,"En este tacho van residuos orgánicos, tales como restos de comida, tierra, entre otros. ",blacktrashbin,banana
+Vidrio,"En este tacho van residuos de vidrio, tales como botellas usadas, vidrios rotos, entre otros items hechos de vidrio.",redtrashbin,botellavidrio
+Metal,"En este tacho van residuos de metal, tales como latas de comida, herramientas de metal, y otros items hechos de metal. ",yellowtrashbin,latametal
