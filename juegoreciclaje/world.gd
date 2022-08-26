@@ -1,6 +1,7 @@
 extends Node
 
 onready var TrashCanContainer = $TrashCanContainer
+onready var trashContainer = $TrashContainer
 var preBlackTrashCan = preload("res://juegoreciclaje/trashcans/BlackTrashCan.tscn")
 var preYellowTrashCan = preload ("res://juegoreciclaje/trashcans/YellowTrashCan.tscn")
 
