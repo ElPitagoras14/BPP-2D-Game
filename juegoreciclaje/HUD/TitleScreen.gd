@@ -11,3 +11,7 @@ func _on_JUGAR_pressed():
 
 func _on_Volver_pressed():
 	get_tree().change_scene("res://scenes/MainMenu.tscn")
+
+
+func _on_Instrucciones_pressed():
+	get_tree().change_scene("res://juegoreciclaje/HUD/ControlesReciclaje.tscn")
