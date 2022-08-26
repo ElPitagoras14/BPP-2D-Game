@@ -1,11 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://juegoreciclaje/enemy/Trash.tscn" type="PackedScene" id=1]
-[ext_resource path="res://juegoreciclaje/enemy/blueTrash.png" type="Texture" id=2]
+[ext_resource path="res://assets/reciclaje/periodico.png" type="Texture" id=2]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Trash
 "
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 28, 19.5 )
 
 [node name="BlueTrash" instance=ExtResource( 1 )]
 script = SubResource( 1 )
@@ -13,5 +16,15 @@ VerticalSpeed = 27.0
 pointsGiven = 10
 trashColor = "blue"
 
-[node name="Sprite" parent="." index="0"]
+[node name="background" parent="." index="0"]
+position = Vector2( -1, -1 )
+scale = Vector2( 3.5, 2.375 )
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2( 0.999999, -1 )
+scale = Vector2( 0.245, 0.273529 )
 texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2( -2, -0.5 )
+shape = SubResource( 2 )

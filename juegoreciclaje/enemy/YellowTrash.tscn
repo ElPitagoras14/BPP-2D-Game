@@ -1,12 +1,28 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://juegoreciclaje/enemy/Trash.tscn" type="PackedScene" id=1]
 [ext_resource path="res://juegoreciclaje/enemy/YellowTrash.png" type="Texture" id=2]
+[ext_resource path="res://assets/reciclaje/latametal.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 21.5, 26.5 )
 
 [node name="yellowTrash" instance=ExtResource( 1 )]
+position = Vector2( 0, 5 )
 VerticalSpeed = 34.0
 pointsGiven = 10
 trashColor = "yellow"
 
-[node name="Sprite" parent="." index="0"]
+[node name="background" parent="." index="0"]
+position = Vector2( -1, -10 )
+scale = Vector2( 2.5, 3.125 )
 texture = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2( -1, -11 )
+scale = Vector2( 0.266667, 0.24 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2( -1.5, -10.5 )
+shape = SubResource( 1 )
