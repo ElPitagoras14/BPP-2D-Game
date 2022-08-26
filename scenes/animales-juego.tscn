@@ -1,9 +1,15 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://images/placeholder-cabania.png" type="Texture" id=1]
+[ext_resource path="res://assets/iconos/sonido-block.png" type="Texture" id=2]
 [ext_resource path="res://assets/iconos/help.png" type="Texture" id=3]
+[ext_resource path="res://images/fondo-libro.png" type="Texture" id=4]
+[ext_resource path="res://assets/iconos/sonido.png" type="Texture" id=5]
+[ext_resource path="res://assets/iconos/derecha.png" type="Texture" id=6]
+[ext_resource path="res://assets/iconos/izquierda.png" type="Texture" id=7]
+[ext_resource path="res://assets/iconos/salir.png" type="Texture" id=8]
 [ext_resource path="res://assets/iconos/pause.png" type="Texture" id=9]
-[ext_resource path="res://assets/animales/ardilla.png" type="Texture" id=10]
+[ext_resource path="res://assets/espaciadores/Espacio3.png" type="Texture" id=10]
 [ext_resource path="res://scenes/animales-juego.gd" type="Script" id=11]
 [ext_resource path="res://SFX/ardilla.ogg" type="AudioStream" id=12]
 [ext_resource path="res://SFX/buho.ogg" type="AudioStream" id=13]
@@ -21,9 +27,6 @@
 [sub_resource type="DynamicFont" id=2]
 font_data = SubResource( 1 )
 
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 51.125, 50.375 )
-
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 521.5, 15 )
 
@@ -36,6 +39,13 @@ font_path = "res://fonts/Righteous-Regular.ttf"
 [sub_resource type="DynamicFont" id=10]
 size = 30
 font_data = SubResource( 9 )
+
+[sub_resource type="DynamicFontData" id=11]
+font_path = "res://fonts/Righteous-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=12]
+size = 20
+font_data = SubResource( 11 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -61,7 +71,7 @@ __meta__ = {
 "_editor_description_": "Ayuda"
 }
 
-[node name="Ayuda2" type="TextureButton" parent="."]
+[node name="Pausar" type="TextureButton" parent="."]
 margin_left = 914.0
 margin_right = 1005.0
 margin_bottom = 91.0
@@ -82,59 +92,77 @@ margin_bottom = 64.0
 custom_fonts/font = SubResource( 2 )
 text = "AKJWBDKAW"
 
-[node name="Animal1" type="Area2D" parent="."]
-position = Vector2( 191, 464 )
+[node name="Animal1" type="TextureButton" parent="."]
+margin_left = 101.0
+margin_top = 415.0
+margin_right = 195.0
+margin_bottom = 510.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+action_mode = 0
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_editor_description_": "Ayuda"
+}
 
-[node name="Sprite" type="Sprite" parent="Animal1"]
-position = Vector2( 86, -39 )
-texture = ExtResource( 10 )
+[node name="Animal2" type="TextureButton" parent="."]
+margin_left = 372.0
+margin_top = 332.0
+margin_right = 466.0
+margin_bottom = 427.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+action_mode = 0
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_editor_description_": "Ayuda"
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Animal1"]
-position = Vector2( 84.875, -43.625 )
-shape = SubResource( 8 )
+[node name="Animal3" type="TextureButton" parent="."]
+margin_left = 565.0
+margin_top = 415.0
+margin_right = 659.0
+margin_bottom = 510.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+action_mode = 0
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_editor_description_": "Ayuda"
+}
 
-[node name="Animal2" type="Area2D" parent="."]
-position = Vector2( 453, 497 )
-
-[node name="Sprite" type="Sprite" parent="Animal2"]
-texture = ExtResource( 10 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Animal2"]
-position = Vector2( -1.125, -4.625 )
-shape = SubResource( 8 )
-
-[node name="Animal3" type="Area2D" parent="."]
-position = Vector2( 631, 528 )
-
-[node name="Sprite" type="Sprite" parent="Animal3"]
-texture = ExtResource( 10 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Animal3"]
-position = Vector2( -1.125, -4.625 )
-shape = SubResource( 8 )
-
-[node name="Animal4" type="Area2D" parent="."]
-position = Vector2( 914, 502 )
-
-[node name="Sprite" type="Sprite" parent="Animal4"]
-texture = ExtResource( 10 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Animal4"]
-position = Vector2( -1.125, -4.625 )
-shape = SubResource( 8 )
+[node name="Animal4" type="TextureButton" parent="."]
+margin_left = 781.0
+margin_top = 378.0
+margin_right = 875.0
+margin_bottom = 473.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+action_mode = 0
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_editor_description_": "Ayuda"
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 520.5, 595 )
 shape = SubResource( 6 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 shape = SubResource( 7 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2( 1024, 0 )
@@ -197,9 +225,186 @@ volume_db = -13.0
 stream = ExtResource( 17 )
 volume_db = -13.0
 
+[node name="Popup" type="Popup" parent="."]
+visible = true
+margin_right = 1027.0
+margin_bottom = 600.0
+popup_exclusive = true
+
+[node name="TextureRect" type="TextureRect" parent="Popup"]
+margin_right = 1027.0
+margin_bottom = 601.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -3.0
+margin_bottom = -5.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Popup/MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1004.0
+margin_bottom = 575.0
+
+[node name="cerrarAyuda" type="TextureButton" parent="Popup/MarginContainer/VBoxContainer"]
+margin_right = 68.0
+margin_bottom = 68.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource( 8 )
+
+[node name="Espaciador" type="TextureRect" parent="Popup/MarginContainer/VBoxContainer"]
+margin_top = 72.0
+margin_right = 994.0
+margin_bottom = 119.0
+texture = ExtResource( 10 )
+stretch_mode = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Popup/MarginContainer/VBoxContainer"]
+margin_top = 123.0
+margin_right = 994.0
+margin_bottom = 451.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Popup/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 495.0
+margin_bottom = 328.0
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Popup/MarginContainer/VBoxContainer/HBoxContainer/CenterContainer"]
+margin_left = 117.0
+margin_top = 92.0
+margin_right = 378.0
+margin_bottom = 236.0
+custom_constants/separation = 10
+
+[node name="Nombre" type="Label" parent="Popup/MarginContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer2"]
+margin_right = 261.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 12 )
+text = "Nombre de arbol"
+align = 1
+
+[node name="Arbol" type="TextureRect" parent="Popup/MarginContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer2"]
+margin_top = 36.0
+margin_right = 261.0
+margin_bottom = 36.0
+stretch_mode = 6
+
+[node name="Tipo" type="Label" parent="Popup/MarginContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer2"]
+margin_top = 46.0
+margin_right = 261.0
+margin_bottom = 72.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 12 )
+text = "Tipo"
+align = 1
+
+[node name="Familia" type="Label" parent="Popup/MarginContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer2"]
+margin_top = 82.0
+margin_right = 261.0
+margin_bottom = 108.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 12 )
+text = "Familia"
+align = 1
+
+[node name="NombreCientifico" type="Label" parent="Popup/MarginContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer2"]
+margin_top = 118.0
+margin_right = 261.0
+margin_bottom = 144.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 12 )
+text = "Nombre Cientifico de arbol"
+align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Popup/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 499.0
+margin_right = 994.0
+margin_bottom = 328.0
+size_flags_horizontal = 3
+custom_constants/margin_top = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Popup/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+margin_top = 25.0
+margin_right = 495.0
+margin_bottom = 328.0
+size_flags_horizontal = 3
+
+[node name="Descripcion" type="Label" parent="Popup/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+margin_right = 495.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 12 )
+text = "Descripción"
+align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Popup/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 30.0
+margin_right = 495.0
+margin_bottom = 303.0
+size_flags_vertical = 3
+custom_constants/margin_right = 40
+custom_constants/margin_left = 40
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Popup/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer"]
+margin_left = 40.0
+margin_right = 455.0
+margin_bottom = 273.0
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Popup/MarginContainer/VBoxContainer"]
+margin_left = 3.0
+margin_top = 485.0
+margin_right = 991.0
+margin_bottom = 565.0
+size_flags_horizontal = 4
+size_flags_vertical = 10
+custom_constants/separation = 700
+
+[node name="back" type="TextureButton" parent="Popup/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 144.0
+margin_bottom = 80.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 7 )
+
+[node name="next" type="TextureButton" parent="Popup/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 844.0
+margin_right = 988.0
+margin_bottom = 80.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 6 )
+
+[node name="Sonido" type="TextureButton" parent="Popup"]
+margin_left = 230.0
+margin_top = 64.0
+margin_right = 290.0
+margin_bottom = 124.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 2 )
+texture_disabled = ExtResource( 2 )
+
+[node name="SFX" type="AudioStreamPlayer" parent="Popup"]
+stream = ExtResource( 12 )
+volume_db = -4.727
+
 [connection signal="pressed" from="Ayuda" to="." method="_on_Ayuda_pressed"]
-[connection signal="pressed" from="Ayuda2" to="." method="_on_Ayuda_pressed"]
-[connection signal="body_entered" from="Animal1" to="." method="_on_Animal1_body_entered"]
-[connection signal="body_entered" from="Animal2" to="." method="_on_Animal2_body_entered"]
-[connection signal="body_entered" from="Animal3" to="." method="_on_Animal3_body_entered"]
-[connection signal="body_entered" from="Animal4" to="." method="_on_Animal4_body_entered"]
+[connection signal="pressed" from="Popup/MarginContainer/VBoxContainer/cerrarAyuda" to="." method="_on_cerrarAyuda_pressed"]
+[connection signal="pressed" from="Popup/MarginContainer/VBoxContainer/HBoxContainer2/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Popup/MarginContainer/VBoxContainer/HBoxContainer2/next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Popup/Sonido" to="." method="_on_Sonido_pressed"]

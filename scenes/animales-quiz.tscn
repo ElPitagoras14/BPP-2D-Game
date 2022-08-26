@@ -33,15 +33,15 @@ extents = Vector2( 51.125, 50.375 )
 [sub_resource type="SpriteFrames" id=4]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 2 ) ],
-"loop": false,
-"name": "jump",
-"speed": 3.0
-}, {
 "frames": [ ExtResource( 4 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "run",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 2 ) ],
+"loop": false,
+"name": "jump",
+"speed": 3.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=5]

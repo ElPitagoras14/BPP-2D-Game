@@ -131,8 +131,8 @@ func mostrarInfo():
 		semilla.texture = semillaImg
 	elif vistaActual == "Animales":
 		sonido.visible = true
-		Tipo.visible = false
-		Familia.visible = false
+		Tipo.visible = true
+		Familia.visible = true
 		hoja.visible = false
 		fruto.visible = false
 		flor.visible = false
