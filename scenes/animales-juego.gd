@@ -23,6 +23,7 @@ onready var animal3 = get_node("Animal3")
 onready var animal4 = get_node("Animal4")
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_node("BGM").play()
 	get_node("TextureRect").texture = load("res://images//placeholder-bosque.png")
 	load_data()
 	generate_elec()
@@ -97,17 +98,22 @@ func _on_Animal1_body_entered(body):
 
 
 func _on_Ayuda_pressed():
+	get_node("Click").play()
 	$Popup.popup()
 	pass # Replace with function body.
 
 func _on_cerrarAyuda_pressed():
+	sfx.stop()
+	get_node("Click").play()
 	$Popup.hide()
 	pass # Replace with function body.
 
 
 func _on_back_pressed():
+	
 	if indice > 0:
 		indice -= 1
+		get_node("Page").play()
 		if(rep%2 == 0):
 			rep = rep+1
 			sfx.stop()
@@ -116,10 +122,29 @@ func _on_back_pressed():
 
 
 func _on_next_pressed():
+	
 	if indice < 3:
 			indice += 1
+			get_node("Page").play()
 			if(rep%2 == 0):
 				rep = rep+1
 				sfx.stop()
 			mostrarInfo()
+	pass # Replace with function body.
+
+
+func _on_Pausar_pressed():
+	get_node("Click").play()
+	$Pause.popup()
+
+
+func _on_ResumeButton_pressed():
+	get_node("Click").play()
+	$Pause.hide()
+
+
+func _on_QuitGame_pressed():
+	get_node("Click").play()
+	yield(get_tree().create_timer(.3),"timeout")
+	get_tree().change_scene("res://scenes/GameOver_A.tscn")
 	pass # Replace with function body.

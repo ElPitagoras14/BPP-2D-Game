@@ -24,10 +24,13 @@ onready var semilla = get_node("MarginContainer/VBoxContainer/HBoxContainer/Marg
 onready var basura = get_node("MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Basura")
 
 func _ready():
+	get_node("BGM").play()
 	load_data()
 	btnArboles.disabled = true
 
 func _on_TextureButton_pressed():
+	get_node("Click").play()
+	yield(get_tree().create_timer(.3),"timeout")
 	get_tree().change_scene("res://scenes/MainMenu.tscn")
 
 func load_data():
@@ -66,6 +69,7 @@ func load_data():
 func _on_back_pressed():
 	if indice > 0:
 		indice -= 1
+		get_node("Page").play()
 		if(rep%2 == 0):
 			rep = rep+1
 			sfx.stop()
@@ -74,17 +78,20 @@ func _on_back_pressed():
 func _on_next_pressed():
 	if vistaActual == "Arboles":
 		if indice < list_data_arboles.size() - 1:
+			get_node("Page").play()
 			indice += 1
 			mostrarInfo()
 	elif vistaActual == "Animales":
 		if indice < list_data_animales.size() - 1:
 			indice += 1
+			get_node("Page").play()
 			if(rep%2 == 0):
 				rep = rep+1
 				sfx.stop()
 			mostrarInfo()
 	elif vistaActual == "Reciclaje":
 		if indice < list_data_reciclajes.size() - 1:
+			get_node("Page").play()
 			indice += 1
 			mostrarInfo()
 
@@ -175,6 +182,7 @@ func mostrarInfo():
 		
 
 func _on_Arboles_pressed():
+	get_node("Click").play()
 	if(rep%2 == 0):
 			rep = rep+1
 			sfx.stop()
@@ -187,6 +195,7 @@ func _on_Arboles_pressed():
 
 
 func _on_Animales_pressed():
+	get_node("Click").play()
 	if(rep%2 == 0):
 			rep = rep+1
 			sfx.stop()
@@ -210,6 +219,7 @@ func _on_Sonido_pressed():
 
 
 func _on_Reciclajes_pressed():
+	get_node("Click").play()
 	if(rep%2 == 0):
 			rep = rep+1
 			sfx.stop()

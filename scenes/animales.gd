@@ -1,6 +1,6 @@
 extends Node
 
-
+onready var BGM = get_node("BGM")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -8,6 +8,7 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	BGM.play()
 	pass # Replace with function body.
 
 
@@ -16,15 +17,21 @@ func _ready():
 #	pass
 
 func _on_TextureButton4_pressed():
+	get_node("Click").play()
+	yield(get_tree().create_timer(.3),"timeout")
 	get_tree().change_scene("res://scenes/MainMenu.tscn")
 	pass # Replace with function body.
 
 
 func _on_TextureButton_pressed():
+	get_node("Click").play()
+	yield(get_tree().create_timer(.3),"timeout")
 	get_tree().change_scene("res://scenes/Controles.tscn")
 	pass # Replace with function body.
 
 
 func _on_JUGAR_pressed():
+	get_node("Click").play()
+	yield(get_tree().create_timer(.3),"timeout")
 	get_tree().change_scene("res://scenes/animales-tema.tscn")
 	pass # Replace with function body.
