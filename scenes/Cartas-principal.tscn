@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/Cartas-principal.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Righteous-Regular.ttf" type="DynamicFontData" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://assets/iconos/atras.png" type="Texture" id=7]
 [ext_resource path="res://assets/espaciadores/espacio2.png" type="Texture" id=8]
 [ext_resource path="res://assets/espaciadores/Espacio3.png" type="Texture" id=9]
+[ext_resource path="res://SFX/3.1. mouse-click1.ogg" type="AudioStream" id=10]
+[ext_resource path="res://BGM/6. ES_Forest Exploration - Sight of Wonders.mp3" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -134,6 +136,13 @@ texture_normal = ExtResource( 3 )
 __meta__ = {
 "_editor_description_": "Ayuda"
 }
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -17.0
 
 [connection signal="pressed" from="HBoxContainer/TextureButton4" to="." method="_on_TextureButton4_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/JUGAR" to="." method="_on_JUGAR_pressed"]

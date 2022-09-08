@@ -226,7 +226,6 @@ stream = ExtResource( 17 )
 volume_db = -13.0
 
 [node name="Popup" type="Popup" parent="."]
-visible = true
 margin_right = 1027.0
 margin_bottom = 600.0
 popup_exclusive = true
