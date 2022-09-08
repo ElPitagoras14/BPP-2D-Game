@@ -67,29 +67,31 @@ func load_data():
 	mostrarInfo()
 
 func _on_back_pressed():
-	get_node("Page").play()
 	if indice > 0:
 		indice -= 1
+		get_node("Page").play()
 		if(rep%2 == 0):
 			rep = rep+1
 			sfx.stop()
 		mostrarInfo()
 
 func _on_next_pressed():
-	get_node("Page").play()
 	if vistaActual == "Arboles":
 		if indice < list_data_arboles.size() - 1:
+			get_node("Page").play()
 			indice += 1
 			mostrarInfo()
 	elif vistaActual == "Animales":
 		if indice < list_data_animales.size() - 1:
 			indice += 1
+			get_node("Page").play()
 			if(rep%2 == 0):
 				rep = rep+1
 				sfx.stop()
 			mostrarInfo()
 	elif vistaActual == "Reciclaje":
 		if indice < list_data_reciclajes.size() - 1:
+			get_node("Page").play()
 			indice += 1
 			mostrarInfo()
 
