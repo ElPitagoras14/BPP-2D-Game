@@ -4,12 +4,12 @@
 [ext_resource path="res://assets/cards/niguito/arbol.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Popup.gd" type="Script" id=3]
 
-[sub_resource type="DynamicFontData" id=1]
+[sub_resource type="DynamicFontData" id=3]
 font_path = "res://fonts/Righteous-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=2]
 size = 20
-font_data = SubResource( 1 )
+font_data = SubResource( 3 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://images/placeholder-cabania.png" type="Texture" id=1]
 [ext_resource path="res://assets/iconos/sonido-block.png" type="Texture" id=2]
@@ -25,17 +25,18 @@
 [ext_resource path="res://SFX/page.ogg" type="AudioStream" id=23]
 [ext_resource path="res://SFX/3.1. mouse-click1.ogg" type="AudioStream" id=24]
 [ext_resource path="res://BGM/mt4.mp3" type="AudioStream" id=25]
+[ext_resource path="res://images/interrogacion.png" type="Texture" id=26]
+[ext_resource path="res://assets/animales/ardilla.png" type="Texture" id=27]
+[ext_resource path="res://SFX/correcto.ogg" type="AudioStream" id=28]
+[ext_resource path="res://assets/PopUp.png" type="Texture" id=29]
+[ext_resource path="res://assets/iconos/heart.png" type="Texture" id=30]
+[ext_resource path="res://assets/PopUp2.png" type="Texture" id=31]
+[ext_resource path="res://SFX/incorrecto.ogg" type="AudioStream" id=32]
 
 [sub_resource type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=2]
 font_data = SubResource( 1 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 521.5, 15 )
-
-[sub_resource type="SegmentShape2D" id=7]
-a = Vector2( -1, 607 )
 
 [sub_resource type="DynamicFontData" id=9]
 font_path = "res://fonts/Righteous-Regular.ttf"
@@ -66,6 +67,20 @@ font_data = ExtResource( 22 )
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFontData" id=16]
+font_path = "res://fonts/Righteous-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=17]
+size = 20
+font_data = SubResource( 16 )
+
+[sub_resource type="DynamicFontData" id=18]
+font_path = "res://fonts/Righteous-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=19]
+size = 20
+font_data = SubResource( 18 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -168,25 +183,15 @@ __meta__ = {
 "_editor_description_": "Ayuda"
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="correcto" type="TextureRect" parent="."]
 visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 520.5, 595 )
-shape = SubResource( 6 )
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-shape = SubResource( 7 )
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2( 1024, 0 )
-shape = SubResource( 7 )
+margin_left = 230.0
+margin_top = 50.0
+margin_right = 802.0
+margin_bottom = 712.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 26 )
 
 [node name="Puntos" type="Label" parent="."]
 margin_left = 408.0
@@ -470,6 +475,176 @@ margin_bottom = 190.0
 custom_fonts/font = SubResource( 15 )
 text = "Terminar Juego"
 
+[node name="PopupCorrecto" type="Popup" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+input_pass_on_modal_close_click = false
+
+[node name="TextureRect" type="TextureRect" parent="PopupCorrecto"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -222.0
+margin_top = -176.0
+margin_right = 278.0
+margin_bottom = 199.0
+texture = ExtResource( 31 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupCorrecto"]
+anchor_left = 0.5
+anchor_top = 0.092
+anchor_right = 0.5
+anchor_bottom = 0.092
+margin_left = -200.0
+margin_top = -97.68
+margin_right = 269.0
+margin_bottom = 146.32
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="PopupCorrecto/VBoxContainer"]
+margin_right = 469.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 17 )
+text = "¡Felicidades, has acertado!"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopupCorrecto/VBoxContainer"]
+margin_left = 126.0
+margin_top = 36.0
+margin_right = 342.0
+margin_bottom = 62.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 20
+
+[node name="Puntos" type="Label" parent="PopupCorrecto/VBoxContainer/HBoxContainer"]
+margin_right = 123.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 17 )
+text = "+ 100 puntos"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopupCorrecto/VBoxContainer/HBoxContainer"]
+margin_left = 143.0
+margin_right = 216.0
+margin_bottom = 26.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Animal" type="Label" parent="PopupCorrecto/VBoxContainer/HBoxContainer/HBoxContainer"]
+margin_right = 69.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 17 )
+text = "Animal:"
+align = 1
+
+[node name="AnimalEncontrado" type="Label" parent="PopupCorrecto/VBoxContainer/HBoxContainer/HBoxContainer"]
+margin_left = 73.0
+margin_right = 73.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 17 )
+align = 1
+
+[node name="Correcto_img" type="TextureRect" parent="PopupCorrecto/VBoxContainer"]
+margin_left = 148.0
+margin_top = 72.0
+margin_right = 320.0
+margin_bottom = 244.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 27 )
+stretch_mode = 6
+
+[node name="PopupIncorrecto" type="Popup" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+input_pass_on_modal_close_click = false
+
+[node name="TextureRect" type="TextureRect" parent="PopupIncorrecto"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -150.0
+margin_right = 200.0
+margin_bottom = 150.0
+texture = ExtResource( 29 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupIncorrecto"]
+anchor_left = 0.5
+anchor_top = 0.092
+anchor_right = 0.5
+anchor_bottom = 0.092
+margin_left = -162.0
+margin_top = -97.68
+margin_right = 162.0
+margin_bottom = 124.32
+custom_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="PopupIncorrecto/VBoxContainer"]
+margin_top = 42.0
+margin_right = 324.0
+margin_bottom = 68.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 19 )
+text = "¡Animal incorrecto!"
+align = 1
+
+[node name="Puntos" type="Label" parent="PopupIncorrecto/VBoxContainer"]
+margin_top = 88.0
+margin_right = 324.0
+margin_bottom = 114.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 17 )
+text = "-25 puntos"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopupIncorrecto/VBoxContainer"]
+margin_left = 124.0
+margin_top = 134.0
+margin_right = 200.0
+margin_bottom = 179.0
+size_flags_horizontal = 4
+
+[node name="Puntos" type="Label" parent="PopupIncorrecto/VBoxContainer/HBoxContainer"]
+margin_top = 9.0
+margin_right = 22.0
+margin_bottom = 35.0
+size_flags_horizontal = 4
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 19 )
+text = "-1 "
+align = 1
+valign = 1
+
+[node name="Corazon1" type="TextureRect" parent="PopupIncorrecto/VBoxContainer/HBoxContainer"]
+margin_left = 26.0
+margin_right = 76.0
+margin_bottom = 45.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource( 30 )
+
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 24 )
 
@@ -480,11 +655,25 @@ stream = ExtResource( 23 )
 stream = ExtResource( 25 )
 volume_db = -50.0
 
+[node name="correcto_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[node name="correctoSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 28 )
+
+[node name="incorrectoSFX2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 32 )
+
 [connection signal="pressed" from="Ayuda" to="." method="_on_Ayuda_pressed"]
 [connection signal="pressed" from="Pausar" to="." method="_on_Pausar_pressed"]
+[connection signal="pressed" from="Animal1" to="." method="_on_Animal1_pressed"]
+[connection signal="pressed" from="Animal2" to="." method="_on_Animal2_pressed"]
+[connection signal="pressed" from="Animal3" to="." method="_on_Animal3_pressed"]
+[connection signal="pressed" from="Animal4" to="." method="_on_Animal4_pressed"]
 [connection signal="pressed" from="Popup/MarginContainer/VBoxContainer/cerrarAyuda" to="." method="_on_cerrarAyuda_pressed"]
 [connection signal="pressed" from="Popup/MarginContainer/VBoxContainer/HBoxContainer2/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Popup/MarginContainer/VBoxContainer/HBoxContainer2/next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="Popup/Sonido" to="." method="_on_Sonido_pressed"]
 [connection signal="pressed" from="Pause/Background/CenterContainer/VBoxContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]
 [connection signal="pressed" from="Pause/Background/CenterContainer/VBoxContainer/QuitGame" to="." method="_on_QuitGame_pressed"]
+[connection signal="popup_hide" from="PopupCorrecto" to="." method="_on_PopupCorrecto_popup_hide"]
