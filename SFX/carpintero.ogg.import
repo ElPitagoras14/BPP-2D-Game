@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/carpintero.ogg-20b7ffa840a58ecf3a89393f4cf3586d.oggstr"
+
+[deps]
+
+source_file="res://SFX/carpintero.ogg"
+dest_files=[ "res://.import/carpintero.ogg-20b7ffa840a58ecf3a89393f4cf3586d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

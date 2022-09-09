@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/pato.ogg-9692fa888c6f88aa049c27c874b238bf.oggstr"
+
+[deps]
+
+source_file="res://SFX/pato.ogg"
+dest_files=[ "res://.import/pato.ogg-9692fa888c6f88aa049c27c874b238bf.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

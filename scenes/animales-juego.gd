@@ -58,13 +58,18 @@ func show_img():
 
 func load_data():
 	var fileAnimales = File.new()
+	var conf = File.new()
 	fileAnimales.open("res://data/animales_data.dat", fileAnimales.READ)
-			
+	conf.open("res://data/juego_animales.dat", fileAnimales.READ)
+	var data2 = conf.get_csv_line()
+	print(data2[0])
 	while !fileAnimales.eof_reached():
 		var data = fileAnimales.get_csv_line()
-		if data[1]=="Mamífero":
+		if data[1]=="Mamífero" && data2[0]=="MAMIFEROS":
 			list_data_animales.append(data)
-			
+		else:
+			if data[1]=="Ave" && data2[0]=="AVES":
+				list_data_animales.append(data)
 	fileAnimales.close()
 	
 func generate_elec():

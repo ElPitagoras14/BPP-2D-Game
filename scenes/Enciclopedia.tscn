@@ -310,9 +310,9 @@ texture_normal = ExtResource( 2 )
 
 [node name="Sonido" type="TextureButton" parent="."]
 margin_left = 240.0
-margin_top = 62.0
+margin_top = 52.0
 margin_right = 300.0
-margin_bottom = 122.0
+margin_bottom = 112.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
 texture_normal = ExtResource( 9 )

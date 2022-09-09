@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/monob.ogg-408eb5dec9c72fa54e7e4381efcf2f78.oggstr"
+
+[deps]
+
+source_file="res://SFX/monob.ogg"
+dest_files=[ "res://.import/monob.ogg-408eb5dec9c72fa54e7e4381efcf2f78.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
