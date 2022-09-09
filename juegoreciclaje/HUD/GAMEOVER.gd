@@ -22,7 +22,9 @@ func init(score: int, maxCombo: int):
 		medalla.texture = load("res://assets/Medallas/bronce.png")
 		GameManager.player.reciclaje.medallas +=1
 	GameManager.player.reciclaje.pts += score
-	GameManager.player.ptsTotales += score
+	if score > GameManager.player.reciclaje.mejorPuntaje:
+		GameManager.player.reciclaje.mejorPuntaje = score
+	GameManager.player.monedas += int(score/10)
 	GameManager.saveJson(GameManager.player)
 	
 	

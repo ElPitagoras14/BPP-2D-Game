@@ -21,7 +21,7 @@ onready var hoja = get_node("MarginContainer/VBoxContainer/HBoxContainer/MarginC
 onready var fruto = get_node("MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Fruto")
 onready var flor = get_node("MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Flor")
 onready var semilla = get_node("MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4/Semilla")
-onready var basura = get_node("MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Basura")
+
 
 func _ready():
 	get_node("BGM").play()
@@ -98,10 +98,13 @@ func _on_next_pressed():
 func mostrarInfo():
 	if vistaActual == "Arboles":
 		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer.visible = true
+		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Label.text = "Hoja"
 		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2.visible = true
+		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Label.visible = true
+		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Label.text = "Fruto"
 		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3.visible = true
+		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Label.text = "Flor"
 		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4.visible = true
-		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5.visible = false
 		sonido.visible = false
 		Tipo.visible = false
 		Familia.visible = false
@@ -150,7 +153,6 @@ func mostrarInfo():
 		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2.visible = false
 		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3.visible = false
 		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4.visible = false
-		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5.visible = false
 		var imagenPrincipal = load("res://assets/animales/"+str(list_data_animales[indice][5])+".png")
 		nombre.text = String(list_data_animales[indice][0])
 		Tipo.text = String(list_data_animales[indice][1])
@@ -159,22 +161,27 @@ func mostrarInfo():
 		descripcion.text = String(list_data_animales[indice][4])
 		imagenArbol.texture = imagenPrincipal
 	elif vistaActual == "Reciclaje":
-		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5.visible = true
 		sonido.visible = false
 		Familia.visible = false
 		Tipo.visible = false
 		nombreCientifico.visible = false
-		hoja.visible = false
-		fruto.visible = false
-		flor.visible = false
+
 		semilla.visible = false
-		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer.visible = false
-		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2.visible = false
-		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3.visible = false
+		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer.visible = true
+		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Label.text = ""
+		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2.visible = true
+		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Label.visible = true
+		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Label.text = "Ejemplos"
+		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3.visible = true
+		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Label.text = ""
 		$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4.visible = false
 		var imagenPrincipal = load("res://assets/reciclaje/"+list_data_reciclajes[indice][2]+".png")
-		var basuraImg = load("res://assets/reciclaje/"+list_data_reciclajes[indice][3]+".png")
-		basura.texture = basuraImg
+		var basuraImg1 = load("res://assets/reciclaje/"+list_data_reciclajes[indice][3]+".png")
+		var basuraImg2 = load("res://assets/reciclaje/"+list_data_reciclajes[indice][4]+".png")
+		var basuraImg3 = load("res://assets/reciclaje/"+list_data_reciclajes[indice][5]+".png")
+		hoja.texture = basuraImg1
+		fruto.texture = basuraImg2
+		flor.texture = basuraImg3
 		
 		nombre.text = String(list_data_reciclajes[indice][0])
 		descripcion.text = String(list_data_reciclajes[indice][1])
