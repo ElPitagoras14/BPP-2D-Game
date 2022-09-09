@@ -36,7 +36,7 @@ func loadJson():
 
 
 func _ready():
-	pass
+	loadJson()
 	
 func chooseCard(var c):
 	if card1 == null: #and !isPopUp:
