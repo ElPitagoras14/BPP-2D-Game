@@ -268,25 +268,6 @@ margin_top = 30.0
 margin_right = 68.0
 margin_bottom = 30.0
 
-[node name="VBoxContainer5" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-visible = false
-margin_left = 322.0
-margin_right = 394.0
-margin_bottom = 30.0
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5"]
-margin_right = 72.0
-margin_bottom = 26.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 2 )
-text = "Ejemplo"
-align = 1
-
-[node name="Basura" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5"]
-margin_top = 30.0
-margin_right = 72.0
-margin_bottom = 30.0
-
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 margin_top = 480.0
 margin_right = 988.0
@@ -310,9 +291,9 @@ texture_normal = ExtResource( 2 )
 
 [node name="Sonido" type="TextureButton" parent="."]
 margin_left = 240.0
-margin_top = 62.0
+margin_top = 52.0
 margin_right = 300.0
-margin_bottom = 122.0
+margin_bottom = 112.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
 texture_normal = ExtResource( 9 )

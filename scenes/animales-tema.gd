@@ -31,7 +31,7 @@ func _on_MAMIFEROS_pressed():
 	leer()
 	fileCong.store_string("MAMIFEROS,")
 	fileCong.close()
-	get_tree().change_scene("res://scenes/animales-dificultad.tscn")
+	get_tree().change_scene("res://scenes/animales-juego.tscn")
 
 func _on_AVES_pressed():
 	get_node("Click").play()
@@ -40,7 +40,7 @@ func _on_AVES_pressed():
 	leer()
 	fileCong.store_string("AVES,")
 	fileCong.close()
-	get_tree().change_scene("res://scenes/animales-dificultad.tscn")
+	get_tree().change_scene("res://scenes/animales-juego.tscn")
 
 func leer():
 	fileCong.open("res://data/juego_animales.dat", fileCong.WRITE)

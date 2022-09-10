@@ -18,11 +18,11 @@ func _on_Enciclopedia_pressed():
 	yield(get_tree().create_timer(.3),"timeout")
 	get_tree().change_scene("res://scenes/Enciclopedia.tscn")
 
-
 func _on_reciclaje_pressed():
 	get_node("Click").play()
 	yield(get_tree().create_timer(.3),"timeout")
 	get_tree().change_scene("res://juegoreciclaje/HUD/TitleScreen.tscn")
+	MusicController.play_music()
 
 
 func _on_TextureButton2_pressed():

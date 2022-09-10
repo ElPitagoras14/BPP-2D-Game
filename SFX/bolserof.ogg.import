@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bolserof.ogg-05f70de16f2508bd933cf9f7d173984d.oggstr"
+
+[deps]
+
+source_file="res://SFX/bolserof.ogg"
+dest_files=[ "res://.import/bolserof.ogg-05f70de16f2508bd933cf9f7d173984d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

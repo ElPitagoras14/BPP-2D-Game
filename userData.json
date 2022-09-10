@@ -1,18 +1,1 @@
-{
-  "monedas": 200,
-  "animales": {
-    "medallas": 2,
-    "pts": 200,
-    "mejorPuntaje": 150
-  },
-  "cartas": {
-    "medallas": 1,
-    "pts": 100,
-    "mejorPuntaje": 50
-  },
-  "reciclaje": {
-    "medallas": 3,
-    "pts": 310,
-    "mejorPuntaje": 200
-  }
-}
+{"animales":{"medallas":2,"mejorPuntaje":150,"pts":200},"cartas":{"medallas":1,"mejorPuntaje":50,"pts":100},"monedas":92,"reciclaje":{"medallas":7,"mejorPuntaje":280,"pts":1260}}

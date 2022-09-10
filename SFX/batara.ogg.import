@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/batara.ogg-dfe8eedd67fa73f844ecc1c929ca7929.oggstr"
+
+[deps]
+
+source_file="res://SFX/batara.ogg"
+dest_files=[ "res://.import/batara.ogg-dfe8eedd67fa73f844ecc1c929ca7929.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
