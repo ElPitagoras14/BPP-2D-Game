@@ -12,10 +12,10 @@
 [ext_resource path="res://BGM/6. ES_Forest Exploration - Sight of Wonders.mp3" type="AudioStream" id=10]
 [ext_resource path="res://SFX/3.1. mouse-click1.ogg" type="AudioStream" id=11]
 
-[sub_resource type="DynamicFontData" id=1]
+[sub_resource type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=2]
-font_data = SubResource( 1 )
+font_data = SubResource( 4 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 65

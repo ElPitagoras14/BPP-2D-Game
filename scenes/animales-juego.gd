@@ -7,6 +7,7 @@ extends Control
 var indice = 0
 var puntaje = 0
 var rondas = 1
+var vidas = 3
 var list_data_animales = []
 var animalesdisponibles = [1,2,3,4]
 onready var index
@@ -31,6 +32,7 @@ var correcto
 var seleccionado
 
 func _ready():
+	$Rondas.text = str(rondas)+"/10"
 	puntajelbl.text = "0"
 	correcto = randi() % 4
 	correcto_img.hide()
@@ -42,6 +44,7 @@ func _ready():
 	show_img()
 
 func show_img():
+	$Ayuda.hide()
 	animal1.hide()
 	animal2.hide()
 	animal3.hide()
@@ -55,6 +58,7 @@ func show_img():
 	animal2.show()
 	animal3.show()
 	animal4.show()
+	$Ayuda.show()
 
 func load_data():
 	var fileAnimales = File.new()
@@ -161,6 +165,7 @@ func _on_Animal2_pressed():
 func _on_Animal1_pressed():
 	accion(1)
 	pass # Replace with function body.
+	
 func accion(n):
 	for animal in animalesdisponibles:
 		if(animal==1 && n!=1):
@@ -211,10 +216,35 @@ func accion(n):
 		$correctoSFX.play()
 		$PopupCorrecto.popup()
 	else:
-		puntaje-=25
+		if(puntaje-25>0):
+			puntaje-=25
+		else:
+			puntaje=0
 		puntajelbl.text = str(puntaje)
 		$incorrectoSFX2.play()
-		$PopupIncorrecto.popup()
+		if vidas == 0:
+			var coinsLabel = $End/MonedaLabel
+			var medalla = $End/medallaImg
+			var SFX = $End/ClappingSFX
+			$End/score.text = puntaje
+			if puntaje >= 900:
+				medalla.texture = load("res://assets/Medallas/diamante.png")
+			elif puntaje >= 750:
+				medalla.texture = load("res://assets/Medallas/oro.png")
+			elif puntaje >= 500:
+				medalla.texture = load("res://assets/Medallas/plata.png")
+			elif puntaje >= 250:
+				medalla.texture = load("res://assets/Medallas/bronce.png")
+			$End.popup()
+		else:
+			var corazon = get_node("Corazon"+str(vidas))
+			var image = Image.new()
+			image.load("res://assets/iconos/heart_border.png")
+			var texture = ImageTexture.new()
+			texture.create_from_image(image)
+			corazon.set_texture(texture)
+			$PopupIncorrecto.popup()
+			vidas -= 1
 
 func verify(n):
 	index = animalesdisponibles.find(n,0)
@@ -232,4 +262,13 @@ func _on_PopupCorrecto_popup_hide():
 	if rondas<=10:
 		restart()
 		rondas+=1
+		$Rondas.text = str(rondas)+"/10"
+	pass # Replace with function body.
+
+
+func _on_RetryButton_pressed():
+	pass # Replace with function body.
+
+
+func _on_TitleButton_pressed():
 	pass # Replace with function body.

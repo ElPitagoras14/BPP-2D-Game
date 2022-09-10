@@ -1,37 +1,52 @@
 extends Node
 
 onready var BGM = get_node("BGM")
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var fileCong = File.new()
+var data
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	BGM.play()
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 func _on_TextureButton4_pressed():
 	get_node("Click").play()
 	yield(get_tree().create_timer(.3),"timeout")
 	get_tree().change_scene("res://scenes/MainMenu.tscn")
-	pass # Replace with function body.
-
 
 func _on_TextureButton_pressed():
 	get_node("Click").play()
 	yield(get_tree().create_timer(.3),"timeout")
 	get_tree().change_scene("res://scenes/Controles.tscn")
-	pass # Replace with function body.
-
 
 func _on_JUGAR_pressed():
 	get_node("Click").play()
+	$Tema.popup()
+
+func _on_salirmod_pressed():
+	get_node("Click").play()
+	$Tema.hide()
+
+func _on_MAMIFEROS_pressed():
+	get_node("Click").play()
 	yield(get_tree().create_timer(.3),"timeout")
-	get_tree().change_scene("res://scenes/animales-tema.tscn")
-	pass # Replace with function body.
+	leer()
+	fileCong.store_string("MAMIFEROS,")
+	fileCong.close()
+	get_tree().change_scene("res://scenes/animales-juego.tscn")
+
+func _on_AVES_pressed():
+	get_node("Click").play()
+	yield(get_tree().create_timer(.3),"timeout")
+	#get_tree().change_scene("res://scenes/animales-tema.tscn")
+	leer()
+	fileCong.store_string("AVES,")
+	fileCong.close()
+	get_tree().change_scene("res://scenes/animales-juego.tscn")
+
+func leer():
+	fileCong.open("res://data/juego_animales.dat", fileCong.WRITE)
+	data = fileCong.get_csv_line()
+
+func _on_Tema_about_to_show():
+	$Tema/HBoxContainer/salirmod.disabled = false
+	$Tema/HBoxContainer/VBoxContainer/HBoxContainer/MAMIFEROS.disabled = false
+	$Tema/HBoxContainer/VBoxContainer/HBoxContainer2/AVES.disabled = false

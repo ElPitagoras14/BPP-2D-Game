@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mt6.mp3-c521b23be24f5e046e7cb9797b3e903d.mp3str"
+
+[deps]
+
+source_file="res://BGM/mt6.mp3"
+dest_files=[ "res://.import/mt6.mp3-c521b23be24f5e046e7cb9797b3e903d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
