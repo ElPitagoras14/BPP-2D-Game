@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/espaciadores/espacio2.png" type="Texture" id=8]
 [ext_resource path="res://assets/espaciadores/Espacio3.png" type="Texture" id=9]
 [ext_resource path="res://SFX/3.1. mouse-click1.ogg" type="AudioStream" id=10]
-[ext_resource path="res://BGM/6. ES_Forest Exploration - Sight of Wonders.mp3" type="AudioStream" id=11]
+[ext_resource path="res://BGM/mt6.mp3" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFontData" id=1]
 
