@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://images/Fondo.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Perfil.gd" type="Script" id=2]
@@ -323,8 +323,6 @@ margin_right = 8.0
 margin_left = 12.0
 margin_right = 12.0
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/TextureButton" to="." method="_on_TextureButton_pressed"]
-
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 
@@ -332,4 +330,4 @@ stream = ExtResource( 3 )
 stream = ExtResource( 5 )
 volume_db = -24.818
 
-[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/TextureButton" to="." method="_on_TextureButton_pressed"]
