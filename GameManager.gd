@@ -56,6 +56,8 @@ func checkCard():
 		card2.flip()
 	elif !card1.isBack and !card2.isBack:
 		emit_signal("noParCartas", card1.suit, card2.suit)
+		card1.backToNormal()
+		card2.backToNormal()
 	card1.set_disabled(false)
 	card2.set_disabled(false)
 	card1 = null

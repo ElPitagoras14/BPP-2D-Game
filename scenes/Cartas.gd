@@ -9,6 +9,9 @@ var arboles = Array()
 var gameMode = "hoja"
 onready var gridPane = $grid
 
+var list_data_arboles = []
+var indice = 0
+
 func _ready():
 	gameMode = "hoja"
 	GameManager.ganaArbol = false
@@ -20,7 +23,9 @@ func _ready():
 		var data = fileArboles.get_csv_line()
 		if data.size() > 2:
 			arboles.append(data[0])
+			list_data_arboles.append(data)
 	arboles.remove(0)
+	list_data_arboles.remove(0)
 	fileArboles.close()
 	
 	fillDeck()
@@ -30,6 +35,7 @@ func _ready():
 	cartaNode.connect("noParCartas", self, "handlerNoPar")
 	totalPares = deck.size() / 2
 	nuevoPuntaje()
+	get_node("BGM").play()
 	
 func handlerPar(var value):
 	pares += 1
@@ -70,9 +76,9 @@ func fillDeck():
 	var f = 1
 	var i = 0
 	
-	while f <= 3:
+	while f <= 1:
 		c = 1
-		while c <= 2:
+		while c <= 6:
 			deck.append(CardObj.new("arbol", arboles[i]))
 			deck.append(CardObj.new(gameMode, arboles[i]))
 			i+=1
@@ -111,9 +117,80 @@ func _on_Button2_pressed():
 		$PopupGana.hide()
 	else:
 		$PopupGana.hide()
-		get_tree().change_scene("res://scenes/MainMenu.tscn")
+		$Final.popup()
+		menuFinal()
 		
 func cleanGrid():
 	for n in gridPane.get_children():
 			gridPane.remove_child(n)
 			n.queue_free()
+
+
+func _on_Help_pressed():
+	get_node("Click").play()
+	$Ayuda.popup()
+	mostrarInfo()
+
+
+func _on_cerrarAyuda_pressed():
+	get_node("Click").play()
+	$Ayuda.hide()
+
+
+func _on_back_pressed():
+	if indice > 0:
+		indice -= 1
+		get_node("Page").play()
+		mostrarInfo()
+
+
+func _on_next_pressed():
+	if indice < arboles.size() - 1:
+		indice += 1
+		get_node("Page").play()
+		mostrarInfo()
+
+func mostrarInfo():
+	print(list_data_arboles)
+	var imagenPrincipal = load("res://assets/cards/"+str(list_data_arboles[indice][0])+"/arbolimg.png")
+	var hojaImg = load("res://assets/cards/"+str(list_data_arboles[indice][0])+"/hoja.png")
+	var frutoImg = load("res://assets/cards/"+str(list_data_arboles[indice][0])+"/fruto.png")
+	var florImg = load("res://assets/cards/"+str(list_data_arboles[indice][0])+"/flor.png")
+	var semillaImg = load("res://assets/cards/"+str(list_data_arboles[indice][0])+"/semilla.png")
+	
+	$Ayuda/MarginContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer2/Nombre.text = list_data_arboles[indice][0]
+	$Ayuda/MarginContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer2/Tipo.text = list_data_arboles[indice][1]
+	$Ayuda/MarginContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer2/Arbol.texture = imagenPrincipal
+	$Ayuda/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/RichTextLabel.text = list_data_arboles[indice][2]
+	
+	$Ayuda/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Hoja.texture = hojaImg
+	$Ayuda/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Fruto.texture = frutoImg
+	$Ayuda/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4/Semilla.texture = semillaImg
+	$Ayuda/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Flor.texture = florImg
+	
+	if frutoImg == null:
+		$Ayuda/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2.visible = false
+		$Ayuda/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3.visible = true
+	else:
+		$Ayuda/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3.visible = false
+		$Ayuda/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2.visible = true
+			
+
+func _on_ResumeButton_pressed():
+	get_node("Click").play()
+	$Pause.hide()
+
+func _on_QuitGame_pressed():
+	get_node("Click").play()
+	$Final.popup()
+	menuFinal()
+
+func _on_Pause_pressed():
+	get_node("Click").play()
+	$Pause.popup()
+
+func menuFinal():
+	$Final/Background/CenterContainer/VBoxContainer/HBoxContainer/puntajeFinal.text = str(puntaje)
+	$Final/Background/CenterContainer/VBoxContainer/HBoxContainer2/monedas.text = "x"+str(floor(puntaje/50))
+func _on_volverInicio_pressed():
+	get_tree().change_scene("res://scenes/MainMenu.tscn")

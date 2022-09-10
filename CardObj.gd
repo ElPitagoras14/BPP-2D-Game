@@ -25,12 +25,16 @@ func _init(var s, var v):
 	set_normal_texture(face)
 
 func _pressed():
+	#
 	if !isBack:
 		GameManager.chooseCard(self)
 	
 func cartaSeleccionada():
-	print(value)
-	
+	set_normal_texture(load("res://assets/cards/"+str(value)+"/"+str(suit)+"Selected.png"))
+
+func backToNormal():
+	set_normal_texture(face)
+
 func flip():
 	set_normal_texture(back)
 	set_disabled(true)
