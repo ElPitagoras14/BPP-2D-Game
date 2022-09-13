@@ -36,7 +36,7 @@ func _ready():
 		get_node("MarginContainer/VBoxContainer/HBoxContainer/Bosque/medallasBosque/"+medallas[count]).texture = medalla
 		count+=1
 		
-	#Cartas
+	#Reciclaje
 	count = 0
 	while(count < GameManager.player.reciclaje.medallas):
 		var medalla = load("res://assets/Medallas/"+str(medallas[count])+".png")

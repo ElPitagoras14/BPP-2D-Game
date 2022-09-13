@@ -11,16 +11,16 @@ func init(score: int, maxCombo: int):
 	coinsLabel.text = str("x", int(score/10))
 	if score >= 600 or maxCombo >= 50:
 		medalla.texture = load("res://assets/Medallas/diamante.png")
-		GameManager.player.reciclaje.medallas +=1
+		GameManager.player.reciclaje.medallas =3
 	elif score >= 300 or maxCombo >= 25:
 		medalla.texture = load("res://assets/Medallas/oro.png")
-		GameManager.player.reciclaje.medallas +=1
+		GameManager.player.reciclaje.medallas =2
 	elif score >= 200 or maxCombo >= 20:
 		medalla.texture = load("res://assets/Medallas/plata.png")
-		GameManager.player.reciclaje.medallas +=1
+		GameManager.player.reciclaje.medallas =1
 	elif score >= 100 or maxCombo >= 10:
 		medalla.texture = load("res://assets/Medallas/bronce.png")
-		GameManager.player.reciclaje.medallas +=1
+		GameManager.player.reciclaje.medallas =0
 	GameManager.player.reciclaje.pts += score
 	if score > GameManager.player.reciclaje.mejorPuntaje:
 		GameManager.player.reciclaje.mejorPuntaje = score

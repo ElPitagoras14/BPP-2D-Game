@@ -62,5 +62,3 @@ func checkCard():
 	card2.set_disabled(false)
 	card1 = null
 	card2 = null
-
-var difficulty_animales

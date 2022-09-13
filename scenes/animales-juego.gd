@@ -7,7 +7,7 @@ extends Control
 var indice = 0
 var puntaje = 0
 var rondas = 1
-var vidas = 3
+var vidas = 5
 var list_data_animales = []
 var animalesdisponibles = [1,2,3,4]
 onready var index
@@ -34,6 +34,7 @@ var seleccionado
 func _ready():
 	$Rondas.text = str(rondas)+"/10"
 	puntajelbl.text = "0"
+	randomize()
 	correcto = randi() % 4
 	correcto_img.hide()
 	get_node("BGM").play()
@@ -42,23 +43,6 @@ func _ready():
 	generate_elec()
 	mostrarInfo()
 	show_img()
-
-func show_img():
-	$Ayuda.hide()
-	animal1.hide()
-	animal2.hide()
-	animal3.hide()
-	animal4.hide()
-	correcto_img.show()
-	correcto_sound.stream = load("res://SFX/"+str(list_data_animales[correcto][5])+".ogg")
-	correcto_sound.play()
-	yield(get_tree().create_timer(6.1),"timeout")
-	correcto_img.hide()
-	animal1.show()
-	animal2.show()
-	animal3.show()
-	animal4.show()
-	$Ayuda.show()
 
 func load_data():
 	var fileAnimales = File.new()
@@ -78,11 +62,16 @@ func load_data():
 	
 func generate_elec():
 	randomize()
-	list_data_animales.shuffle()
-	animal1.texture_normal = load("res://assets/animales/"+str(list_data_animales[0][5])+".png")
-	animal2.texture_normal = load("res://assets/animales/"+str(list_data_animales[1][5])+".png")
-	animal3.texture_normal = load("res://assets/animales/"+str(list_data_animales[2][5])+".png")
-	animal4.texture_normal = load("res://assets/animales/"+str(list_data_animales[3][5])+".png")
+	correcto = randi() % 4
+	if rondas == 10:
+		$End.popup()
+	else:
+		randomize()
+		list_data_animales.shuffle()
+		animal1.texture_normal = load("res://assets/animales/"+str(list_data_animales[0][5])+".png")
+		animal2.texture_normal = load("res://assets/animales/"+str(list_data_animales[1][5])+".png")
+		animal3.texture_normal = load("res://assets/animales/"+str(list_data_animales[2][5])+".png")
+		animal4.texture_normal = load("res://assets/animales/"+str(list_data_animales[3][5])+".png")
 	
 func mostrarInfo():
 	sonido.visible = true
@@ -97,6 +86,21 @@ func mostrarInfo():
 	nombreCientifico.text = String(list_data_animales[indice][3])
 	descripcion.text = String(list_data_animales[indice][4])
 	imagenArbol.texture = imagenPrincipal
+
+func show_img():
+	$Pausar.hide()
+	$Ayuda.hide()
+	for a in animalesdisponibles:
+		get_node("Animal"+str(a)).hide()
+	correcto_img.show()
+	correcto_sound.stream = load("res://SFX/"+str(list_data_animales[correcto][5])+".ogg")
+	correcto_sound.play()
+	yield(get_tree().create_timer(6.1),"timeout")
+	correcto_img.hide()
+	for a in animalesdisponibles:
+		get_node("Animal"+str(a)).show()
+	$Ayuda.show()
+	$Pausar.show()
 
 var rep=1
 func _on_Sonido_pressed():
@@ -144,76 +148,58 @@ func _on_ResumeButton_pressed():
 
 func _on_QuitGame_pressed():
 	get_node("Click").play()
-	yield(get_tree().create_timer(.3),"timeout")
-	get_tree().change_scene("res://scenes/GameOver_A.tscn")
+	sfx.stop()
+	correcto_sound.stop()
+	$End.popup()
 
 func _on_Animal4_pressed():
 	accion(4)
-	pass # Replace with function body.
-	
 
 func _on_Animal3_pressed():
 	accion(3)
-	pass # Replace with function body.
-
 
 func _on_Animal2_pressed():
 	accion(2)
-	pass # Replace with function body.
-
 
 func _on_Animal1_pressed():
 	accion(1)
-	pass # Replace with function body.
-	
+
 func accion(n):
 	for animal in animalesdisponibles:
 		if(animal==1 && n!=1):
 			animal1.hide()
-		else:
-			if(animal==2 && n!=2):
-				animal2.hide()
-			else:
-				if(animal==3 && n!=3):
-					animal3.hide()
-				else:
-					if(animal==4 && n!=4):
-						animal4.hide()
+		elif(animal==2 && n!=2):
+			animal2.hide()
+		elif(animal==3 && n!=3):
+			animal3.hide()
+		elif(animal==4 && n!=4):
+			animal4.hide()
 	get_node("Node/"+str(list_data_animales[n-1][5])).play()
 	yield(get_tree().create_timer(6.1),"timeout")
 	if(n==1):
 		animal1.hide()
 		verify(1)
-	else:
-		if(n==2):
-			animal2.hide()
-			verify(2)
-		else:
-			if(n==3):
-				animal3.hide()
-				verify(3)
-			else:
-				if(n==4):
-					animal4.hide()
-					verify(4)
+	elif(n==2):
+		animal2.hide()
+		verify(2)
+	elif(n==3):
+		animal3.hide()
+		verify(3)
+	elif(n==4):
+		animal4.hide()
+		verify(4)
 	for animal in animalesdisponibles:
 		if(animal==1):
 			animal1.show()
-		else:
-			if(animal==2):
-				animal2.show()
-			else:
-				if(animal==3):
-					animal3.show()
-				else:
-					if(animal==4):
-						animal4.show()
+		elif(animal==2):
+			animal2.show()
+		elif(animal==3):
+			animal3.show()
+		elif(animal==4):
+			animal4.show()
 	if(n-1==correcto):
 		puntaje+=100
 		puntajelbl.text = str(puntaje)
-		$PopupCorrecto/VBoxContainer/Correcto_img.texture = load("res://assets/animales/"+str(list_data_animales[n-1][5])+".png")
-		$PopupCorrecto/VBoxContainer/HBoxContainer/HBoxContainer/AnimalEncontrado.text = list_data_animales[n-1][0]
-		$correctoSFX.play()
 		$PopupCorrecto.popup()
 	else:
 		if(puntaje-25>0):
@@ -223,18 +209,6 @@ func accion(n):
 		puntajelbl.text = str(puntaje)
 		$incorrectoSFX2.play()
 		if vidas == 0:
-			var coinsLabel = $End/MonedaLabel
-			var medalla = $End/medallaImg
-			var SFX = $End/ClappingSFX
-			$End/score.text = puntaje
-			if puntaje >= 900:
-				medalla.texture = load("res://assets/Medallas/diamante.png")
-			elif puntaje >= 750:
-				medalla.texture = load("res://assets/Medallas/oro.png")
-			elif puntaje >= 500:
-				medalla.texture = load("res://assets/Medallas/plata.png")
-			elif puntaje >= 250:
-				medalla.texture = load("res://assets/Medallas/bronce.png")
 			$End.popup()
 		else:
 			var corazon = get_node("Corazon"+str(vidas))
@@ -257,18 +231,59 @@ func restart():
 	mostrarInfo()
 	show_img()
 
-
 func _on_PopupCorrecto_popup_hide():
-	if rondas<=10:
+	if rondas<10:
 		restart()
 		rondas+=1
 		$Rondas.text = str(rondas)+"/10"
-	pass # Replace with function body.
-
+	else:
+		$End.popup()
 
 func _on_RetryButton_pressed():
-	pass # Replace with function body.
-
+	get_node("Click").play()
+	yield(get_tree().create_timer(.4),"timeout")
+	get_tree().change_scene("res://scenes/animales-juego.tscn")
 
 func _on_TitleButton_pressed():
-	pass # Replace with function body.
+	get_node("Click").play()
+	yield(get_tree().create_timer(.4),"timeout")
+	get_tree().change_scene("res://scenes/animales.tscn")
+
+func _on_End_about_to_show():
+	$End/score.text = str(puntaje)
+	$End/MonedaLabel.text= str("x", int(puntaje/10))
+	var medalla = $End/medallaImg
+	if puntaje >= 900:
+		medalla.texture = load("res://assets/Medallas/diamante.png")
+		if GameManager.player.animales.medallas<4:
+			GameManager.player.animales.medallas = 4
+	elif puntaje >= 750:
+		medalla.texture = load("res://assets/Medallas/oro.png")
+		if GameManager.player.animales.medallas<3:
+			GameManager.player.animales.medallas = 3
+	elif puntaje >= 500:
+		medalla.texture = load("res://assets/Medallas/plata.png")
+		if GameManager.player.animales.medallas<2:
+			GameManager.player.animales.medallas = 2
+	elif puntaje >= 250:
+		medalla.texture = load("res://assets/Medallas/bronce.png")
+		if GameManager.player.animales.medallas<1:
+			GameManager.player.animales.medallas = 1
+	else:
+		medalla.texture = null
+		
+	GameManager.player.animales.pts += puntaje
+	if GameManager.player.animales.mejorPuntaje < puntaje:
+		GameManager.player.animales.mejorPuntaje = puntaje
+	GameManager.player.monedas += int(puntaje/10)
+	$End/ClappingSFX.play()
+	GameManager.saveJson(GameManager.player)
+
+func _on_PopupCorrecto_about_to_show():
+	$PopupCorrecto/VBoxContainer/Correcto_img.texture = load("res://assets/animales/"+str(list_data_animales[correcto][5])+".png")
+	$PopupCorrecto/VBoxContainer/HBoxContainer/HBoxContainer/AnimalEncontrado.text = list_data_animales[correcto][0]
+	$correctoSFX.play()
+
+func _on_PopupIncorrecto_popup_hide():
+	show_img()
+
