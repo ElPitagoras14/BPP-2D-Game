@@ -37,14 +37,6 @@ texture = ExtResource( 1 )
 expand = true
 stretch_mode = 1
 
-[node name="TextureButton" type="TextureButton" parent="." groups=["botones"]]
-margin_left = 946.0
-margin_top = 13.0
-margin_right = 1014.0
-margin_bottom = 81.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 8 )
-
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
 margin_left = 2.0
 margin_top = -4.0
@@ -61,6 +53,45 @@ margin_bottom = 342.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource( 3 )
+stretch_mode = 5
+
+[node name="TextureButton" type="TextureButton" parent="." groups=["botones"]]
+margin_left = 946.0
+margin_top = 13.0
+margin_right = 1014.0
+margin_bottom = 81.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 8 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_top = 319.0
+margin_right = 3410.0
+margin_bottom = 1129.0
+rect_scale = Vector2( 0.3, 0.3 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Nuevo" type="TextureButton" parent="HBoxContainer" groups=["botones"]]
+margin_left = 444.0
+margin_top = 91.0
+margin_right = 1703.0
+margin_bottom = 719.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource( 5 )
+stretch_mode = 4
+
+[node name="Cargar" type="TextureButton" parent="HBoxContainer" groups=["botones"]]
+margin_left = 1707.0
+margin_top = 91.0
+margin_right = 2966.0
+margin_bottom = 718.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource( 6 )
 stretch_mode = 5
 
 [node name="Popup" type="Popup" parent="."]
@@ -133,37 +164,6 @@ custom_fonts/font = SubResource( 6 )
 enabled_focus_mode = 1
 text = "SALIR"
 flat = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_top = 319.0
-margin_right = 3410.0
-margin_bottom = 1129.0
-rect_scale = Vector2( 0.3, 0.3 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-alignment = 1
-
-[node name="Nuevo" type="TextureButton" parent="HBoxContainer" groups=["botones"]]
-margin_left = 444.0
-margin_top = 91.0
-margin_right = 1703.0
-margin_bottom = 719.0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource( 5 )
-stretch_mode = 4
-
-[node name="Cargar" type="TextureButton" parent="HBoxContainer" groups=["botones"]]
-margin_left = 1707.0
-margin_top = 91.0
-margin_right = 2966.0
-margin_bottom = 718.0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource( 6 )
-stretch_mode = 5
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
