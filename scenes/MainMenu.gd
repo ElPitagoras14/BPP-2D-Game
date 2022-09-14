@@ -24,25 +24,20 @@ func _on_reciclaje_pressed():
 	get_tree().change_scene("res://juegoreciclaje/HUD/TitleScreen.tscn")
 	MusicController.play_music()
 
+func _on_Cancelar4_pressed():
+	get_node("Click").play()
+	$SalirPopup.hide()
 
-func _on_TextureButton2_pressed():
+func _on_Salir4_pressed():
+	get_node("Click").play()
+	yield(get_tree().create_timer(.4),"timeout")
+	get_tree().change_scene("res://scenes/PantallaInicio.tscn")
+
+func _on_Perfil_pressed():
 	get_node("Click").play()
 	yield(get_tree().create_timer(.3),"timeout")
 	get_tree().change_scene("res://scenes/Perfil.tscn")
 
-
-func _on_TextureButton_pressed():
+func _on_Salir5_pressed():
 	get_node("Click").play()
-	$Popup.popup()
-
-
-func _on_Button2_pressed():
-	get_node("Click").play()
-	yield(get_tree().create_timer(.4),"timeout")
-	get_tree().quit()
-
-
-func _on_Button_pressed():
-	get_node("Click").play()
-	$Popup.hide()
-
+	$SalirPopup.popup()
