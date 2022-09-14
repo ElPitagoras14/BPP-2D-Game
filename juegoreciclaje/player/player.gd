@@ -8,7 +8,7 @@ const JUMP_SPEED = 350
 var canPick = true
 
 var Points: int = 0
-export var life: int = 6
+export var life: int = 5
 var velocity = Vector2()
 
 onready var gravity = 400
@@ -54,8 +54,8 @@ func _physics_process(delta):
 
 func damage():
 	miss.play()
-	life -= 1
 	Signals.emit_signal("on_player_life_changed", life)
+	life -= 1
 	if life <=0:
 		Signals.emit_signal("on_game_over")
 	

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://juegoreciclaje/enemy/Trash.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juegoreciclaje/enemy/BlackTrash.png" type="Texture" id=2]
+[ext_resource path="res://juegoreciclaje/enemy/BlackTrash.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 34.5, 36.5 )
+
+[node name="blackTrash" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+VerticalSpeed = 20.0
+pointsGiven = 20
+trashColor = "black"
+trashImg1 = "res://assets/reciclaje/banana.png"
+trashImg2 = "res://assets/reciclaje/manzana.png"
+trashImg3 = "res://assets/reciclaje/donut.png"
+horizontalSpeed = 27.0
+
+[node name="background" parent="." index="0"]
+position = Vector2( 0.589599, -4.43631 )
+scale = Vector2( 4.28, 4.62 )
+texture = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2( 0, -5 )
+scale = Vector2( 0.0826667, 0.0607813 )
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2( 0.5, -4.5 )
+shape = SubResource( 1 )
