@@ -3,7 +3,7 @@ extends Node
 onready var BGM = get_node("BGM")
 var fileCong = File.new()
 var data
-var x=0
+onready var x=0
 
 func _ready():
 	BGM.play()
