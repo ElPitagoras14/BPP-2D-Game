@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://images/placeholder-cabania.png" type="Texture" id=1]
 [ext_resource path="res://assets/iconos/sonido-block.png" type="Texture" id=2]
@@ -44,11 +44,6 @@
 [ext_resource path="res://images/moneda.png" type="Texture" id=42]
 [ext_resource path="res://SFX/Clapping.mp3" type="AudioStream" id=43]
 [ext_resource path="res://assets/Medallas/bronce.png" type="Texture" id=44]
-
-[sub_resource type="DynamicFontData" id=1]
-
-[sub_resource type="DynamicFont" id=2]
-font_data = SubResource( 1 )
 
 [sub_resource type="DynamicFontData" id=9]
 font_path = "res://fonts/Righteous-Regular.ttf"
@@ -156,14 +151,6 @@ __meta__ = {
 "_editor_description_": "Ayuda"
 }
 
-[node name="Label" type="Label" parent="."]
-margin_left = 61.0
-margin_top = 50.0
-margin_right = 101.0
-margin_bottom = 64.0
-custom_fonts/font = SubResource( 2 )
-text = "AKJWBDKAW"
-
 [node name="Animal1" type="TextureButton" parent="."]
 margin_left = 167.0
 margin_top = 408.0
@@ -236,6 +223,7 @@ margin_top = 20.0
 margin_right = 423.0
 margin_bottom = 58.0
 rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 10 )
 text = "Puntos:"
 
@@ -244,19 +232,37 @@ margin_left = 433.0
 margin_top = 20.0
 margin_right = 433.0
 margin_bottom = 58.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 10 )
+
+[node name="Corazon5" type="TextureRect" parent="."]
+margin_left = 218.0
+margin_top = 4.0
+margin_right = 270.0
+margin_bottom = 68.0
+texture = ExtResource( 30 )
+stretch_mode = 4
+
+[node name="Corazon4" type="TextureRect" parent="."]
+margin_left = 166.0
+margin_top = 4.0
+margin_right = 218.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 31, 3 )
+texture = ExtResource( 30 )
+stretch_mode = 4
 
 [node name="Corazon3" type="TextureRect" parent="."]
 margin_left = 114.0
 margin_top = 4.0
-margin_right = 164.0
+margin_right = 166.0
 margin_bottom = 68.0
 rect_pivot_offset = Vector2( 31, 3 )
 texture = ExtResource( 30 )
 stretch_mode = 4
 
 [node name="Corazon2" type="TextureRect" parent="."]
-margin_left = 64.0
+margin_left = 62.0
 margin_top = 4.0
 margin_right = 114.0
 margin_bottom = 68.0
@@ -266,24 +272,7 @@ stretch_mode = 4
 [node name="Corazon1" type="TextureRect" parent="."]
 margin_left = 10.0
 margin_top = 4.0
-margin_right = 60.0
-margin_bottom = 68.0
-texture = ExtResource( 30 )
-stretch_mode = 4
-
-[node name="Corazon4" type="TextureRect" parent="."]
-margin_left = 164.0
-margin_top = 4.0
-margin_right = 214.0
-margin_bottom = 68.0
-rect_pivot_offset = Vector2( 31, 3 )
-texture = ExtResource( 30 )
-stretch_mode = 4
-
-[node name="Corazon5" type="TextureRect" parent="."]
-margin_left = 217.0
-margin_top = 4.0
-margin_right = 267.0
+margin_right = 62.0
 margin_bottom = 68.0
 texture = ExtResource( 30 )
 stretch_mode = 4
@@ -294,6 +283,7 @@ margin_top = 20.0
 margin_right = 643.0
 margin_bottom = 58.0
 rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 10 )
 text = "Ronda:"
 
@@ -302,6 +292,7 @@ margin_left = 650.0
 margin_top = 20.0
 margin_right = 669.0
 margin_bottom = 58.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 10 )
 
 [node name="Node" type="Node" parent="."]
@@ -625,7 +616,7 @@ alignment = 1
 [node name="Label" type="Label" parent="PopupCorrecto/VBoxContainer"]
 margin_right = 469.0
 margin_bottom = 26.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 17 )
 text = "¡Felicidades, has acertado!"
 align = 1
@@ -642,7 +633,7 @@ custom_constants/separation = 20
 [node name="Puntos" type="Label" parent="PopupCorrecto/VBoxContainer/HBoxContainer"]
 margin_right = 123.0
 margin_bottom = 26.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 17 )
 text = "+ 100 puntos"
 align = 1
@@ -657,7 +648,7 @@ size_flags_vertical = 4
 [node name="Animal" type="Label" parent="PopupCorrecto/VBoxContainer/HBoxContainer/HBoxContainer"]
 margin_right = 69.0
 margin_bottom = 26.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 17 )
 text = "Animal:"
 align = 1
@@ -666,7 +657,7 @@ align = 1
 margin_left = 73.0
 margin_right = 73.0
 margin_bottom = 26.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 17 )
 align = 1
 
@@ -718,7 +709,7 @@ alignment = 1
 margin_top = 42.0
 margin_right = 324.0
 margin_bottom = 68.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 19 )
 text = "¡Animal incorrecto!"
 align = 1
@@ -727,7 +718,7 @@ align = 1
 margin_top = 88.0
 margin_right = 324.0
 margin_bottom = 114.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 17 )
 text = "-25 puntos"
 align = 1
@@ -744,7 +735,7 @@ margin_top = 9.0
 margin_right = 22.0
 margin_bottom = 35.0
 size_flags_horizontal = 4
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 19 )
 text = "-1 "
 align = 1
@@ -759,7 +750,6 @@ size_flags_vertical = 4
 texture = ExtResource( 30 )
 
 [node name="End" type="Popup" parent="."]
-visible = true
 margin_right = 1027.0
 margin_bottom = 601.0
 popup_exclusive = true

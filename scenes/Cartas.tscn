@@ -87,6 +87,7 @@ script = ExtResource( 2 )
 visible = false
 
 [node name="ParEncontrado" parent="." instance=ExtResource( 3 )]
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -184,7 +185,6 @@ margin_bottom = -40.0
 columns = 4
 
 [node name="PopupGana" type="Popup" parent="."]
-visible = true
 margin_left = 219.0
 margin_top = 166.0
 margin_right = 784.0
@@ -208,32 +208,33 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -185.5
+margin_left = -151.5
 margin_top = -110.5
-margin_right = 191.5
+margin_right = 171.5
 margin_bottom = 119.5
 custom_constants/separation = 20
 alignment = 1
 
 [node name="Label" type="Label" parent="PopupGana/VBoxContainer"]
 margin_top = 38.0
-margin_right = 377.0
+margin_right = 323.0
 margin_bottom = 93.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 7 )
-text = "¡Felicidades, encontró todos los 
-pares!"
+text = "¡Felicidades, encontró todos
+ los pares!"
+align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PopupGana/VBoxContainer"]
 margin_top = 113.0
-margin_right = 377.0
+margin_right = 323.0
 margin_bottom = 139.0
 custom_constants/separation = 10
 
 [node name="Puntos" type="Label" parent="PopupGana/VBoxContainer/HBoxContainer"]
 margin_right = 162.0
 margin_bottom = 26.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 7 )
 text = "Total de puntos:"
 
@@ -241,14 +242,14 @@ text = "Total de puntos:"
 margin_left = 172.0
 margin_right = 172.0
 margin_bottom = 26.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 7 )
 
 [node name="Button2" type="Button" parent="PopupGana/VBoxContainer"]
 light_mask = 0
-margin_left = 135.0
+margin_left = 108.0
 margin_top = 159.0
-margin_right = 241.0
+margin_right = 214.0
 margin_bottom = 191.0
 focus_mode = 0
 mouse_default_cursor_shape = 2
@@ -517,29 +518,29 @@ margin_bottom = 382.0
 custom_constants/separation = 20
 
 [node name="Label" type="Label" parent="Pause/Background/CenterContainer/VBoxContainer"]
-margin_right = 194.0
-margin_bottom = 76.0
+margin_right = 131.0
+margin_bottom = 51.0
 custom_fonts/font = SubResource( 15 )
 text = "PAUSA"
 align = 1
 valign = 1
 
 [node name="Control" type="Control" parent="Pause/Background/CenterContainer/VBoxContainer"]
-margin_top = 96.0
-margin_right = 194.0
-margin_bottom = 96.0
+margin_top = 71.0
+margin_right = 131.0
+margin_bottom = 71.0
 
 [node name="ResumeButton" type="Button" parent="Pause/Background/CenterContainer/VBoxContainer"]
-margin_top = 116.0
-margin_right = 194.0
-margin_bottom = 143.0
+margin_top = 91.0
+margin_right = 131.0
+margin_bottom = 118.0
 custom_fonts/font = SubResource( 16 )
 text = "Resumir Juego"
 
 [node name="QuitGame" type="Button" parent="Pause/Background/CenterContainer/VBoxContainer"]
-margin_top = 163.0
-margin_right = 194.0
-margin_bottom = 190.0
+margin_top = 138.0
+margin_right = 131.0
+margin_bottom = 165.0
 custom_fonts/font = SubResource( 17 )
 text = "Terminar Juego"
 

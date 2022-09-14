@@ -54,20 +54,23 @@ alignment = 1
 [node name="Label" type="Label" parent="Popup/VBoxContainer"]
 margin_right = 324.0
 margin_bottom = 26.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "¡Felicidades, encontraste un par!"
+align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Popup/VBoxContainer"]
+margin_left = 67.0
 margin_top = 36.0
-margin_right = 324.0
+margin_right = 257.0
 margin_bottom = 62.0
+size_flags_horizontal = 4
 custom_constants/separation = 20
 
 [node name="Puntos" type="Label" parent="Popup/VBoxContainer/HBoxContainer"]
 margin_right = 110.0
 margin_bottom = 26.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "+ 10 puntos"
 
@@ -79,15 +82,15 @@ margin_bottom = 26.0
 [node name="Arbol" type="Label" parent="Popup/VBoxContainer/HBoxContainer/HBoxContainer"]
 margin_right = 56.0
 margin_bottom = 26.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 2 )
-text = "Arbol:"
+text = "Árbol:"
 
 [node name="ArbolEncontrado" type="Label" parent="Popup/VBoxContainer/HBoxContainer/HBoxContainer"]
 margin_left = 60.0
 margin_right = 60.0
 margin_bottom = 26.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 2 )
 
 [node name="ArbolEncontradoImg" type="TextureRect" parent="Popup/VBoxContainer"]
