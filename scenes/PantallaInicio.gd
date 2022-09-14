@@ -18,6 +18,7 @@ func _on_Nuevo_pressed():
 
 func _on_Cargar_pressed():
 	get_node("Click").play()
+	yield(get_tree().create_timer(.4),"timeout")
 	get_tree().change_scene("res://scenes/MainMenu.tscn")
 
 func _on_Cerrar_pressed():

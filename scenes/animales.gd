@@ -3,6 +3,7 @@ extends Node
 onready var BGM = get_node("BGM")
 var fileCong = File.new()
 var data
+var x=0
 
 func _ready():
 	BGM.play()
@@ -19,7 +20,11 @@ func _on_TextureButton_pressed():
 
 func _on_JUGAR_pressed():
 	get_node("Click").play()
-	$Tema.popup()
+	if(GameManager.player.animales.medallas==0 && GameManager.player.animales.pts==0 && GameManager.player.animales.mejorPuntaje==0 && x==0):
+		x=1
+		$Ayuda.popup()
+	else:
+		$Tema.popup()
 
 func _on_salirmod_pressed():
 	get_node("Click").play()
@@ -50,3 +55,7 @@ func _on_Tema_about_to_show():
 	$Tema/HBoxContainer/salirmod.disabled = false
 	$Tema/HBoxContainer/VBoxContainer/HBoxContainer/MAMIFEROS.disabled = false
 	$Tema/HBoxContainer/VBoxContainer/HBoxContainer2/AVES.disabled = false
+
+
+func _on_Cerrar_pressed():
+	$Ayuda.hide()

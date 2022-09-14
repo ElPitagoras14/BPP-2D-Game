@@ -30,13 +30,6 @@ size_flags_vertical = 0
 action_mode = 0
 texture_normal = ExtResource( 3 )
 
-[node name="Click" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
-
-[node name="BGM" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
-volume_db = -20.0
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_top = 102.0
 margin_right = 512.0
@@ -54,7 +47,7 @@ texture_normal = ExtResource( 4 )
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 margin_left = 512.0
-margin_top = 46.0
+margin_top = 48.0
 margin_right = 1024.0
 margin_bottom = 600.0
 size_flags_horizontal = 4
@@ -63,9 +56,16 @@ size_flags_vertical = 4
 [node name="CONTROLES2" type="TextureButton" parent="VBoxContainer2"]
 margin_left = 81.0
 margin_right = 431.0
-margin_bottom = 500.0
+margin_bottom = 490.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource( 7 )
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -20.0
 
 [connection signal="pressed" from="Cerrar" to="." method="_on_Cerrar_pressed"]
