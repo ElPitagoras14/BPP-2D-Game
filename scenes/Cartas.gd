@@ -3,7 +3,7 @@ extends Control
 var deck = Array()
 var pares = 0
 var puntaje = 0
-var vidas = 3
+var vidas = 5
 var totalPares
 var arboles = Array()
 var gameMode = "hoja"
@@ -14,6 +14,7 @@ var indice = 0
 
 func _ready():
 	gameMode = "hoja"
+	$MarginContainer/HBoxContainer/HBoxContainer4/numRonda.text = "1"
 	GameManager.ganaArbol = false
 	GameManager.isPopUp = false
 	var fileArboles = File.new()
@@ -56,7 +57,7 @@ func handlerPar(var value):
 		$ParEncontrado/Popup.popup()
 
 func handlerNoPar(var suit1, var suit2):
-	if vidas == 0:
+	if vidas == 1:
 		GameManager.ganaArbol = true
 		$ParNoEncontrado/Popup/VBoxContainer/Label.text = "Perdiste todas tus vidas"
 		$ParNoEncontrado/Popup/VBoxContainer/HBoxContainer.visible = false
@@ -87,17 +88,19 @@ func fillDeck():
 	
 func dealDeck():
 	var c = 0
+	randomize()
 	deck.shuffle()
 	while c < deck.size():
 		gridPane.add_child(deck[c])
 		c += 1
 
 func nuevoPuntaje():
-	$MarginContainer/HBoxContainer/Puntaje.text = String(puntaje)
+	$MarginContainer/HBoxContainer/HBoxContainer3/Puntaje.text = String(puntaje)
 
 
 func _on_Button2_pressed():
 	if gameMode == "hoja":
+		$MarginContainer/HBoxContainer/HBoxContainer4/numRonda.text = "2"
 		cleanGrid()
 		pares = 0
 		gameMode = "semilla"
@@ -107,6 +110,7 @@ func _on_Button2_pressed():
 		dealDeck()
 		$PopupGana.hide()
 	elif gameMode == "semilla":
+		$MarginContainer/HBoxContainer/HBoxContainer4/numRonda.text = "3"
 		cleanGrid()
 		pares = 0
 		gameMode = "flor"
@@ -122,8 +126,8 @@ func _on_Button2_pressed():
 		
 func cleanGrid():
 	for n in gridPane.get_children():
-			gridPane.remove_child(n)
-			n.queue_free()
+		gridPane.remove_child(n)
+		n.queue_free()
 
 
 func _on_Help_pressed():
