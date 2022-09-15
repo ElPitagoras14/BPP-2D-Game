@@ -39,9 +39,9 @@ __meta__ = {
 
 [node name="Pausar" type="TextureButton" parent="."]
 margin_left = 700.0
-margin_top = 4.0
 margin_right = 794.0
-margin_bottom = 99.0
+margin_bottom = 95.0
+rect_scale = Vector2( 1.03, 1.03 )
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
