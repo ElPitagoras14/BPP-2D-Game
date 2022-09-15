@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/Cartas-principal.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Righteous-Regular.ttf" type="DynamicFontData" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://assets/espaciadores/Espacio3.png" type="Texture" id=9]
 [ext_resource path="res://SFX/3.1. mouse-click1.ogg" type="AudioStream" id=10]
 [ext_resource path="res://BGM/mt6.mp3" type="AudioStream" id=11]
+[ext_resource path="res://images/fondo-libro.png" type="Texture" id=12]
+[ext_resource path="res://assets/Instrucciones-arbol.png" type="Texture" id=13]
+[ext_resource path="res://assets/controles-arbol.png" type="Texture" id=14]
+[ext_resource path="res://assets/iconos/salir.png" type="Texture" id=15]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -144,6 +148,58 @@ stream = ExtResource( 10 )
 stream = ExtResource( 11 )
 volume_db = -17.0
 
+[node name="Ayuda" type="Popup" parent="."]
+margin_right = 1030.0
+margin_bottom = 600.0
+popup_exclusive = true
+
+[node name="TextureRect" type="TextureRect" parent="Ayuda"]
+margin_right = 2062.0
+margin_bottom = 1449.0
+rect_scale = Vector2( 0.499, 0.417 )
+texture = ExtResource( 12 )
+
+[node name="Cerrar" type="TextureButton" parent="Ayuda"]
+margin_right = 68.0
+margin_bottom = 68.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+action_mode = 0
+texture_normal = ExtResource( 15 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Ayuda"]
+margin_top = 102.0
+margin_right = 512.0
+margin_bottom = 600.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="CONTROLES" type="TextureButton" parent="Ayuda/VBoxContainer"]
+margin_left = 81.0
+margin_right = 431.0
+margin_bottom = 400.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource( 14 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Ayuda"]
+margin_left = 512.0
+margin_top = 48.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="CONTROLES2" type="TextureButton" parent="Ayuda/VBoxContainer2"]
+margin_left = 81.0
+margin_right = 431.0
+margin_bottom = 371.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource( 13 )
+
 [connection signal="pressed" from="HBoxContainer/TextureButton4" to="." method="_on_TextureButton4_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/JUGAR" to="." method="_on_JUGAR_pressed"]
 [connection signal="pressed" from="HBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Ayuda/Cerrar" to="." method="_on_Cerrar_pressed"]
