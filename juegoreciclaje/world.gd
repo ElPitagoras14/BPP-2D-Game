@@ -38,7 +38,6 @@ func set_is_paused(value):
 	is_paused = value
 	get_tree().paused = is_paused
 	ayuda.visible = is_paused
-	print(ayuda.visible)
 	
 
 

@@ -17,7 +17,7 @@ func _ready():
 
 func _physics_process(delta):
 	position.y += VerticalSpeed * delta
-	if position.y >= 442:
+	if position.y >= 524:
 		if get_node("../Player") != null:
 			get_node("../Player").damage()
 		Signals.emit_signal("on_combo_break")

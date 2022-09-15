@@ -1,13 +1,13 @@
 extends Control
 
 func init(score: int, maxCombo: int):
-	var ScoreLabel = $ScoreLabel
-	var maxComboLabel = $MaxComboLabel
+	var ScoreLabel = $HBoxContainer/score
+	var maxComboLabel = $HBoxContainer/maxcombo
 	var coinsLabel = $MonedaLabel
 	var medalla = $medallaImg
 	var SFX = $ClappingSFX
-	ScoreLabel.text = str("Score: ",score)
-	maxComboLabel.text = str("Max Combo:  ", maxCombo)
+	ScoreLabel.text = str("Puntaje: ",score)
+	maxComboLabel.text = str("Max Combo: ",maxCombo)
 	coinsLabel.text = str("x", int(score/10))
 	if score >= 600 or maxCombo >= 50:
 		medalla.texture = load("res://assets/Medallas/diamante.png")
@@ -32,7 +32,7 @@ func init(score: int, maxCombo: int):
 	
 
 func _on_RetryButton_pressed():
-	get_tree().reload_current_scene()
+	get_tree().change_scene("res://juegoreciclaje/RecicleGame.tscn")
 
 
 func _on_TitleButton_pressed():

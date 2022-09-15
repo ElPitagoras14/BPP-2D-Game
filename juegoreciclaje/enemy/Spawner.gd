@@ -38,7 +38,7 @@ func _on_yellowtrash_spawn():
 func _on_SpawnTimer_timeout():
 	#Spawn the enemy
 	var ViewRect := get_viewport_rect()
-	var xPos := rand_range(-122, 701 )
+	var xPos := rand_range(-183, 689 )
 	
 	while currentTrash == lastTrash:
 		currentTrash = randi() % (preloadedTrash.size() - sizeRemover)

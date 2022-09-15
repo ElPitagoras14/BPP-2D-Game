@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/Sprites/Ben/ben-a.svg" type="Texture" id=3]
 [ext_resource path="res://assets/Sprites/Ben/ben-d.svg" type="Texture" id=4]
 [ext_resource path="res://assets/Sprites/Ben/ben-c.svg" type="Texture" id=5]
-[ext_resource path="res://assets/Sprites/jugador.png" type="Texture" id=6]
+[ext_resource path="res://assets/Sprites/Ben2/ben2-a.svg" type="Texture" id=6]
 [ext_resource path="res://assets/Sprites/Ben/ben-b.svg" type="Texture" id=7]
 [ext_resource path="res://SFX/13.1. respuestaincorreta.mp3" type="AudioStream" id=8]
 
@@ -24,7 +24,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 30.75, 33.75 )
+extents = Vector2( 25, 31.375 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 18, 20 )
@@ -37,7 +37,7 @@ frames = SubResource( 2 )
 animation = "jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 11.25, -15.25 )
+position = Vector2( 11, -21.625 )
 shape = SubResource( 1 )
 
 [node name="Position2D" type="Position2D" parent="."]
