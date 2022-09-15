@@ -9,6 +9,7 @@ var puntaje = 0
 var rondas = 1
 var vidas = 5
 var list_data_animales = []
+var usados = []
 var animalesdisponibles = [1,2,3,4]
 onready var index
 
@@ -61,17 +62,28 @@ func load_data():
 	fileAnimales.close()
 	
 func generate_elec():
-	randomize()
-	correcto = randi() % 4
-	if rondas == 10:
-		$End.popup()
-	else:
+	var val = true
+	while(val):
 		randomize()
-		list_data_animales.shuffle()
-		animal1.texture_normal = load("res://assets/animales/"+str(list_data_animales[0][5])+".png")
-		animal2.texture_normal = load("res://assets/animales/"+str(list_data_animales[1][5])+".png")
-		animal3.texture_normal = load("res://assets/animales/"+str(list_data_animales[2][5])+".png")
-		animal4.texture_normal = load("res://assets/animales/"+str(list_data_animales[3][5])+".png")
+		correcto = randi() % 4
+		if rondas == 10:
+			$End.popup()
+		else:
+			randomize()
+			list_data_animales.shuffle()
+			animal1.texture_normal = load("res://assets/animales/"+str(list_data_animales[0][5])+".png")
+			animal2.texture_normal = load("res://assets/animales/"+str(list_data_animales[1][5])+".png")
+			animal3.texture_normal = load("res://assets/animales/"+str(list_data_animales[2][5])+".png")
+			animal4.texture_normal = load("res://assets/animales/"+str(list_data_animales[3][5])+".png")
+			var m = 0
+			if usados.size() > 2:
+				for u in usados:
+					if str(list_data_animales[correcto][0]) == u:
+						m+=1
+				if m<2:
+					val = false
+			else:
+				val = false
 	
 func mostrarInfo():
 	sonido.visible = true
@@ -165,6 +177,10 @@ func _on_Animal1_pressed():
 	accion(1)
 
 func accion(n):
+	animal1.disabled = true
+	animal2.disabled = true
+	animal3.disabled = true
+	animal4.disabled = true
 	for animal in animalesdisponibles:
 		if(animal==1 && n!=1):
 			animal1.hide()
@@ -233,6 +249,10 @@ func restart():
 
 func _on_PopupCorrecto_popup_hide():
 	if rondas<10:
+		animal1.disabled = false
+		animal2.disabled = false
+		animal3.disabled = false
+		animal4.disabled = false
 		restart()
 		rondas+=1
 		$Rondas.text = str(rondas)+"/10"
@@ -285,5 +305,9 @@ func _on_PopupCorrecto_about_to_show():
 	$correctoSFX.play()
 
 func _on_PopupIncorrecto_popup_hide():
+	animal1.disabled = false
+	animal2.disabled = false
+	animal3.disabled = false
+	animal4.disabled = false
 	show_img()
 
