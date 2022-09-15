@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/plata.png-3dba4b0c020f9635945d3cccfd523396.stex"
+path="res://.import/ben2-b.svg-3c1809fc6f006e7441b58f50877cddac.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Medallas/plata.png"
-dest_files=[ "res://.import/plata.png-3dba4b0c020f9635945d3cccfd523396.stex" ]
+source_file="res://assets/Sprites/Ben2/ben2-b.svg"
+dest_files=[ "res://.import/ben2-b.svg-3c1809fc6f006e7441b58f50877cddac.stex" ]
 
 [params]
 

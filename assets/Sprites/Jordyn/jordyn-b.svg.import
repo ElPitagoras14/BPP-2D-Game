@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/plata.png-3dba4b0c020f9635945d3cccfd523396.stex"
+path="res://.import/jordyn-b.svg-aa51e6faf37ef96e4f2e20d71cf39f65.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Medallas/plata.png"
-dest_files=[ "res://.import/plata.png-3dba4b0c020f9635945d3cccfd523396.stex" ]
+source_file="res://assets/Sprites/Jordyn/jordyn-b.svg"
+dest_files=[ "res://.import/jordyn-b.svg-aa51e6faf37ef96e4f2e20d71cf39f65.stex" ]
 
 [params]
 
