@@ -14,7 +14,7 @@ var indice = 0
 
 func _ready():
 	gameMode = "hoja"
-	$MarginContainer/HBoxContainer/HBoxContainer4/numRonda.text = "1"
+	$MarginContainer/HBoxContainer/HBoxContainer4/numRonda.text = "1/3"
 	GameManager.ganaArbol = false
 	GameManager.isPopUp = false
 	var fileArboles = File.new()
@@ -100,7 +100,7 @@ func nuevoPuntaje():
 
 func _on_Button2_pressed():
 	if gameMode == "hoja":
-		$MarginContainer/HBoxContainer/HBoxContainer4/numRonda.text = "2"
+		$MarginContainer/HBoxContainer/HBoxContainer4/numRonda.text = "2/3"
 		cleanGrid()
 		pares = 0
 		gameMode = "semilla"
@@ -110,7 +110,7 @@ func _on_Button2_pressed():
 		dealDeck()
 		$PopupGana.hide()
 	elif gameMode == "semilla":
-		$MarginContainer/HBoxContainer/HBoxContainer4/numRonda.text = "3"
+		$MarginContainer/HBoxContainer/HBoxContainer4/numRonda.text = "3/3"
 		cleanGrid()
 		pares = 0
 		gameMode = "flor"

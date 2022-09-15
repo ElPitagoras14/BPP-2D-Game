@@ -5,8 +5,8 @@ extends Control
 # var a = 2
 # var b = "text"
 var indice = 0
-var puntaje = 0
-var rondas = 1
+onready var puntaje = 0
+onready var rondas = 1
 var vidas = 5
 var list_data_animales = []
 var usados = []
@@ -81,7 +81,7 @@ func generate_elec():
 					if str(list_data_animales[correcto][0]) == u:
 						m+=1
 				if m<2:
-					val = false
+					val = true
 			else:
 				val = false
 	
@@ -270,7 +270,7 @@ func _on_TitleButton_pressed():
 	get_tree().change_scene("res://scenes/animales.tscn")
 
 func _on_End_about_to_show():
-	$End/score.text = str(puntaje)
+	$End/HBoxContainer/score.text = str(puntaje)
 	$End/MonedaLabel.text= str("x", int(puntaje/10))
 	var medalla = $End/medallaImg
 	if puntaje >= 900:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://images/bg.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Cartas.gd" type="Script" id=2]
@@ -19,6 +19,9 @@
 [ext_resource path="res://images/fondo-libro.png" type="Texture" id=17]
 [ext_resource path="res://fonts/Righteous-Regular.ttf" type="DynamicFontData" id=18]
 [ext_resource path="res://images/moneda2.png" type="Texture" id=19]
+[ext_resource path="res://images/salir_juego.png" type="Texture" id=20]
+[ext_resource path="res://images/continuar_juego.png" type="Texture" id=21]
+[ext_resource path="res://images/madera.png" type="Texture" id=22]
 
 [sub_resource type="DynamicFontData" id=10]
 font_path = "res://fonts/Righteous-Regular.ttf"
@@ -55,18 +58,14 @@ font_path = "res://fonts/Righteous-Regular.ttf"
 size = 20
 font_data = SubResource( 13 )
 
+[sub_resource type="DynamicFont" id=20]
+size = 74
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 18 )
+
 [sub_resource type="DynamicFont" id=15]
 size = 40
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 18 )
-
-[sub_resource type="DynamicFont" id=16]
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 18 )
-
-[sub_resource type="DynamicFont" id=17]
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 18 )
@@ -77,6 +76,11 @@ font_path = "res://fonts/Righteous-Regular.ttf"
 [sub_resource type="DynamicFont" id=19]
 size = 26
 font_data = SubResource( 18 )
+
+[sub_resource type="DynamicFont" id=17]
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 18 )
 
 [node name="Control2" type="Control"]
 anchor_right = 1.0
@@ -533,47 +537,55 @@ popup_exclusive = true
 [node name="Background" type="ColorRect" parent="Pause"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0627451, 0.054902, 0.054902, 1 )
+color = Color( 0.0823529, 0.0627451, 0.0196078, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="Pause/Background"]
+modulate = Color( 0.866667, 0.866667, 0.866667, 1 )
+margin_right = 1027.0
+margin_bottom = 600.0
+texture = ExtResource( 22 )
+stretch_mode = 4
 
 [node name="CenterContainer" type="CenterContainer" parent="Pause/Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Pause/Background/CenterContainer"]
-margin_left = 448.0
-margin_top = 217.0
-margin_right = 579.0
-margin_bottom = 382.0
+margin_left = 367.0
+margin_top = 127.0
+margin_right = 660.0
+margin_bottom = 473.0
 custom_constants/separation = 20
 
 [node name="Label" type="Label" parent="Pause/Background/CenterContainer/VBoxContainer"]
-margin_right = 131.0
-margin_bottom = 51.0
-custom_fonts/font = SubResource( 15 )
+margin_right = 293.0
+margin_bottom = 92.0
+custom_fonts/font = SubResource( 20 )
 text = "PAUSA"
 align = 1
 valign = 1
 
 [node name="Control" type="Control" parent="Pause/Background/CenterContainer/VBoxContainer"]
-margin_top = 71.0
-margin_right = 131.0
-margin_bottom = 71.0
+margin_top = 112.0
+margin_right = 293.0
+margin_bottom = 112.0
 
-[node name="ResumeButton" type="Button" parent="Pause/Background/CenterContainer/VBoxContainer"]
-margin_top = 91.0
-margin_right = 131.0
-margin_bottom = 118.0
-custom_fonts/font = SubResource( 16 )
-text = "Resumir Juego"
+[node name="ResumeButton" type="TextureButton" parent="Pause/Background/CenterContainer/VBoxContainer"]
+margin_top = 132.0
+margin_right = 293.0
+margin_bottom = 229.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 21 )
 
-[node name="QuitGame" type="Button" parent="Pause/Background/CenterContainer/VBoxContainer"]
-margin_top = 138.0
-margin_right = 131.0
-margin_bottom = 165.0
-custom_fonts/font = SubResource( 17 )
-text = "Terminar Juego"
+[node name="QuitGame" type="TextureButton" parent="Pause/Background/CenterContainer/VBoxContainer"]
+margin_top = 249.0
+margin_right = 293.0
+margin_bottom = 346.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 20 )
 
 [node name="Final" type="Popup" parent="."]
+visible = true
 margin_right = 1027.0
 margin_bottom = 600.0
 popup_exclusive = true
