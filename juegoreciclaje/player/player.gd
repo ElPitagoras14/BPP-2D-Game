@@ -20,6 +20,7 @@ onready var miss = $miss
 
 func _ready():
 	Signals.connect("on_game_over", self, "_on_game_over")
+	loadSprite()
 	
 func _physics_process(delta):
 	# Horizontal movement code. First, get the player's input.
@@ -66,3 +67,30 @@ func addPoints(amount: int):
 	
 func _on_game_over():
 	queue_free()
+	
+func loadSprite():
+	if GameManager.player.sprite == 1:
+		_animated_sprite.frames.set_frame("run", 0, load("res://assets/Sprites/Ben/ben-a.svg"))
+		_animated_sprite.frames.set_frame("run", 1, load("res://assets/Sprites/Ben/ben-b.svg"))
+		_animated_sprite.frames.set_frame("jump", 0, load("res://assets/Sprites/Ben/ben-a.svg"))
+		_animated_sprite.frames.set_frame("jump", 1, load("res://assets/Sprites/Ben/ben-c.svg"))
+		_animated_sprite.frames.set_frame("jump", 2, load("res://assets/Sprites/Ben/ben-d.svg"))
+	elif GameManager.player.sprite == 2:
+		_animated_sprite.frames.set_frame("run", 0, load("res://assets/Sprites/Ben2/ben2-a.svg"))
+		_animated_sprite.frames.set_frame("run", 1, load("res://assets/Sprites/Ben2/ben2-b.svg"))
+		_animated_sprite.frames.set_frame("jump", 0, load("res://assets/Sprites/Ben2/ben2-a.svg"))
+		_animated_sprite.frames.set_frame("jump", 1, load("res://assets/Sprites/Ben2/ben2-c.svg"))
+		_animated_sprite.frames.set_frame("jump", 2, load("res://assets/Sprites/Ben2/ben2-d.svg"))
+	elif GameManager.player.sprite == 3:
+		_animated_sprite.frames.set_frame("run", 0, load("res://assets/Sprites/Jordyn/jordyn-a.svg"))
+		_animated_sprite.frames.set_frame("run", 1, load("res://assets/Sprites/Jordyn/jordyn-b.svg"))
+		_animated_sprite.frames.set_frame("jump", 0, load("res://assets/Sprites/Jordyn/jordyn-a.svg"))
+		_animated_sprite.frames.set_frame("jump", 1, load("res://assets/Sprites/Jordyn/jordyn-c.svg"))
+		_animated_sprite.frames.set_frame("jump", 2, load("res://assets/Sprites/Jordyn/jordyn-d.svg"))
+	elif GameManager.player.sprite == 4:
+		_animated_sprite.frames.set_frame("run", 0, load("res://assets/Sprites/Jordyn2/jordyn2-a.svg"))
+		_animated_sprite.frames.set_frame("run", 1, load("res://assets/Sprites/Jordyn2/jordyn2-b.svg"))
+		_animated_sprite.frames.set_frame("jump", 0, load("res://assets/Sprites/Jordyn2/jordyn2-a.svg"))
+		_animated_sprite.frames.set_frame("jump", 1, load("res://assets/Sprites/Jordyn2/jordyn2-c.svg"))
+		_animated_sprite.frames.set_frame("jump", 2, load("res://assets/Sprites/Jordyn2/jordyn2-d.svg"))
+		
