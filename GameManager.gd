@@ -14,6 +14,8 @@ const userFile = "res://userData.json"
 # player contiene toda la informacion dentro del json
 # para que se carguen los datos en la variable player debes llamar a loadJson()
 var player
+var playerName
+var allPlayers
 
 func saveJson(var playerConfig):
 	var file = File.new()
@@ -28,12 +30,19 @@ func loadJson():
 		var data = parse_json(file.get_as_text())
 		file.close()
 		if typeof(data) == TYPE_DICTIONARY:
-			player = data
+			allPlayers = data
+			print(allPlayers)
 		else:
 			printerr("Corrupted data!")
 	else:
 		printerr("No saved data!")
 
+func addPlayer(var Nombre, var sprite):
+	allPlayers[Nombre] = {"animales":{"medallas":0, "mejorPuntaje":0, "pts":0}, "cartas":{"medallas":0, "mejorPuntaje":0, "pts":0}, "monedas":0, "reciclaje":{"medallas":0, "mejorPuntaje":0, "pts":0}, "sprite":sprite}
+
+	
+func loadPlayer(var Nombre):
+	player = allPlayers[Nombre]
 
 func _ready():
 	loadJson()

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Imagen44.svg-22bc0d3b780fa96c26af38d3c436a4b6.stex"
+path="res://.import/jordyn2-b.svg-1f36e818ef95aa7f190124e1654d303a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Imagen44.svg"
-dest_files=[ "res://.import/Imagen44.svg-22bc0d3b780fa96c26af38d3c436a4b6.stex" ]
+source_file="res://assets/Sprites/Jordyn2/jordyn2-b.svg"
+dest_files=[ "res://.import/jordyn2-b.svg-1f36e818ef95aa7f190124e1654d303a.stex" ]
 
 [params]
 

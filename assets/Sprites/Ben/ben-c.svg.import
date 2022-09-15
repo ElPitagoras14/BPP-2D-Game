@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Imagen47.svg-d30929dca09a92827f4c8f65ee4a01ba.stex"
+path="res://.import/ben-c.svg-5c16a9054585e21da67f8528a52e0b1f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Imagen47.svg"
-dest_files=[ "res://.import/Imagen47.svg-d30929dca09a92827f4c8f65ee4a01ba.stex" ]
+source_file="res://assets/Sprites/Ben/ben-c.svg"
+dest_files=[ "res://.import/ben-c.svg-5c16a9054585e21da67f8528a52e0b1f.stex" ]
 
 [params]
 
