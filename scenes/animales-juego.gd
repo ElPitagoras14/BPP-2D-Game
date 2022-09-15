@@ -31,27 +31,32 @@ onready var animal4 = get_node("Animal4")
 onready var correcto_img = get_node("correcto")
 var correcto
 var seleccionado
+var fileAnimales = File.new()
+var conf = File.new()
 
 func _ready():
+	fileAnimales.open("res://data/animales_data.dat", fileAnimales.READ)
+	conf.open("res://data/juego_animales.dat", fileAnimales.READ)
 	$Rondas.text = str(rondas)+"/10"
 	puntajelbl.text = "0"
 	randomize()
 	correcto = randi() % 4
 	correcto_img.hide()
 	get_node("BGM").play()
-	get_node("TextureRect").texture = load("res://images//placeholder-bosque.png")
+	var data2 = conf.get_csv_line()
+	if data2[0] == "MAMIFEROS":
+		get_node("TextureRect").texture = load("res://images//mamiferos-placeholder.png")
+	else:
+		get_node("TextureRect").texture = load("res://images//aves-placeholder.png")
 	load_data()
 	generate_elec()
 	mostrarInfo()
 	show_img()
 
 func load_data():
-	var fileAnimales = File.new()
-	var conf = File.new()
 	fileAnimales.open("res://data/animales_data.dat", fileAnimales.READ)
 	conf.open("res://data/juego_animales.dat", fileAnimales.READ)
 	var data2 = conf.get_csv_line()
-	print(data2[0])
 	while !fileAnimales.eof_reached():
 		var data = fileAnimales.get_csv_line()
 		if data[1]=="Mamífero" && data2[0]=="MAMIFEROS":

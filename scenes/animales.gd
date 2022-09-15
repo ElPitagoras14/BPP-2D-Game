@@ -41,7 +41,6 @@ func _on_MAMIFEROS_pressed():
 func _on_AVES_pressed():
 	get_node("Click").play()
 	yield(get_tree().create_timer(.3),"timeout")
-	#get_tree().change_scene("res://scenes/animales-tema.tscn")
 	leer()
 	fileCong.store_string("AVES,")
 	fileCong.close()
