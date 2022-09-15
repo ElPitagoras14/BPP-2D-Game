@@ -24,6 +24,7 @@ func _ready():
 	
 func _physics_process(delta):
 	# Horizontal movement code. First, get the player's input.
+	
 	var walk = WALK_FORCE * (Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"))
 	if walk == 600:
 		_animated_sprite.play("run")

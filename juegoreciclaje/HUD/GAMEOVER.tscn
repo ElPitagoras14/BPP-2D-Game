@@ -1,107 +1,117 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://juegoreciclaje/HUD/GAMEOVER.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Righteous-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://images/moneda.png" type="Texture" id=3]
 [ext_resource path="res://SFX/Clapping.mp3" type="AudioStream" id=4]
+[ext_resource path="res://images/madera.png" type="Texture" id=5]
+[ext_resource path="res://images/reintentar_juego.png" type="Texture" id=6]
+[ext_resource path="res://images/menu_juego.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
-size = 83
+size = 74
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 21
+size = 32
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 22
+size = 32
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=4]
-size = 22
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 2 )
-
-[node name="GameOverHUD" type="Control"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -734.0
-margin_top = -280.0
-margin_right = 179.0
-margin_bottom = 195.0
+[node name="GAMEOVER" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 1 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0823529, 0.0627451, 0.0196078, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+modulate = Color( 0.866667, 0.866667, 0.866667, 1 )
+margin_right = 1027.0
+margin_bottom = 600.0
+texture = ExtResource( 5 )
+stretch_mode = 4
 
 [node name="GameOverLabel" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -512.0
+margin_top = 99.0
 margin_right = 512.0
-margin_bottom = 104.0
+margin_bottom = 191.0
 custom_fonts/font = SubResource( 1 )
-text = "GAME OVER"
+text = "FIN DEL JUEGO"
 align = 1
 valign = 1
 
-[node name="TitleButton" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -93.0
-margin_top = 139.5
-margin_right = 93.0
-margin_bottom = 180.5
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_top = 186.0
+margin_right = 1024.0
+margin_bottom = 248.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 64
+alignment = 1
+
+[node name="score" type="Label" parent="HBoxContainer"]
+margin_left = 283.0
+margin_top = 10.0
+margin_right = 448.0
+margin_bottom = 51.0
 custom_fonts/font = SubResource( 2 )
-text = "VOLVER AL MENU"
+text = "Puntaje: 10"
+align = 1
 
-[node name="RetryButton" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -92.5
-margin_top = 76.5
-margin_right = 93.5
-margin_bottom = 117.5
+[node name="maxcombo" type="Label" parent="HBoxContainer"]
+margin_left = 512.0
+margin_top = 10.0
+margin_right = 741.0
+margin_bottom = 51.0
 custom_fonts/font = SubResource( 2 )
-text = "REINTENTAR"
+text = "Max Combo: 20"
 
-[node name="ScoreLabel" type="Label" parent="."]
-anchor_right = 0.044
-anchor_bottom = 0.028
-margin_left = 312.0
-margin_top = 153.0
-margin_right = 344.4
-margin_bottom = 167.7
-custom_fonts/font = SubResource( 3 )
-text = "Puntaje: "
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+margin_top = 317.0
+margin_right = 1024.0
+margin_bottom = 515.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
 
-[node name="MaxComboLabel" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 43.5
-margin_top = -84.5
-margin_right = 168.5
-margin_bottom = -56.5
-custom_fonts/font = SubResource( 4 )
-text = "Combo Max:"
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2"]
+margin_left = 414.0
+margin_right = 610.0
+margin_bottom = 198.0
+
+[node name="RetryButton" type="TextureButton" parent="HBoxContainer2/VBoxContainer"]
+margin_right = 196.0
+margin_bottom = 97.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 6 )
+
+[node name="TitleButton" type="TextureButton" parent="HBoxContainer2/VBoxContainer"]
+margin_top = 101.0
+margin_right = 196.0
+margin_bottom = 198.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 8 )
 
 [node name="Moneda" type="TextureRect" parent="."]
-margin_left = 307.0
-margin_top = 197.0
-margin_right = 352.0
-margin_bottom = 242.0
+margin_left = 312.0
+margin_top = 259.0
+margin_right = 357.0
+margin_bottom = 304.0
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
@@ -111,21 +121,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -95.5
-margin_top = -34.5
-margin_right = 29.5
-margin_bottom = -6.5
-custom_fonts/font = SubResource( 4 )
+margin_left = -140.0
+margin_top = -41.0
+margin_right = -15.0
+custom_fonts/font = SubResource( 3 )
 text = "x"
 
 [node name="medallaImg" type="TextureRect" parent="."]
-margin_left = 530.0
-margin_top = 195.0
-margin_right = 570.0
-margin_bottom = 235.0
+margin_left = 607.0
+margin_top = 259.0
+margin_right = 661.0
+margin_bottom = 310.0
 
 [node name="ClappingSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 
-[connection signal="pressed" from="TitleButton" to="." method="_on_TitleButton_pressed"]
-[connection signal="pressed" from="RetryButton" to="." method="_on_RetryButton_pressed"]
+[connection signal="pressed" from="HBoxContainer2/VBoxContainer/RetryButton" to="." method="_on_RetryButton_pressed"]
+[connection signal="pressed" from="HBoxContainer2/VBoxContainer/TitleButton" to="." method="_on_TitleButton_pressed"]

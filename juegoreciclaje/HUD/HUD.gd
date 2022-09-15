@@ -1,5 +1,5 @@
 extends Control
-var pGameOver := preload("res://juegoreciclaje/HUD/GAMEOVER.tscn")
+onready var GameOver := get_tree().current_scene.get_node("GAMEOVER")
 onready var scoreLabel := $Puntaje
 onready var comboLabel := $Rondas
 
@@ -50,11 +50,10 @@ func _on_combo_break():
 	comboLabel.text = str(combo)
 	
 func _on_game_over():
-	var gameOver = pGameOver.instance()
 	if combo >= maxCombo:
 		maxCombo = combo
-	gameOver.init(score, maxCombo)
-	get_tree().current_scene.add_child(gameOver)
+	GameOver.init(score, maxCombo)
+	GameOver.visible = true
 	queue_free() 
 
 func _on_player_life_changed(life):
