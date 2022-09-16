@@ -219,3 +219,6 @@ func _on_TextureButton_pressed():
 	
 	GameManager.savePlayerToJson('cartas', str(medallas), str(puntaje))
 	get_tree().change_scene("res://scenes/MainMenu.tscn")
+
+func _on_Final_about_to_show():
+	$Final/ClappingSFX.play()
