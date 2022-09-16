@@ -522,6 +522,7 @@ stream = ExtResource( 12 )
 volume_db = -4.727
 
 [node name="PopupCorrecto" type="Popup" parent="."]
+visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -537,10 +538,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -222.0
-margin_top = -176.0
-margin_right = 278.0
-margin_bottom = 199.0
+margin_left = -265.0
+margin_top = -175.0
+margin_right = 335.0
+margin_bottom = 225.0
 texture = ExtResource( 31 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PopupCorrecto"]
