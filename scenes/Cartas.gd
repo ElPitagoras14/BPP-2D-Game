@@ -7,7 +7,9 @@ var vidas = 5
 var totalPares
 var arboles = Array()
 var gameMode = "hoja"
+var medallas = 1
 onready var gridPane = $grid
+var medallasList = ["Bronce", "Plata", "Oro", "Diamante"]
 
 var list_data_arboles = []
 var indice = 0
@@ -58,10 +60,11 @@ func handlerPar(var value):
 
 func handlerNoPar(var suit1, var suit2):
 	if vidas == 1:
+		vidas -= 1
 		GameManager.ganaArbol = true
-		$ParNoEncontrado/Popup/VBoxContainer/Label.text = "Perdiste todas tus vidas"
-		$ParNoEncontrado/Popup/VBoxContainer/HBoxContainer.visible = false
-		$ParNoEncontrado/Popup.popup()
+		$PopupGana/VBoxContainer/Label.text = "Perdiste todas tus vidas"
+		$PopupGana/VBoxContainer/HBoxContainer/Puntaje.text  = str(puntaje)
+		$PopupGana.popup()
 	else:
 		var corazon = get_node("MarginContainer/HBoxContainer/HBoxContainer/Corazon"+str(vidas))
 		var image = Image.new()
@@ -99,7 +102,11 @@ func nuevoPuntaje():
 
 
 func _on_Button2_pressed():
-	if gameMode == "hoja":
+	if vidas == 0:
+		$PopupGana.hide()
+		$Final.popup()
+		menuFinal()
+	elif gameMode == "hoja":
 		$MarginContainer/HBoxContainer/HBoxContainer4/numRonda.text = "2/3"
 		cleanGrid()
 		pares = 0
@@ -194,9 +201,21 @@ func _on_Pause_pressed():
 	$Pause.popup()
 
 func menuFinal():
+	if gameMode == 'semilla':
+		medallas = 2
+	elif gameMode == 'flor' and puntaje < 800:
+		medallas = 3
+	elif puntaje >= 800:
+		medallas = 4
+	var count = 0
+	while count < medallas:
+		var medallaRsc = load("res://assets/Medallas/"+str(medallasList[count])+".png")
+		get_node("Final/Background/CenterContainer/VBoxContainer/Medallas/"+medallasList[count]).texture = medallaRsc
+		count+=1
 	$Final/Background/CenterContainer/VBoxContainer/HBoxContainer/puntajeFinal.text = str(puntaje)
-	$Final/Background/CenterContainer/VBoxContainer/HBoxContainer2/monedas.text = "x"+str(floor(puntaje/50))
+	$Final/Background/CenterContainer/VBoxContainer/HBoxContainer2/monedas.text = "x"+str(floor(puntaje/10))
 
 func _on_TextureButton_pressed():
-	GameManager.savePlayerToJson('cartas', '4', str(puntaje))
+	
+	GameManager.savePlayerToJson('cartas', str(medallas), str(puntaje))
 	get_tree().change_scene("res://scenes/MainMenu.tscn")
