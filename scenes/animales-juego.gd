@@ -279,31 +279,24 @@ func _on_End_about_to_show():
 	$End/HBoxContainer/score.text = str(puntaje)
 	$End/MonedaLabel.text= str("x", int(puntaje/10))
 	var medalla = $End/medallaImg
+	var m
 	if puntaje >= 900:
 		medalla.texture = load("res://assets/Medallas/diamante.png")
-		if GameManager.player.animales.medallas<4:
-			GameManager.player.animales.medallas = 4
+		m=4
 	elif puntaje >= 750:
 		medalla.texture = load("res://assets/Medallas/oro.png")
-		if GameManager.player.animales.medallas<3:
-			GameManager.player.animales.medallas = 3
+		m=3
 	elif puntaje >= 500:
 		medalla.texture = load("res://assets/Medallas/plata.png")
-		if GameManager.player.animales.medallas<2:
-			GameManager.player.animales.medallas = 2
+		m=2
 	elif puntaje >= 250:
 		medalla.texture = load("res://assets/Medallas/bronce.png")
-		if GameManager.player.animales.medallas<1:
-			GameManager.player.animales.medallas = 1
+		m=1
 	else:
 		medalla.texture = null
-		
-	GameManager.player.animales.pts += puntaje
-	if GameManager.player.animales.mejorPuntaje < puntaje:
-		GameManager.player.animales.mejorPuntaje = puntaje
-	GameManager.player.monedas += int(puntaje/10)
+		m=0
 	$End/ClappingSFX.play()
-	GameManager.saveJson(GameManager.player)
+	GameManager.savePlayerToJson('animales', str(m), str(puntaje))
 
 func _on_PopupCorrecto_about_to_show():
 	$PopupCorrecto/VBoxContainer/Correcto_img.texture = load("res://assets/animales/"+str(list_data_animales[correcto][5])+".png")

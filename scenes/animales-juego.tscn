@@ -522,7 +522,6 @@ stream = ExtResource( 12 )
 volume_db = -4.727
 
 [node name="PopupCorrecto" type="Popup" parent="."]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
