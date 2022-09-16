@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://BGM/6. ES_Forest Exploration - Sight of Wonders.mp3" type="AudioStream" id=2]
+[ext_resource path="res://BGM/6. ES_Forest Exploration - Sight of Wonders.mp3" type="AudioStream" id=1]
 [ext_resource path="res://SFX/3.1. mouse-click1.ogg" type="AudioStream" id=4]
 [ext_resource path="res://assets/PopUp.png" type="Texture" id=11]
 [ext_resource path="res://assets/personajes/p3.png" type="Texture" id=12]
@@ -293,7 +293,7 @@ text = "SELECCIONA A TU PERSONAJE:"
 align = 1
 valign = 1
 
-[node name="Cerrar2" type="TextureButton" parent="CargarPartida"]
+[node name="CerrarCarga" type="TextureButton" parent="CargarPartida"]
 margin_left = 946.0
 margin_top = 13.0
 margin_right = 1016.0
@@ -392,7 +392,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
+stream = ExtResource( 1 )
 volume_db = -17.0
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
@@ -408,6 +408,6 @@ stream = ExtResource( 4 )
 [connection signal="pressed" from="Seleccionar/HBoxContainer/personaje3" to="." method="_on_personaje3_pressed"]
 [connection signal="pressed" from="Seleccionar/HBoxContainer/personaje4" to="." method="_on_personaje4_pressed"]
 [connection signal="pressed" from="Seleccionar/Cerrar2" to="." method="_on_Cerrar2_pressed"]
-[connection signal="pressed" from="CargarPartida/Cerrar2" to="." method="_on_Cerrar2_pressed"]
+[connection signal="pressed" from="CargarPartida/CerrarCarga" to="." method="_on_CerrarCarga_pressed"]
 [connection signal="pressed" from="Nombre/Cerrar3" to="." method="_on_Cerrar3_pressed"]
 [connection signal="pressed" from="Nombre/Continuar" to="." method="_on_Continuar_pressed"]

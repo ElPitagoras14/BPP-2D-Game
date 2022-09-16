@@ -75,3 +75,13 @@ func _on_personaje4_pressed():
 	GameManager.saveJson(GameManager.allPlayers)
 	GameManager.currentPlayer = Nombre
 	get_tree().change_scene("res://scenes/MainMenu.tscn")
+
+
+func _on_CerrarCarga_pressed():
+	var listaPartida = $CargarPartida/ScrollContainer/Partidas
+	for n in listaPartida.get_children():
+		listaPartida.remove_child(n)
+		n.queue_free()
+	
+	get_node("Click").play()
+	$CargarPartida.hide()

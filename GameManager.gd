@@ -50,7 +50,7 @@ func loadJson():
 
 func addPlayer(var Nombre, var sprite):
 	allPlayers[Nombre] = {"animales":{"medallas":0, "mejorPuntaje":0, "pts":0}, "cartas":{"medallas":0, "mejorPuntaje":0, "pts":0}, "monedas":0, "reciclaje":{"medallas":0, "mejorPuntaje":0, "pts":0}, "sprite":sprite}
-
+	saveJson(allPlayers)
 	
 func loadPlayer(var Nombre):
 	player = allPlayers[Nombre]
