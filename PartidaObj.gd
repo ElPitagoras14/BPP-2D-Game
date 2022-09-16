@@ -9,7 +9,6 @@ func _ready():
 	self.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 	self.set("custom_fonts/font", font)
 	text = str(partida)
-	
 	self.connect("pressed", self, "_onClickPartida")
 	
 func _init(var partida):
@@ -19,4 +18,5 @@ func _init(var partida):
 	
 func _onClickPartida():
 	GameManager.currentPlayer = partida
+	GameManager.player = GameManager.allPlayers[partida]
 	get_tree().change_scene("res://scenes/MainMenu.tscn")

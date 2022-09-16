@@ -28,7 +28,11 @@ func savePlayerToJson(var juego, var medallas, var puntos):
 	loadJson()
 	allPlayers[currentPlayer][juego]['medallas'] = medallas
 	var puntaje = int(allPlayers[currentPlayer][juego]['pts'])
-	allPlayers[currentPlayer][juego]['pts'] = str(puntaje + int(puntos))
+	if puntos > puntaje:
+		allPlayers[currentPlayer][juego]['mejorPuntaje'] = puntos
+	allPlayers[currentPlayer][juego]['monedas'] += int(puntos/10)
+	allPlayers[currentPlayer][juego]['pts'] = puntaje + int(puntos)
+	
 	saveJson(allPlayers)
 
 func loadJson():

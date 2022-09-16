@@ -170,13 +170,12 @@ margin_bottom = -76.0
 
 [node name="TrashContainer" type="Node2D" parent="."]
 
-[node name="Ayuda" type="Control" parent="."]
+[node name="Instrucciones" type="Control" parent="."]
 pause_mode = 2
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="Ayuda"]
+[node name="TextureRect" type="TextureRect" parent="Instrucciones"]
 margin_left = -236.0
 margin_top = -3.0
 margin_right = 1826.0
@@ -184,14 +183,14 @@ margin_bottom = 1446.0
 rect_scale = Vector2( 0.5, 0.42 )
 texture = ExtResource( 14 )
 
-[node name="CONTROLES" type="TextureButton" parent="Ayuda"]
+[node name="CONTROLES" type="TextureButton" parent="Instrucciones"]
 margin_left = -177.0
 margin_top = 75.0
 margin_right = 223.0
 margin_bottom = 386.0
 texture_normal = ExtResource( 15 )
 
-[node name="Unpause" type="TextureButton" parent="Ayuda"]
+[node name="Unpause" type="TextureButton" parent="Instrucciones"]
 margin_left = -227.0
 margin_top = -3.0
 margin_right = -159.0
@@ -202,7 +201,7 @@ size_flags_vertical = 0
 action_mode = 0
 texture_normal = ExtResource( 12 )
 
-[node name="TextureRect2" type="TextureRect" parent="Ayuda"]
+[node name="TextureRect2" type="TextureRect" parent="Instrucciones"]
 margin_left = -14.0
 margin_top = 364.0
 margin_right = 66.0
@@ -211,7 +210,7 @@ texture = ExtResource( 17 )
 expand = true
 stretch_mode = 6
 
-[node name="Controles" type="Label" parent="Ayuda"]
+[node name="Controles" type="Label" parent="Instrucciones"]
 margin_left = 390.0
 margin_top = 149.0
 margin_right = 693.0
@@ -226,7 +225,7 @@ El juego acabara cuando se te acaban las vidas, o si terminas el juego en el men
 align = 3
 autowrap = true
 
-[node name="Instrucciones" type="Label" parent="Ayuda"]
+[node name="Instrucciones" type="Label" parent="Instrucciones"]
 margin_left = 389.0
 margin_top = 75.0
 margin_right = 695.0
@@ -235,7 +234,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 8 )
 text = "INSTRUCCIONES"
 
-[node name="CogerTacho" type="Label" parent="Ayuda"]
+[node name="CogerTacho" type="Label" parent="Instrucciones"]
 margin_left = -63.0
 margin_top = 454.0
 margin_right = 126.0
@@ -246,10 +245,15 @@ text = "COGER TACHO"
 
 [node name="GAMEOVER" parent="." instance=ExtResource( 13 )]
 visible = false
-margin_left = -253.0
-margin_top = 1.0
-margin_right = -253.0
-margin_bottom = 1.0
+margin_left = -238.0
+margin_top = -2.0
+margin_right = -238.0
+margin_bottom = -2.0
+
+[node name="Ayuda" type="Control" parent="."]
+pause_mode = 2
+margin_right = 40.0
+margin_bottom = 40.0
 
 [connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="_on_SpawnTimer_timeout"]
-[connection signal="pressed" from="Ayuda/Unpause" to="." method="_on_Unpause_pressed"]
+[connection signal="pressed" from="Instrucciones/Unpause" to="." method="_on_Unpause_pressed"]

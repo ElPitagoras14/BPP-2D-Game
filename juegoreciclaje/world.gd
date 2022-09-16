@@ -3,6 +3,7 @@ extends Node
 onready var TrashCanContainer = $TrashCanContainer
 onready var trashContainer = $TrashContainer
 onready var ayuda = $Ayuda
+onready var instrucciones = $Instrucciones
 var preBlackTrashCan = preload("res://juegoreciclaje/trashcans/BlackTrashCan.tscn")
 var preYellowTrashCan = preload ("res://juegoreciclaje/trashcans/YellowTrashCan.tscn")
 
@@ -12,6 +13,8 @@ func _ready():
 	Signals.connect("on_blacktrash_spawn", self, "_on_blacktrash_spawn")
 	Signals.connect("on_yellowtrash_spawn", self, "_on_yellowtrash_spawn")
 	Signals.connect("ayudaPressed", self, "ayudaPressed")
+	get_tree().paused = true
+	
 
 func _on_blacktrash_spawn():
 	var blackT = preBlackTrashCan.instance()
@@ -42,4 +45,5 @@ func set_is_paused(value):
 
 
 func _on_Unpause_pressed():
-	self.is_paused = false
+	get_tree().paused = false
+	instrucciones.visible = false
