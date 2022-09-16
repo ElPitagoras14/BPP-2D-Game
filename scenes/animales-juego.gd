@@ -229,7 +229,8 @@ func accion(n):
 			puntaje=0
 		puntajelbl.text = str(puntaje)
 		$incorrectoSFX2.play()
-		if vidas == 0:
+		if vidas == 1:
+			$Corazon1.texture = load("res://assets/iconos/heart_border.png")
 			$End.popup()
 		else:
 			var corazon = get_node("Corazon"+str(vidas))
