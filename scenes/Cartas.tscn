@@ -214,6 +214,7 @@ margin_bottom = -40.0
 columns = 4
 
 [node name="PopupGana" type="Popup" parent="."]
+visible = true
 margin_left = 219.0
 margin_top = 166.0
 margin_right = 784.0
@@ -581,7 +582,6 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 20 )
 
 [node name="Final" type="Popup" parent="."]
-visible = true
 margin_right = 1027.0
 margin_bottom = 600.0
 popup_exclusive = true

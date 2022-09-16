@@ -58,10 +58,11 @@ func handlerPar(var value):
 
 func handlerNoPar(var suit1, var suit2):
 	if vidas == 1:
+		vidas -= 1
 		GameManager.ganaArbol = true
-		$ParNoEncontrado/Popup/VBoxContainer/Label.text = "Perdiste todas tus vidas"
-		$ParNoEncontrado/Popup/VBoxContainer/HBoxContainer.visible = false
-		$ParNoEncontrado/Popup.popup()
+		$PopupGana/VBoxContainer/Label.text = "Perdiste todas tus vidas"
+		$PopupGana/VBoxContainer/HBoxContainer/Puntaje.text  = str(puntaje)
+		$PopupGana.popup()
 	else:
 		var corazon = get_node("MarginContainer/HBoxContainer/HBoxContainer/Corazon"+str(vidas))
 		var image = Image.new()
@@ -99,7 +100,11 @@ func nuevoPuntaje():
 
 
 func _on_Button2_pressed():
-	if gameMode == "hoja":
+	if vidas == 0:
+		$PopupGana.hide()
+		$Final.popup()
+		menuFinal()
+	elif gameMode == "hoja":
 		$MarginContainer/HBoxContainer/HBoxContainer4/numRonda.text = "2/3"
 		cleanGrid()
 		pares = 0
@@ -195,8 +200,15 @@ func _on_Pause_pressed():
 
 func menuFinal():
 	$Final/Background/CenterContainer/VBoxContainer/HBoxContainer/puntajeFinal.text = str(puntaje)
-	$Final/Background/CenterContainer/VBoxContainer/HBoxContainer2/monedas.text = "x"+str(floor(puntaje/50))
+	$Final/Background/CenterContainer/VBoxContainer/HBoxContainer2/monedas.text = "x"+str(floor(puntaje/10))
 
 func _on_TextureButton_pressed():
-	GameManager.savePlayerToJson('cartas', '4', str(puntaje))
+	var medallas = 1
+	if gameMode == 'semilla':
+		medallas = 2
+	elif gameMode == 'flor' and puntaje < 800:
+		medallas = '3'
+	elif puntaje >= 800:
+		medallas = '4'
+	GameManager.savePlayerToJson('cartas', medallas, str(puntaje))
 	get_tree().change_scene("res://scenes/MainMenu.tscn")
