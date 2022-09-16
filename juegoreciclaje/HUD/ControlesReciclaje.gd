@@ -17,4 +17,6 @@ func _ready():
 
 
 func _on_TextureButton4_pressed():
+	get_node("Click").play()
+	yield(get_tree().create_timer(.4),"timeout")
 	get_tree().change_scene("res://juegoreciclaje/HUD/TitleScreen.tscn")

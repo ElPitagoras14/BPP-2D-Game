@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://juegoreciclaje/HUD/PauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Righteous-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://images/salir_juego.png" type="Texture" id=3]
 [ext_resource path="res://images/continuar_juego.png" type="Texture" id=4]
 [ext_resource path="res://images/madera.png" type="Texture" id=5]
+[ext_resource path="res://SFX/3.1. mouse-click1.ogg" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 74
@@ -69,6 +70,9 @@ margin_right = 293.0
 margin_bottom = 346.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 3 )
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
 
 [connection signal="pressed" from="Background/CenterContainer/VBoxContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]
 [connection signal="pressed" from="Background/CenterContainer/VBoxContainer/QuitGame" to="." method="_on_QuitGame_pressed"]

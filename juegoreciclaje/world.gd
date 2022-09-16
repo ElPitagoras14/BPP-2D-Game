@@ -35,6 +35,7 @@ func _on_yellowtrash_spawn():
 	self.add_child_below_node(TrashCanContainer, yellowT)
 
 func ayudaPressed():
+	get_node("Click").play()
 	self.is_paused = !is_paused
 
 func set_is_paused(value):
@@ -45,5 +46,7 @@ func set_is_paused(value):
 
 
 func _on_Unpause_pressed():
+	get_node("Click").play()
+	yield(get_tree().create_timer(.4),"timeout")
 	get_tree().paused = false
 	instrucciones.visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://juegoreciclaje/HUD/GAMEOVER.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Righteous-Regular.ttf" type="DynamicFontData" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://SFX/Clapping.mp3" type="AudioStream" id=4]
 [ext_resource path="res://images/madera.png" type="Texture" id=5]
 [ext_resource path="res://images/reintentar_juego.png" type="Texture" id=6]
+[ext_resource path="res://SFX/3.1. mouse-click1.ogg" type="AudioStream" id=7]
 [ext_resource path="res://images/menu_juego.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
@@ -135,6 +136,9 @@ margin_bottom = 310.0
 
 [node name="ClappingSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
 
 [connection signal="pressed" from="HBoxContainer2/VBoxContainer/RetryButton" to="." method="_on_RetryButton_pressed"]
 [connection signal="pressed" from="HBoxContainer2/VBoxContainer/TitleButton" to="." method="_on_TitleButton_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://fonts/Righteous-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://juegoreciclaje/HUD/TitleScreen.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/espaciadores/espacio2.png" type="Texture" id=7]
 [ext_resource path="res://assets/Botones/jugar2.png" type="Texture" id=8]
 [ext_resource path="res://assets/espaciadores/espacio.png" type="Texture" id=9]
+[ext_resource path="res://SFX/3.1. mouse-click1.ogg" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 65
@@ -135,6 +136,9 @@ texture_normal = ExtResource( 5 )
 __meta__ = {
 "_editor_description_": "Ayuda"
 }
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
 
 [connection signal="pressed" from="HBoxContainer/Volver" to="." method="_on_Volver_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/JUGAR" to="." method="_on_JUGAR_pressed"]

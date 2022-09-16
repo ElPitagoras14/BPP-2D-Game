@@ -32,8 +32,12 @@ func init(score: int, maxCombo: int):
 	
 
 func _on_RetryButton_pressed():
+	get_node("Click").play()
+	yield(get_tree().create_timer(.4),"timeout")
 	get_tree().change_scene("res://juegoreciclaje/RecicleGame.tscn")
 
 
 func _on_TitleButton_pressed():
+	get_node("Click").play()
+	yield(get_tree().create_timer(.4),"timeout")
 	get_tree().change_scene("res://juegoreciclaje/HUD/TitleScreen.tscn")
