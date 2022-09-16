@@ -16,12 +16,20 @@ const userFile = "res://userData.json"
 var player
 var playerName
 var allPlayers
+var currentPlayer
 
 func saveJson(var playerConfig):
 	var file = File.new()
 	file.open(userFile, File.WRITE)
 	file.store_string(to_json(playerConfig))
 	file.close()
+
+func savePlayerToJson(var juego, var medallas, var puntos):
+	loadJson()
+	allPlayers[currentPlayer][juego]['medallas'] = medallas
+	var puntaje = int(allPlayers[currentPlayer][juego]['pts'])
+	allPlayers[currentPlayer][juego]['pts'] = str(puntaje + int(puntos))
+	saveJson(allPlayers)
 
 func loadJson():
 	var file = File.new()
@@ -31,7 +39,6 @@ func loadJson():
 		file.close()
 		if typeof(data) == TYPE_DICTIONARY:
 			allPlayers = data
-			print(allPlayers)
 		else:
 			printerr("Corrupted data!")
 	else:

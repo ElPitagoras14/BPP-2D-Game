@@ -196,5 +196,7 @@ func _on_Pause_pressed():
 func menuFinal():
 	$Final/Background/CenterContainer/VBoxContainer/HBoxContainer/puntajeFinal.text = str(puntaje)
 	$Final/Background/CenterContainer/VBoxContainer/HBoxContainer2/monedas.text = "x"+str(floor(puntaje/50))
-func _on_volverInicio_pressed():
+
+func _on_TextureButton_pressed():
+	GameManager.savePlayerToJson('cartas', '4', str(puntaje))
 	get_tree().change_scene("res://scenes/MainMenu.tscn")

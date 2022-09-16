@@ -30,7 +30,11 @@ func _pressed():
 		GameManager.chooseCard(self)
 	
 func cartaSeleccionada():
-	set_normal_texture(load("res://assets/cards/"+str(value)+"/"+str(suit)+"Selected.png"))
+	var newFace = load("res://assets/cards/"+str(value)+"/"+str(suit)+"Selected.png")
+	if newFace == null:
+		set_normal_texture(load("res://assets/cards/"+str(value)+"/frutoSelected.png"))
+	else:
+		set_normal_texture(newFace)
 
 func backToNormal():
 	set_normal_texture(face)

@@ -13,6 +13,8 @@ onready var mejorPuntajeAnimals = get_node("MarginContainer/VBoxContainer/HBoxCo
 
 func _ready():
 	GameManager.loadJson()
+	GameManager.loadPlayer(GameManager.currentPlayer)
+	$MarginContainer/VBoxContainer/JugadorActual.text = str(GameManager.currentPlayer)
 	get_node("BGM").play()
 	puntajeTotalReciclaje.text = str(GameManager.player.reciclaje.pts)
 	puntajeTotalBosque.text = str(GameManager.player.cartas.pts)
@@ -24,21 +26,21 @@ func _ready():
 	
 	#Animales
 	var count = 0
-	while(count < GameManager.player.animales.medallas):
+	while(count < int(GameManager.player.animales.medallas)):
 		var medalla = load("res://assets/Medallas/"+str(medallas[count])+".png")
 		get_node("MarginContainer/VBoxContainer/HBoxContainer/Animals/medallasAnimals/"+medallas[count]).texture = medalla
 		count+=1
 	
 	#Cartas
 	count = 0
-	while(count < GameManager.player.cartas.medallas):
+	while(count < int(GameManager.player.cartas.medallas)):
 		var medalla = load("res://assets/Medallas/"+str(medallas[count])+".png")
 		get_node("MarginContainer/VBoxContainer/HBoxContainer/Bosque/medallasBosque/"+medallas[count]).texture = medalla
 		count+=1
 		
 	#Reciclaje
 	count = 0
-	while(count < GameManager.player.reciclaje.medallas):
+	while(count < int(GameManager.player.reciclaje.medallas)):
 		var medalla = load("res://assets/Medallas/"+str(medallas[count])+".png")
 		get_node("MarginContainer/VBoxContainer/HBoxContainer/Reciclar/medallasReciclaje/"+medallas[count]).texture = medalla
 		count+=1
