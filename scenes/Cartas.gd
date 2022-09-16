@@ -7,7 +7,9 @@ var vidas = 5
 var totalPares
 var arboles = Array()
 var gameMode = "hoja"
+var medallas = 1
 onready var gridPane = $grid
+var medallasList = ["Bronce", "Plata", "Oro", "Diamante"]
 
 var list_data_arboles = []
 var indice = 0
@@ -199,16 +201,21 @@ func _on_Pause_pressed():
 	$Pause.popup()
 
 func menuFinal():
+	if gameMode == 'semilla':
+		medallas = 2
+	elif gameMode == 'flor' and puntaje < 800:
+		medallas = 3
+	elif puntaje >= 800:
+		medallas = 4
+	var count = 0
+	while count < medallas:
+		var medallaRsc = load("res://assets/Medallas/"+str(medallasList[count])+".png")
+		get_node("Final/Background/CenterContainer/VBoxContainer/Medallas/"+medallasList[count]).texture = medallaRsc
+		count+=1
 	$Final/Background/CenterContainer/VBoxContainer/HBoxContainer/puntajeFinal.text = str(puntaje)
 	$Final/Background/CenterContainer/VBoxContainer/HBoxContainer2/monedas.text = "x"+str(floor(puntaje/10))
 
 func _on_TextureButton_pressed():
-	var medallas = 1
-	if gameMode == 'semilla':
-		medallas = 2
-	elif gameMode == 'flor' and puntaje < 800:
-		medallas = '3'
-	elif puntaje >= 800:
-		medallas = '4'
-	GameManager.savePlayerToJson('cartas', medallas, str(puntaje))
+	
+	GameManager.savePlayerToJson('cartas', str(medallas), str(puntaje))
 	get_tree().change_scene("res://scenes/MainMenu.tscn")
