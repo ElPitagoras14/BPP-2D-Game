@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://BGM/6. ES_Forest Exploration - Sight of Wonders.mp3" type="AudioStream" id=1]
+[ext_resource path="res://fonts/Righteous-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://SFX/3.1. mouse-click1.ogg" type="AudioStream" id=4]
 [ext_resource path="res://assets/PopUp.png" type="Texture" id=11]
 [ext_resource path="res://assets/personajes/p3.png" type="Texture" id=12]
@@ -38,6 +39,11 @@ font_path = "res://fonts/Righteous-Regular.ttf"
 [sub_resource type="DynamicFont" id=10]
 size = 42
 font_data = SubResource( 9 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 42
+extra_spacing_top = 1
+font_data = ExtResource( 2 )
 
 [node name="Principal" type="Control"]
 anchor_right = 1.0
@@ -267,7 +273,6 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 18 )
 
 [node name="CargarPartida" type="Popup" parent="."]
-visible = true
 margin_left = -1.0
 margin_top = -3.0
 margin_right = 1035.0
@@ -312,6 +317,7 @@ margin_bottom = -53.0
 [node name="Partidas" type="VBoxContainer" parent="CargarPartida/ScrollContainer"]
 
 [node name="Nombre" type="Popup" parent="."]
+visible = true
 margin_left = -1.0
 margin_top = -3.0
 margin_right = 1035.0
@@ -384,12 +390,17 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 15 )
 
 [node name="TextEdit" type="TextEdit" parent="Nombre"]
+light_mask = 0
 margin_left = 316.0
 margin_top = 300.0
 margin_right = 716.0
 margin_bottom = 375.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+custom_constants/completion_lines = 1
+custom_constants/completion_max_width = 1
+custom_fonts/font = SubResource( 11 )
+wrap_enabled = true
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
