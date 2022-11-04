@@ -281,16 +281,16 @@ func _on_End_about_to_show():
 	var medalla = $End/medallaImg
 	var m
 	if puntaje >= 900:
-		medalla.texture = load("res://assets/Medallas/diamante.png")
+		medalla.texture = load("res://assets/Medallas/Diamante.png")
 		m=4
 	elif puntaje >= 750:
-		medalla.texture = load("res://assets/Medallas/oro.png")
+		medalla.texture = load("res://assets/Medallas/Oro.png")
 		m=3
 	elif puntaje >= 500:
-		medalla.texture = load("res://assets/Medallas/plata.png")
+		medalla.texture = load("res://assets/Medallas/Plata.png")
 		m=2
 	elif puntaje >= 250:
-		medalla.texture = load("res://assets/Medallas/bronce.png")
+		medalla.texture = load("res://assets/Medallas/Bronce.png")
 		m=1
 	else:
 		medalla.texture = null

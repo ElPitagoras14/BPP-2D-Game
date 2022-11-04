@@ -32,7 +32,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Juegos2D"
+config/name="Bosque2D"
 run/main_scene="res://scenes/PantallaInicio.tscn"
 config/icon="res://icon.png"
 

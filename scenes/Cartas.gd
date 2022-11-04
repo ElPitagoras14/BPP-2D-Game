@@ -162,7 +162,6 @@ func _on_next_pressed():
 		mostrarInfo()
 
 func mostrarInfo():
-	print(list_data_arboles)
 	var imagenPrincipal = load("res://assets/cards/"+str(list_data_arboles[indice][0])+"/arbolimg.png")
 	var hojaImg = load("res://assets/cards/"+str(list_data_arboles[indice][0])+"/hoja.png")
 	var frutoImg = load("res://assets/cards/"+str(list_data_arboles[indice][0])+"/fruto.png")
