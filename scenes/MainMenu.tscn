@@ -13,12 +13,12 @@
 [ext_resource path="res://BGM/6. ES_Forest Exploration - Sight of Wonders.mp3" type="AudioStream" id=12]
 [ext_resource path="res://SFX/3.1. mouse-click1.ogg" type="AudioStream" id=13]
 
-[sub_resource type="DynamicFontData" id=7]
+[sub_resource type="DynamicFontData" id=10]
 font_path = "res://fonts/Righteous-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=2]
 size = 40
-font_data = SubResource( 7 )
+font_data = SubResource( 10 )
 
 [sub_resource type="DynamicFontData" id=8]
 font_path = "res://fonts/Righteous-Regular.ttf"

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/plata.png-3dba4b0c020f9635945d3cccfd523396.stex"
+path="res://.import/door_16x16.png-cc99252e94fcca7b106a454b551f94e7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Medallas/plata.png"
-dest_files=[ "res://.import/plata.png-3dba4b0c020f9635945d3cccfd523396.stex" ]
+source_file="res://hubinicial/assets/Serene Village Assets Pack/Animated stuff/door_16x16.png"
+dest_files=[ "res://.import/door_16x16.png-cc99252e94fcca7b106a454b551f94e7.stex" ]
 
 [params]
 

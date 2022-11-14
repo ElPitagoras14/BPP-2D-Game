@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/plata.png-3dba4b0c020f9635945d3cccfd523396.stex"
+path="res://.import/campfire_32x32.png-3ed2a6a73c83b57b2df04784337581c6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Medallas/plata.png"
-dest_files=[ "res://.import/plata.png-3dba4b0c020f9635945d3cccfd523396.stex" ]
+source_file="res://hubinicial/assets/Serene Village Assets Pack/Animated stuff/campfire_32x32.png"
+dest_files=[ "res://.import/campfire_32x32.png-3ed2a6a73c83b57b2df04784337581c6.stex" ]
 
 [params]
 
