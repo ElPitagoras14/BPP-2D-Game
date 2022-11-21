@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://juego_cavado/scripts/zona_cavar.gd" type="Script" id=1]
+[ext_resource path="res://juego_cavado/assets/Fondo.png" type="Texture" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+
+[node name="ZonaCavar" type="Control" parent="."]
+margin_left = 154.0
+margin_top = 84.0
+margin_right = 754.0
+margin_bottom = 564.0
+script = ExtResource( 1 )
