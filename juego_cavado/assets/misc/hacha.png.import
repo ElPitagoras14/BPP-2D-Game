@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Fondo.png-0ebcce104f05473bf4aef3784faebea7.stex"
+path="res://.import/hacha.png-0d00958da4af880c119d69e563c7a423.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://juego_cavado/assets/Fondo.png"
-dest_files=[ "res://.import/Fondo.png-0ebcce104f05473bf4aef3784faebea7.stex" ]
+source_file="res://juego_cavado/assets/misc/hacha.png"
+dest_files=[ "res://.import/hacha.png-0d00958da4af880c119d69e563c7a423.stex" ]
 
 [params]
 

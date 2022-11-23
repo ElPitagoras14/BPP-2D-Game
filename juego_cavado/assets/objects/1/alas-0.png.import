@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/block-1.png-a77047c66b789019db58f89c0e288697.stex"
+path="res://.import/alas-0.png-c1a71e63cecd51d76a8ac432c45fd506.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://juego_cavado/assets/block-1.png"
-dest_files=[ "res://.import/block-1.png-a77047c66b789019db58f89c0e288697.stex" ]
+source_file="res://juego_cavado/assets/objects/1/alas-0.png"
+dest_files=[ "res://.import/alas-0.png-c1a71e63cecd51d76a8ac432c45fd506.stex" ]
 
 [params]
 

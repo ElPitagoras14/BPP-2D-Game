@@ -41,6 +41,7 @@ config/icon="res://icon.png"
 GameManager="*res://GameManager.gd"
 Signals="*res://juegoreciclaje/Autoloads/Signals.gd"
 MusicController="*res://juegoreciclaje/Autoloads/MusicController.tscn"
+CavadoMaster="*res://juego_cavado/scripts/CavadoMaster.gd"
 
 [display]
 
