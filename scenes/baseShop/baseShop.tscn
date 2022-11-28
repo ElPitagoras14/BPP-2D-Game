@@ -1,0 +1,99 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scenes/baseShop/npc/shopKeeperInteractionManager.gd" type="Script" id=1]
+[ext_resource path="res://scenes/baseShop/npc/shopKeeper.gd" type="Script" id=2]
+[ext_resource path="res://scenes/baseShop/baseShop.gd" type="Script" id=3]
+[ext_resource path="res://assets/Player/Jugador.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/InteractionManager/InteractionManager.tscn" type="PackedScene" id=6]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/houseInterior.png-95277984b7aa41ab5c4c7c8dbad2abe1.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/jordyn-d.svg-ae803dbba038fb04e391705009ff45dc.stex"
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 45, 72 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 49, 56.5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 23.5, 36 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 38.5, 25 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 47.5, 28 )
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 1.0
+margin_top = 3.0
+margin_right = 1024.0
+margin_bottom = 599.0
+texture = SubResource( 1 )
+stretch_mode = 4
+
+[node name="shopKeeper" type="KinematicBody2D" parent="."]
+position = Vector2( 414, 187 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="shopKeeper"]
+scale = Vector2( 0.6, 0.6 )
+texture = SubResource( 3 )
+
+[node name="Interaction Manager" parent="shopKeeper" instance=ExtResource( 6 )]
+scale = Vector2( 2, 2 )
+script = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 5, -33 )
+
+[node name="Paredes" type="StaticBody2D" parent="."]
+position = Vector2( 256, 40 )
+
+[node name="Paredes" type="CollisionPolygon2D" parent="Paredes"]
+polygon = PoolVector2Array( 520, 16, 496, 16, 496, 152, 496, 464, 472, 480, 160, 480, 160, 528, 112, 528, 112, 480, 40, 480, 16, 456, 16, 152, 496, 152, 496, 16, 0, 16, -8, 464, 32, 504, 96, 504, 96, 536, 112, 552, 168, 552, 184, 528, 184, 496, 480, 496, 520, 464 )
+
+[node name="Jugador" parent="." instance=ExtResource( 5 )]
+position = Vector2( 392, 512 )
+scale = Vector2( 2, 2 )
+
+[node name="cama" type="StaticBody2D" parent="."]
+
+[node name="cama" type="CollisionShape2D" parent="cama"]
+position = Vector2( 707, 448 )
+shape = SubResource( 4 )
+
+[node name="mesa" type="StaticBody2D" parent="."]
+
+[node name="mesa" type="CollisionShape2D" parent="mesa"]
+position = Vector2( 319, 335.5 )
+shape = SubResource( 5 )
+
+[node name="silla" type="StaticBody2D" parent="."]
+
+[node name="Silla" type="CollisionShape2D" parent="silla"]
+position = Vector2( 296.5, 244 )
+shape = SubResource( 6 )
+
+[node name="tv" type="StaticBody2D" parent="."]
+
+[node name="tv" type="CollisionShape2D" parent="tv"]
+position = Vector2( 513.5, 217 )
+shape = SubResource( 7 )
+
+[node name="chiminea" type="StaticBody2D" parent="."]
+
+[node name="chiminea" type="CollisionShape2D" parent="chiminea"]
+position = Vector2( 656.5, 220 )
+shape = SubResource( 8 )
