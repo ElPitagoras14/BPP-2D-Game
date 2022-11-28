@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fondo.png-c68898d07d8f669a6a90712445af4556.stex"
+path="res://.import/nivel-2.png-f0203b6a950ea8d0c6627fbba6b54c27.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://juego_cavado/assets/misc/fondo.png"
-dest_files=[ "res://.import/fondo.png-c68898d07d8f669a6a90712445af4556.stex" ]
+source_file="res://juego_cavado/assets/niveles_iconos/nivel-2.png"
+dest_files=[ "res://.import/nivel-2.png-f0203b6a950ea8d0c6627fbba6b54c27.stex" ]
 
 [params]
 

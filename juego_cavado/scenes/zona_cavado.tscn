@@ -1,9 +1,49 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://juego_cavado/scripts/zona_cavar.gd" type="Script" id=1]
-[ext_resource path="res://juego_cavado/assets/misc/Fondo.png" type="Texture" id=2]
+[ext_resource path="res://juego_cavado/assets/misc/fondo.png" type="Texture" id=2]
 [ext_resource path="res://juego_cavado/scripts/herramienta.gd" type="Script" id=3]
 [ext_resource path="res://juego_cavado/assets/misc/pico.png" type="Texture" id=4]
+[ext_resource path="res://juego_cavado/assets/HUD/borde_barra.png" type="Texture" id=5]
+[ext_resource path="res://juego_cavado/assets/HUD/progreso_barra.png" type="Texture" id=6]
+[ext_resource path="res://juego_cavado/assets/HUD/fondo_barra.png" type="Texture" id=7]
+[ext_resource path="res://juego_cavado/scripts/barra_energia.gd" type="Script" id=8]
+[ext_resource path="res://fonts/Righteous-Regular.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://juego_cavado/scripts/cant_energia.gd" type="Script" id=10]
+[ext_resource path="res://juego_cavado/scripts/logica_vida.gd" type="Script" id=11]
+[ext_resource path="res://juego_cavado/scripts/logica_encontrado.gd" type="Script" id=12]
+[ext_resource path="res://juego_cavado/scripts/canvas_energia.gd" type="Script" id=13]
+[ext_resource path="res://images/madera.png" type="Texture" id=14]
+[ext_resource path="res://images/moneda.png" type="Texture" id=15]
+[ext_resource path="res://SFX/Clapping.mp3" type="AudioStream" id=16]
+[ext_resource path="res://images/menu_juego.png" type="Texture" id=17]
+[ext_resource path="res://images/reintentar_juego.png" type="Texture" id=18]
+[ext_resource path="res://juego_cavado/scripts/win_popup.gd" type="Script" id=19]
+[ext_resource path="res://juego_cavado/scripts/lose_popup.gd" type="Script" id=20]
+
+[sub_resource type="DynamicFont" id=1]
+size = 17
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 74
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 9 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -28,19 +68,309 @@ position = Vector2( 652, 238 )
 texture = ExtResource( 4 )
 script = ExtResource( 3 )
 
-[node name="Hacha" type="Button" parent="."]
+[node name="HUD" type="Control" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( -276, 150 )
+
+[node name="Hacha" type="Button" parent="HUD"]
 margin_left = 899.0
 margin_top = 282.0
 margin_right = 998.0
 margin_bottom = 321.0
 text = "Hacha"
 
-[node name="Pico" type="Button" parent="."]
+[node name="Pico" type="Button" parent="HUD"]
 margin_left = 899.0
 margin_top = 452.0
 margin_right = 998.0
 margin_bottom = 491.0
 text = "Pico"
 
-[connection signal="button_down" from="Hacha" to="Herramienta" method="_on_Hacha_button_down"]
-[connection signal="button_down" from="Pico" to="Herramienta" method="_on_Pico_button_down"]
+[node name="Energia" type="CanvasLayer" parent="HUD"]
+script = ExtResource( 13 )
+
+[node name="BarraEnergia" type="TextureProgress" parent="HUD/Energia"]
+margin_left = 799.0
+margin_top = 283.0
+margin_right = 839.0
+margin_bottom = 580.0
+value = 100.0
+texture_under = ExtResource( 7 )
+texture_over = ExtResource( 5 )
+texture_progress = ExtResource( 6 )
+fill_mode = 3
+tint_under = Color( 0.607843, 0.243137, 0.243137, 1 )
+tint_over = Color( 0.117647, 0.117647, 0.223529, 1 )
+tint_progress = Color( 0.654902, 0.882353, 0.819608, 1 )
+script = ExtResource( 8 )
+
+[node name="Cantidad" type="Label" parent="HUD/Energia"]
+margin_left = 774.0
+margin_top = 246.0
+margin_right = 860.0
+margin_bottom = 277.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "100 / 270"
+align = 1
+valign = 1
+autowrap = true
+script = ExtResource( 10 )
+
+[node name="Objeto" type="Label" parent="HUD"]
+margin_left = 909.0
+margin_top = 103.0
+margin_right = 995.0
+margin_bottom = 150.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Objetos:
+0/3"
+align = 1
+valign = 1
+autowrap = true
+script = ExtResource( 12 )
+
+[node name="Vida" type="Container" parent="HUD"]
+margin_left = 14.0
+margin_right = 234.0
+margin_bottom = 63.0
+script = ExtResource( 11 )
+
+[node name="Win" type="Popup" parent="."]
+visible = true
+margin_right = 1027.0
+margin_bottom = 601.0
+popup_exclusive = true
+script = ExtResource( 19 )
+
+[node name="Background" type="ColorRect" parent="Win"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0823529, 0.0627451, 0.0196078, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="Win/Background"]
+modulate = Color( 0.866667, 0.866667, 0.866667, 1 )
+margin_right = 1027.0
+margin_bottom = 600.0
+texture = ExtResource( 14 )
+stretch_mode = 4
+
+[node name="GameOverLabel" type="Label" parent="Win"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -513.5
+margin_top = 99.0
+margin_right = 510.5
+margin_bottom = 191.0
+custom_fonts/font = SubResource( 2 )
+text = "FIN DEL JUEGO"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Win"]
+margin_top = 186.0
+margin_right = 1024.0
+margin_bottom = 248.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="Win/HBoxContainer"]
+margin_left = 442.0
+margin_top = 10.0
+margin_right = 577.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "Puntaje: "
+
+[node name="ScoreValue" type="Label" parent="Win/HBoxContainer"]
+margin_left = 581.0
+margin_top = 10.0
+margin_right = 581.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Win"]
+margin_top = 317.0
+margin_right = 1024.0
+margin_bottom = 515.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Win/HBoxContainer2"]
+margin_left = 414.0
+margin_right = 610.0
+margin_bottom = 198.0
+
+[node name="RetryButton" type="TextureButton" parent="Win/HBoxContainer2/VBoxContainer"]
+margin_right = 196.0
+margin_bottom = 97.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 18 )
+
+[node name="TitleButton" type="TextureButton" parent="Win/HBoxContainer2/VBoxContainer"]
+margin_top = 101.0
+margin_right = 196.0
+margin_bottom = 198.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 17 )
+
+[node name="Moneda" type="TextureRect" parent="Win"]
+margin_left = 312.0
+margin_top = 259.0
+margin_right = 357.0
+margin_bottom = 304.0
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 6
+
+[node name="CoinValue" type="Label" parent="Win"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -141.5
+margin_top = -41.5
+margin_right = -16.5
+margin_bottom = -0.5
+custom_fonts/font = SubResource( 4 )
+text = "x"
+
+[node name="medallaImg" type="TextureRect" parent="Win"]
+margin_left = 607.0
+margin_top = 259.0
+margin_right = 661.0
+margin_bottom = 310.0
+
+[node name="ClappingSFX" type="AudioStreamPlayer" parent="Win"]
+stream = ExtResource( 16 )
+
+[node name="Lose" type="Popup" parent="."]
+margin_right = 1027.0
+margin_bottom = 601.0
+popup_exclusive = true
+script = ExtResource( 20 )
+
+[node name="Background" type="ColorRect" parent="Lose"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0823529, 0.0627451, 0.0196078, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="Lose/Background"]
+modulate = Color( 0.866667, 0.866667, 0.866667, 1 )
+margin_right = 1027.0
+margin_bottom = 600.0
+texture = ExtResource( 14 )
+stretch_mode = 4
+
+[node name="GameOverLabel" type="Label" parent="Lose"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -513.5
+margin_top = 99.0
+margin_right = 510.5
+margin_bottom = 191.0
+custom_fonts/font = SubResource( 2 )
+text = "FIN DEL JUEGO"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Lose"]
+margin_top = 186.0
+margin_right = 1024.0
+margin_bottom = 248.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="Lose/HBoxContainer"]
+margin_left = 374.0
+margin_top = 10.0
+margin_right = 646.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "Perdiste por malo"
+
+[node name="ScoreValue" type="Label" parent="Lose/HBoxContainer"]
+margin_left = 650.0
+margin_top = 10.0
+margin_right = 650.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Lose"]
+margin_top = 317.0
+margin_right = 1024.0
+margin_bottom = 515.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Lose/HBoxContainer2"]
+margin_left = 414.0
+margin_right = 610.0
+margin_bottom = 198.0
+
+[node name="RetryButton" type="TextureButton" parent="Lose/HBoxContainer2/VBoxContainer"]
+margin_right = 196.0
+margin_bottom = 97.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 18 )
+
+[node name="TitleButton" type="TextureButton" parent="Lose/HBoxContainer2/VBoxContainer"]
+margin_top = 101.0
+margin_right = 196.0
+margin_bottom = 198.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 17 )
+
+[node name="Moneda" type="TextureRect" parent="Lose"]
+margin_left = 312.0
+margin_top = 259.0
+margin_right = 357.0
+margin_bottom = 304.0
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 6
+
+[node name="CoinValue" type="Label" parent="Lose"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -141.5
+margin_top = -41.5
+margin_right = -16.5
+margin_bottom = -0.5
+custom_fonts/font = SubResource( 4 )
+text = "x"
+
+[node name="medallaImg" type="TextureRect" parent="Lose"]
+margin_left = 607.0
+margin_top = 259.0
+margin_right = 661.0
+margin_bottom = 310.0
+
+[node name="ClappingSFX" type="AudioStreamPlayer" parent="Lose"]
+stream = ExtResource( 16 )
+
+[connection signal="lose_game" from="ZonaCavar" to="Herramienta" method="_on_ZonaCavar_lose_game"]
+[connection signal="lose_game" from="ZonaCavar" to="HUD/Energia" method="_on_ZonaCavar_lose_game"]
+[connection signal="lose_game" from="ZonaCavar" to="Lose" method="_on_ZonaCavar_lose_game"]
+[connection signal="reduce_energy" from="ZonaCavar" to="HUD/Energia/BarraEnergia" method="_on_ZonaCavar_reduce_energy"]
+[connection signal="reduce_energy" from="ZonaCavar" to="HUD/Energia/Cantidad" method="_on_ZonaCavar_reduce_energy"]
+[connection signal="reduce_energy" from="ZonaCavar" to="HUD/Vida" method="_on_ZonaCavar_reduce_energy"]
+[connection signal="win_game" from="ZonaCavar" to="Herramienta" method="_on_ZonaCavar_win_game"]
+[connection signal="win_game" from="ZonaCavar" to="HUD/Energia" method="_on_ZonaCavar_win_game"]
+[connection signal="win_game" from="ZonaCavar" to="Win" method="_on_ZonaCavar_win_game"]
+[connection signal="button_down" from="HUD/Hacha" to="Herramienta" method="_on_Hacha_button_down"]
+[connection signal="button_down" from="HUD/Pico" to="Herramienta" method="_on_Pico_button_down"]
+[connection signal="mouse_entered" from="HUD/Energia/BarraEnergia" to="HUD/Energia/Cantidad" method="_on_BarraEnergia_mouse_entered"]
+[connection signal="mouse_exited" from="HUD/Energia/BarraEnergia" to="HUD/Energia/Cantidad" method="_on_BarraEnergia_mouse_exited"]
+[connection signal="update_energy" from="HUD/Vida" to="HUD/Energia/BarraEnergia" method="_on_Vida_update_energy"]
+[connection signal="update_energy" from="HUD/Vida" to="HUD/Energia/Cantidad" method="_on_Vida_update_energy"]
+[connection signal="button_down" from="Win/HBoxContainer2/VBoxContainer/RetryButton" to="ZonaCavar" method="_on_RetryButton_button_down"]
+[connection signal="button_down" from="Lose/HBoxContainer2/VBoxContainer/RetryButton" to="ZonaCavar" method="_on_RetryButton_button_down"]

@@ -30,3 +30,11 @@ func _on_Pico_button_down():
 func _on_Hacha_button_down():
 	_set_tex_tool("hacha")
 	CavadoMaster.tool_act = "hacha"
+
+
+func _on_ZonaCavar_lose_game():
+	hide()
+
+
+func _on_ZonaCavar_win_game():
+	hide()

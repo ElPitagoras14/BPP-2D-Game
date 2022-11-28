@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fondo.png-c68898d07d8f669a6a90712445af4556.stex"
+path="res://.import/construir.png-f4fafb84ec9f914664a4cb3b688b88fc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://juego_cavado/assets/misc/fondo.png"
-dest_files=[ "res://.import/fondo.png-c68898d07d8f669a6a90712445af4556.stex" ]
+source_file="res://juego_cavado/assets/misc/construir.png"
+dest_files=[ "res://.import/construir.png-f4fafb84ec9f914664a4cb3b688b88fc.stex" ]
 
 [params]
 

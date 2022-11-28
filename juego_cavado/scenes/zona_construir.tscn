@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://juego_cavado/assets/objects/2/egip-2.png" type="Texture" id=1]
+[ext_resource path="res://juego_cavado/scripts/objeto_construir.gd" type="Script" id=2]
+[ext_resource path="res://juego_cavado/assets/objects/2/egip-1.png" type="Texture" id=3]
+[ext_resource path="res://juego_cavado/assets/misc/construir.png" type="Texture" id=4]
+[ext_resource path="res://juego_cavado/scripts/zona_construir.gd" type="Script" id=6]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+
+[node name="ZonaConstruir" type="Control" parent="."]
+margin_left = 84.0
+margin_top = 66.0
+margin_right = 830.0
+margin_bottom = 524.0
+script = ExtResource( 6 )
+
+[node name="ZonaItems" type="Control" parent="."]
+margin_left = 832.0
+margin_top = 9.0
+margin_right = 1027.0
+margin_bottom = 600.0
+
+[node name="Egip-1" type="Sprite" parent="ZonaItems"]
+position = Vector2( 96, 121 )
+texture = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="Egip-2" type="Sprite" parent="ZonaItems"]
+position = Vector2( 105, 322 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )

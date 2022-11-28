@@ -1,4 +1,7 @@
 extends Control
+signal reduce_energy
+signal win_game
+signal lose_game
 
 var objects = []
 var volume = []
@@ -28,9 +31,9 @@ var scr_path = "/scripts"
 func _ready():
 	rng.randomize()
 	_get_info()
+	_set_default_values()
 	_add_objects()
 	_fill_scene()
-	pass # Replace with function body.
 	
 func _fill_scene():
 	var script = load(base_path + scr_path + "/block.gd")
@@ -48,7 +51,7 @@ func _fill_scene():
 				block._set_shape(layer)
 				add_child(block, true)
 				volume[layer][i][j] = block
-
+	
 func _get_real_pos(index, blc_size, img_size, offset):
 	return index * blc_size + img_size / 2 + offset
 
@@ -74,16 +77,29 @@ func _input(event):
 
 func _delete_block():
 	var tool_act = CavadoMaster.tool_act
+	CavadoMaster.game_state = 0
 	if tool_act == "pico":
 		if _delete_stack_block():
-			_delete_random_block(2)
+			_delete_random_blocks(2)
+			_reduce_energy(3)
 	elif tool_act == "hacha":
-		_delete_single_block()
+		if _delete_single_block():
+			_reduce_energy(1)
+	yield(get_tree().create_timer(0.2), "timeout")
+	CavadoMaster.game_state = 1
+	_check_final_state()
+
+func _reduce_energy(energy):
+	var new_energy = CavadoMaster.actual_energy - energy
+	if new_energy < 0:
+		new_energy = 0
+	CavadoMaster.actual_energy = new_energy
+	emit_signal("reduce_energy")
 
 func _delete_single_block():
 	for layer in range(layers - 1, -1,-1):
-		if is_instance_valid(volume[layer][row][column]):
-			var block = volume[layer][row][column];
+		if is_instance_valid(volume[layer][column][row]):
+			var block = volume[layer][column][row];
 			block._eliminar()
 			return true
 	return false
@@ -91,13 +107,13 @@ func _delete_single_block():
 func _delete_stack_block():
 	var deleted = 0
 	for layer in range(layers - 1, -1,-1):
-		if is_instance_valid(volume[layer][row][column]):
-			var block = volume[layer][row][column];
+		if is_instance_valid(volume[layer][column][row]):
+			var block = volume[layer][column][row];
 			block._eliminar()
 			deleted += 1
 	return deleted != 0
 	
-func _delete_random_block(number):
+func _delete_random_blocks(number):
 	var deleted = 0
 	while(deleted != number):
 		column = rng.randi_range(0, width - 1)
@@ -108,8 +124,15 @@ func _delete_random_block(number):
 func _get_indexs(click_pos):
 	var c_x = click_pos.x
 	var c_y = click_pos.y
-	row = floor((c_x - g_pos.x - offset_x) / block_size)
-	column = floor((c_y - g_pos.y - offset_y) / block_size)
+	column = floor((c_x - g_pos.x - offset_x) / block_size)
+	row = floor((c_y - g_pos.y - offset_y) / block_size)
+	
+func _set_default_values():
+	CavadoMaster.max_objects = num_objs
+	CavadoMaster.game_state = 1
+	CavadoMaster.act_life = 3
+	CavadoMaster.actual_energy = CavadoMaster.max_energy
+	CavadoMaster.actual_objects = 0
 	
 func _get_info():
 	g_pos = self.rect_position
@@ -124,6 +147,8 @@ func _get_info():
 	offset_y = (size.y - height * block_size) / 2
 	
 func _check_click(x, y):
+	if (CavadoMaster.game_state == 0):
+		return false
 	var range_x = abs(x - g_pos.x - offset_x) < (width * block_size)
 	var range_y = abs(y - g_pos.y - offset_y) < (height * block_size)
 	if range_x and range_y:
@@ -180,3 +205,20 @@ func _add_single_obj(path, img_size, x, y):
 	spr_obj._set_init_data(img_size)
 	spr_obj._set_shape()
 	add_child(spr_obj)
+
+func _check_final_state():
+	if CavadoMaster.actual_objects == CavadoMaster.max_objects:
+		print("GANASTE")
+		CavadoMaster.game_state = 0
+		emit_signal("win_game")
+	elif CavadoMaster.act_life <= 0 and CavadoMaster.actual_energy <= 0:
+		print("PERDISTE")
+		CavadoMaster.game_state = 0
+		emit_signal("lose_game")
+
+func  _restart_level():
+	get_tree().reload_current_scene()
+
+func _on_RetryButton_button_down():
+	yield(get_tree().create_timer(0.5), "timeout")
+	_restart_level()
