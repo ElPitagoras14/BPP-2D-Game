@@ -51,6 +51,7 @@ func _on_personaje1_pressed():
 	GameManager.loadPlayer(Nombre)
 	GameManager.saveJson(GameManager.allPlayers)
 	GameManager.currentPlayer = Nombre
+	GameManager.newGameFlag = true
 	get_tree().change_scene("res://hubinicial/Hub/GameHub2D.tscn")
 
 func _on_personaje2_pressed():
@@ -59,6 +60,7 @@ func _on_personaje2_pressed():
 	GameManager.loadPlayer(Nombre)
 	GameManager.saveJson(GameManager.allPlayers)
 	GameManager.currentPlayer = Nombre
+	GameManager.newGameFlag = true
 	get_tree().change_scene("res://hubinicial/Hub/GameHub2D.tscn")
 
 func _on_personaje3_pressed():
@@ -67,6 +69,7 @@ func _on_personaje3_pressed():
 	GameManager.loadPlayer(Nombre)
 	GameManager.saveJson(GameManager.allPlayers)
 	GameManager.currentPlayer = Nombre
+	GameManager.newGameFlag = true
 	get_tree().change_scene("res://hubinicial/Hub/GameHub2D.tscn")
 
 func _on_personaje4_pressed():
@@ -75,6 +78,7 @@ func _on_personaje4_pressed():
 	GameManager.loadPlayer(Nombre)
 	GameManager.saveJson(GameManager.allPlayers)
 	GameManager.currentPlayer = Nombre
+	GameManager.newGameFlag = true
 	get_tree().change_scene("res://hubinicial/Hub/GameHub2D.tscn")
 
 

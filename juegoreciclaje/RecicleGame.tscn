@@ -20,7 +20,6 @@
 [ext_resource path="res://SFX/3.1. mouse-click1.ogg" type="AudioStream" id=18]
 [ext_resource path="res://juegoreciclaje/reciclarFondo.jpg" type="Texture" id=19]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
 

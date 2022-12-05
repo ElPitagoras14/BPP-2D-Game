@@ -5,6 +5,7 @@ export var RUN_MULTIPLIER: float = 1.5
 var velocity: Vector2 = Vector2(0,0)
 var multiplier: float = 1.0
 export var starting_position: Vector2 = Vector2(0,1)
+export var stopControls: bool = false
 
 onready var animation_tree = $AnimationTree
 onready var state_machine =  animation_tree.get("parameters/playback")
@@ -14,18 +15,17 @@ func _ready():
 	update_animation_parameters(starting_position)
 
 func _physics_process(_delta):
-	
-	if(Input.is_action_pressed("ui_run")):
-		multiplier = 1.5
-	else:
+	if not stopControls:
 		multiplier = 1.0
-	
-	velocity = Input.get_vector("ui_left","ui_right","ui_up","ui_down") * WALK_SPEED * multiplier	
-	
-	update_animation_parameters(velocity)
-	pick_new_state()
+		if(Input.is_action_pressed("ui_run")):
+			multiplier = 1.5
+		
+		velocity = Input.get_vector("ui_left","ui_right","ui_up","ui_down") * WALK_SPEED * multiplier	
+		
+		update_animation_parameters(velocity)
+		pick_new_state()
 
-	move_and_slide(velocity)
+		move_and_slide(velocity)
 
 func update_animation_parameters(move_input:Vector2):
 	

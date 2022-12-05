@@ -1,5 +1,7 @@
 extends Control
 
+var FAST_TRAVEL_COORDS = {"reciclaje" : {"x" : 415,"y": 0}}
+export var stopControls:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,11 +10,11 @@ func _ready():
 		$NombreJugador.text = str(GameManager.currentPlayer)
 
 func _input(ev):
-	if ($HBoxContainer.visible and Input.is_action_pressed("ui_cancel") and not ev.is_echo()):
+	if ($HBoxContainer.visible and Input.is_action_pressed("ui_cancel") and not ev.is_echo() and not stopControls):
 		$HBoxContainer.visible = false
-	elif ($SalirPopup.visible and Input.is_action_pressed("ui_cancel")  and not ev.is_echo() ):
+	elif ($SalirPopup.visible and Input.is_action_pressed("ui_cancel")  and not ev.is_echo() and not stopControls):
 		$SalirPopup.visible = false 
-	elif(Input.is_action_pressed("ui_cancel")  and not ev.is_echo() ):
+	elif(Input.is_action_pressed("ui_cancel")  and not ev.is_echo() and not stopControls):
 		$SalirPopup.popup()
 
 
@@ -23,6 +25,7 @@ func _on_Arbol_pressed():
 
 func _on_Animales_pressed():
 	get_node("Click").play()
+	GameManager.saveCurrentPlayerPosition( FAST_TRAVEL_COORDS['recilcaje']['x'] , FAST_TRAVEL_COORDS['recilcaje']['y'])
 	yield(get_tree().create_timer(.3),"timeout")
 	get_tree().change_scene("res://scenes/animales.tscn")
 
@@ -62,9 +65,13 @@ func _on_SalirMenu_pressed():
 
 func _on_SalirJuego_pressed():
 	get_node("Click").play()
-	yield(get_tree().create_timer(.4),"timeout")
-	get_tree().quit()
-
+	var player = get_owner().get_node_or_null('Jugador')
+	if player:
+		GameManager.saveCurrentPlayerPosition(player.position.x, player.position.y)
+		yield(get_tree().create_timer(.3),"timeout")
+		get_tree().quit()
+	else:
+		print('Debugging')
 
 func _on_Cancelar4_pressed():
 	get_node("Click").play()
