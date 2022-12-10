@@ -18,7 +18,7 @@
 [ext_resource path="res://juegoreciclaje/EnciclopediaReciclaje.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/reciclaje/Block-z2.png" type="Texture" id=17]
 [ext_resource path="res://SFX/3.1. mouse-click1.ogg" type="AudioStream" id=18]
-[ext_resource path="res://juegoreciclaje/reciclarFondo.jpg" type="Texture" id=19]
+[ext_resource path="res://images/placeholder-bosque.png" type="Texture" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -73,8 +73,8 @@ script = ExtResource( 7 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -248.0
-margin_top = -38.0
-margin_right = 784.0
+margin_top = -26.0
+margin_right = 766.0
 margin_bottom = 640.0
 texture = ExtResource( 19 )
 expand = true

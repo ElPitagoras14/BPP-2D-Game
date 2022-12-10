@@ -15,7 +15,8 @@ func _on_Volver_pressed():
 	get_node("Click").play()
 	yield(get_tree().create_timer(.4),"timeout")
 	MusicController.stop_music()
-	get_tree().change_scene("res://scenes/MainMenu.tscn")
+	GameManager.player
+	get_tree().change_scene("res://hubinicial/Hub/GameHub2D.tscn")
 	
 
 
