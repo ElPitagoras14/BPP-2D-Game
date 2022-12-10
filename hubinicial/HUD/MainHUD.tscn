@@ -102,7 +102,6 @@ margin_right = 100.0
 margin_bottom = 100.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
-disabled = true
 texture_normal = ExtResource( 6 )
 
 [node name="Enciclopedia" type="TextureButton" parent="HBoxContainer/VBoxMenu" groups=["botones"]]

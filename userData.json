@@ -1,10 +1,1 @@
-{
-  "Jose": {
-    "animales": { "medallas": 0, "mejorPuntaje": 0, "pts": 0 },
-    "cartas": { "medallas": 0, "mejorPuntaje": 0, "pts": 0 },
-    "monedas": 0,
-    "reciclaje": { "medallas": 0, "mejorPuntaje": 0, "pts": 0 },
-    "sprite": 1,
-    "ubicacion": { "x": 8.734772, "y": -176.620682 }
-  }
-}
+{"Hola":{"animales":{"medallas":0,"mejorPuntaje":0,"pts":0},"cartas":{"medallas":0,"mejorPuntaje":0,"pts":0},"monedas":0,"reciclaje":{"medallas":0,"mejorPuntaje":0,"pts":0},"sprite":2,"ubicacion":{"x":-36.069183,"y":-302.583771}},"Javier":{"animales":{"medallas":0,"mejorPuntaje":0,"pts":0},"cartas":{"medallas":0,"mejorPuntaje":0,"pts":0},"monedas":0,"reciclaje":{"medallas":0,"mejorPuntaje":0,"pts":0},"sprite":1,"ubicacion":{"x":-348.648651,"y":257.205658}},"Jose":{"animales":{"medallas":0,"mejorPuntaje":0,"pts":0},"cartas":{"medallas":0,"mejorPuntaje":0,"pts":0},"monedas":0,"reciclaje":{"medallas":0,"mejorPuntaje":0,"pts":0},"sprite":1,"ubicacion":{"x":-305.309723,"y":-617.108887}},"Jota":{"animales":{"medallas":0,"mejorPuntaje":0,"pts":0},"cartas":{"medallas":0,"mejorPuntaje":0,"pts":0},"monedas":0,"reciclaje":{"medallas":0,"mejorPuntaje":0,"pts":0},"sprite":4,"ubicacion":{"x":0,"y":0}},"Pamela":{"animales":{"medallas":0,"mejorPuntaje":0,"pts":0},"cartas":{"medallas":0,"mejorPuntaje":0,"pts":0},"monedas":0,"reciclaje":{"medallas":0,"mejorPuntaje":0,"pts":0},"sprite":1,"ubicacion":{"x":0,"y":0}},"Prueba":{"animales":{"medallas":0,"mejorPuntaje":0,"pts":0},"cartas":{"medallas":0,"mejorPuntaje":0,"pts":0},"monedas":0,"reciclaje":{"medallas":0,"mejorPuntaje":0,"pts":0},"sprite":2,"ubicacion":{"x":0,"y":0}}}

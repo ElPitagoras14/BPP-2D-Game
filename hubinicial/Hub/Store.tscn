@@ -1,0 +1,200 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://images/Fondo.png" type="Texture" id=1]
+[ext_resource path="res://assets/iconos/iconos-X-cerrar.png" type="Texture" id=2]
+[ext_resource path="res://hubinicial/Hub/Store.gd" type="Script" id=3]
+[ext_resource path="res://SFX/3.1. mouse-click1.ogg" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://fonts/Righteous-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 40
+font_data = SubResource( 7 )
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://fonts/Righteous-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=9]
+size = 28
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://fonts/Righteous-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=10]
+size = 22
+font_data = SubResource( 3 )
+
+[node name="StoreHub" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1027.0
+margin_bottom = 601.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1014.0
+margin_bottom = 590.0
+custom_constants/separation = 10
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 1004.0
+margin_bottom = 80.0
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 70.0
+margin_bottom = 80.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 74.0
+margin_right = 74.0
+margin_bottom = 80.0
+
+[node name="JugadorActual" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 78.0
+margin_top = 14.0
+margin_right = 221.0
+margin_bottom = 65.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Nombre"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_left = 19.0
+margin_top = 90.0
+margin_right = 984.0
+margin_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+custom_constants/separation = 55
+
+[node name="Reciclar" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 262.0
+margin_bottom = 74.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/separation = 10
+
+[node name="Reciclar" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Reciclar"]
+margin_right = 262.0
+margin_bottom = 36.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "Ayuda a reciclar"
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Reciclar"]
+margin_top = 46.0
+margin_right = 262.0
+margin_bottom = 74.0
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Reciclar/HBoxContainer"]
+margin_right = 153.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Puntaje total: "
+
+[node name="puntajeTotalReciclaje" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Reciclar/HBoxContainer"]
+margin_left = 157.0
+margin_right = 157.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+
+[node name="Bosque" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 317.0
+margin_right = 597.0
+margin_bottom = 74.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/separation = 10
+
+[node name="Bosque" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Bosque"]
+margin_right = 280.0
+margin_bottom = 36.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "Conoce el bosque"
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Bosque"]
+margin_top = 46.0
+margin_right = 280.0
+margin_bottom = 74.0
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Bosque/HBoxContainer"]
+margin_right = 153.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Puntaje total: "
+
+[node name="puntajeTotalBosque" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Bosque/HBoxContainer"]
+margin_left = 157.0
+margin_right = 157.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+
+[node name="Animals" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 652.0
+margin_right = 965.0
+margin_bottom = 74.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/separation = 10
+alignment = 2
+
+[node name="Animals" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Animals"]
+margin_right = 313.0
+margin_bottom = 36.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "Animals and sounds"
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Animals"]
+margin_top = 46.0
+margin_right = 313.0
+margin_bottom = 74.0
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Animals/HBoxContainer"]
+margin_right = 153.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Puntaje total: "
+
+[node name="puntajeTotalAnimals" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Animals/HBoxContainer"]
+margin_left = 157.0
+margin_right = 157.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -14.178
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/TextureButton" to="." method="_on_TextureButton_pressed"]

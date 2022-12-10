@@ -1,6 +1,6 @@
 extends Control
 
-var FAST_TRAVEL_COORDS = {"reciclaje" : {"x" : 415,"y": 0}}
+var FAST_TRAVEL_COORDS = {"reciclaje" : {"x" : 300,"y": 0}}
 export var stopControls:bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -25,10 +25,21 @@ func _on_Arbol_pressed():
 
 func _on_Animales_pressed():
 	get_node("Click").play()
-	GameManager.saveCurrentPlayerPosition( FAST_TRAVEL_COORDS['recilcaje']['x'] , FAST_TRAVEL_COORDS['recilcaje']['y'])
+	GameManager.saveCurrentPlayerPosition( FAST_TRAVEL_COORDS['reciclaje']['x'] , FAST_TRAVEL_COORDS['reciclaje']['y'])
 	yield(get_tree().create_timer(.3),"timeout")
 	get_tree().change_scene("res://scenes/animales.tscn")
 
+func _on_Tienda_pressed():
+	var player = get_owner().get_node_or_null('Jugador')
+	get_node("Click").play()
+	if player:
+		GameManager.saveCurrentPlayerPosition(player.position.x, player.position.y)
+		yield(get_tree().create_timer(.2),"timeout")
+		get_tree().change_scene("res://hubinicial/Hub/Store.tscn")
+	else:
+		GameManager.saveCurrentPlayerPosition(0,0)		
+		get_tree().change_scene("res://hubinicial/Hub/Store.tscn")
+	
 func _on_Enciclopedia_pressed():
 	get_node("Click").play()
 	yield(get_tree().create_timer(.3),"timeout")
@@ -47,12 +58,10 @@ func _on_ProfileButton_pressed():
 
 func _on_Menu_pressed():
 	get_node("Click").play()
-	
+
 	$HBoxContainer.visible = !$HBoxContainer.visible
 	$MenuBg.visible = !$MenuBg.visible
 
-func _on_Tienda_pressed():
-	pass # Replace with function body.
 
 func _on_Exit_pressed():
 	get_node("Click").play()	

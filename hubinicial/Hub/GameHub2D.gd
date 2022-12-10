@@ -8,8 +8,7 @@ onready var speakerAnimation = $Hud/DialogPopUp/SpeakerSprite/SpeakerAnimation
 onready var HUD = $Hud/MainHud
 onready var animationTimer = $AnimationTimer
 
-#onready var southTreeSpriteArray = [$DinamicTreeS/TreeSprite, $DinamicTreeS2/TreeSprite,$DinamicTreeS3/TreeSprite,
-#					$DinamicTreeS4/TreeSprite,$DinamicTreeS5/TreeSprite]
+onready var TreeRegionsArray = [$SWTrees, $SETrees, $NWTrees, $NETrees]
 
 func _ready():
 	$Hud/ColorRect/FadeInAnimation.play("FadeIn")
@@ -23,6 +22,7 @@ func _ready():
 		
 	if(GameManager.newGameFlag):#Play tutorial cutscene
 		player.stopControls = true
+		$CutsceneCam2D.current = true
 		HUD.stopControls = true
 		dialog.start()
 		dialog.popup_exclusive = true
@@ -59,6 +59,8 @@ func _input(event):
 			
 		animationTimer.start()
 
+func _loadTreeUpgrade():
+	pass
 
 func _on_FadeInAnimation_animation_finished(anim_name):
 	if(dialog.dActive):
