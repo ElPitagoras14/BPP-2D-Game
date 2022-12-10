@@ -9,6 +9,7 @@ export var stopControls: bool = false
 
 onready var animation_tree = $AnimationTree
 onready var state_machine =  animation_tree.get("parameters/playback")
+onready var interactionManager: InteractionManager = $InteractionManager
 
 func _ready():
 	state_machine.start("Start")
@@ -26,6 +27,10 @@ func _physics_process(_delta):
 		pick_new_state()
 
 		move_and_slide(velocity)
+		
+		#interaction
+		if(Input.is_action_just_pressed("ui_select")):
+			interactionManager.startInteraction()
 
 func update_animation_parameters(move_input:Vector2):
 	

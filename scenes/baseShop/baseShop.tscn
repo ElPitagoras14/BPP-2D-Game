@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/baseShop/npc/shopKeeperInteractionManager.gd" type="Script" id=1]
 [ext_resource path="res://scenes/baseShop/npc/shopKeeper.gd" type="Script" id=2]
 [ext_resource path="res://scenes/baseShop/baseShop.gd" type="Script" id=3]
-[ext_resource path="res://assets/Player/Jugador.tscn" type="PackedScene" id=5]
+[ext_resource path="res://hubinicial/Player/Jugador.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/InteractionManager/InteractionManager.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/baseShop/door.gd" type="Script" id=7]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -64,10 +65,6 @@ position = Vector2( 256, 40 )
 [node name="Paredes" type="CollisionPolygon2D" parent="Paredes"]
 polygon = PoolVector2Array( 520, 16, 496, 16, 496, 152, 496, 464, 472, 480, 160, 480, 160, 528, 112, 528, 112, 480, 40, 480, 16, 456, 16, 152, 496, 152, 496, 16, 0, 16, -8, 464, 32, 504, 96, 504, 96, 536, 112, 552, 168, 552, 184, 528, 184, 496, 480, 496, 520, 464 )
 
-[node name="Jugador" parent="." instance=ExtResource( 5 )]
-position = Vector2( 392, 512 )
-scale = Vector2( 2, 2 )
-
 [node name="cama" type="StaticBody2D" parent="."]
 
 [node name="cama" type="CollisionShape2D" parent="cama"]
@@ -97,3 +94,13 @@ shape = SubResource( 7 )
 [node name="chiminea" type="CollisionShape2D" parent="chiminea"]
 position = Vector2( 656.5, 220 )
 shape = SubResource( 8 )
+
+[node name="Jugador" parent="." instance=ExtResource( 4 )]
+position = Vector2( 392, 536 )
+scale = Vector2( 2, 2 )
+
+[node name="door" parent="." instance=ExtResource( 6 )]
+position = Vector2( 392, 584 )
+scale = Vector2( 2.28, 0.28 )
+script = ExtResource( 7 )
+targetScene = "res://hubinicial/Hub/GameHub2D.tscn"

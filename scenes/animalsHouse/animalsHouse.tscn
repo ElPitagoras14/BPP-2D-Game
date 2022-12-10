@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://assets/Player/Jugador.tscn" type="PackedScene" id=1]
+[ext_resource path="res://hubinicial/Player/Jugador.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/InteractionManager/InteractionManager.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/animalsHouse/npc.gd" type="Script" id=3]
 [ext_resource path="res://assets/InteractionManager/npcInteractionManager.gd" type="Script" id=4]
+[ext_resource path="res://scenes/baseShop/door.gd" type="Script" id=6]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -128,5 +129,11 @@ position = Vector2( 501, 337 )
 shape = SubResource( 13 )
 
 [node name="Jugador" parent="." instance=ExtResource( 1 )]
-position = Vector2( 524, 534 )
+position = Vector2( 523, 538 )
 scale = Vector2( 2, 2 )
+
+[node name="door" parent="." instance=ExtResource( 2 )]
+position = Vector2( 522, 589 )
+scale = Vector2( 2.28, 0.28 )
+script = ExtResource( 6 )
+targetScene = "res://hubinicial/Hub/GameHub2D.tscn"

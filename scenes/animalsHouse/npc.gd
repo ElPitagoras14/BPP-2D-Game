@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-onready var interactionManager: InteractionManager=$"Interaction Manager"
+onready var interactionManager: InteractionManager=$"InteractionManager"
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
