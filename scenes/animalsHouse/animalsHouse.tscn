@@ -1,0 +1,139 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://hubinicial/Player/Jugador.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/InteractionManager/InteractionManager.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/animalsHouse/npc.gd" type="Script" id=3]
+[ext_resource path="res://assets/InteractionManager/npcInteractionManager.gd" type="Script" id=4]
+[ext_resource path="res://scenes/baseShop/door.gd" type="Script" id=6]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/animalsHouse.png-310fb588cf2dbbcce872a608b98fba88.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/ben-d.svg-e2d39605dcc1c8b6c859aa34c7669e72.stex"
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 43.5, 29 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 41.6644, 27.1831 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 21, 115 )
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 43.0116
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 17, 37 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 64, 22.5 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 20.5, 39 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 16.25, 21.5 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 18.5, 33.25 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 18.5, 33 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 37, 80 )
+
+[node name="Main" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 223.0
+margin_top = -18.0
+margin_right = 894.0
+margin_bottom = 707.0
+rect_scale = Vector2( 0.9, 0.9 )
+texture = SubResource( 1 )
+
+[node name="npc" type="KinematicBody2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="npc"]
+position = Vector2( 559, 194 )
+scale = Vector2( 0.4, 0.4 )
+texture = SubResource( 2 )
+
+[node name="InteractionManager" parent="npc" instance=ExtResource( 2 )]
+position = Vector2( 559, 213 )
+scale = Vector2( 3.5, 3.5 )
+script = ExtResource( 4 )
+
+[node name="paredes" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="paredes"]
+polygon = PoolVector2Array( 523, 114, 522, 206, 282, 206, 284, 517, 303, 536, 500, 535, 502, 577, 545, 577, 548, 534, 741, 535, 761, 516, 761, 206, 523, 207, 523, 114, 778, 113, 781, 520, 753, 549, 564, 551, 565, 582, 553, 595, 490, 593, 478, 582, 480, 553, 297, 551, 262, 518, 266, 107 )
+
+[node name="mesas" type="StaticBody2D" parent="."]
+
+[node name="mesa" type="CollisionShape2D" parent="mesas"]
+position = Vector2( 413.5, 267 )
+shape = SubResource( 3 )
+
+[node name="mesa2" type="CollisionShape2D" parent="mesas"]
+position = Vector2( 630.336, 266.817 )
+shape = SubResource( 4 )
+
+[node name="mesas" type="CollisionShape2D" parent="mesas"]
+position = Vector2( 740, 392 )
+shape = SubResource( 5 )
+
+[node name="mesa redonda" type="CollisionShape2D" parent="mesas"]
+position = Vector2( 327, 497 )
+shape = SubResource( 6 )
+
+[node name="sillas" type="StaticBody2D" parent="."]
+
+[node name="silla" type="CollisionShape2D" parent="sillas"]
+position = Vector2( 310, 426 )
+shape = SubResource( 7 )
+
+[node name="silla2" type="CollisionPolygon2D" parent="sillas"]
+polygon = PoolVector2Array( 375, 509, 401, 508, 401, 473, 412, 472, 412, 531, 373, 532 )
+
+[node name="sillon" type="CollisionShape2D" parent="sillas"]
+position = Vector2( 653, 512 )
+shape = SubResource( 8 )
+
+[node name="silla tronco" type="CollisionShape2D" parent="sillas"]
+position = Vector2( 696.5, 384 )
+shape = SubResource( 9 )
+
+[node name="banco" type="CollisionShape2D" parent="sillas"]
+position = Vector2( 522.75, 444.5 )
+shape = SubResource( 10 )
+
+[node name="decor" type="StaticBody2D" parent="."]
+
+[node name="vasija" type="CollisionShape2D" parent="decor"]
+position = Vector2( 308.5, 302.75 )
+shape = SubResource( 11 )
+
+[node name="flores" type="CollisionShape2D" parent="decor"]
+position = Vector2( 740.5, 244 )
+shape = SubResource( 12 )
+
+[node name="oso" type="CollisionShape2D" parent="decor"]
+position = Vector2( 501, 337 )
+shape = SubResource( 13 )
+
+[node name="Jugador" parent="." instance=ExtResource( 1 )]
+position = Vector2( 523, 538 )
+scale = Vector2( 2, 2 )
+
+[node name="door" parent="." instance=ExtResource( 2 )]
+position = Vector2( 522, 589 )
+scale = Vector2( 2.28, 0.28 )
+script = ExtResource( 6 )
+targetScene = "res://hubinicial/Hub/GameHub2D.tscn"

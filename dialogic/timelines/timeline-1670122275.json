@@ -1,0 +1,61 @@
+{
+	"events": [
+		{
+			"character": "character-1670122306.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "¡Buenas! Yo soy el encargado de identificar a los animales y ayudarlos en base a su sonido. Es muy díficil al principio pero cada vez es más sencillo."
+		},
+		{
+			"character": "character-1670122306.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "¿Deseas ayudarnos en esta labor?"
+		},
+		{
+			"choice": "¡Suena interesante!",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1670122306.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "¡Muchas gracias!"
+		},
+		{
+			"change_scene": "res://scenes/animales.tscn",
+			"event_id": "dialogic_041"
+		},
+		{
+			"choice": "No puedo, me falta un boloncito primero",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1669523955.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "No te preocupes, si cambias de opinión ven a hablar conmigo otra vez."
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1670122275.json",
+		"name": "animalsNpcTimeline"
+	}
+}
