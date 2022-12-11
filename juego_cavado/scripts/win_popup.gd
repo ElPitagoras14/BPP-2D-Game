@@ -9,8 +9,13 @@ func _ready():
 	lbl_coin = get_node("CoinValue")
 
 func _update_values():
-	lbl_score.text = "Hola"
-	lbl_coin.text = "x" + str(2)
+	var points = CavadoMaster.points
+	var life_points = CavadoMaster.act_life * 30
+	var energy_points = floor((CavadoMaster.max_energy - CavadoMaster.actual_energy) * 60)
+	var new_points = floor((points + life_points + energy_points * (1 + CavadoMaster.nivel_actual / 20)) / 10) 
+	var coins = floor(new_points / 10)
+	lbl_score.text = str(new_points)
+	lbl_coin.text = "x" + str(coins)
 	
 func _show():
 	self.set_visible(true)

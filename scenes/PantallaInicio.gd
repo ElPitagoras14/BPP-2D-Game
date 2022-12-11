@@ -3,7 +3,7 @@ var Nombre
 
 func _ready():
 	#$Nombre/TextEdit
-	get_tree().change_scene("res://juego_cavado/scenes/zona_construir.tscn")
+	get_tree().change_scene("res://juego_cavado/scenes/niveles.tscn")
 	get_node("BGM").play()
 
 func _on_Button2_pressed():

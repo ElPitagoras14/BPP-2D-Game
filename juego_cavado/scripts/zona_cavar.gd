@@ -208,16 +208,21 @@ func _add_single_obj(path, img_size, x, y):
 
 func _check_final_state():
 	if CavadoMaster.actual_objects == CavadoMaster.max_objects:
-		print("GANASTE")
 		CavadoMaster.game_state = 0
 		emit_signal("win_game")
 	elif CavadoMaster.act_life <= 0 and CavadoMaster.actual_energy <= 0:
-		print("PERDISTE")
 		CavadoMaster.game_state = 0
 		emit_signal("lose_game")
 
 func  _restart_level():
 	get_tree().reload_current_scene()
+	
+func _next_level():
+	get_tree().change_scene(("res://juego_cavado/scenes/zona_construir.tscn"))
+
+func _on_ContinueButton_button_down():
+	yield(get_tree().create_timer(0.5), "timeout")
+	_next_level()
 
 func _on_RetryButton_button_down():
 	yield(get_tree().create_timer(0.5), "timeout")

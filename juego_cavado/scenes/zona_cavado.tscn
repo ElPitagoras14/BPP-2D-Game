@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://juego_cavado/scripts/zona_cavar.gd" type="Script" id=1]
 [ext_resource path="res://juego_cavado/assets/misc/fondo.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://images/reintentar_juego.png" type="Texture" id=18]
 [ext_resource path="res://juego_cavado/scripts/win_popup.gd" type="Script" id=19]
 [ext_resource path="res://juego_cavado/scripts/lose_popup.gd" type="Script" id=20]
+[ext_resource path="res://juego_cavado/scripts/puntaje.gd" type="Script" id=21]
 
 [sub_resource type="DynamicFont" id=1]
 size = 17
@@ -45,7 +46,7 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 9 )
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.0
@@ -75,9 +76,9 @@ rect_pivot_offset = Vector2( -276, 150 )
 
 [node name="Hacha" type="Button" parent="HUD"]
 margin_left = 899.0
-margin_top = 282.0
+margin_top = 388.0
 margin_right = 998.0
-margin_bottom = 321.0
+margin_bottom = 427.0
 text = "Hacha"
 
 [node name="Pico" type="Button" parent="HUD"]
@@ -119,10 +120,10 @@ autowrap = true
 script = ExtResource( 10 )
 
 [node name="Objeto" type="Label" parent="HUD"]
-margin_left = 909.0
-margin_top = 103.0
-margin_right = 995.0
-margin_bottom = 150.0
+margin_left = 906.0
+margin_top = 92.0
+margin_right = 992.0
+margin_bottom = 139.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Objetos:
@@ -138,8 +139,21 @@ margin_right = 234.0
 margin_bottom = 63.0
 script = ExtResource( 11 )
 
+[node name="Puntaje" type="Label" parent="HUD"]
+margin_left = 906.0
+margin_top = 29.0
+margin_right = 992.0
+margin_bottom = 76.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Puntaje:
+0"
+align = 1
+valign = 1
+autowrap = true
+script = ExtResource( 21 )
+
 [node name="Win" type="Popup" parent="."]
-visible = true
 margin_right = 1027.0
 margin_bottom = 601.0
 popup_exclusive = true
@@ -165,7 +179,7 @@ margin_top = 99.0
 margin_right = 510.5
 margin_bottom = 191.0
 custom_fonts/font = SubResource( 2 )
-text = "FIN DEL JUEGO"
+text = "Nivel Completado"
 align = 1
 valign = 1
 
@@ -205,7 +219,7 @@ margin_left = 414.0
 margin_right = 610.0
 margin_bottom = 198.0
 
-[node name="RetryButton" type="TextureButton" parent="Win/HBoxContainer2/VBoxContainer"]
+[node name="ContinueButton" type="TextureButton" parent="Win/HBoxContainer2/VBoxContainer"]
 margin_right = 196.0
 margin_bottom = 97.0
 mouse_default_cursor_shape = 2
@@ -287,17 +301,17 @@ size_flags_vertical = 4
 alignment = 1
 
 [node name="ScoreLabel" type="Label" parent="Lose/HBoxContainer"]
-margin_left = 374.0
+margin_left = 447.0
 margin_top = 10.0
-margin_right = 646.0
+margin_right = 573.0
 margin_bottom = 51.0
 custom_fonts/font = SubResource( 3 )
-text = "Perdiste por malo"
+text = "Puntaje:"
 
 [node name="ScoreValue" type="Label" parent="Lose/HBoxContainer"]
-margin_left = 650.0
+margin_left = 577.0
 margin_top = 10.0
-margin_right = 650.0
+margin_right = 577.0
 margin_bottom = 51.0
 custom_fonts/font = SubResource( 3 )
 
@@ -329,9 +343,9 @@ texture_normal = ExtResource( 17 )
 
 [node name="Moneda" type="TextureRect" parent="Lose"]
 margin_left = 312.0
-margin_top = 259.0
+margin_top = 252.0
 margin_right = 357.0
-margin_bottom = 304.0
+margin_bottom = 297.0
 texture = ExtResource( 15 )
 expand = true
 stretch_mode = 6
@@ -342,9 +356,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -141.5
-margin_top = -41.5
+margin_top = -48.5
 margin_right = -16.5
-margin_bottom = -0.5
+margin_bottom = -7.5
 custom_fonts/font = SubResource( 4 )
 text = "x"
 
@@ -372,5 +386,5 @@ stream = ExtResource( 16 )
 [connection signal="mouse_exited" from="HUD/Energia/BarraEnergia" to="HUD/Energia/Cantidad" method="_on_BarraEnergia_mouse_exited"]
 [connection signal="update_energy" from="HUD/Vida" to="HUD/Energia/BarraEnergia" method="_on_Vida_update_energy"]
 [connection signal="update_energy" from="HUD/Vida" to="HUD/Energia/Cantidad" method="_on_Vida_update_energy"]
-[connection signal="button_down" from="Win/HBoxContainer2/VBoxContainer/RetryButton" to="ZonaCavar" method="_on_RetryButton_button_down"]
+[connection signal="button_down" from="Win/HBoxContainer2/VBoxContainer/ContinueButton" to="ZonaCavar" method="_on_ContinueButton_button_down"]
 [connection signal="button_down" from="Lose/HBoxContainer2/VBoxContainer/RetryButton" to="ZonaCavar" method="_on_RetryButton_button_down"]

@@ -7,15 +7,18 @@ var blc_height
 var size
 var block_size = CavadoMaster.block_size
 var lbl_obj
+var lbl_point
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	lbl_point = get_parent().get_parent().get_node("HUD/Puntaje")
 	lbl_obj = get_parent().get_parent().get_node("HUD/Objeto")
 	pass # Replace with function body.
 	
 func _encontrado(area):
 	size -= 1
 	if size == 0:
+		lbl_point._point_event(30)
 		lbl_obj._found_object()
 
 func _set_init_data(img_size):

@@ -6,7 +6,7 @@
 [ext_resource path="res://juego_cavado/assets/niveles_iconos/nivel-1.png" type="Texture" id=4]
 [ext_resource path="res://juego_cavado/assets/misc/niveles.png" type="Texture" id=5]
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 

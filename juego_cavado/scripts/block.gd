@@ -2,9 +2,11 @@ extends Sprite
 
 var block_size = CavadoMaster.block_size
 var g_pos
+var lbl_point
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	lbl_point = get_parent().get_parent().get_node("HUD/Puntaje")
 	g_pos = self.global_position
 	pass # Replace with function body.
 
@@ -18,6 +20,7 @@ func _input(event):
 		set_self_modulate(Color(1, 1, 1))
 
 func _eliminar():
+	lbl_point._point_event(2)
 	queue_free()
 	
 func _check_click(x, y):
