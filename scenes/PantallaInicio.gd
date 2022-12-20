@@ -24,7 +24,7 @@ func _on_Cargar_pressed():
 	yield(get_tree().create_timer(.4),"timeout")
 	$CargarPartida.popup()
 	for i in GameManager.allPlayers.keys():
-		$CargarPartida/ScrollContainer/Partidas.add_child(PartidaObj.new(str(i)))
+		$CargarPartida/ScrollContainer/Partidas.add_child(.new(str(i)))
 
 func _on_Cerrar_pressed():
 	get_node("Click").play()

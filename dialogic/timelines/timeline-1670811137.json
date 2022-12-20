@@ -1,0 +1,55 @@
+{
+	"events": [
+		{
+			"character": "character-1670789696.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "¡Hola! Soy la encargada de identificar los diferentes tipos de flora del bosque. \n¡Es un trabajo que requiere mucha memoria!"
+		},
+		{
+			"character": "character-1670789696.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "¿Te consideras a la altura?"
+		},
+		{
+			"choice": "¡Por supuesto!",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"change_scene": "res://scenes/Cartas-principal.tscn",
+			"event_id": "dialogic_041"
+		},
+		{
+			"choice": "No, me falta un tigrillo.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1670789696.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "No te preocupes, cuando te sientas preparado habla conmigo."
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1670811137.json",
+		"name": "cartasNpcTimeline"
+	}
+}

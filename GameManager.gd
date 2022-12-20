@@ -43,7 +43,16 @@ func saveCurrentPlayerPosition(var x, var y):
 	allPlayers[currentPlayer]["ubicacion"]["x"] = x
 	allPlayers[currentPlayer]["ubicacion"]["y"] = y
 	saveJson(allPlayers)
-	
+
+func unlockObject(var pos):
+	loadJson()
+	allPlayers[currentPlayer]["objetos"][pos]=true
+	saveJson(allPlayers)
+
+func getObjects():
+	loadJson()
+	return allPlayers[currentPlayer]["objetos"]
+
 func loadJson():
 	var file = File.new()
 	if file.file_exists(userFile):
@@ -62,6 +71,8 @@ func addPlayer(var Nombre, var sprite):
 	"cartas":{"medallas":0, "mejorPuntaje":0, "pts":0}, 
 	"monedas":0, "reciclaje":{"medallas":0, "mejorPuntaje":0, "pts":0},
 	"ubicacion":{"x":0, "y":0},
+	"objetos":[false, false, false, false, false, false, false,
+			   false, false, false, false, false, false, false, false],
 	"sprite":sprite}
 	saveJson(allPlayers)
 	

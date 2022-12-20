@@ -12,7 +12,7 @@ func recieveInteraction()->void:
 	print("No interaction recepction behavior defined.")
 
 func _on_InteractionManager_area_entered(area):
-	currentInteraction=area	
+	currentInteraction=area
 
 
 func _on_InteractionManager_area_exited(area):

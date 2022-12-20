@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/InteractionManager/InteractionManager.tscn" type="PackedScene" id=1]
+[ext_resource path="res://hubinicial/Player/Jugador.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/cartasHouse/npc/npc.gd" type="Script" id=3]
+[ext_resource path="res://scenes/baseShop/door.gd" type="Script" id=4]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/cartasHouse.png-98cf7c498706352e2f7ddc3ab1593c60.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/jordyn2-d.svg-e0bed94ae4e8ed21d0c9f493093fa2cb.stex"
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 42.5, 41.5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 44, 41 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 42.5, 40.5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 43, 41 )
+
+[node name="Main" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 239.0
+margin_top = -17.0
+margin_right = 899.0
+margin_bottom = 696.0
+rect_scale = Vector2( 0.933131, 0.896213 )
+texture = SubResource( 1 )
+stretch_mode = 5
+
+[node name="npc" type="KinematicBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="npc"]
+position = Vector2( 649, 192 )
+scale = Vector2( 0.5, 0.5 )
+texture = SubResource( 2 )
+
+[node name="InteractionManager" parent="npc" instance=ExtResource( 1 )]
+position = Vector2( 648, 204 )
+scale = Vector2( 3, 2.88 )
+script = ExtResource( 3 )
+
+[node name="door" parent="." instance=ExtResource( 1 )]
+position = Vector2( 545, 588 )
+scale = Vector2( 2.28, 0.28 )
+script = ExtResource( 4 )
+targetScene = "res://hubinicial/Hub/GameHub2D.tscn"
+
+[node name="paredes" type="StaticBody2D" parent="."]
+
+[node name="paredes" type="CollisionPolygon2D" parent="paredes"]
+polygon = PoolVector2Array( 548, 207, 547, 153, 296, 155, 274, 156, 276, 515, 310, 550, 500, 549, 498, 578, 515, 592, 578, 594, 589, 577, 587, 553, 780, 551, 815, 517, 810, 149, 548, 152, 551, 206, 744, 207, 749, 496, 566, 498, 567, 535, 568, 576, 520, 577, 519, 534, 521, 497, 342, 495, 338, 205 )
+
+[node name="mesas" type="StaticBody2D" parent="."]
+
+[node name="mesa 0" type="CollisionShape2D" parent="mesas"]
+position = Vector2( 432.5, 294.5 )
+shape = SubResource( 3 )
+
+[node name="mesa 1" type="CollisionShape2D" parent="mesas"]
+position = Vector2( 656, 294 )
+shape = SubResource( 4 )
+
+[node name="mesa 2" type="CollisionShape2D" parent="mesas"]
+position = Vector2( 432.5, 422.5 )
+shape = SubResource( 5 )
+
+[node name="mesa 3" type="CollisionShape2D" parent="mesas"]
+position = Vector2( 656, 422 )
+shape = SubResource( 6 )
+
+[node name="Jugador" parent="." instance=ExtResource( 2 )]
+position = Vector2( 544, 540 )
+scale = Vector2( 2, 2 )
