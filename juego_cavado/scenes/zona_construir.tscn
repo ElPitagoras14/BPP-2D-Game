@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://juego_cavado/scripts/win_construir.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Righteous-Regular.ttf" type="DynamicFontData" id=2]
@@ -8,8 +8,9 @@
 [ext_resource path="res://juego_cavado/scripts/zona_construir.gd" type="Script" id=6]
 [ext_resource path="res://images/madera.png" type="Texture" id=7]
 [ext_resource path="res://SFX/Clapping.mp3" type="AudioStream" id=8]
-[ext_resource path="res://images/reintentar_juego.png" type="Texture" id=9]
+[ext_resource path="res://juego_cavado/assets/misc/continuar.png" type="Texture" id=9]
 [ext_resource path="res://images/moneda.png" type="Texture" id=10]
+[ext_resource path="res://juego_cavado/assets/music/ms_construir.mp3" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 74
@@ -47,7 +48,6 @@ margin_bottom = 600.0
 script = ExtResource( 5 )
 
 [node name="Win" type="Popup" parent="."]
-visible = true
 margin_right = 1027.0
 margin_bottom = 601.0
 popup_exclusive = true
@@ -132,3 +132,10 @@ margin_bottom = 310.0
 
 [node name="ClappingSFX" type="AudioStreamPlayer" parent="Win"]
 stream = ExtResource( 8 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -8.0
+
+[connection signal="button_down" from="Win/HBoxContainer2/VBoxContainer/ContinueButton" to="ZonaConstruir" method="_on_ContinueButton_button_down"]
+[connection signal="button_down" from="Win/HBoxContainer2/VBoxContainer/TitleButton" to="ZonaConstruir" method="_on_TitleButton_button_down"]

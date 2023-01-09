@@ -18,7 +18,7 @@ func _ready():
 func _encontrado(area):
 	size -= 1
 	if size == 0:
-		lbl_point._point_event(30)
+		lbl_point._point_event(15)
 		lbl_obj._found_object()
 
 func _set_init_data(img_size):

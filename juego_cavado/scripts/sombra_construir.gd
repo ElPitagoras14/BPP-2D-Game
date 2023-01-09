@@ -30,7 +30,11 @@ func _input(event):
 		if CavadoMaster.actual_objects == CavadoMaster.max_objects:
 			yield(get_tree().create_timer(0.3), "timeout")
 			emit_signal("win_game")
-		
+
+func _set_helper_color(num):
+	var color = CavadoMaster.shadow_colors[num]
+	set_self_modulate(color)
+
 func _set_tex_values():
 	size = self.texture.get_size()
 	var tmp = self.texture.get_path()

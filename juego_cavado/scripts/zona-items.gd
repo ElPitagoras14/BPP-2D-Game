@@ -1,11 +1,12 @@
 extends Control
 
-var lvl_actual
-var objetos = 4
+var lvl_actual = 1
 var base_path = "res://juego_cavado"
 var object_path = "/assets/objects"
 var scr_path = "/scripts"
-var spr_path = "/2/egip-"
+var act_obj_path
+var prefix_build = "/ctr-"
+var num_objs
 
 var size
 var offset_x
@@ -15,22 +16,25 @@ var pos_y = 0
 func _ready():
 	size = self.rect_size
 	offset_x = size.x / 2
-	lvl_actual = CavadoMaster.nivel_actual
-	var info = CavadoMaster.niveles[lvl_actual]
-	objetos = info[4]
+	_get_info()
 	_fill_scene()
 	pass # Replace with function body.
 	
 func _fill_scene():
 	var offset_figuras = CavadoMaster.offset_figuras[lvl_actual]
 	var script = load(base_path + scr_path + "/objeto_construir.gd")
-	for i in range(objetos):
-		var spr_figura = _get_new_sprite(offset_x, i, i+1, script)
+	for i in range(num_objs):
+		var spr_figura = _get_new_sprite(offset_x, i, script)
 		add_child(spr_figura, true)
+		
+func _get_info():
+	var info = CavadoMaster.niveles[lvl_actual]
+	act_obj_path = info[3]
+	num_objs = info[4]
 
-func _get_new_sprite(pos_x, i, num, script):
+func _get_new_sprite(pos_x, num, script):
 	var spr_fig = Sprite.new()
-	var name_spr_fig = base_path + object_path + spr_path + str(num) + ".png"
+	var name_spr_fig = base_path + object_path + act_obj_path + prefix_build + str(num) + ".png"
 	var tex_fig = load(name_spr_fig)
 	var size = tex_fig.get_size()
 	pos_y += size.y / 2

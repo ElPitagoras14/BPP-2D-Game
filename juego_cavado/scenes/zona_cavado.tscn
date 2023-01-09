@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://juego_cavado/scripts/zona_cavar.gd" type="Script" id=1]
 [ext_resource path="res://juego_cavado/assets/misc/fondo.png" type="Texture" id=2]
@@ -21,6 +21,8 @@
 [ext_resource path="res://juego_cavado/scripts/win_popup.gd" type="Script" id=19]
 [ext_resource path="res://juego_cavado/scripts/lose_popup.gd" type="Script" id=20]
 [ext_resource path="res://juego_cavado/scripts/puntaje.gd" type="Script" id=21]
+[ext_resource path="res://juego_cavado/assets/misc/continuar.png" type="Texture" id=22]
+[ext_resource path="res://juego_cavado/assets/music/ms_cavado.mp3" type="AudioStream" id=23]
 
 [sub_resource type="DynamicFont" id=1]
 size = 17
@@ -56,6 +58,10 @@ margin_right = 1.0
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 23 )
+volume_db = -8.0
 
 [node name="ZonaCavar" type="Control" parent="."]
 margin_left = 154.0
@@ -223,7 +229,7 @@ margin_bottom = 198.0
 margin_right = 196.0
 margin_bottom = 97.0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 18 )
+texture_normal = ExtResource( 22 )
 
 [node name="TitleButton" type="TextureButton" parent="Win/HBoxContainer2/VBoxContainer"]
 margin_top = 101.0
@@ -387,4 +393,6 @@ stream = ExtResource( 16 )
 [connection signal="update_energy" from="HUD/Vida" to="HUD/Energia/BarraEnergia" method="_on_Vida_update_energy"]
 [connection signal="update_energy" from="HUD/Vida" to="HUD/Energia/Cantidad" method="_on_Vida_update_energy"]
 [connection signal="button_down" from="Win/HBoxContainer2/VBoxContainer/ContinueButton" to="ZonaCavar" method="_on_ContinueButton_button_down"]
+[connection signal="button_down" from="Win/HBoxContainer2/VBoxContainer/TitleButton" to="ZonaCavar" method="_on_TitleButton_button_down"]
 [connection signal="button_down" from="Lose/HBoxContainer2/VBoxContainer/RetryButton" to="ZonaCavar" method="_on_RetryButton_button_down"]
+[connection signal="button_down" from="Lose/HBoxContainer2/VBoxContainer/TitleButton" to="ZonaCavar" method="_on_TitleButton_button_down"]

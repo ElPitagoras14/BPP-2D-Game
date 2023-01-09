@@ -1,32 +1,33 @@
 extends Control
 
-
+var base_path = "res://juego_cavado"
+var scrp_path = "/scripts"
+var icon_path = "/assets/niveles_iconos"
+var icon_prefix = "/nivel-"
 var total_niveles = CavadoMaster.niveles.size()
+var offset_x = 30
+var offset_y = 30
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_parent().get_node("AudioStreamPlayer").play()
+	_fill_scene()
 	pass # Replace with function body.
 
-func _change_to_play_scene():
-	CavadoMaster.max_energy = _get_max_energy(CavadoMaster.nivel_actual)
-	yield(get_tree().create_timer(0.5), "timeout")
-	get_tree().change_scene("res://juego_cavado/scenes/zona_cavado.tscn")
+func _fill_scene():
+	for tex_num in range(total_niveles):
+		var spr_block = Sprite.new()
+		var name_tex_block = base_path + icon_path + icon_prefix + str(tex_num + 1) + ".png"
+		var script = load(base_path + scrp_path + "/nivel.gd")
+		var tex_block = load(name_tex_block)
+		var pos_x = offset_x + tex_num * 158
+		var pos_y = offset_y
+		if tex_num >= 5:
+			pos_y += 158
+			pos_x = offset_x + (tex_num - 5) * 158
+		spr_block.set_texture(tex_block)
+		spr_block.set_position(Vector2(pos_x, pos_y))
+		spr_block.set_script(script)
+		spr_block._set_nivel(tex_num)
+		self.add_child(spr_block)
 
-func _get_max_energy(lvl):
-	var info = CavadoMaster.niveles[lvl]
-	var difficulty = float(100 - (lvl + 1) * 2) / 100
-	difficulty = max(0.8, difficulty)
-	var max_energy = info[0] * info[1] * (0.6 + (info[2] - 1) * 0.55) * difficulty
-	return int(max_energy)
-
-func _on_Nivel1_button_down():
-	CavadoMaster.nivel_actual = 0
-	_change_to_play_scene()
-
-func _on_Nivel2_button_down():
-	CavadoMaster.nivel_actual = 1
-	_change_to_play_scene()
-
-func _on_Nivel3_button_down():
-	CavadoMaster.nivel_actual = 2
-	_change_to_play_scene()

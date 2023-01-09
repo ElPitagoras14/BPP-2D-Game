@@ -27,6 +27,7 @@ var base_path = "res://juego_cavado"
 var block_path = "/assets/blocks"
 var object_path = "/assets/objects"
 var scr_path = "/scripts"
+var prefix_obj = "/obj-"
 
 func _ready():
 	rng.randomize()
@@ -34,6 +35,7 @@ func _ready():
 	_set_default_values()
 	_add_objects()
 	_fill_scene()
+	get_parent().get_node("AudioStreamPlayer").play()
 	
 func _fill_scene():
 	var script = load(base_path + scr_path + "/block.gd")
@@ -133,6 +135,7 @@ func _set_default_values():
 	CavadoMaster.act_life = 3
 	CavadoMaster.actual_energy = CavadoMaster.max_energy
 	CavadoMaster.actual_objects = 0
+	CavadoMaster.points = 0
 	
 func _get_info():
 	g_pos = self.rect_position
@@ -162,7 +165,7 @@ func _add_objects():
 		objects[i].resize(height)
 		for j in range(height):
 			objects[i][j] = false
-	var cmp_path = base_path + object_path + act_obj_path
+	var cmp_path = base_path + object_path + act_obj_path + prefix_obj
 	for i in range(num_objs):
 		var tmp_path = cmp_path + str(i) + ".png"
 		var size = _get_size_obj(tmp_path)
@@ -209,9 +212,11 @@ func _add_single_obj(path, img_size, x, y):
 func _check_final_state():
 	if CavadoMaster.actual_objects == CavadoMaster.max_objects:
 		CavadoMaster.game_state = 0
+		yield(get_tree().create_timer(0.5), "timeout")
 		emit_signal("win_game")
 	elif CavadoMaster.act_life <= 0 and CavadoMaster.actual_energy <= 0:
 		CavadoMaster.game_state = 0
+		yield(get_tree().create_timer(0.5), "timeout")
 		emit_signal("lose_game")
 
 func  _restart_level():
@@ -227,3 +232,7 @@ func _on_ContinueButton_button_down():
 func _on_RetryButton_button_down():
 	yield(get_tree().create_timer(0.5), "timeout")
 	_restart_level()
+
+func _on_TitleButton_button_down():
+	yield(get_tree().create_timer(0.5), "timeout")
+	get_tree().change_scene(("res://juego_cavado/scenes/niveles.tscn"))
