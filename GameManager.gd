@@ -43,6 +43,14 @@ func saveCurrentPlayerPosition(var x, var y):
 	allPlayers[currentPlayer]["ubicacion"]["x"] = x
 	allPlayers[currentPlayer]["ubicacion"]["y"] = y
 	saveJson(allPlayers)
+
+func save_user_level(var data_array:Array):
+	allPlayers[currentPlayer]['level'] = data_array
+	saveJson(allPlayers)
+
+func savePlayerMonedas(var newQuantity):
+	allPlayers[currentPlayer]['monedas'] = newQuantity
+	saveJson(allPlayers)
 	
 func loadJson():
 	var file = File.new()
@@ -60,13 +68,20 @@ func loadJson():
 func addPlayer(var Nombre, var sprite):
 	allPlayers[Nombre] = {"animales":{"medallas":0, "mejorPuntaje":0, "pts":0}, 
 	"cartas":{"medallas":0, "mejorPuntaje":0, "pts":0}, 
+	"mejoras": {
+	  "arboles": { "NETrees": false, "NOTrees": false, "SETrees": false, "SOTrees": false }
+	},
+	'level':[],
 	"monedas":0, "reciclaje":{"medallas":0, "mejorPuntaje":0, "pts":0},
 	"ubicacion":{"x":0, "y":0},
 	"sprite":sprite}
 	saveJson(allPlayers)
 	
 func loadPlayer(var Nombre):
-	player = allPlayers[Nombre]
+	if(Nombre and allPlayers):
+		player = allPlayers[Nombre]
+	else:#Error de carga, de vuleta al menu
+		get_tree().change_scene("res://scenes/PantallaInicio.tscn")
 
 func _ready():
 	loadJson()

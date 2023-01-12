@@ -1,0 +1,315 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://hubinicial/Store/Items/item_wolf.tscn" type="PackedScene" id=1]
+[ext_resource path="res://hubinicial/Store/Items/item_arbol.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/iconos/iconos-X-cerrar.png" type="Texture" id=4]
+[ext_resource path="res://hubinicial/Store/StoreMenu.gd" type="Script" id=5]
+
+[sub_resource type="Theme" id=12]
+
+[sub_resource type="StreamTexture" id=13]
+flags = 4
+load_path = "res://.import/principal.png-372b37f94fa316f873a4f12a07283da3.stex"
+
+[sub_resource type="DynamicFontData" id=15]
+font_path = "res://fonts/Righteous-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=14]
+size = 25
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 15 )
+
+[node name="StoreMenu" type="Control"]
+margin_right = 1005.0
+margin_bottom = 596.0
+rect_scale = Vector2( 1.01903, 1.0062 )
+mouse_filter = 2
+script = ExtResource( 5 )
+
+[node name="AddMenu" type="Control" parent="."]
+visible = false
+margin_right = 1003.0
+margin_bottom = 596.0
+
+[node name="TabStoreContainer" type="TabContainer" parent="AddMenu"]
+self_modulate = Color( 0.807843, 1, 0.721569, 1 )
+margin_right = 258.0
+margin_bottom = 324.0
+rect_min_size = Vector2( 258, 324 )
+rect_scale = Vector2( 0.999752, 1.00786 )
+tab_align = 0
+
+[node name="Animals" type="Tabs" parent="AddMenu/TabStoreContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+mouse_filter = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="AddMenu/TabStoreContainer/Animals"]
+anchor_left = 0.047
+anchor_top = 0.056
+anchor_right = 0.047
+anchor_bottom = 0.056
+margin_left = -0.75
+margin_top = -16.128
+margin_right = 230.25
+margin_bottom = 271.872
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AddMenu/TabStoreContainer/Animals/ScrollContainer"]
+margin_right = 45.0
+margin_bottom = 28.0
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AddMenu/TabStoreContainer/Animals/ScrollContainer/VBoxContainer"]
+margin_right = 45.0
+margin_bottom = 28.0
+mouse_filter = 2
+
+[node name="item_wolf" parent="AddMenu/TabStoreContainer/Animals/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+margin_right = 45.0
+margin_bottom = 28.0
+mouse_default_cursor_shape = 2
+
+[node name="PriceLabel" type="Label" parent="AddMenu/TabStoreContainer/Animals/ScrollContainer/VBoxContainer/HBoxContainer/item_wolf"]
+margin_left = 5.61299
+margin_top = 28.1514
+margin_right = 45.613
+margin_bottom = 42.1514
+text = "300"
+
+[node name="Arboles" type="Tabs" parent="AddMenu/TabStoreContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+mouse_filter = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="AddMenu/TabStoreContainer/Arboles"]
+margin_right = 152.0
+margin_bottom = 146.0
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AddMenu/TabStoreContainer/Arboles/ScrollContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AddMenu/TabStoreContainer/Arboles/ScrollContainer/VBoxContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+mouse_filter = 2
+
+[node name="item_arbol" parent="AddMenu/TabStoreContainer/Arboles/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 2 )]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="PriceLabel" type="Label" parent="AddMenu/TabStoreContainer/Arboles/ScrollContainer/VBoxContainer/HBoxContainer/item_arbol"]
+margin_left = 17.6314
+margin_top = 64.8593
+margin_right = 55.6314
+margin_bottom = 78.8593
+rect_scale = Vector2( 0.779152, 0.780983 )
+text = "1000"
+
+[node name="NinePatchCancelar" type="NinePatchRect" parent="AddMenu"]
+margin_left = 810.576
+margin_top = 72.5503
+margin_right = 997.576
+margin_bottom = 133.55
+mouse_filter = 1
+theme = SubResource( 12 )
+texture = SubResource( 13 )
+
+[node name="CancelarButton" type="Button" parent="AddMenu/NinePatchCancelar"]
+modulate = Color( 1, 0.87451, 0.466667, 0.431373 )
+self_modulate = Color( 1, 0.733333, 0.290196, 1 )
+margin_left = 14.0908
+margin_top = 7.95072
+margin_right = 175.091
+margin_bottom = 53.9507
+
+[node name="FrontLabel" type="Label" parent="AddMenu/NinePatchCancelar"]
+margin_left = 17.0348
+margin_top = 17.8891
+margin_right = 157.035
+margin_bottom = 49.8891
+rect_scale = Vector2( 0.848748, 0.848748 )
+rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Cancelar"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="NinePatchConfirmar" type="NinePatchRect" parent="AddMenu"]
+margin_left = 810.576
+margin_right = 997.576
+margin_bottom = 61.0
+theme = SubResource( 12 )
+texture = SubResource( 13 )
+
+[node name="GuardarButton" type="Button" parent="AddMenu/NinePatchConfirmar"]
+modulate = Color( 1, 0.87451, 0.466667, 0.431373 )
+self_modulate = Color( 1, 0.733333, 0.290196, 1 )
+margin_left = 14.0908
+margin_top = 7.95072
+margin_right = 175.091
+margin_bottom = 53.9507
+
+[node name="FrontLabel" type="Label" parent="AddMenu/NinePatchConfirmar"]
+margin_left = 17.0348
+margin_top = 17.8891
+margin_right = 157.035
+margin_bottom = 49.8891
+rect_scale = Vector2( 0.848748, 0.848748 )
+rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Guardar
+"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="StoreOptionsPopUp" type="Popup" parent="."]
+visible = true
+margin_left = 4.0
+margin_right = 1006.0
+margin_bottom = 288.0
+rect_scale = Vector2( 0.998456, 0.98733 )
+
+[node name="NinePatchUpgrades" type="NinePatchRect" parent="StoreOptionsPopUp"]
+margin_left = 522.799
+margin_top = 151.996
+margin_right = 876.799
+margin_bottom = 233.996
+theme = SubResource( 12 )
+texture = SubResource( 13 )
+
+[node name="AddElementsButton" type="Button" parent="StoreOptionsPopUp/NinePatchUpgrades"]
+modulate = Color( 1, 0.87451, 0.466667, 0.431373 )
+self_modulate = Color( 1, 0.733333, 0.290196, 1 )
+margin_left = 20.0
+margin_top = 13.0
+margin_right = 341.0
+margin_bottom = 72.0
+
+[node name="FrontLabel" type="Label" parent="StoreOptionsPopUp/NinePatchUpgrades"]
+margin_left = 29.0
+margin_top = 30.0
+margin_right = 339.0
+margin_bottom = 62.0
+rect_scale = Vector2( 0.848748, 0.848748 )
+rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Añadir Arboles y Animales"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="NinePatchReciclaje" type="NinePatchRect" parent="StoreOptionsPopUp"]
+margin_left = 74.6214
+margin_top = 151.996
+margin_right = 428.621
+margin_bottom = 233.996
+theme = SubResource( 12 )
+texture = SubResource( 13 )
+
+[node name="RecicleButton" type="Button" parent="StoreOptionsPopUp/NinePatchReciclaje"]
+modulate = Color( 1, 0.87451, 0.466667, 0.431373 )
+self_modulate = Color( 1, 0.733333, 0.290196, 1 )
+margin_left = 20.0
+margin_top = 13.0
+margin_right = 341.0
+margin_bottom = 72.0
+
+[node name="FrontLabel" type="Label" parent="StoreOptionsPopUp/NinePatchReciclaje"]
+margin_left = 29.0
+margin_top = 30.0
+margin_right = 339.0
+margin_bottom = 62.0
+rect_scale = Vector2( 0.848748, 0.848748 )
+rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Limpiar basura"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Title" type="NinePatchRect" parent="StoreOptionsPopUp"]
+margin_left = 280.0
+margin_top = 61.0
+margin_right = 643.0
+margin_bottom = 112.0
+theme = SubResource( 12 )
+texture = SubResource( 13 )
+
+[node name="FrontLabel" type="Label" parent="StoreOptionsPopUp/Title"]
+margin_left = 15.7615
+margin_top = 12.4814
+margin_right = 372.761
+margin_bottom = 44.4814
+rect_scale = Vector2( 0.848748, 0.848748 )
+rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Que Mejora Quieres Realizar?"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ExitPopup" type="TextureButton" parent="StoreOptionsPopUp"]
+margin_left = 930.679
+margin_right = 1000.68
+margin_bottom = 80.0
+rect_scale = Vector2( 0.997548, 0.992172 )
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+
+[connection signal="mouse_entered" from="AddMenu/TabStoreContainer" to="." method="_on_TabStoreContainer_mouse_entered"]
+[connection signal="mouse_exited" from="AddMenu/TabStoreContainer" to="." method="_on_TabStoreContainer_mouse_exited"]
+[connection signal="gui_input" from="AddMenu/TabStoreContainer/Arboles/ScrollContainer/VBoxContainer/HBoxContainer/item_arbol" to="AddMenu/TabStoreContainer/Arboles/ScrollContainer/VBoxContainer/HBoxContainer/item_arbol" method="_item_clicked"]
+[connection signal="mouse_entered" from="AddMenu/NinePatchCancelar" to="." method="_on_Exit_mouse_entered"]
+[connection signal="mouse_exited" from="AddMenu/NinePatchCancelar" to="." method="_on_Exit_mouse_exited"]
+[connection signal="pressed" from="AddMenu/NinePatchCancelar/CancelarButton" to="." method="_on_CancelarButton_pressed"]
+[connection signal="mouse_entered" from="AddMenu/NinePatchConfirmar" to="." method="_on_Exit_mouse_entered"]
+[connection signal="mouse_exited" from="AddMenu/NinePatchConfirmar" to="." method="_on_Exit_mouse_exited"]
+[connection signal="pressed" from="AddMenu/NinePatchConfirmar/GuardarButton" to="." method="_on_GuardarButton_pressed"]
+[connection signal="pressed" from="StoreOptionsPopUp/NinePatchUpgrades/AddElementsButton" to="." method="_on_AddElementsButton_pressed"]
+[connection signal="pressed" from="StoreOptionsPopUp/NinePatchReciclaje/RecicleButton" to="." method="_on_RecicleButton_pressed"]
+[connection signal="mouse_entered" from="StoreOptionsPopUp/ExitPopup" to="." method="_on_Exit_mouse_entered"]
+[connection signal="mouse_exited" from="StoreOptionsPopUp/ExitPopup" to="." method="_on_Exit_mouse_exited"]
+[connection signal="pressed" from="StoreOptionsPopUp/ExitPopup" to="." method="_on_Exit_pressed"]

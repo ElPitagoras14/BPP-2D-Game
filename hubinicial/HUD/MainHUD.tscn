@@ -14,14 +14,14 @@
 [ext_resource path="res://assets/iconos/atras.png" type="Texture" id=12]
 [ext_resource path="res://SFX/3.1. mouse-click1.ogg" type="AudioStream" id=13]
 
-[sub_resource type="DynamicFontData" id=11]
+[sub_resource type="DynamicFontData" id=15]
 font_path = "res://fonts/Righteous-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=12]
 size = 25
 use_mipmaps = true
 use_filter = true
-font_data = SubResource( 11 )
+font_data = SubResource( 15 )
 
 [sub_resource type="DynamicFontData" id=9]
 font_path = "res://fonts/Righteous-Regular.ttf"
