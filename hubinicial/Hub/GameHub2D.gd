@@ -10,9 +10,13 @@ onready var HUD = $Hud/MainHud
 onready var StoreHud = $HudStore
 onready var animationTimer = $AnimationTimer
 onready var MagicEffectScene = load("res://hubinicial/Hub/MagicEffect.tscn")
+onready var store_menu = get_node('HudStore')
 
 var user_objects = {'Arbol':"res://hubinicial/Store/Objects/Arbol.tscn",\
 					'Wolf':"res://hubinicial/Store/Objects/Wolf.tscn"}
+
+var temp_user_objects = []
+var temp_deleted_tiles = []
 
 var RECOVER_TREE_PRICE = 1000
 
@@ -56,6 +60,17 @@ func _ready():
 		check_mejoras()
 		activatePlayer()
 
+func _process(delta):
+	if is_freeCam_active:
+		
+		if Input.is_action_pressed("ui_down"):
+			freeCam.global_position.y += 5
+		elif Input.is_action_pressed("ui_up"):
+			freeCam.global_position.y -= 5
+		elif Input.is_action_pressed("ui_left"):
+			freeCam.global_position.x -= 5
+		elif Input.is_action_pressed("ui_right"):
+			freeCam.global_position.x += 5
 
 func _input(event):
 	
@@ -81,26 +96,34 @@ func _input(event):
 			HUD.stopControls = false
 			dialog.popup_exclusive = false
 			dialog.hide()
-			
-	if is_freeCam_active:
-		
-		if Input.is_action_pressed("ui_down"):
-			freeCam.global_position.y += 30
-		elif Input.is_action_pressed("ui_up"):
-			freeCam.global_position.y -= 30
-		elif Input.is_action_pressed("ui_left"):
-			freeCam.global_position.x -= 30
-		elif Input.is_action_pressed("ui_right"):
-			freeCam.global_position.x += 30
 
 func showHUD():
 	$Hud.visible = true
 	$Hud/MainHud.visible = true
+	
 	$HudStore.visible = false
 	activatePlayer()
 
 func clean_name(var name:String):
 	return str(name.replace("@", "").replace(str(int(name)), ""))
+
+func save_trash_map():
+	reset_Cleaner_Object()
+
+	if(GameManager.currentPlayer):
+		var data_array = []
+		for trash_cords in temp_deleted_tiles:
+			var data = {
+				"x":trash_cords.x,
+				"y":trash_cords.y}
+			data_array.append(data)
+		GameManager.save_trash_level(data_array)
+		GameManager.savePlayerMonedas(store_menu.monedas_temp)
+		showHUD()
+	else:
+		push_error("Error al guardar")
+	temp_deleted_tiles = []
+	
 	
 func save_user_map():
 	var user_level = $UserLevel
@@ -113,40 +136,74 @@ func save_user_map():
 			 "pos_y" : child.position.y}
 			data_array.append(data)
 		GameManager.save_user_level(data_array)
+		GameManager.savePlayerMonedas(store_menu.monedas_temp)
+		showHUD()
+		reset_Editor_Object()
 	else:
 		push_error("Error al guardar")
+	temp_user_objects = []
+	
+
+func reset_Editor_Object():
+	var obj = $Editor_Object
+	obj.current_item = null
+	obj.can_place = 1
+	obj.get_node("Sprite").texture = null
+	obj.get_node("Area2Detection").remove_child(obj.get_node("Area2Detection").get_child(0))
+
+func cancelar_upgrades():
+	reset_Editor_Object()
+	for object in temp_user_objects:
+		object.queue_free()
+	temp_user_objects = []
+	showHUD()
+	
+func cancelar_reciclaje():
+	reset_Cleaner_Object()
+	for tile_cords in temp_deleted_tiles:
+		$Trash.set_cell(tile_cords.x,tile_cords.y,0)
+	showHUD()
+	temp_deleted_tiles = []
 
 func load_user_map():
 	var user_level = $UserLevel
 	if (GameManager.currentPlayer):
 		GameManager.loadPlayer(GameManager.currentPlayer)
 		if(GameManager.player.level):
-			for obj in GameManager.player.level:
+			var upgrade_dic = GameManager.player.level.duplicate()
+			var deleted_trash = upgrade_dic.get("Trash")
+			for trash_cords in deleted_trash:
+				$Trash.set_cell(trash_cords.x,trash_cords.y,-1)
+			upgrade_dic.erase('Trash')
+
+			for obj in upgrade_dic['Upgrades']:
 				var instance_path = user_objects.get(obj.name)
 				if instance_path:
 					var new_obj = load(instance_path).instance()
 					new_obj.position.x = obj.pos_x
 					new_obj.position.y = obj.pos_y
 					user_level.add_child(new_obj)
+			
 		
 	else:
 		get_tree().change_scene("res://scenes/PantallaInicio.tscn")
 
-
-
-
-func reset_Editor_Object():
-	var obj = $Editor_Object
-	obj.current_item = null
+	
+func reset_Cleaner_Object():
+	var obj = $Cleaner_Object
 	obj.get_node("Sprite").texture = null
+	obj.tile_selected = 0
+	obj.get_node("Area2D").remove_child(obj.get_node("Area2D").get_child(0))
+	obj.cleaning = false
+	obj.enough_money = false
 
 func check_mejoras():
 	if(GameManager.currentPlayer):
 		#Check mejoras de arboles
-		var arboles = Array(GameManager.player['mejoras']["arboles"].keys())
+		var arboles = Array(GameManager.player['level']["Arboles"].keys())
 		var count = 0
 		for key in arboles:
-			var is_upgraded = GameManager.player['mejoras']["arboles"][key]
+			var is_upgraded = GameManager.player['level']["Arboles"][key]
 			if(is_upgraded ):
 				if("NE" in key):
 					upgradeTrees("DynamicTreeNE")
@@ -202,7 +259,12 @@ func _on_Dinamic_area_body_exited(body):
 func _on_CutsceneAnimationPlayer_animation_finished(anim_name, upgr_name):
 	if("upgradeT" in anim_name):
 		var upgr = anim_name.get_slice("_",1)  
-		GameManager.player['mejoras']['arboles'][upgr] = true
+		GameManager.player['level']['Arboles'][upgr] = true
 		GameManager.player['monedas'] -= RECOVER_TREE_PRICE
-		GameManager.savePlayerMonedas(GameManager.player['monedas']-RECOVER_TREE_PRICE)
-		activatePlayer()
+		GameManager.savePlayerMonedas(GameManager.player['monedas'])
+		check_mejoras()
+		showHUD()
+		
+
+func _CutsceneAnimationPlayer_play_upgrade_animation(var anim_name:String ):
+	cameraCutAnimation.play(anim_name)

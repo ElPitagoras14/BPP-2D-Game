@@ -18,8 +18,8 @@ func set_label_monedas():
 	label_monedas.text = str(monedas_temp)
 	
 func show_warning_msg():
-	$WarningMsg.show()
+	$StoreMenu.show_warning()
 	
 func hide_warning_msg():
-	$WarningMsg.hide()
+	$StoreMenu.hide_warning()
 

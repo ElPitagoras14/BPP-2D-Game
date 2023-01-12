@@ -33,6 +33,7 @@ func _process(delta):
 			new_item.owner = user_level
 			new_item.global_position = get_global_mouse_position()
 			store_menu.update_currency(current_price)
+			get_parent().temp_user_objects.append(new_item)
 			check_enough_currency()
 		
 	if(new_selection and current_item != null):

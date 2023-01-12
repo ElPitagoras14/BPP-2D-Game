@@ -20,6 +20,9 @@ script = ExtResource( 2 )
 position = Vector2( -1, 7.5 )
 shape = SubResource( 1 )
 
+[node name="AnimatedSprite" parent="." index="1"]
+animation = "Tree"
+
 [node name="Area2D_Front" type="Area2D" parent="." index="2"]
 position = Vector2( 0, 40 )
 

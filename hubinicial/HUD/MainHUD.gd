@@ -70,8 +70,14 @@ func _on_Exit_pressed():
 	
 func _on_SalirMenu_pressed():
 	get_node("Click").play()
-	yield(get_tree().create_timer(.4),"timeout")
-	get_tree().change_scene("res://scenes/PantallaInicio.tscn")
+	var player = get_owner().get_node_or_null('Jugador')
+	if player:
+		GameManager.saveCurrentPlayerPosition(player.position.x, player.position.y)
+		yield(get_tree().create_timer(.3),"timeout")
+		get_tree().change_scene("res://scenes/PantallaInicio.tscn")
+	else:
+		print('Debugging')
+	
 
 func _on_SalirJuego_pressed():
 	get_node("Click").play()

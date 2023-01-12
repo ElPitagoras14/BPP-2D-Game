@@ -44,8 +44,12 @@ func saveCurrentPlayerPosition(var x, var y):
 	allPlayers[currentPlayer]["ubicacion"]["y"] = y
 	saveJson(allPlayers)
 
+func save_trash_level(data_array:Array):
+	allPlayers[currentPlayer]['level']['Trash'] = data_array
+	saveJson(allPlayers)
+
 func save_user_level(var data_array:Array):
-	allPlayers[currentPlayer]['level'] = data_array
+	allPlayers[currentPlayer]['level']['Upgrades'] = data_array
 	saveJson(allPlayers)
 
 func savePlayerMonedas(var newQuantity):
@@ -69,9 +73,16 @@ func addPlayer(var Nombre, var sprite):
 	allPlayers[Nombre] = {"animales":{"medallas":0, "mejorPuntaje":0, "pts":0}, 
 	"cartas":{"medallas":0, "mejorPuntaje":0, "pts":0}, 
 	"mejoras": {
-	  "arboles": { "NETrees": false, "NOTrees": false, "SETrees": false, "SOTrees": false }
+	 
 	},
-	'level':[],
+	'level':{'Trash':[],
+		'Upgrades':[], 
+		"Arboles": { "NETrees": false,
+		 "NOTrees": false,
+		 "SETrees": false,
+		 "SOTrees": false
+		 }
+		},
 	"monedas":0, "reciclaje":{"medallas":0, "mejorPuntaje":0, "pts":0},
 	"ubicacion":{"x":0, "y":0},
 	"sprite":sprite}
