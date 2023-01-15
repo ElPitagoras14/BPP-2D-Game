@@ -8,6 +8,7 @@
 [ext_resource path="res://fonts/Righteous-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://assets/reciclaje/Block-z2.png" type="Texture" id=8]
 
+
 [sub_resource type="DynamicFont" id=1]
 size = 17
 use_mipmaps = true

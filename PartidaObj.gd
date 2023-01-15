@@ -19,4 +19,4 @@ func _init(var partida):
 func _onClickPartida():
 	GameManager.currentPlayer = partida
 	GameManager.player = GameManager.allPlayers[partida]
-	get_tree().change_scene("res://scenes/MainMenu.tscn")
+	get_tree().change_scene("res://hubinicial/Hub/GameHub2D.tscn")

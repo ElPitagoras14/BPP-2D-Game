@@ -1,0 +1,61 @@
+{
+	"events": [
+		{
+			"character": "character-1669523955.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "¡Buenas! Yo soy el encargado de limpiar el bosque de basura y luego mandarla a la planta de reciclaje.\nEs un trabajo duro pero honesto"
+		},
+		{
+			"character": "character-1669523955.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "¿Deseas ayudar a nuestro equipo?"
+		},
+		{
+			"choice": "¡Claro que sí!",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1669523955.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "¡Excelente!"
+		},
+		{
+			"change_scene": "res://juegoreciclaje/HUD/TitleScreen.tscn",
+			"event_id": "dialogic_041"
+		},
+		{
+			"choice": "Ahora no que me falta un encebollado",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1669523955.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "No te preocupes, cuando puedas."
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1669523975.json",
+		"name": "recycleNpcTimeline"
+	}
+}

@@ -11,7 +11,7 @@ func _ready():
 func _on_TextureButton4_pressed():
 	get_node("Click").play()
 	yield(get_tree().create_timer(.3),"timeout")
-	get_tree().change_scene("res://scenes/MainMenu.tscn")
+	get_tree().change_scene("res://hubinicial/Hub/GameHub2D.tscn")
 
 func _on_TextureButton_pressed():
 	get_node("Click").play()
@@ -54,7 +54,12 @@ func _on_Tema_about_to_show():
 	$Tema/HBoxContainer/salirmod.disabled = false
 	$Tema/HBoxContainer/VBoxContainer/HBoxContainer/MAMIFEROS.disabled = false
 	$Tema/HBoxContainer/VBoxContainer/HBoxContainer2/AVES.disabled = false
+	
+func _on_TextureButton4_button_down():
+	get_node("Click").play()
+	yield(get_tree().create_timer(.3),"timeout")
+	get_tree().change_scene("res://hubinicial/Hub/GameHub2D.tscn")
 
 
-func _on_Cerrar_pressed():
-	$Ayuda.hide()
+func _on_JUGAR_button_down():
+	get_tree().change_scene("res://juego_cavado/scenes/niveles.tscn")

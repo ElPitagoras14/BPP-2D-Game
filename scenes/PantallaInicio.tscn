@@ -190,6 +190,7 @@ text = "SALIR"
 flat = true
 
 [node name="Seleccionar" type="Popup" parent="."]
+visible = true
 margin_left = -1.0
 margin_top = -3.0
 margin_right = 1035.0
@@ -342,6 +343,7 @@ expand = true
 stretch_mode = 1
 
 [node name="Label" type="Label" parent="Nombre"]
+visible = false
 margin_left = 3.0
 margin_top = 138.0
 margin_right = 1026.0

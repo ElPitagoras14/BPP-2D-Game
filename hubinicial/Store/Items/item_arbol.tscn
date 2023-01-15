@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://hubinicial/assets/Pipoya RPG Tileset 32x32/TreeSprite.png" type="Texture" id=1]
+[ext_resource path="res://hubinicial/Store/Texture.tscn" type="PackedScene" id=2]
+[ext_resource path="res://hubinicial/Store/Objects/Arbol.tscn" type="PackedScene" id=3]
+
+[node name="item_arbol" instance=ExtResource( 2 )]
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+this_scene = ExtResource( 3 )
+price = 1000

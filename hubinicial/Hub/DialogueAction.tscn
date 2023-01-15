@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://hubinicial/Hub/DialogueAction.gd" type="Script" id=1]
+[ext_resource path="res://fonts/new_dynamicfont.tres" type="DynamicFont" id=2]
+
+[sub_resource type="Theme" id=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/principal.png-372b37f94fa316f873a4f12a07283da3.stex"
+
+[node name="Popup" type="Popup"]
+margin_top = 8.0
+margin_right = 512.0
+margin_bottom = 192.0
+script = ExtResource( 1 )
+dFile = "res://hubinicial/assets/tutorialDialog.json"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+margin_top = -8.0
+margin_right = 512.0
+margin_bottom = 184.0
+theme = SubResource( 2 )
+texture = SubResource( 1 )
+
+[node name="Text" type="RichTextLabel" parent="NinePatchRect"]
+margin_left = 16.0
+margin_top = 41.0
+margin_right = 496.0
+margin_bottom = 169.0
+theme_type_variation = "Bold Font"
+custom_fonts/normal_font = ExtResource( 2 )
+text = "Contenido..."
+scroll_following = true
+
+[node name="Speaker" type="RichTextLabel" parent="NinePatchRect"]
+margin_left = 16.0
+margin_top = 18.0
+margin_right = 496.0
+margin_bottom = 41.0
+custom_fonts/normal_font = ExtResource( 2 )
+text = "Contenido..."
+scroll_active = false
+scroll_following = true
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+margin_left = 225.0
+margin_top = 169.0
+margin_right = 505.0
+margin_bottom = 183.0
+text = "Presiona la barra espaciadora para adelantar"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

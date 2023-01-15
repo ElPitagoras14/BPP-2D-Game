@@ -2,7 +2,6 @@ extends Control
 var Nombre
 
 func _ready():
-	#$Nombre/TextEdit
 	get_node("BGM").play()
 
 func _on_Button2_pressed():
@@ -51,7 +50,8 @@ func _on_personaje1_pressed():
 	GameManager.loadPlayer(Nombre)
 	GameManager.saveJson(GameManager.allPlayers)
 	GameManager.currentPlayer = Nombre
-	get_tree().change_scene("res://scenes/MainMenu.tscn")
+	GameManager.newGameFlag = true
+	get_tree().change_scene("res://hubinicial/Hub/GameHub2D.tscn")
 
 func _on_personaje2_pressed():
 	get_node("Click").play()
@@ -59,7 +59,8 @@ func _on_personaje2_pressed():
 	GameManager.loadPlayer(Nombre)
 	GameManager.saveJson(GameManager.allPlayers)
 	GameManager.currentPlayer = Nombre
-	get_tree().change_scene("res://scenes/MainMenu.tscn")
+	GameManager.newGameFlag = true
+	get_tree().change_scene("res://hubinicial/Hub/GameHub2D.tscn")
 
 func _on_personaje3_pressed():
 	get_node("Click").play()
@@ -67,7 +68,8 @@ func _on_personaje3_pressed():
 	GameManager.loadPlayer(Nombre)
 	GameManager.saveJson(GameManager.allPlayers)
 	GameManager.currentPlayer = Nombre
-	get_tree().change_scene("res://scenes/MainMenu.tscn")
+	GameManager.newGameFlag = true
+	get_tree().change_scene("res://hubinicial/Hub/GameHub2D.tscn")
 
 func _on_personaje4_pressed():
 	get_node("Click").play()
@@ -75,7 +77,8 @@ func _on_personaje4_pressed():
 	GameManager.loadPlayer(Nombre)
 	GameManager.saveJson(GameManager.allPlayers)
 	GameManager.currentPlayer = Nombre
-	get_tree().change_scene("res://scenes/MainMenu.tscn")
+	GameManager.newGameFlag = true
+	get_tree().change_scene("res://hubinicial/Hub/GameHub2D.tscn")
 
 
 func _on_CerrarCarga_pressed():

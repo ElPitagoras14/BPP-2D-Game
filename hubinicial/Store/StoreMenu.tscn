@@ -1,0 +1,713 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://hubinicial/Store/Items/item_wolf.tscn" type="PackedScene" id=1]
+[ext_resource path="res://hubinicial/Store/Items/item_arbol.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fonts/Righteous-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/iconos/iconos-X-cerrar.png" type="Texture" id=4]
+[ext_resource path="res://hubinicial/Store/StoreMenu.gd" type="Script" id=5]
+
+[sub_resource type="Theme" id=12]
+
+[sub_resource type="StreamTexture" id=13]
+flags = 4
+load_path = "res://.import/principal.png-372b37f94fa316f873a4f12a07283da3.stex"
+
+[sub_resource type="DynamicFontData" id=15]
+font_path = "res://fonts/Righteous-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=14]
+size = 25
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 15 )
+
+[sub_resource type="DynamicFontData" id=16]
+font_path = "res://fonts/Righteous-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=17]
+size = 25
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 16 )
+
+[sub_resource type="DynamicFontData" id=73]
+font_path = "res://fonts/Righteous-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=74]
+size = 25
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 73 )
+
+[sub_resource type="DynamicFont" id=75]
+size = 22
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[node name="StoreMenu" type="Control"]
+margin_right = 1005.0
+margin_bottom = 596.0
+rect_scale = Vector2( 1.01903, 1.0062 )
+mouse_filter = 2
+script = ExtResource( 5 )
+
+[node name="AddMenu" type="Control" parent="."]
+visible = false
+margin_right = 1003.0
+margin_bottom = 596.0
+
+[node name="TabStoreContainer" type="TabContainer" parent="AddMenu"]
+self_modulate = Color( 0.807843, 1, 0.721569, 1 )
+margin_right = 258.0
+margin_bottom = 324.0
+rect_min_size = Vector2( 258, 324 )
+rect_scale = Vector2( 0.999752, 1.00786 )
+tab_align = 0
+
+[node name="Animals" type="Tabs" parent="AddMenu/TabStoreContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+mouse_filter = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="AddMenu/TabStoreContainer/Animals"]
+anchor_left = 0.047
+anchor_top = 0.056
+anchor_right = 0.047
+anchor_bottom = 0.056
+margin_left = -0.75
+margin_top = -16.128
+margin_right = 230.25
+margin_bottom = 271.872
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AddMenu/TabStoreContainer/Animals/ScrollContainer"]
+margin_right = 45.0
+margin_bottom = 28.0
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AddMenu/TabStoreContainer/Animals/ScrollContainer/VBoxContainer"]
+margin_right = 45.0
+margin_bottom = 28.0
+mouse_filter = 2
+
+[node name="item_wolf" parent="AddMenu/TabStoreContainer/Animals/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+margin_right = 45.0
+margin_bottom = 28.0
+mouse_default_cursor_shape = 2
+
+[node name="PriceLabel" type="Label" parent="AddMenu/TabStoreContainer/Animals/ScrollContainer/VBoxContainer/HBoxContainer/item_wolf"]
+margin_left = 5.61299
+margin_top = 28.1514
+margin_right = 45.613
+margin_bottom = 42.1514
+text = "300"
+
+[node name="Arboles" type="Tabs" parent="AddMenu/TabStoreContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+mouse_filter = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="AddMenu/TabStoreContainer/Arboles"]
+margin_right = 152.0
+margin_bottom = 146.0
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AddMenu/TabStoreContainer/Arboles/ScrollContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AddMenu/TabStoreContainer/Arboles/ScrollContainer/VBoxContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+mouse_filter = 2
+
+[node name="item_arbol" parent="AddMenu/TabStoreContainer/Arboles/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 2 )]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="PriceLabel" type="Label" parent="AddMenu/TabStoreContainer/Arboles/ScrollContainer/VBoxContainer/HBoxContainer/item_arbol"]
+margin_left = 17.6314
+margin_top = 64.8593
+margin_right = 55.6314
+margin_bottom = 78.8593
+rect_scale = Vector2( 0.779152, 0.780983 )
+text = "1000"
+
+[node name="NinePatchCancelar" type="NinePatchRect" parent="AddMenu"]
+margin_left = 810.576
+margin_top = 72.5503
+margin_right = 997.576
+margin_bottom = 133.55
+mouse_filter = 0
+theme = SubResource( 12 )
+texture = SubResource( 13 )
+
+[node name="CancelarButton" type="Button" parent="AddMenu/NinePatchCancelar"]
+modulate = Color( 1, 0.87451, 0.466667, 0.431373 )
+self_modulate = Color( 1, 0.733333, 0.290196, 1 )
+margin_left = 14.0908
+margin_top = 7.95072
+margin_right = 175.091
+margin_bottom = 53.9507
+
+[node name="FrontLabel" type="Label" parent="AddMenu/NinePatchCancelar"]
+margin_left = 17.0348
+margin_top = 17.8891
+margin_right = 157.035
+margin_bottom = 49.8891
+rect_scale = Vector2( 0.848748, 0.848748 )
+rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Cancelar"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="NinePatchConfirmar" type="NinePatchRect" parent="AddMenu"]
+margin_left = 810.576
+margin_right = 997.576
+margin_bottom = 61.0
+mouse_filter = 0
+theme = SubResource( 12 )
+texture = SubResource( 13 )
+
+[node name="GuardarButton" type="Button" parent="AddMenu/NinePatchConfirmar"]
+modulate = Color( 1, 0.87451, 0.466667, 0.431373 )
+self_modulate = Color( 1, 0.733333, 0.290196, 1 )
+margin_left = 14.0908
+margin_top = 7.95072
+margin_right = 175.091
+margin_bottom = 53.9507
+
+[node name="FrontLabel" type="Label" parent="AddMenu/NinePatchConfirmar"]
+margin_left = 17.0348
+margin_top = 17.8891
+margin_right = 157.035
+margin_bottom = 49.8891
+rect_scale = Vector2( 0.848748, 0.848748 )
+rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Guardar
+"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="StoreOptionsPopUp" type="Popup" parent="."]
+margin_left = 39.2531
+margin_right = 1004.25
+margin_bottom = 400.0
+rect_scale = Vector2( 0.998456, 0.98733 )
+
+[node name="NinePatchUpgrades" type="NinePatchRect" parent="StoreOptionsPopUp"]
+margin_left = 522.799
+margin_top = 151.996
+margin_right = 876.799
+margin_bottom = 233.996
+theme = SubResource( 12 )
+texture = SubResource( 13 )
+
+[node name="AddElementsButton" type="Button" parent="StoreOptionsPopUp/NinePatchUpgrades"]
+modulate = Color( 1, 0.87451, 0.466667, 0.431373 )
+self_modulate = Color( 1, 0.733333, 0.290196, 1 )
+margin_left = 20.0
+margin_top = 13.0
+margin_right = 341.0
+margin_bottom = 72.0
+
+[node name="FrontLabel" type="Label" parent="StoreOptionsPopUp/NinePatchUpgrades"]
+margin_left = 29.0
+margin_top = 30.0
+margin_right = 339.0
+margin_bottom = 62.0
+rect_scale = Vector2( 0.848748, 0.848748 )
+rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Añadir Árboles y Animales"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="NinePatchReciclaje" type="NinePatchRect" parent="StoreOptionsPopUp"]
+margin_left = 74.6214
+margin_top = 151.996
+margin_right = 428.621
+margin_bottom = 233.996
+theme = SubResource( 12 )
+texture = SubResource( 13 )
+
+[node name="RecicleButton" type="Button" parent="StoreOptionsPopUp/NinePatchReciclaje"]
+modulate = Color( 1, 0.87451, 0.466667, 0.431373 )
+self_modulate = Color( 1, 0.733333, 0.290196, 1 )
+margin_left = 20.0
+margin_top = 13.0
+margin_right = 341.0
+margin_bottom = 72.0
+
+[node name="FrontLabel" type="Label" parent="StoreOptionsPopUp/NinePatchReciclaje"]
+margin_left = 29.0
+margin_top = 30.0
+margin_right = 339.0
+margin_bottom = 62.0
+rect_scale = Vector2( 0.848748, 0.848748 )
+rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Limpiar basura"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="NinePatchÁrboles" type="NinePatchRect" parent="StoreOptionsPopUp"]
+margin_left = 74.6214
+margin_top = 268.761
+margin_right = 428.621
+margin_bottom = 350.761
+theme = SubResource( 12 )
+texture = SubResource( 13 )
+
+[node name="RevivirArbolesButton" type="Button" parent="StoreOptionsPopUp/NinePatchÁrboles"]
+modulate = Color( 1, 0.87451, 0.466667, 0.431373 )
+self_modulate = Color( 1, 0.733333, 0.290196, 1 )
+margin_left = 20.0
+margin_top = 13.0
+margin_right = 341.0
+margin_bottom = 72.0
+
+[node name="FrontLabel" type="Label" parent="StoreOptionsPopUp/NinePatchÁrboles"]
+margin_left = 29.0
+margin_top = 30.0
+margin_right = 339.0
+margin_bottom = 62.0
+rect_scale = Vector2( 0.848748, 0.848748 )
+rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Revivir Árboles Gigantes"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Title" type="NinePatchRect" parent="StoreOptionsPopUp"]
+margin_left = 280.0
+margin_top = 61.0
+margin_right = 643.0
+margin_bottom = 112.0
+theme = SubResource( 12 )
+texture = SubResource( 13 )
+
+[node name="FrontLabel" type="Label" parent="StoreOptionsPopUp/Title"]
+margin_left = 15.7615
+margin_top = 12.4814
+margin_right = 372.761
+margin_bottom = 44.4814
+rect_scale = Vector2( 0.848748, 0.848748 )
+rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Que Mejora Quieres Realizar?"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ExitPopup" type="TextureButton" parent="StoreOptionsPopUp"]
+margin_left = 894.389
+margin_right = 964.389
+margin_bottom = 80.0
+rect_scale = Vector2( 0.997548, 0.992172 )
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
+
+[node name="TrashMenu" type="Control" parent="."]
+visible = false
+margin_right = 1005.0
+margin_bottom = 596.0
+
+[node name="NinePatchCancelar" type="NinePatchRect" parent="TrashMenu"]
+margin_left = 810.576
+margin_top = 72.5503
+margin_right = 997.576
+margin_bottom = 133.55
+mouse_filter = 0
+theme = SubResource( 12 )
+texture = SubResource( 13 )
+
+[node name="CancelarButton" type="Button" parent="TrashMenu/NinePatchCancelar"]
+modulate = Color( 1, 0.87451, 0.466667, 0.431373 )
+self_modulate = Color( 1, 0.733333, 0.290196, 1 )
+margin_left = 14.0908
+margin_top = 7.95072
+margin_right = 175.091
+margin_bottom = 53.9507
+
+[node name="FrontLabel" type="Label" parent="TrashMenu/NinePatchCancelar"]
+margin_left = 17.0348
+margin_top = 17.8891
+margin_right = 157.035
+margin_bottom = 49.8891
+rect_scale = Vector2( 0.848748, 0.848748 )
+rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Cancelar"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="NinePatchConfirmar" type="NinePatchRect" parent="TrashMenu"]
+margin_left = 810.576
+margin_right = 997.576
+margin_bottom = 61.0
+mouse_filter = 0
+theme = SubResource( 12 )
+texture = SubResource( 13 )
+
+[node name="GuardarButton" type="Button" parent="TrashMenu/NinePatchConfirmar"]
+modulate = Color( 1, 0.87451, 0.466667, 0.431373 )
+self_modulate = Color( 1, 0.733333, 0.290196, 1 )
+margin_left = 14.0908
+margin_top = 7.95072
+margin_right = 175.091
+margin_bottom = 53.9507
+
+[node name="FrontLabel" type="Label" parent="TrashMenu/NinePatchConfirmar"]
+margin_left = 17.0348
+margin_top = 17.8891
+margin_right = 157.035
+margin_bottom = 49.8891
+rect_scale = Vector2( 0.848748, 0.848748 )
+rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Guardar
+"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="TutorialMsg" type="Label" parent="TrashMenu"]
+margin_left = 258.089
+margin_top = 508.846
+margin_right = 862.089
+margin_bottom = 587.846
+rect_scale = Vector2( 0.848748, 0.848748 )
+rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 17 )
+text = "Haz click en la basura para limpiarla (50 Monedas)"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="WarningMsg" type="Label" parent="."]
+visible = false
+margin_left = 269.0
+margin_top = 541.0
+margin_right = 627.0
+margin_bottom = 620.0
+rect_scale = Vector2( 0.848748, 0.848748 )
+rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 74 )
+text = "No se puede añadir más (Monedas Insuficientes)"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ArbolGiganteMenu" type="Control" parent="."]
+margin_left = 39.2531
+margin_right = 1044.25
+margin_bottom = 596.0
+
+[node name="Options" type="Control" parent="ArbolGiganteMenu"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="NinePatchNE" type="NinePatchRect" parent="ArbolGiganteMenu/Options"]
+margin_left = 522.066
+margin_top = 152.058
+margin_right = 876.066
+margin_bottom = 234.058
+theme = SubResource( 12 )
+texture = SubResource( 13 )
+
+[node name="ArbolButton" type="Button" parent="ArbolGiganteMenu/Options/NinePatchNE"]
+modulate = Color( 1, 0.87451, 0.466667, 0.431373 )
+self_modulate = Color( 1, 0.733333, 0.290196, 1 )
+margin_left = 20.0
+margin_top = 13.0
+margin_right = 341.0
+margin_bottom = 72.0
+
+[node name="FrontLabel" type="Label" parent="ArbolGiganteMenu/Options/NinePatchNE"]
+margin_left = 29.0
+margin_top = 30.0
+margin_right = 339.0
+margin_bottom = 62.0
+rect_scale = Vector2( 0.848748, 0.848748 )
+rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Árbol Zona Nor-Este"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="NinePatchNO" type="NinePatchRect" parent="ArbolGiganteMenu/Options"]
+margin_left = 74.5808
+margin_top = 152.058
+margin_right = 428.581
+margin_bottom = 234.058
+theme = SubResource( 12 )
+texture = SubResource( 13 )
+
+[node name="ArbolButton" type="Button" parent="ArbolGiganteMenu/Options/NinePatchNO"]
+modulate = Color( 1, 0.87451, 0.466667, 0.431373 )
+self_modulate = Color( 1, 0.733333, 0.290196, 1 )
+margin_left = 20.0
+margin_top = 13.0
+margin_right = 341.0
+margin_bottom = 72.0
+
+[node name="FrontLabel" type="Label" parent="ArbolGiganteMenu/Options/NinePatchNO"]
+margin_left = 29.0
+margin_top = 30.0
+margin_right = 339.0
+margin_bottom = 62.0
+rect_scale = Vector2( 0.848748, 0.848748 )
+rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Árbol Zona Nor-Oeste"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="NinePatchSE" type="NinePatchRect" parent="ArbolGiganteMenu/Options"]
+margin_left = 525.991
+margin_top = 265.355
+margin_right = 879.991
+margin_bottom = 347.355
+theme = SubResource( 12 )
+texture = SubResource( 13 )
+
+[node name="ArbolButton" type="Button" parent="ArbolGiganteMenu/Options/NinePatchSE"]
+modulate = Color( 1, 0.87451, 0.466667, 0.431373 )
+self_modulate = Color( 1, 0.733333, 0.290196, 1 )
+margin_left = 20.0
+margin_top = 13.0
+margin_right = 341.0
+margin_bottom = 72.0
+
+[node name="FrontLabel" type="Label" parent="ArbolGiganteMenu/Options/NinePatchSE"]
+margin_left = 29.0
+margin_top = 30.0
+margin_right = 339.0
+margin_bottom = 62.0
+rect_scale = Vector2( 0.848748, 0.848748 )
+rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Árbol Zona Sur-Este"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="NinePatchSO" type="NinePatchRect" parent="ArbolGiganteMenu/Options"]
+margin_left = 74.5809
+margin_top = 265.355
+margin_right = 428.581
+margin_bottom = 347.355
+theme = SubResource( 12 )
+texture = SubResource( 13 )
+
+[node name="ArbolButton" type="Button" parent="ArbolGiganteMenu/Options/NinePatchSO"]
+modulate = Color( 1, 0.87451, 0.466667, 0.431373 )
+self_modulate = Color( 1, 0.733333, 0.290196, 1 )
+margin_left = 20.0
+margin_top = 13.0
+margin_right = 341.0
+margin_bottom = 72.0
+
+[node name="FrontLabel" type="Label" parent="ArbolGiganteMenu/Options/NinePatchSO"]
+margin_left = 29.0
+margin_top = 30.0
+margin_right = 339.0
+margin_bottom = 62.0
+rect_scale = Vector2( 0.848748, 0.848748 )
+rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Árbol Zona Sur-Oeste"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="PriceMesasge" type="Label" parent="ArbolGiganteMenu"]
+margin_left = 194.303
+margin_top = 508.846
+margin_right = 838.303
+margin_bottom = 587.846
+rect_scale = Vector2( 0.848748, 0.848748 )
+rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 17 )
+text = "¿Cúal Árbol quieres recuperar? (Costo 1000 Monedas)"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="NinePatchRegresar" type="NinePatchRect" parent="ArbolGiganteMenu"]
+margin_left = 771.323
+margin_top = 7.95072
+margin_right = 958.323
+margin_bottom = 68.9507
+mouse_filter = 0
+theme = SubResource( 12 )
+texture = SubResource( 13 )
+
+[node name="RegresarButton" type="Button" parent="ArbolGiganteMenu/NinePatchRegresar"]
+modulate = Color( 1, 0.87451, 0.466667, 0.431373 )
+self_modulate = Color( 1, 0.733333, 0.290196, 1 )
+margin_left = 14.0908
+margin_top = 7.95072
+margin_right = 175.091
+margin_bottom = 53.9507
+
+[node name="FrontLabel" type="Label" parent="ArbolGiganteMenu/NinePatchRegresar"]
+margin_left = 17.0348
+margin_top = 17.8891
+margin_right = 157.035
+margin_bottom = 49.8891
+rect_scale = Vector2( 0.848748, 0.848748 )
+rect_pivot_offset = Vector2( 140, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Regresar"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="WarningText" type="RichTextLabel" parent="ArbolGiganteMenu"]
+visible = false
+margin_left = 240.425
+margin_top = 472.074
+margin_right = 730.425
+margin_bottom = 551.074
+custom_fonts/normal_font = SubResource( 75 )
+text = "No tienes suficientes monedas (Costo 1000). 
+Consigue monedas en los minijuegos y regresa"
+scroll_active = false
+
+[connection signal="mouse_entered" from="AddMenu/TabStoreContainer" to="." method="_on_TabStoreContainer_mouse_entered"]
+[connection signal="mouse_exited" from="AddMenu/TabStoreContainer" to="." method="_on_TabStoreContainer_mouse_exited"]
+[connection signal="gui_input" from="AddMenu/TabStoreContainer/Arboles/ScrollContainer/VBoxContainer/HBoxContainer/item_arbol" to="AddMenu/TabStoreContainer/Arboles/ScrollContainer/VBoxContainer/HBoxContainer/item_arbol" method="_item_clicked"]
+[connection signal="mouse_entered" from="AddMenu/NinePatchCancelar" to="." method="_on_Exit_mouse_entered"]
+[connection signal="mouse_exited" from="AddMenu/NinePatchCancelar" to="." method="_on_Exit_mouse_exited"]
+[connection signal="mouse_entered" from="AddMenu/NinePatchCancelar/CancelarButton" to="." method="_on_Exit_mouse_entered"]
+[connection signal="mouse_exited" from="AddMenu/NinePatchCancelar/CancelarButton" to="." method="_on_Exit_mouse_exited"]
+[connection signal="pressed" from="AddMenu/NinePatchCancelar/CancelarButton" to="." method="_on_CancelarButton_pressed"]
+[connection signal="mouse_entered" from="AddMenu/NinePatchConfirmar" to="." method="_on_Exit_mouse_entered"]
+[connection signal="mouse_exited" from="AddMenu/NinePatchConfirmar" to="." method="_on_Exit_mouse_exited"]
+[connection signal="mouse_entered" from="AddMenu/NinePatchConfirmar/GuardarButton" to="." method="_on_Exit_mouse_entered"]
+[connection signal="mouse_exited" from="AddMenu/NinePatchConfirmar/GuardarButton" to="." method="_on_Exit_mouse_exited"]
+[connection signal="pressed" from="AddMenu/NinePatchConfirmar/GuardarButton" to="." method="_on_GuardarButton_pressed"]
+[connection signal="pressed" from="StoreOptionsPopUp/NinePatchUpgrades/AddElementsButton" to="." method="_on_AddElementsButton_pressed"]
+[connection signal="pressed" from="StoreOptionsPopUp/NinePatchReciclaje/RecicleButton" to="." method="_on_RecicleButton_pressed"]
+[connection signal="pressed" from="StoreOptionsPopUp/NinePatchÁrboles/RevivirArbolesButton" to="." method="_on_RevivirButton_pressed"]
+[connection signal="mouse_entered" from="StoreOptionsPopUp/ExitPopup" to="." method="_on_Exit_mouse_entered"]
+[connection signal="mouse_exited" from="StoreOptionsPopUp/ExitPopup" to="." method="_on_Exit_mouse_exited"]
+[connection signal="pressed" from="StoreOptionsPopUp/ExitPopup" to="." method="_on_Exit_pressed"]
+[connection signal="mouse_entered" from="TrashMenu/NinePatchCancelar" to="." method="_on_reciclar_button_mouse_entered"]
+[connection signal="mouse_exited" from="TrashMenu/NinePatchCancelar" to="." method="_on_reciclar_button_mouse_exited"]
+[connection signal="mouse_entered" from="TrashMenu/NinePatchCancelar/CancelarButton" to="." method="_on_reciclar_button_mouse_entered"]
+[connection signal="mouse_exited" from="TrashMenu/NinePatchCancelar/CancelarButton" to="." method="_on_reciclar_button_mouse_exited"]
+[connection signal="pressed" from="TrashMenu/NinePatchCancelar/CancelarButton" to="." method="_on_reciclar_cancel_pressed"]
+[connection signal="mouse_entered" from="TrashMenu/NinePatchConfirmar/GuardarButton" to="." method="_on_reciclar_button_mouse_entered"]
+[connection signal="mouse_exited" from="TrashMenu/NinePatchConfirmar/GuardarButton" to="." method="_on_reciclar_button_mouse_exited"]
+[connection signal="pressed" from="TrashMenu/NinePatchConfirmar/GuardarButton" to="." method="_on_reciclar_guardar_pressed"]
+[connection signal="pressed" from="ArbolGiganteMenu/Options/NinePatchNE/ArbolButton" to="." method="_on_ArbolButtonNE_pressed"]
+[connection signal="pressed" from="ArbolGiganteMenu/Options/NinePatchNO/ArbolButton" to="." method="_on_ArbolButtonNO_pressed"]
+[connection signal="pressed" from="ArbolGiganteMenu/Options/NinePatchSE/ArbolButton" to="." method="_on_ArbolButtonSE_pressed"]
+[connection signal="pressed" from="ArbolGiganteMenu/Options/NinePatchSO/ArbolButton" to="." method="_on_ArbolButtonSO_pressed"]
+[connection signal="pressed" from="ArbolGiganteMenu/NinePatchRegresar/RegresarButton" to="." method="_on_RegresarButton_pressed"]

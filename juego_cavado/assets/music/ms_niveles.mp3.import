@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ms_niveles.mp3-0a51d51c34a7a79ef269d606386dd22d.mp3str"
+
+[deps]
+
+source_file="res://juego_cavado/assets/music/ms_niveles.mp3"
+dest_files=[ "res://.import/ms_niveles.mp3-0a51d51c34a7a79ef269d606386dd22d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
