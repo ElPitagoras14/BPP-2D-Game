@@ -4,9 +4,8 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var shopKeeperArea=get_node("shopKeeper/shopKeeperArea")
-onready var playerArea=get_node("player/Area2D")
-onready var shopKeeperPopup=get_node("shopKeeperDialogueBox/shopKeeperPopup")
+
+onready var popup=$Popup
 
 
 #func _process(delta):
@@ -21,3 +20,11 @@ onready var shopKeeperPopup=get_node("shopKeeperDialogueBox/shopKeeperPopup")
 #func _process(delta):
 #	pass
 
+
+
+func _on_exit_pressed():
+	for n in popup.get_children():
+		if n.name!="exit":
+			popup.remove_child(n)
+			n.queue_free()
+	popup.hide()

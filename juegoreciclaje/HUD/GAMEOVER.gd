@@ -6,10 +6,14 @@ func init(score: int, maxCombo: int):
 	var coinsLabel = $MonedaLabel
 	var medalla = $medallaImg
 	var SFX = $ClappingSFX
+	var money=int(score/10)
 	ScoreLabel.text = str("Puntaje: ",score)
 	maxComboLabel.text = str("Max Combo: ",maxCombo)
-	coinsLabel.text = str("x", int(score/10))
+	coinsLabel.text = str("x", money)
 	if score >= 600 or maxCombo >= 50:
+		var baseStats=GameManager.getBaseStats()
+		baseStats["trophy-r"]=true
+		GameManager.saveBaseStats(baseStats)
 		medalla.texture = load("res://assets/Medallas/diamante.png")
 		if GameManager.player.reciclaje.medallas < 4:
 			GameManager.player.reciclaje.medallas =4
@@ -24,7 +28,7 @@ func init(score: int, maxCombo: int):
 	elif score >= 100 or maxCombo >= 10:
 		medalla.texture = load("res://assets/Medallas/bronce.png")
 		if GameManager.player.reciclaje.medallas < 1:
-			GameManager.player.reciclaje.medallas =1	
+			GameManager.player.reciclaje.medallas =1
 	GameManager.savePlayerToJson("reciclaje", GameManager.player.reciclaje.medallas, score)
 	
 	

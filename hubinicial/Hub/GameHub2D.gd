@@ -1,5 +1,13 @@
 extends Node2D
 
+export (String,FILE,"*.png") var TextureBase1
+export (String,FILE,"*.png") var TextureBase2
+export (String,FILE,"*.png") var TextureBase3
+export (String,FILE,"*.png") var TextureBase4
+export (String,FILE,"*.png") var TextureBase5
+
+onready var textureList=[TextureBase1,TextureBase2,TextureBase3,TextureBase4,
+						TextureBase5]
 onready var player = $Jugador
 onready var playerCamera = $Jugador/Camera2D
 onready var dialog = $Hud/DialogPopUp
@@ -7,10 +15,13 @@ onready var cameraCutAnimation = $CutsceneCam2D/AnimationPlayer
 onready var speakerAnimation = $Hud/DialogPopUp/SpeakerSprite/SpeakerAnimation
 onready var HUD = $Hud/MainHud
 onready var animationTimer = $AnimationTimer
-
+onready var base=$Base
+onready var baseEntrance=$BaseEntrance
 onready var TreeRegionsArray = [$SWTrees, $SETrees, $NWTrees, $NETrees]
 
 func _ready():
+	var baseStats=GameManager.getBaseStats()
+	GameManager.saveLastZone("",0,0)
 	$Hud/ColorRect/FadeInAnimation.play("FadeIn")
 	if(GameManager.currentPlayer):
 		GameManager.loadPlayer(GameManager.currentPlayer)
@@ -29,6 +40,7 @@ func _ready():
 		animationTimer.start()
 	else:
 		$Jugador/Camera2D.current = true
+	loadBaseTexture(baseStats["level"])
 
 func _input(event):
 	
@@ -61,6 +73,20 @@ func _input(event):
 
 func _loadTreeUpgrade():
 	pass
+
+func loadBaseTexture(var level):
+	var texturePath="../../image/"
+	var scenePath="res://scenes/bases/"
+	var baseBody=base.get_node("BaseBody")
+	if level==0:
+		base.remove_child(baseBody)
+		remove_child(baseEntrance)
+		baseBody.queue_free()
+		baseEntrance.queue_free()
+	else:
+		baseEntrance.targetScene=scenePath+"base-"+str(level)+"/base-"+str(level)+".tscn"
+		var texture=load(textureList[level-1])
+		base.texture=texture
 
 func _on_FadeInAnimation_animation_finished(anim_name):
 	if(dialog.dActive):

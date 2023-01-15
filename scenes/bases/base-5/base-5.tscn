@@ -1,0 +1,162 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/Sprites/tilesets/decoraciones.tres" type="TileSet" id=1]
+[ext_resource path="res://scenes/baseShop/door.gd" type="Script" id=2]
+[ext_resource path="res://hubinicial/Player/Jugador.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/InteractionManager/InteractionManager.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/bases/base.gd" type="Script" id=5]
+[ext_resource path="res://scenes/bases/base-5/trophyInteractionManager.gd" type="Script" id=6]
+[ext_resource path="res://scenes/bases/base-5/utilityInteractionManager.gd" type="Script" id=9]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/inBase-5.png-f2842a5052d0c379b835ccf335fdee12.stex"
+
+[node name="main" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -228.0
+margin_top = -395.0
+margin_right = 1411.0
+margin_bottom = 597.0
+texture = SubResource( 1 )
+
+[node name="wallDecors" type="TileMap" parent="."]
+scale = Vector2( 2.5, 2.5 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 16 )
+format = 1
+tile_data = PoolIntArray( 131096, 107, 0, 131123, 105, 0, 131126, 536870966, 0, 131131, 105, 0, 524328, 108, 0 )
+
+[node name="preWallDecors" type="TileMap" parent="."]
+scale = Vector2( 2.5, 2.5 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 16 )
+format = 1
+tile_data = PoolIntArray( 131106, 536870944, 0, 131116, 536870953, 0, 131134, 536870952, 0 )
+
+[node name="decors" type="TileMap" parent="."]
+scale = Vector2( 2.5, 2.5 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 16 )
+format = 1
+tile_data = PoolIntArray( -196616, 68, 0, -262142, 70, 0, 196619, 36, 0, 458803, 28, 0, 524331, 97, 0 )
+
+[node name="preDecors" type="TileMap" parent="."]
+scale = Vector2( 2.5, 2.5 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 16 )
+format = 1
+tile_data = PoolIntArray( -262132, 48, 0, 196629, 12, 0, 196651, 50, 0, 196675, 50, 0, 524315, 10, 0, 655370, 98, 0, 655427, 33, 0 )
+
+[node name="muebles" type="TileMap" parent="."]
+scale = Vector2( 2.5, 2.5 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 16 )
+format = 1
+tile_data = PoolIntArray( 262190, 38, 0, 262197, 73, 0, 262206, 38, 0, 458762, 89, 0, 458817, 536871004, 0, 524315, 45, 0, 524317, 536870955, 0, 524321, 536870957, 0, 589854, 46, 0 )
+
+[node name="preMuebles" type="TileMap" parent="."]
+scale = Vector2( 2.5, 2.5 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 16 )
+format = 1
+tile_data = PoolIntArray( 262197, 536870954, 0, 262206, 17, 0, 458762, 27, 0, 524315, 21, 0, 524317, 16, 0, 524321, 536870933, 0, 589854, 22, 0 )
+
+[node name="utility" type="TileMap" parent="."]
+scale = Vector2( 2.5, 2.5 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 16 )
+format = 1
+tile_data = PoolIntArray( 196642, 13, 0 )
+
+[node name="utilityInteractionManager" parent="utility" instance=ExtResource( 4 )]
+position = Vector2( 288.4, 91.2 )
+scale = Vector2( 1.736, 0.328 )
+script = ExtResource( 9 )
+timeline = ""
+
+[node name="preUtility" type="TileMap" parent="."]
+scale = Vector2( 2.5, 2.5 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 16 )
+format = 1
+tile_data = PoolIntArray( 720917, 14, 0 )
+
+[node name="trophy-r" type="TileMap" parent="."]
+scale = Vector2( 2.5, 2.5 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 16 )
+format = 1
+tile_data = PoolIntArray( -524298, 65, 0, -524296, 63, 0, -524294, 62, 0, -458761, 66, 0 )
+
+[node name="r-interactionManager" parent="trophy-r" instance=ExtResource( 4 )]
+position = Vector2( -56.4, -86.4 )
+scale = Vector2( 1.736, 0.328 )
+script = ExtResource( 6 )
+timeline = "r-trophyTimeline"
+
+[node name="trophy-c" type="TileMap" parent="."]
+scale = Vector2( 2.5, 2.5 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 16 )
+format = 1
+tile_data = PoolIntArray( -589812, 55, 0, -589811, 8, 0 )
+
+[node name="c-interactionManager" parent="trophy-c" instance=ExtResource( 4 )]
+position = Vector2( 128, -76.4 )
+scale = Vector2( 2.296, 0.328 )
+script = ExtResource( 6 )
+timeline = "c-trophyTimeline"
+
+[node name="trophy-e" type="TileMap" parent="."]
+scale = Vector2( 2.5, 2.5 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 16 )
+format = 1
+tile_data = PoolIntArray( -524289, 49, 0, -393218, 35, 0 )
+
+[node name="e-interactionManager" parent="trophy-e" instance=ExtResource( 4 )]
+position = Vector2( 8, -85.2 )
+scale = Vector2( 2.19958, 0.392648 )
+script = ExtResource( 6 )
+timeline = "e-trophyTimeline"
+
+[node name="trophy-a" type="TileMap" parent="."]
+scale = Vector2( 2.5, 2.5 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 16 )
+format = 1
+tile_data = PoolIntArray( -589818, 34, 0 )
+
+[node name="a-interactionManager" parent="trophy-a" instance=ExtResource( 4 )]
+position = Vector2( 64.8, -87.2 )
+scale = Vector2( 1.736, 0.328 )
+script = ExtResource( 6 )
+timeline = "a-trophyTimeline"
+
+[node name="paredes" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="paredes" type="CollisionPolygon2D" parent="paredes"]
+polygon = PoolVector2Array( 211, 194, 273, 202, 276, -50, -177, -51, -202, -71, -201, -235, 80, -235, 87, -298, -227, -291, -228, -62, -185, -29, 254, -32, 251, 137, 182, 138, 182, 530, 205, 550, 302, 551, 301, 575, 316, 593, 392, 594, 402, 570, 400, 546, 766, 550, 783, 534, 781, 499, 833, 499, 836, 509, 870, 543, 1373, 544, 1415, 501, 1408, 129, 967, 134, 835, 139, 843, 379, 786, 379, 783, 145, 407, 143, 397, -305, 377, -304, 97, -300, 89, -236, 380, -230, 379, 197, 566, 201, 569, 261, 667, 258, 667, 201, 761, 204, 763, 441, 858, 442, 853, 205, 1381, 197, 1381, 497, 1366, 517, 879, 519, 855, 500, 853, 476, 765, 476, 760, 522, 378, 526, 379, 573, 329, 577, 326, 525, 209, 524, 200, 470 )
+
+[node name="Jugador" parent="." instance=ExtResource( 3 )]
+position = Vector2( 355, 502 )
+scale = Vector2( 2, 2 )
+
+[node name="Camera2D" type="Camera2D" parent="Jugador"]
+current = true
+limit_left = -236
+limit_top = -401
+limit_right = 1427
+limit_bottom = 603
+smoothing_speed = 2.0
+editor_draw_limits = true
+
+[node name="door" parent="." instance=ExtResource( 4 )]
+position = Vector2( 356, 578 )
+scale = Vector2( 2.84, 0.28 )
+script = ExtResource( 2 )
+targetScene = "res://hubinicial/Hub/GameHub2D.tscn"

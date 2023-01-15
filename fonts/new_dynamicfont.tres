@@ -3,6 +3,6 @@
 [ext_resource path="res://fonts/Righteous-Regular.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 20
+size = 37
 outline_color = Color( 0.0235294, 0.0235294, 0.0235294, 1 )
 font_data = ExtResource( 1 )

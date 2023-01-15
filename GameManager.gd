@@ -44,6 +44,17 @@ func saveCurrentPlayerPosition(var x, var y):
 	allPlayers[currentPlayer]["ubicacion"]["y"] = y
 	saveJson(allPlayers)
 
+func saveLastZone(var name, var x, var y):
+	loadJson()
+	allPlayers[currentPlayer]["lastZone"]["name"]=name
+	allPlayers[currentPlayer]["lastZone"]["x"] = x
+	allPlayers[currentPlayer]["lastZone"]["y"] = y
+	saveJson(allPlayers)
+
+func getLastZone():
+	loadJson()
+	return allPlayers[currentPlayer]["lastZone"]
+
 func unlockObject(var pos):
 	loadJson()
 	allPlayers[currentPlayer]["objetos"][pos]=true
@@ -52,6 +63,32 @@ func unlockObject(var pos):
 func getObjects():
 	loadJson()
 	return allPlayers[currentPlayer]["objetos"]
+
+func getBaseStats():
+	loadJson()
+	return allPlayers[currentPlayer]["base"]
+
+func purchaseBase(var id):
+	loadJson()
+	allPlayers[currentPlayer]["base"][id]=true
+	saveJson(allPlayers)
+
+func saveBaseStats(var dicc):
+	loadJson()
+	allPlayers[currentPlayer]["base"]=dicc
+	saveJson(allPlayers)
+
+func reduceMoney(var money):
+	loadJson()
+	allPlayers[currentPlayer]["monedas"]-=money
+	saveJson(allPlayers)
+
+func getMoney():
+	loadJson()
+	if currentPlayer==null:
+		return 0
+	else:
+		return allPlayers[currentPlayer]["monedas"]
 
 func loadJson():
 	var file = File.new()
@@ -71,8 +108,12 @@ func addPlayer(var Nombre, var sprite):
 	"cartas":{"medallas":0, "mejorPuntaje":0, "pts":0}, 
 	"monedas":0, "reciclaje":{"medallas":0, "mejorPuntaje":0, "pts":0},
 	"ubicacion":{"x":0, "y":0},
+	"lastZone":{"name":"","x":0, "y":0},
 	"objetos":[false, false, false, false, false, false, false,
 			   false, false, false, false, false, false, false, false],
+	"base":{"level":0, "decors": false, "muebles": false, "wallDecors":false,
+			"utility":false,"trophy":false, "trophy-r": false, "trophy-c":false,
+			"trophy-e":false, "trophy-a":false},
 	"sprite":sprite}
 	saveJson(allPlayers)
 	

@@ -1,0 +1,36 @@
+{
+    "0":{
+        "upgrade":{"itemName":"base", "price":500},
+        "list":[]
+        },
+    "1":{
+        "upgrade":{"itemName":"Mejora a Nivel 2 de base.", "price":1500},
+        "list":[{"id":"muebles","itemName":"Muebles.", "price":100}]
+        },
+    "2":{
+        "upgrade":{"itemName":"Mejora a Nivel 3 de base.", "price":2000},
+        "list":[{"id":"muebles","itemName":"Muebles.", "price":200},
+                {"id":"decors","itemName":"Decoraciones.", "price":100}]
+        },
+    "3":{
+        "upgrade":{"itemName":"Mejora a Nivel 4 de base.", "price":2500},
+        "list":[{"id":"muebles","itemName":"Muebles.", "price":300},
+                {"id":"decors","itemName":"Decoraciones.", "price":200},
+                {"id":"wallDecors","itemName":"Decoraciones para paredes.", "price":100}]
+        },
+    "4":{
+        "upgrade":{"itemName":"Mejora a Nivel 5 de base.", "price":3000},
+        "list":[{"id":"muebles","itemName":"Muebles.", "price":400},
+                {"id":"decors","itemName":"Decoraciones.", "price":300},
+                {"id":"wallDecors","itemName":"Decoraciones para paredes.", "price":200},
+                {"id":"utility","itemName":"Objetos de utilidad.", "price":100}]
+        },
+    "5":{
+        "upgrade":{},
+        "list":[{"id":"muebles","itemName":"Muebles.", "price":500},
+                {"id":"decors","itemName":"Decoraciones.", "price":400},
+                {"id":"wallDecors","itemName":"Decoraciones para paredes.", "price":300},
+                {"id":"utility","itemName":"Objetos de utilidad.", "price":200},
+                {"id":"trophy","itemName":"Posibilidad de trofeos.", "price":100}]
+        }
+}

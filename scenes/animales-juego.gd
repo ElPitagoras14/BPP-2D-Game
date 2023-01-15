@@ -276,12 +276,15 @@ func _on_TitleButton_pressed():
 	get_tree().change_scene("res://scenes/animales.tscn")
 
 func _on_End_about_to_show():
-	$End/HBoxContainer/score.text = str(puntaje)
-	$End/MonedaLabel.text= str("x", int(puntaje/10))
 	var medalla = $End/medallaImg
 	var m
+	$End/HBoxContainer/score.text = str(puntaje)
+	$End/MonedaLabel.text= str("x", int(puntaje/10))
 	if puntaje >= 900:
 		medalla.texture = load("res://assets/Medallas/Diamante.png")
+		var baseStats=GameManager.getBaseStats()
+		baseStats["trophy-a"]=true
+		GameManager.saveBaseStats(baseStats)
 		m=4
 	elif puntaje >= 750:
 		medalla.texture = load("res://assets/Medallas/Oro.png")

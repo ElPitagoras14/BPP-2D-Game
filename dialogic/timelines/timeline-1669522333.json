@@ -4,11 +4,47 @@
 			"character": "character-1669522278.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "¡Hola, encantada en conocerte! Mi nombre es Gloria y soy la encargada de manejar las cabañas en la entrada del bosque.\n¿En qué te puedo ayudar?"
+			"text": "¡Hola, encantada en conocerte! Mi nombre es Gloria y soy la encargada de manejar las cabañas en la entrada del bosque."
+		},
+		{
+			"character": "character-1669522278.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "¿Quieres comprar?"
+		},
+		{
+			"choice": "Sí, por favor",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"emit_signal": "openShop",
+			"event_id": "dialogic_040"
+		},
+		{
+			"choice": "Solo vine a saludar",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1669522278.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "¡Si necesitas algo habla conmigo!"
+		},
+		{
+			"event_id": "dialogic_013"
 		},
 		{
 			"event_id": "dialogic_022",
-			"transition_duration": 1
+			"transition_duration": 0.5
 		}
 	],
 	"metadata": {

@@ -9,7 +9,6 @@
 [ext_resource path="res://SFX/3.1. mouse-click1.ogg" type="AudioStream" id=7]
 [ext_resource path="res://images/menu_juego.png" type="Texture" id=8]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 74
 use_mipmaps = true

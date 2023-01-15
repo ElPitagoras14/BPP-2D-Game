@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/new_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://images/moneda.png" type="Texture" id=2]
+[ext_resource path="res://scenes/shopUI/shopUIBtn.gd" type="Script" id=3]
+[ext_resource path="res://images/shopUi-ItemBg.png" type="Texture" id=4]
+
+[node name="TextureButton" type="TextureButton"]
+margin_right = 832.0
+margin_bottom = 89.0
+rect_min_size = Vector2( 0, 89 )
+texture_normal = ExtResource( 4 )
+expand = true
+stretch_mode = 4
+script = ExtResource( 3 )
+itemName = "1"
+price = "1"
+
+[node name="ItemName" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 576.0
+margin_bottom = 65.0
+custom_colors/font_color = Color( 0.337255, 0.0862745, 0.0470588, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.878431, 0.588235, 0.313726, 1 )
+custom_constants/shadow_offset_x = -3
+custom_constants/shadow_offset_y = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Item"
+valign = 1
+clip_text = true
+
+[node name="Price" type="Label" parent="."]
+margin_left = 648.0
+margin_top = 8.0
+margin_right = 817.0
+margin_bottom = 65.0
+grow_horizontal = 0
+custom_colors/font_color = Color( 0.337255, 0.0862745, 0.0470588, 1 )
+custom_colors/font_color_shadow = Color( 0.878431, 0.588235, 0.313726, 1 )
+custom_constants/shadow_offset_x = -3
+custom_constants/shadow_offset_y = 1
+custom_fonts/font = ExtResource( 1 )
+text = "x99999"
+valign = 1
+
+[node name="Moneda" type="TextureRect" parent="."]
+margin_left = 592.0
+margin_top = 8.0
+margin_right = 648.0
+margin_bottom = 72.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6

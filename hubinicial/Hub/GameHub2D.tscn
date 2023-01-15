@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://hubinicial/Player/Jugador.tscn" type="PackedScene" id=1]
 [ext_resource path="res://hubinicial/assets/Pipoya RPG Tileset 32x32/[A]Grass2_pipo.png" type="Texture" id=2]
@@ -1272,8 +1272,16 @@ points = PoolVector2Array( 8, 0, 32, 0, 32, 24, 8, 24 )
 0/shapes = [  ]
 0/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=49]
+extents = Vector2( 109, 106.5 )
+
 [node name="GameHub2D" type="Node2D"]
 script = ExtResource( 5 )
+TextureBase1 = "res://images/base-1.png"
+TextureBase2 = "res://images/base-2.png"
+TextureBase3 = "res://images/base-3.png"
+TextureBase4 = "res://images/base-4.png"
+TextureBase5 = "res://images/base-5.png"
 
 [node name="Jugador" parent="." instance=ExtResource( 1 )]
 scale = Vector2( 1.5, 1.5 )
@@ -1746,7 +1754,7 @@ tile_set = SubResource( 5 )
 cell_size = Vector2( 32, 32 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( -1048595, 0, 0, -720913, 19, 0, -720912, 18, 0, -786414, 9, 0, -655379, 11, 0, -655378, 6, 0, -655377, 8, 0, -655376, 8, 0, -655375, 6, 0, -655374, 7, 0, -720880, 0, 0, -589843, 12, 0, -589842, 5, 0, -589841, 4, 0, -589840, 5, 0, -589839, 5, 0, -589838, 10, 0, -393198, 19, 0, -393197, 18, 0, -327664, 11, 0, -327663, 8, 0, -327662, 6, 0, -327661, 6, 0, -327660, 8, 0, -327659, 7, 0, -262137, 1, 0, -262128, 12, 0, -262127, 5, 0, -262126, 4, 0, -262125, 5, 0, -262124, 5, 0, -262123, 10, 0, -131097, 16, 0, -131096, 17, 0, -131095, 17, 0, -131094, 17, 0, -131093, 17, 0, -131092, 17, 0, -131091, 17, 0, -131090, 17, 0, -131089, 15, 0, -65561, 16, 0, -65553, 2, 0, -25, 16, 0, 65511, 16, 0, 131047, 16, 0, 196583, 16, 0, 196591, 15, 0, 262119, 3, 0, 262120, 13, 0, 262121, 14, 0, 262122, 14, 0, 262123, 13, 0, 262124, 14, 0, 262125, 14, 0, 262126, 13, 0, 262127, 2, 0, 327692, 0, 0, 327695, 0, 0, 524266, 0, 0, 655374, 19, 0, 655377, 19, 0, 655378, 18, 0, 720908, 11, 0, 720909, 6, 0, 720910, 6, 0, 720911, 12, 0, 720912, 5, 0, 720913, 5, 0, 720914, 5, 0, 720915, 5, 0, 720916, 10, 0, 851948, 19, 0, 851949, 18, 0, 786444, 12, 0, 786445, 5, 0, 786446, 4, 0, 786447, 11, 0, 786448, 8, 0, 786449, 6, 0, 786450, 8, 0, 786451, 6, 0, 786452, 7, 0, 917482, 11, 0, 917483, 6, 0, 917484, 8, 0, 917485, 8, 0, 917486, 6, 0, 917487, 7, 0, 851983, 12, 0, 851984, 5, 0, 851985, 5, 0, 851986, 5, 0, 851987, 5, 0, 851988, 10, 0, 983018, 12, 0, 983019, 4, 0, 983020, 5, 0, 983021, 5, 0, 983022, 5, 0, 983023, 10, 0 )
+tile_data = PoolIntArray( -1048595, 0, 0, -720913, 19, 0, -720912, 18, 0, -786414, 9, 0, -655379, 11, 0, -655378, 6, 0, -655377, 8, 0, -655376, 8, 0, -655375, 6, 0, -655374, 7, 0, -720880, 0, 0, -589843, 12, 0, -589842, 5, 0, -589841, 4, 0, -589840, 5, 0, -589839, 5, 0, -589838, 10, 0, -393198, 19, 0, -393197, 18, 0, -327664, 11, 0, -327663, 8, 0, -327662, 6, 0, -327661, 6, 0, -327660, 8, 0, -327659, 7, 0, -262137, 1, 0, -262128, 12, 0, -262127, 5, 0, -262126, 4, 0, -262125, 5, 0, -262124, 5, 0, -262123, 10, 0, 327692, 0, 0, 327695, 0, 0, 524266, 0, 0, 655374, 19, 0, 655377, 19, 0, 655378, 18, 0, 720908, 11, 0, 720909, 6, 0, 720910, 6, 0, 720911, 12, 0, 720912, 5, 0, 720913, 5, 0, 720914, 5, 0, 720915, 5, 0, 720916, 10, 0, 851948, 19, 0, 851949, 18, 0, 786444, 12, 0, 786445, 5, 0, 786446, 4, 0, 786447, 11, 0, 786448, 8, 0, 786449, 6, 0, 786450, 8, 0, 786451, 6, 0, 786452, 7, 0, 917482, 11, 0, 917483, 6, 0, 917484, 8, 0, 917485, 8, 0, 917486, 6, 0, 917487, 7, 0, 851983, 12, 0, 851984, 5, 0, 851985, 5, 0, 851986, 5, 0, 851987, 5, 0, 851988, 10, 0, 983018, 12, 0, 983019, 4, 0, 983020, 5, 0, 983021, 5, 0, 983022, 5, 0, 983023, 10, 0 )
 
 [node name="TileMap2" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
@@ -1797,6 +1805,26 @@ position = Vector2( 592, -105 )
 scale = Vector2( 2, 1 )
 script = ExtResource( 18 )
 targetScene = "res://scenes/cartasHouse/cartasHouse.tscn"
+
+[node name="BaseEntrance" parent="." instance=ExtResource( 17 )]
+position = Vector2( -655, 114 )
+scale = Vector2( 3.68, 1 )
+script = ExtResource( 18 )
+targetScene = ""
+
+[node name="Base" type="TextureRect" parent="."]
+margin_left = -760.0
+margin_top = -91.0
+margin_right = -546.0
+margin_bottom = 123.0
+expand = true
+stretch_mode = 6
+
+[node name="BaseBody" type="StaticBody2D" parent="Base"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/BaseBody"]
+position = Vector2( 103, 106.5 )
+shape = SubResource( 49 )
 
 [connection signal="animation_finished" from="CutsceneCam2D/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="body_entered" from="SWTrees/DinamicTree1/Area2D" to="." method="_on_Dinamic_area_body_entered"]

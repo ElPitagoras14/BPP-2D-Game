@@ -205,6 +205,9 @@ func menuFinal():
 	elif gameMode == 'flor' and puntaje < 800:
 		medallas = 3
 	elif puntaje >= 800:
+		var baseStats=GameManager.getBaseStats()
+		baseStats["trophy-c"]=true
+		GameManager.saveBaseStats(baseStats)
 		medallas = 4
 	var count = 0
 	while count < medallas:
@@ -215,7 +218,6 @@ func menuFinal():
 	$Final/Background/CenterContainer/VBoxContainer/HBoxContainer2/monedas.text = "x"+str(floor(puntaje/10))
 
 func _on_TextureButton_pressed():
-	
 	GameManager.savePlayerToJson('cartas', str(medallas), str(puntaje))
 	get_tree().change_scene("res://hubinicial/Hub/GameHub2D.tscn")
 

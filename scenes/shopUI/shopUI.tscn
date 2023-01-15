@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/new_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/shopUI/shopUI.gd" type="Script" id=2]
+[ext_resource path="res://images/moneyLabelBg.png" type="Texture" id=3]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/shopUI-bg.png-54780ce988645bdf98f384a5ce76d217.stex"
+
+[node name="shopUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+itemListJson = "res://scenes/shopUI/baseShopItemList.json"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 72.0
+margin_top = 96.0
+margin_right = 968.0
+margin_bottom = 480.0
+texture = SubResource( 1 )
+expand = true
+stretch_mode = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TextureRect"]
+margin_left = 32.0
+margin_top = 24.0
+margin_right = 864.0
+margin_bottom = 352.0
+
+[node name="itemList" type="VBoxContainer" parent="TextureRect/ScrollContainer"]
+margin_right = 832.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_constants/separation = 10
+
+[node name="Popup" type="Popup" parent="TextureRect"]
+margin_right = 896.0
+margin_bottom = 384.0
+
+[node name="allPurchasedLabel" type="Label" parent="TextureRect/Popup"]
+margin_left = 96.0
+margin_top = 168.0
+margin_right = 812.0
+margin_bottom = 215.0
+custom_colors/font_color = Color( 0.337255, 0.0862745, 0.0470588, 1 )
+custom_colors/font_color_shadow = Color( 0.878431, 0.588235, 0.313726, 1 )
+custom_constants/shadow_offset_x = -3
+custom_constants/shadow_offset_y = 1
+custom_fonts/font = ExtResource( 1 )
+text = "TODO COMPRADO, MIRA TU NUEVA BASE"
+
+[node name="moneyRect" type="TextureRect" parent="."]
+margin_left = 72.0
+margin_top = 472.0
+margin_right = 376.0
+margin_bottom = 552.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 5
+
+[node name="money" type="Label" parent="moneyRect"]
+margin_left = 64.0
+margin_top = 24.0
+margin_right = 263.0
+margin_bottom = 71.0
+custom_colors/font_color = Color( 0.337255, 0.0862745, 0.0470588, 1 )
+custom_colors/font_color_shadow = Color( 0.878431, 0.588235, 0.313726, 1 )
+custom_constants/shadow_offset_x = -3
+custom_constants/shadow_offset_y = 1
+custom_fonts/font = ExtResource( 1 )
+text = "999999999"
+align = 2
+valign = 1
+autowrap = true
+clip_text = true
+max_lines_visible = 1

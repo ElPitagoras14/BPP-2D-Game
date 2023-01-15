@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/baseShop/npc/shopKeeperInteractionManager.gd" type="Script" id=1]
 [ext_resource path="res://scenes/baseShop/npc/shopKeeper.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://hubinicial/Player/Jugador.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/InteractionManager/InteractionManager.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/baseShop/door.gd" type="Script" id=7]
+[ext_resource path="res://images/iconoCerrarMadera.png" type="Texture" id=8]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -104,3 +105,19 @@ position = Vector2( 392, 584 )
 scale = Vector2( 2.28, 0.28 )
 script = ExtResource( 7 )
 targetScene = "res://hubinicial/Hub/GameHub2D.tscn"
+
+[node name="Popup" type="Popup" parent="."]
+visible = true
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="exit" type="TextureButton" parent="Popup"]
+margin_left = 48.0
+margin_top = 56.0
+margin_right = 104.0
+margin_bottom = 112.0
+texture_normal = ExtResource( 8 )
+expand = true
+stretch_mode = 4
+
+[connection signal="pressed" from="Popup/exit" to="." method="_on_exit_pressed"]
