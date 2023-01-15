@@ -73,12 +73,27 @@ func loadJson():
 			printerr("Corrupted data!")
 	else:
 		printerr("No saved data!")
+		
+func getUnlockedLvl():
+	loadJson()
+	return allPlayers[currentPlayer]['niveles']
 
 func addPlayer(var Nombre, var sprite):
 	allPlayers[Nombre] = {"animales":{"medallas":0, "mejorPuntaje":0, "pts":0}, 
-	"cartas":{"medallas":0, "mejorPuntaje":0, "pts":0}, 
+	"cartas":{"medallas":0, "mejorPuntaje":0, "pts":0},
+	"cavado":{"medallas":0, "mejorPuntaje":0, "pts":0}, 
 	"mejoras": {
 	 
+	},
+	"niveles": {
+		"0": true,
+		"1": false,
+		"2": false,
+		"3": false,
+		"4": false,
+		"5": false,
+		"6": false,
+		"7": false
 	},
 	'level':{'Trash':[],
 		'Upgrades':[], 

@@ -16,7 +16,7 @@ func _update_values():
 	var coins = floor(new_points / 10)
 	lbl_score.text = str(new_points)
 	lbl_coin.text = "x" + str(coins)
-	#GameManager.savePlayerToJson("cavado", 0, new_points)
+	GameManager.savePlayerToJson("cavado", 0, new_points)
 	
 func _show():
 	self.set_visible(true)

@@ -10,6 +10,7 @@ var offset_y = 30
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	CavadoMaster.unlocked_levels = GameManager.getUnlockedLvl()
 	get_parent().get_node("AudioStreamPlayer").play()
 	_fill_scene()
 	pass # Replace with function body.

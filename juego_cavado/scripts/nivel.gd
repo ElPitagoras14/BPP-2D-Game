@@ -12,11 +12,11 @@ func _ready():
 
 func _set_nivel(nivel):
 	self.nivel = nivel
-	if !CavadoMaster.unlocked_levels[nivel]:
+	if !CavadoMaster.unlocked_levels[str(nivel)]:
 		set_self_modulate(Color(0.4352, 0.3686, 0.3686))
 
 func _change_to_level(i):
-	if CavadoMaster.unlocked_levels[i]:
+	if CavadoMaster.unlocked_levels[str(i)]:
 		CavadoMaster.nivel_actual = i
 		_change_to_play_scene()
 
@@ -29,7 +29,7 @@ func _get_max_energy(lvl):
 	var info = CavadoMaster.niveles[lvl]
 	var difficulty = float(100 - (lvl + 1) * 2) / 100
 	difficulty = max(0.8, difficulty)
-	var max_energy = info[0] * info[1] * (0.6 + (info[2] - 1) * 0.55) * difficulty
+	var max_energy = info[0] * info[1] * (0.55 + (info[2] - 1) * 0.50) * difficulty
 	return int(max_energy)
 	
 func _input(event):
