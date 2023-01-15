@@ -109,8 +109,6 @@ func _on_RevivirButton_pressed():
 		if(GameManager.player != null):
 			var upgrades = GameManager.player.level['Arboles']
 			for key in upgrades.keys():
-				print(key)
-				print(upgrades[key])
 				if("NE" in key):
 					if upgrades[key]:
 						disableArbolesIsUpgradedButton(arbolMenu.get_node("Options/NinePatchNE"))
