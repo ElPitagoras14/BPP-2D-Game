@@ -19,15 +19,7 @@ var shadow_colors = [
 	Color(0.8705, 0.7568, 0.4862)
 ]
 
-var unlocked_levels = [
-	true,
-	false,
-	false,
-	false,
-	false,
-	false,
-	false
-]
+var unlocked_levels;
 
 var offset_figuras = [
 	[Vector2(271,134), Vector2(377,160), Vector2(437,326), Vector2(291,331)],

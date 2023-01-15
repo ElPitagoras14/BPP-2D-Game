@@ -53,7 +53,7 @@ func _get_new_sprite(pos_x, pos_y, num, script):
 	return spr_fig
 	
 func _win_game():
-	#GameManager.saveUnlockedLvl(CavadoMaster.nivel_actual + 1)
+	GameManager.saveUnlockedLvl(CavadoMaster.nivel_actual + 1)
 	var nivel_actual = CavadoMaster.nivel_actual
 	CavadoMaster.unlocked_levels[nivel_actual + 1] = true
 	pass
