@@ -37,6 +37,11 @@ func savePlayerToJson(var juego, var medallas, var puntos):
 	allPlayers[currentPlayer][juego]['pts'] += int(puntos)
 	
 	saveJson(allPlayers)
+	
+func saveUnlockedLvl(lvl):
+	loadJson()
+	allPlayers[currentPlayer]['niveles'][str(lvl)] = true
+	saveJson(allPlayers)
 
 func saveCurrentPlayerPosition(var x, var y):
 	loadJson()

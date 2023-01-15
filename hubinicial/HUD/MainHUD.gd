@@ -42,19 +42,36 @@ func _on_Tienda_pressed():
 		#TODO Manejar error
 		get_tree().change_scene("res://scenes/PantallaInicio.tscn")
 		
+func _on_Cavado_pressed():
+	get_node("Click").play()
+	var player = get_owner().get_node_or_null('Jugador')
+	if player:
+		GameManager.saveCurrentPlayerPosition(player.position.x, player.position.y)
+	yield(get_tree().create_timer(.2),"timeout")
+	get_tree().change_scene("res://juego_cavado/scenes/menu_cavado.tscn")
+
 func _on_Enciclopedia_pressed():
 	get_node("Click").play()
+	var player = get_owner().get_node_or_null('Jugador')
+	if player:
+		GameManager.saveCurrentPlayerPosition(player.position.x, player.position.y)
 	yield(get_tree().create_timer(.3),"timeout")
 	get_tree().change_scene("res://scenes/Enciclopedia.tscn")
 
 func _on_Reciclaje_pressed():
 	get_node("Click").play()
+	var player = get_owner().get_node_or_null('Jugador')
+	if player:
+		GameManager.saveCurrentPlayerPosition(player.position.x, player.position.y)
 	yield(get_tree().create_timer(.3),"timeout")
 	get_tree().change_scene("res://juegoreciclaje/HUD/TitleScreen.tscn")
 	MusicController.play_music()
 	
 func _on_ProfileButton_pressed():
 	get_node("Click").play()
+	var player = get_owner().get_node_or_null('Jugador')
+	if player:
+		GameManager.saveCurrentPlayerPosition(player.position.x, player.position.y)
 	yield(get_tree().create_timer(.3),"timeout")
 	get_tree().change_scene("res://scenes/Perfil.tscn")
 
@@ -73,10 +90,8 @@ func _on_SalirMenu_pressed():
 	var player = get_owner().get_node_or_null('Jugador')
 	if player:
 		GameManager.saveCurrentPlayerPosition(player.position.x, player.position.y)
-		yield(get_tree().create_timer(.3),"timeout")
-		get_tree().change_scene("res://scenes/PantallaInicio.tscn")
-	else:
-		print('Debugging')
+	yield(get_tree().create_timer(.3),"timeout")
+	get_tree().change_scene("res://scenes/PantallaInicio.tscn")
 	
 
 func _on_SalirJuego_pressed():
@@ -87,7 +102,7 @@ func _on_SalirJuego_pressed():
 		yield(get_tree().create_timer(.3),"timeout")
 		get_tree().quit()
 	else:
-		print('Debugging')
+		get_tree().quit()
 
 func _on_Cancelar4_pressed():
 	get_node("Click").play()
