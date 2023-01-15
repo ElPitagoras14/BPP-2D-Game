@@ -1807,9 +1807,6 @@ points = PoolVector2Array( 32, 24, 0, 24, 0, 8, 32, 8 )
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=49]
-extents = Vector2( 109, 106.5 )
-
 [node name="GameHub2D" type="Node2D"]
 script = ExtResource( 5 )
 TextureBase1 = "res://images/base-1.png"
@@ -2251,17 +2248,11 @@ scale = Vector2( 2, 1 )
 script = ExtResource( 18 )
 targetScene = "res://scenes/recycleHouse/recycleHouse.tscn"
 
-[node name="CartasHouse" parent="." instance=ExtResource( 17 )]
+[node name="CartasHouse" parent="HousesColission" instance=ExtResource( 17 )]
 position = Vector2( 592, -105 )
 scale = Vector2( 2, 1 )
 script = ExtResource( 18 )
 targetScene = "res://scenes/cartasHouse/cartasHouse.tscn"
-
-[node name="BaseEntrance" parent="." instance=ExtResource( 17 )]
-position = Vector2( -655, 114 )
-scale = Vector2( 3.68, 1 )
-script = ExtResource( 18 )
-targetScene = ""
 
 [node name="Base" type="TextureRect" parent="."]
 margin_left = -760.0
@@ -2274,40 +2265,16 @@ stretch_mode = 6
 [node name="BaseBody" type="StaticBody2D" parent="Base"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base/BaseBody"]
-position = Vector2( 103, 106.5 )
+position = Vector2( -2, 0 )
+scale = Vector2( 3.32, 6.6 )
 shape = SubResource( 49 )
 
-[connection signal="animation_finished" from="CutsceneCam2D/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
-[connection signal="body_entered" from="SWTrees/DinamicTree1/Area2D" to="." method="_on_Dinamic_area_body_entered"]
-[connection signal="body_exited" from="SWTrees/DinamicTree1/Area2D" to="." method="_on_Dinamic_area_body_exited"]
-[connection signal="body_entered" from="SWTrees/DinamicTree2/Area2D" to="." method="_on_Dinamic_area_body_entered"]
-[connection signal="body_exited" from="SWTrees/DinamicTree2/Area2D" to="." method="_on_Dinamic_area_body_exited"]
-[connection signal="body_entered" from="SWTrees/DinamicTree3/Area2D" to="." method="_on_Dinamic_area_body_entered"]
-[connection signal="body_exited" from="SWTrees/DinamicTree3/Area2D" to="." method="_on_Dinamic_area_body_exited"]
-[connection signal="body_entered" from="SETrees/DinamicTree1/Area2D" to="." method="_on_Dinamic_area_body_entered"]
-[connection signal="body_exited" from="SETrees/DinamicTree1/Area2D" to="." method="_on_Dinamic_area_body_exited"]
-[connection signal="body_entered" from="SETrees/DinamicTree2/Area2D" to="." method="_on_Dinamic_area_body_entered"]
-[connection signal="body_exited" from="SETrees/DinamicTree2/Area2D" to="." method="_on_Dinamic_area_body_exited"]
-[connection signal="body_entered" from="SETrees/DinamicTree3/Area2D" to="." method="_on_Dinamic_area_body_entered"]
-[connection signal="body_exited" from="SETrees/DinamicTree3/Area2D" to="." method="_on_Dinamic_area_body_exited"]
-[connection signal="body_entered" from="NWTrees/DinamicTree1/Area2D" to="." method="_on_Dinamic_area_body_entered"]
-[connection signal="body_exited" from="NWTrees/DinamicTree1/Area2D" to="." method="_on_Dinamic_area_body_exited"]
-[connection signal="body_entered" from="NWTrees/DinamicTree2/Area2D" to="." method="_on_Dinamic_area_body_entered"]
-[connection signal="body_exited" from="NWTrees/DinamicTree2/Area2D" to="." method="_on_Dinamic_area_body_exited"]
-[connection signal="body_entered" from="NWTrees/DinamicTree3/Area2D" to="." method="_on_Dinamic_area_body_entered"]
-[connection signal="body_exited" from="NWTrees/DinamicTree3/Area2D" to="." method="_on_Dinamic_area_body_exited"]
-[connection signal="body_entered" from="NWTrees/DinamicTree4/Area2D" to="." method="_on_Dinamic_area_body_entered"]
-[connection signal="body_exited" from="NWTrees/DinamicTree4/Area2D" to="." method="_on_Dinamic_area_body_exited"]
-[connection signal="body_entered" from="NWTrees/DinamicTree5/Area2D" to="." method="_on_Dinamic_area_body_entered"]
-[connection signal="body_exited" from="NWTrees/DinamicTree5/Area2D" to="." method="_on_Dinamic_area_body_exited"]
-[connection signal="body_entered" from="NETrees/DinamicTree1/Area2D" to="." method="_on_Dinamic_area_body_entered"]
-[connection signal="body_exited" from="NETrees/DinamicTree1/Area2D" to="." method="_on_Dinamic_area_body_exited"]
-[connection signal="body_entered" from="NETrees/DinamicTree2/Area2D" to="." method="_on_Dinamic_area_body_entered"]
-[connection signal="body_exited" from="NETrees/DinamicTree2/Area2D" to="." method="_on_Dinamic_area_body_exited"]
-[connection signal="body_entered" from="NETrees/DinamicTree3/Area2D" to="." method="_on_Dinamic_area_body_entered"]
-[connection signal="body_exited" from="NETrees/DinamicTree3/Area2D" to="." method="_on_Dinamic_area_body_exited"]
-[connection signal="body_entered" from="NETrees/DinamicTree4/Area2D" to="." method="_on_Dinamic_area_body_entered"]
-[connection signal="body_exited" from="NETrees/DinamicTree4/Area2D" to="." method="_on_Dinamic_area_body_exited"]
+[node name="BaseEntrance" parent="Base" instance=ExtResource( 17 )]
+position = Vector2( 105, 205 )
+scale = Vector2( 3.68, 1 )
+script = ExtResource( 18 )
+targetScene = ""
+
 [node name="AnimationTimer" type="Timer" parent="."]
 wait_time = 2.4
 one_shot = true
@@ -2324,6 +2291,7 @@ volume_db = -0.052
 [connection signal="body_exited" from="DynamicTreeSE/Area2D" to="." method="_on_Dinamic_area_body_exited"]
 [connection signal="body_entered" from="DynamicTreeSO/Area2D" to="." method="_on_Dinamic_area_body_entered"]
 [connection signal="body_exited" from="DynamicTreeSO/Area2D" to="." method="_on_Dinamic_area_body_exited"]
+[connection signal="animation_finished" from="CutsceneCam2D/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="CutsceneCam2D/AnimationPlayer" to="." method="_on_CutsceneAnimationPlayer_animation_finished" binds= [ "" ]]
 [connection signal="animation_finished" from="Hud/ColorRect/FadeInAnimation" to="." method="_on_FadeInAnimation_animation_finished"]
 [connection signal="animation_finished" from="Hud/DialogPopUp/Arrow/ArrowAnimation" to="." method="_on_ArrowAnimation_animation_finished"]

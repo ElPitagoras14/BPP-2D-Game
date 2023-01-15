@@ -16,7 +16,7 @@ onready var speakerAnimation = $Hud/DialogPopUp/SpeakerSprite/SpeakerAnimation
 onready var HUD = $Hud/MainHud
 onready var animationTimer = $AnimationTimer
 onready var base=$Base
-onready var baseEntrance=$BaseEntrance
+onready var baseEntrance=$Base/BaseEntrance
 onready var TreeRegionsArray = [$SWTrees, $SETrees, $NWTrees, $NETrees]
 
 func _ready():
