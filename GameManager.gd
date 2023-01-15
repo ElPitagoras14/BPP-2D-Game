@@ -37,6 +37,11 @@ func savePlayerToJson(var juego, var medallas, var puntos):
 	allPlayers[currentPlayer][juego]['pts'] += int(puntos)
 	
 	saveJson(allPlayers)
+	
+func saveUnlockedLvl(lvl):
+	loadJson()
+	allPlayers[currentPlayer]['niveles'][str(lvl)] = true
+	saveJson(allPlayers)
 
 func saveCurrentPlayerPosition(var x, var y):
 	loadJson()
@@ -90,6 +95,18 @@ func getMoney():
 	else:
 		return allPlayers[currentPlayer]["monedas"]
 
+func save_trash_level(data_array:Array):
+	allPlayers[currentPlayer]['level']['Trash'] = data_array
+	saveJson(allPlayers)
+
+func save_user_level(var data_array:Array):
+	allPlayers[currentPlayer]['level']['Upgrades'] = data_array
+	saveJson(allPlayers)
+
+func savePlayerMonedas(var newQuantity):
+	allPlayers[currentPlayer]['monedas'] = newQuantity
+	saveJson(allPlayers)
+	
 func loadJson():
 	var file = File.new()
 	if file.file_exists(userFile):
@@ -106,6 +123,17 @@ func loadJson():
 func addPlayer(var Nombre, var sprite):
 	allPlayers[Nombre] = {"animales":{"medallas":0, "mejorPuntaje":0, "pts":0}, 
 	"cartas":{"medallas":0, "mejorPuntaje":0, "pts":0}, 
+	"mejoras": {
+	 
+	},
+	'level':{'Trash':[],
+		'Upgrades':[], 
+		"Arboles": { "NETrees": false,
+		 "NOTrees": false,
+		 "SETrees": false,
+		 "SOTrees": false
+		 }
+		},
 	"monedas":0, "reciclaje":{"medallas":0, "mejorPuntaje":0, "pts":0},
 	"ubicacion":{"x":0, "y":0},
 	"lastZone":{"name":"","x":0, "y":0},
@@ -118,7 +146,10 @@ func addPlayer(var Nombre, var sprite):
 	saveJson(allPlayers)
 	
 func loadPlayer(var Nombre):
-	player = allPlayers[Nombre]
+	if(Nombre and allPlayers):
+		player = allPlayers[Nombre]
+	else:#Error de carga, de vuleta al menu
+		get_tree().change_scene("res://scenes/PantallaInicio.tscn")
 
 func _ready():
 	loadJson()

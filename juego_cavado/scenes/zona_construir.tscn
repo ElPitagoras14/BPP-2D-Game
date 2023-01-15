@@ -1,0 +1,141 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://juego_cavado/scripts/win_construir.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Righteous-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://images/menu_juego.png" type="Texture" id=3]
+[ext_resource path="res://juego_cavado/assets/misc/construir.png" type="Texture" id=4]
+[ext_resource path="res://juego_cavado/scripts/zona-items.gd" type="Script" id=5]
+[ext_resource path="res://juego_cavado/scripts/zona_construir.gd" type="Script" id=6]
+[ext_resource path="res://images/madera.png" type="Texture" id=7]
+[ext_resource path="res://SFX/Clapping.mp3" type="AudioStream" id=8]
+[ext_resource path="res://juego_cavado/assets/misc/continuar.png" type="Texture" id=9]
+[ext_resource path="res://images/moneda.png" type="Texture" id=10]
+[ext_resource path="res://juego_cavado/assets/music/ms_construir.mp3" type="AudioStream" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 74
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+
+[node name="ZonaConstruir" type="Control" parent="."]
+margin_left = 84.0
+margin_top = 66.0
+margin_right = 830.0
+margin_bottom = 524.0
+script = ExtResource( 6 )
+
+[node name="ZonaItems" type="Control" parent="."]
+margin_left = 832.0
+margin_top = 9.0
+margin_right = 1027.0
+margin_bottom = 600.0
+script = ExtResource( 5 )
+
+[node name="Win" type="Popup" parent="."]
+margin_right = 1027.0
+margin_bottom = 601.0
+popup_exclusive = true
+script = ExtResource( 1 )
+
+[node name="Background" type="ColorRect" parent="Win"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0823529, 0.0627451, 0.0196078, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="Win/Background"]
+modulate = Color( 0.866667, 0.866667, 0.866667, 1 )
+margin_right = 1027.0
+margin_bottom = 600.0
+texture = ExtResource( 7 )
+stretch_mode = 4
+
+[node name="GameOverLabel" type="Label" parent="Win"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -513.5
+margin_top = 99.0
+margin_right = 510.5
+margin_bottom = 191.0
+custom_fonts/font = SubResource( 1 )
+text = "Nivel Completado"
+align = 1
+valign = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Win"]
+margin_top = 317.0
+margin_right = 1024.0
+margin_bottom = 515.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Win/HBoxContainer2"]
+margin_left = 414.0
+margin_right = 610.0
+margin_bottom = 198.0
+
+[node name="ContinueButton" type="TextureButton" parent="Win/HBoxContainer2/VBoxContainer"]
+margin_right = 196.0
+margin_bottom = 97.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 9 )
+
+[node name="TitleButton" type="TextureButton" parent="Win/HBoxContainer2/VBoxContainer"]
+margin_top = 101.0
+margin_right = 196.0
+margin_bottom = 198.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 3 )
+
+[node name="Moneda" type="TextureRect" parent="Win"]
+margin_left = 444.0
+margin_top = 234.0
+margin_right = 489.0
+margin_bottom = 279.0
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 6
+
+[node name="CoinValue" type="Label" parent="Win"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -9.5
+margin_top = -66.5
+margin_right = 115.5
+margin_bottom = -25.5
+custom_fonts/font = SubResource( 3 )
+text = "x 10"
+
+[node name="medallaImg" type="TextureRect" parent="Win"]
+margin_left = 607.0
+margin_top = 259.0
+margin_right = 661.0
+margin_bottom = 310.0
+
+[node name="ClappingSFX" type="AudioStreamPlayer" parent="Win"]
+stream = ExtResource( 8 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -8.0
+
+[connection signal="button_down" from="Win/HBoxContainer2/VBoxContainer/ContinueButton" to="ZonaConstruir" method="_on_ContinueButton_button_down"]
+[connection signal="button_down" from="Win/HBoxContainer2/VBoxContainer/TitleButton" to="ZonaConstruir" method="_on_TitleButton_button_down"]

@@ -2,7 +2,6 @@ extends Control
 var Nombre
 
 func _ready():
-	#$Nombre/TextEdit
 	get_node("BGM").play()
 
 func _on_Button2_pressed():

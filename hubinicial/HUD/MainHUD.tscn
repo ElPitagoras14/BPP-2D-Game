@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://hubinicial/HUD/MainHUD.gd" type="Script" id=1]
 [ext_resource path="res://assets/iconos/user.png" type="Texture" id=2]
@@ -13,15 +13,16 @@
 [ext_resource path="res://assets/iconos/salir.png" type="Texture" id=11]
 [ext_resource path="res://assets/iconos/atras.png" type="Texture" id=12]
 [ext_resource path="res://SFX/3.1. mouse-click1.ogg" type="AudioStream" id=13]
+[ext_resource path="res://assets/iconos/cavadao_game.png" type="Texture" id=14]
 
-[sub_resource type="DynamicFontData" id=11]
+[sub_resource type="DynamicFontData" id=15]
 font_path = "res://fonts/Righteous-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=12]
 size = 25
 use_mipmaps = true
 use_filter = true
-font_data = SubResource( 11 )
+font_data = SubResource( 15 )
 
 [sub_resource type="DynamicFontData" id=9]
 font_path = "res://fonts/Righteous-Regular.ttf"
@@ -88,14 +89,15 @@ color = Color( 0, 0, 0, 0.262745 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 visible = false
-margin_left = 912.0
+margin_left = 926.0
 margin_top = 68.0
-margin_right = 1012.0
-margin_bottom = 68.0
+margin_right = 1026.0
+margin_bottom = 688.0
+rect_scale = Vector2( 0.85727, 0.85727 )
 
 [node name="VBoxMenu" type="VBoxContainer" parent="HBoxContainer"]
 margin_right = 100.0
-margin_bottom = 516.0
+margin_bottom = 620.0
 
 [node name="Tienda" type="TextureButton" parent="HBoxContainer/VBoxMenu" groups=["botones"]]
 margin_right = 100.0
@@ -112,24 +114,32 @@ mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
 texture_normal = ExtResource( 9 )
 
-[node name="Reciclaje" type="TextureButton" parent="HBoxContainer/VBoxMenu" groups=["botones"]]
+[node name="Cavado" type="TextureButton" parent="HBoxContainer/VBoxMenu" groups=["botones"]]
 margin_top = 208.0
 margin_right = 100.0
 margin_bottom = 308.0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 7 )
+size_flags_horizontal = 0
+texture_normal = ExtResource( 14 )
 
-[node name="Animales" type="TextureButton" parent="HBoxContainer/VBoxMenu"]
+[node name="Reciclaje" type="TextureButton" parent="HBoxContainer/VBoxMenu" groups=["botones"]]
 margin_top = 312.0
 margin_right = 100.0
 margin_bottom = 412.0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 8 )
+texture_normal = ExtResource( 7 )
 
-[node name="Arbol" type="TextureButton" parent="HBoxContainer/VBoxMenu" groups=["botones"]]
+[node name="Animales" type="TextureButton" parent="HBoxContainer/VBoxMenu"]
 margin_top = 416.0
 margin_right = 100.0
 margin_bottom = 516.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 8 )
+
+[node name="Arbol" type="TextureButton" parent="HBoxContainer/VBoxMenu" groups=["botones"]]
+margin_top = 520.0
+margin_right = 100.0
+margin_bottom = 620.0
 mouse_default_cursor_shape = 2
 size_flags_vertical = 4
 texture_normal = ExtResource( 10 )
@@ -230,6 +240,7 @@ volume_db = -15.864
 [connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxMenu/Tienda" to="." method="_on_Tienda_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxMenu/Enciclopedia" to="." method="_on_Enciclopedia_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxMenu/Cavado" to="." method="_on_Cavado_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxMenu/Reciclaje" to="." method="_on_Reciclaje_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxMenu/Animales" to="." method="_on_Animales_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxMenu/Arbol" to="." method="_on_Arbol_pressed"]

@@ -2,7 +2,7 @@ extends InteractionManager
 
 export (String,FILE,"*.tscn,*.scn") var targetScene
 
-onready var player = $"../Jugador"
+onready var player = $"../../Jugador"
 
 func recieveInteraction()->void:
 	if !targetScene:
