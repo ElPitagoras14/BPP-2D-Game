@@ -13,8 +13,8 @@ func _ready():
 	var objetos=GameManager.getObjects()
 	for i in range(len(objetos)):
 		var button=get_node("objetos/"+str(i))
-		button.connect('pressed', self, '_pressed', [button])
 		if objetos[i]:
+			button.connect('pressed', self, '_pressed', [button])
 			button.unlockObject()
 
 func _pressed(button):

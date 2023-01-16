@@ -43,9 +43,9 @@ info = "res://scenes/estanteria/info/alas0.txt"
 objeto = "res://juego_cavad/assets/objects/1/ALBW_Triforce_Artwork.png"
 
 [node name="1" type="TextureButton" parent="objetos"]
-margin_left = 360.0
+margin_left = 472.0
 margin_top = 208.0
-margin_right = 440.0
+margin_right = 552.0
 margin_bottom = 288.0
 texture_normal = SubResource( 2 )
 expand = true
@@ -53,11 +53,13 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
+info = "res://scenes/estanteria/info/alas0.txt"
+objeto = "res://juego_cavad/assets/objects/1/ALBW_Triforce_Artwork.png"
 
 [node name="2" type="TextureButton" parent="objetos"]
-margin_left = 472.0
+margin_left = 696.0
 margin_top = 208.0
-margin_right = 552.0
+margin_right = 776.0
 margin_bottom = 288.0
 texture_normal = SubResource( 2 )
 expand = true
@@ -66,19 +68,21 @@ info = "res://scenes/estanteria/info/alas0.txt"
 objeto = "res://juego_cavad/assets/objects/1/ALBW_Triforce_Artwork.png"
 
 [node name="3" type="TextureButton" parent="objetos"]
-margin_left = 584.0
-margin_top = 208.0
-margin_right = 664.0
-margin_bottom = 288.0
+margin_left = 240.0
+margin_top = 320.0
+margin_right = 320.0
+margin_bottom = 400.0
 texture_normal = SubResource( 2 )
 expand = true
 script = ExtResource( 2 )
+info = "res://scenes/estanteria/info/alas0.txt"
+objeto = "res://juego_cavad/assets/objects/1/ALBW_Triforce_Artwork.png"
 
 [node name="4" type="TextureButton" parent="objetos"]
-margin_left = 696.0
-margin_top = 208.0
-margin_right = 776.0
-margin_bottom = 288.0
+margin_left = 472.0
+margin_top = 320.0
+margin_right = 552.0
+margin_bottom = 400.0
 texture_normal = SubResource( 2 )
 expand = true
 script = ExtResource( 2 )
@@ -86,98 +90,20 @@ info = "res://scenes/estanteria/info/alas0.txt"
 objeto = "res://juego_cavad/assets/objects/1/ALBW_Triforce_Artwork.png"
 
 [node name="5" type="TextureButton" parent="objetos"]
-margin_left = 248.0
+margin_left = 696.0
 margin_top = 320.0
-margin_right = 328.0
+margin_right = 776.0
 margin_bottom = 400.0
 texture_normal = SubResource( 2 )
 expand = true
 script = ExtResource( 2 )
+info = "res://scenes/estanteria/info/alas0.txt"
+objeto = "res://juego_cavad/assets/objects/1/ALBW_Triforce_Artwork.png"
 
 [node name="6" type="TextureButton" parent="objetos"]
-margin_left = 360.0
-margin_top = 320.0
-margin_right = 440.0
-margin_bottom = 400.0
-texture_normal = SubResource( 2 )
-expand = true
-script = ExtResource( 2 )
-info = "res://scenes/estanteria/info/alas0.txt"
-objeto = "res://juego_cavad/assets/objects/1/ALBW_Triforce_Artwork.png"
-
-[node name="7" type="TextureButton" parent="objetos"]
-margin_left = 472.0
-margin_top = 320.0
-margin_right = 552.0
-margin_bottom = 400.0
-texture_normal = SubResource( 2 )
-expand = true
-script = ExtResource( 2 )
-
-[node name="8" type="TextureButton" parent="objetos"]
-margin_left = 584.0
-margin_top = 320.0
-margin_right = 664.0
-margin_bottom = 400.0
-texture_normal = SubResource( 2 )
-expand = true
-script = ExtResource( 2 )
-info = "res://scenes/estanteria/info/alas0.txt"
-objeto = "res://juego_cavad/assets/objects/1/ALBW_Triforce_Artwork.png"
-
-[node name="9" type="TextureButton" parent="objetos"]
-margin_left = 696.0
-margin_top = 320.0
-margin_right = 776.0
-margin_bottom = 400.0
-texture_normal = SubResource( 2 )
-expand = true
-script = ExtResource( 2 )
-
-[node name="10" type="TextureButton" parent="objetos"]
-margin_left = 248.0
-margin_top = 440.0
-margin_right = 328.0
-margin_bottom = 520.0
-texture_normal = SubResource( 2 )
-expand = true
-script = ExtResource( 2 )
-info = "res://scenes/estanteria/info/alas0.txt"
-objeto = "res://juego_cavad/assets/objects/1/ALBW_Triforce_Artwork.png"
-
-[node name="11" type="TextureButton" parent="objetos"]
-margin_left = 360.0
-margin_top = 440.0
-margin_right = 440.0
-margin_bottom = 520.0
-texture_normal = SubResource( 2 )
-expand = true
-script = ExtResource( 2 )
-
-[node name="12" type="TextureButton" parent="objetos"]
 margin_left = 472.0
 margin_top = 440.0
 margin_right = 552.0
-margin_bottom = 520.0
-texture_normal = SubResource( 2 )
-expand = true
-script = ExtResource( 2 )
-info = "res://scenes/estanteria/info/alas0.txt"
-objeto = "res://juego_cavad/assets/objects/1/ALBW_Triforce_Artwork.png"
-
-[node name="13" type="TextureButton" parent="objetos"]
-margin_left = 584.0
-margin_top = 440.0
-margin_right = 664.0
-margin_bottom = 520.0
-texture_normal = SubResource( 2 )
-expand = true
-script = ExtResource( 2 )
-
-[node name="14" type="TextureButton" parent="objetos"]
-margin_left = 696.0
-margin_top = 440.0
-margin_right = 776.0
 margin_bottom = 520.0
 texture_normal = SubResource( 2 )
 expand = true

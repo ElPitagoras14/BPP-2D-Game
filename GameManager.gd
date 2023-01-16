@@ -60,14 +60,18 @@ func getLastZone():
 	loadJson()
 	return allPlayers[currentPlayer]["lastZone"]
 
-func unlockObject(var pos):
+func unlockObject(var nivel):
 	loadJson()
-	allPlayers[currentPlayer]["objetos"][pos]=true
+	allPlayers[currentPlayer]["niveles"][nivel]=true
 	saveJson(allPlayers)
 
 func getObjects():
 	loadJson()
-	return allPlayers[currentPlayer]["objetos"]
+	var objetos=[]
+	for i in allPlayers[currentPlayer]["niveles"]:
+		if i!="0":
+			objetos.append(allPlayers[currentPlayer]["niveles"][i])
+	return objetos
 
 func getBaseStats():
 	loadJson()
@@ -152,8 +156,6 @@ func addPlayer(var Nombre, var sprite):
 	"monedas":0, "reciclaje":{"medallas":0, "mejorPuntaje":0, "pts":0},
 	"ubicacion":{"x":0, "y":0},
 	"lastZone":{"name":"","x":0, "y":0},
-	"objetos":[false, false, false, false, false, false, false,
-			   false, false, false, false, false, false, false, false],
 	"base":{"level":0, "decors": false, "muebles": false, "wallDecors":false,
 			"utility":false,"trophy":false, "trophy-r": false, "trophy-c":false,
 			"trophy-e":false, "trophy-a":false},
