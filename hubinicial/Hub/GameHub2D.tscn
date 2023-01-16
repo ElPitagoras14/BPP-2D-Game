@@ -1889,145 +1889,145 @@ position = Vector2( 763.091, -1517.18 )
 scale = Vector2( 1.2272, 2.3514 )
 shape = SubResource( 70 )
 
-[node name="DynamicTreeNE" type="StaticBody2D" parent="."]
+[node name="NETrees" type="StaticBody2D" parent="."]
 position = Vector2( 269, -647 )
 scale = Vector2( 1.7, 1.7 )
 z_index = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DynamicTreeNE"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NETrees"]
 position = Vector2( 2, 50 )
 scale = Vector2( 4, 4 )
 z_index = 8
 shape = SubResource( 32 )
 
-[node name="Sprite" type="Sprite" parent="DynamicTreeNE"]
+[node name="Sprite" type="Sprite" parent="NETrees"]
 position = Vector2( 2, 0 )
 scale = Vector2( 2, 2 )
 texture = SubResource( 33 )
 hframes = 4
 frame = 3
 
-[node name="Area2D" type="Area2D" parent="DynamicTreeNE"]
+[node name="Area2D" type="Area2D" parent="NETrees"]
 position = Vector2( 2, 72 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DynamicTreeNE/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NETrees/Area2D"]
 position = Vector2( 0, -0.729736 )
 scale = Vector2( 3, 3 )
 shape = SubResource( 34 )
 
-[node name="RestrictedBuildArea" type="Area2D" parent="DynamicTreeNE"]
+[node name="RestrictedBuildArea" type="Area2D" parent="NETrees"]
 position = Vector2( 1.76468, 18.8235 )
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DynamicTreeNE/RestrictedBuildArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NETrees/RestrictedBuildArea"]
 position = Vector2( 3.52936, -8.52942 )
 scale = Vector2( 0.951659, 0.641028 )
 shape = SubResource( 69 )
 
-[node name="DynamicTreeNO" type="StaticBody2D" parent="."]
+[node name="NOTrees" type="StaticBody2D" parent="."]
 position = Vector2( -979, -562 )
 scale = Vector2( 1.7, 1.7 )
 z_index = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DynamicTreeNO"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NOTrees"]
 position = Vector2( 2, 50 )
 scale = Vector2( 4, 4 )
 z_index = 8
 shape = SubResource( 32 )
 
-[node name="Sprite" type="Sprite" parent="DynamicTreeNO"]
+[node name="Sprite" type="Sprite" parent="NOTrees"]
 position = Vector2( -2, 0 )
 scale = Vector2( 2, 2 )
 texture = SubResource( 33 )
 hframes = 4
 frame = 3
 
-[node name="Area2D" type="Area2D" parent="DynamicTreeNO"]
+[node name="Area2D" type="Area2D" parent="NOTrees"]
 position = Vector2( 2, 72 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DynamicTreeNO/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NOTrees/Area2D"]
 position = Vector2( -0.5, 0 )
 scale = Vector2( 3, 3 )
 shape = SubResource( 34 )
 
-[node name="RestrictedBuildArea" type="Area2D" parent="DynamicTreeNO"]
+[node name="RestrictedBuildArea" type="Area2D" parent="NOTrees"]
 position = Vector2( 1.76468, 18.8235 )
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DynamicTreeNO/RestrictedBuildArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NOTrees/RestrictedBuildArea"]
 position = Vector2( 0, -9.41168 )
 scale = Vector2( 0.951659, 0.641028 )
 shape = SubResource( 69 )
 
-[node name="DynamicTreeSE" type="StaticBody2D" parent="."]
+[node name="SETrees" type="StaticBody2D" parent="."]
 position = Vector2( 48, 616 )
 scale = Vector2( 1.7, 1.7 )
 z_index = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DynamicTreeSE"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SETrees"]
 position = Vector2( 2, 50 )
 scale = Vector2( 4, 4 )
 z_index = 8
 shape = SubResource( 32 )
 
-[node name="Sprite" type="Sprite" parent="DynamicTreeSE"]
+[node name="Sprite" type="Sprite" parent="SETrees"]
 position = Vector2( 2, 0 )
 scale = Vector2( 2, 2 )
 texture = SubResource( 33 )
 hframes = 4
 frame = 3
 
-[node name="Area2D" type="Area2D" parent="DynamicTreeSE"]
+[node name="Area2D" type="Area2D" parent="SETrees"]
 position = Vector2( 2, 72 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DynamicTreeSE/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SETrees/Area2D"]
 position = Vector2( 4, 3.59882 )
 scale = Vector2( 3, 3 )
 shape = SubResource( 34 )
 
-[node name="RestrictedBuildArea" type="Area2D" parent="DynamicTreeSE"]
+[node name="RestrictedBuildArea" type="Area2D" parent="SETrees"]
 position = Vector2( 1.76468, 18.8235 )
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DynamicTreeSE/RestrictedBuildArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SETrees/RestrictedBuildArea"]
 position = Vector2( 2.64709, -11.4704 )
 scale = Vector2( 0.951659, 0.641028 )
 shape = SubResource( 69 )
 
-[node name="DynamicTreeSO" type="StaticBody2D" parent="."]
+[node name="SOTrees" type="StaticBody2D" parent="."]
 position = Vector2( -1037, 575 )
 scale = Vector2( 1.7, 1.7 )
 z_index = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DynamicTreeSO"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SOTrees"]
 position = Vector2( 2, 50 )
 scale = Vector2( 4, 4 )
 z_index = 8
 shape = SubResource( 32 )
 
-[node name="Sprite" type="Sprite" parent="DynamicTreeSO"]
+[node name="Sprite" type="Sprite" parent="SOTrees"]
 position = Vector2( 2, 0 )
 scale = Vector2( 2, 2 )
 texture = SubResource( 33 )
 hframes = 4
 frame = 3
 
-[node name="Area2D" type="Area2D" parent="DynamicTreeSO"]
+[node name="Area2D" type="Area2D" parent="SOTrees"]
 position = Vector2( 2, 72 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DynamicTreeSO/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SOTrees/Area2D"]
 scale = Vector2( 3, 3 )
 shape = SubResource( 34 )
 
-[node name="RestrictedBuildArea" type="Area2D" parent="DynamicTreeSO"]
+[node name="RestrictedBuildArea" type="Area2D" parent="SOTrees"]
 position = Vector2( 1.76468, 18.8235 )
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DynamicTreeSO/RestrictedBuildArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SOTrees/RestrictedBuildArea"]
 position = Vector2( 3.23532, -10.294 )
 scale = Vector2( 0.951659, 0.641028 )
 shape = SubResource( 69 )
@@ -2283,14 +2283,14 @@ one_shot = true
 stream = ExtResource( 4 )
 volume_db = -0.052
 
-[connection signal="body_entered" from="DynamicTreeNE/Area2D" to="." method="_on_Dinamic_area_body_entered"]
-[connection signal="body_exited" from="DynamicTreeNE/Area2D" to="." method="_on_Dinamic_area_body_exited"]
-[connection signal="body_entered" from="DynamicTreeNO/Area2D" to="." method="_on_Dinamic_area_body_entered"]
-[connection signal="body_exited" from="DynamicTreeNO/Area2D" to="." method="_on_Dinamic_area_body_exited"]
-[connection signal="body_entered" from="DynamicTreeSE/Area2D" to="." method="_on_Dinamic_area_body_entered"]
-[connection signal="body_exited" from="DynamicTreeSE/Area2D" to="." method="_on_Dinamic_area_body_exited"]
-[connection signal="body_entered" from="DynamicTreeSO/Area2D" to="." method="_on_Dinamic_area_body_entered"]
-[connection signal="body_exited" from="DynamicTreeSO/Area2D" to="." method="_on_Dinamic_area_body_exited"]
+[connection signal="body_entered" from="NETrees/Area2D" to="." method="_on_Dinamic_area_body_entered"]
+[connection signal="body_exited" from="NETrees/Area2D" to="." method="_on_Dinamic_area_body_exited"]
+[connection signal="body_entered" from="NOTrees/Area2D" to="." method="_on_Dinamic_area_body_entered"]
+[connection signal="body_exited" from="NOTrees/Area2D" to="." method="_on_Dinamic_area_body_exited"]
+[connection signal="body_entered" from="SETrees/Area2D" to="." method="_on_Dinamic_area_body_entered"]
+[connection signal="body_exited" from="SETrees/Area2D" to="." method="_on_Dinamic_area_body_exited"]
+[connection signal="body_entered" from="SOTrees/Area2D" to="." method="_on_Dinamic_area_body_entered"]
+[connection signal="body_exited" from="SOTrees/Area2D" to="." method="_on_Dinamic_area_body_exited"]
 [connection signal="animation_finished" from="CutsceneCam2D/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="CutsceneCam2D/AnimationPlayer" to="." method="_on_CutsceneAnimationPlayer_animation_finished" binds= [ "" ]]
 [connection signal="animation_finished" from="Hud/ColorRect/FadeInAnimation" to="." method="_on_FadeInAnimation_animation_finished"]
