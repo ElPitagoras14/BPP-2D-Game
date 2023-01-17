@@ -32,3 +32,8 @@ func _fill_scene():
 		spr_block._set_nivel(tex_num)
 		self.add_child(spr_block)
 
+
+
+func _on_TextureButton4_button_down():
+	yield(get_tree().create_timer(.3),"timeout")
+	get_tree().change_scene("res://juego_cavado/scenes/menu_cavado.tscn")
