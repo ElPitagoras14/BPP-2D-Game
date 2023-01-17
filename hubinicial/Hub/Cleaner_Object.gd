@@ -49,3 +49,5 @@ func _input(event):
 		trash_tileset.set_cell(cellx,celly,-1)
 		get_parent().temp_deleted_tiles.append({"x":cellx, "y":celly})
 		
+		check_enough_currency()
+	

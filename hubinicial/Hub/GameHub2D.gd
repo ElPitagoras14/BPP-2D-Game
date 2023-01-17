@@ -55,7 +55,7 @@ func loadBaseTexture(var level):
 	var baseBody=base.get_node("BaseBody")
 	if level==0:
 		base.remove_child(baseBody)
-		remove_child(baseEntrance)
+		base.remove_child(baseEntrance)
 		baseBody.queue_free()
 		baseEntrance.queue_free()
 	else:
@@ -93,13 +93,13 @@ func _process(delta):
 	if is_freeCam_active:
 		
 		if Input.is_action_pressed("ui_down"):
-			freeCam.global_position.y += 5
+			freeCam.global_position.y += 10
 		elif Input.is_action_pressed("ui_up"):
-			freeCam.global_position.y -= 5
+			freeCam.global_position.y -= 10
 		elif Input.is_action_pressed("ui_left"):
-			freeCam.global_position.x -= 5
+			freeCam.global_position.x -= 10
 		elif Input.is_action_pressed("ui_right"):
-			freeCam.global_position.x += 5
+			freeCam.global_position.x += 10
 
 func _input(event):
 	
@@ -235,16 +235,16 @@ func check_mejoras():
 			var is_upgraded = GameManager.player['level']["Arboles"][key]
 			if(is_upgraded ):
 				if("NE" in key):
-					upgradeTrees("DynamicTreeNE")
+					upgradeTrees("NETrees")
 					count += 1
 				elif("NO" in key):
-					upgradeTrees("DynamicTreeNO")
+					upgradeTrees("NOTrees")
 					count += 1
 				elif("SO" in key):
-					upgradeTrees("DynamicTreeSO")
+					upgradeTrees("SOTrees")
 					count += 1
 				elif("SE" in key):
-					upgradeTrees("DynamicTreeSE")
+					upgradeTrees("SETrees")
 					count += 1
 		if count == len(arboles):
 			$LiveTreeBorder.visible = true

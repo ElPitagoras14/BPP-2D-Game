@@ -135,10 +135,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.3, 3.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
-"args": [ "DynamicTreeNE" ],
+"args": [ "NETrees" ],
 "method": "create_MagicEffects"
 }, {
-"args": [ "DynamicTreeNE" ],
+"args": [ "NETrees" ],
 "method": "upgradeTrees"
 } ]
 }
@@ -216,10 +216,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.3, 3.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
-"args": [ "DynamicTreeNO" ],
+"args": [ "NOTrees" ],
 "method": "create_MagicEffects"
 }, {
-"args": [ "DynamicTreeNO" ],
+"args": [ "NOTrees" ],
 "method": "upgradeTrees"
 } ]
 }
@@ -297,10 +297,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.3, 3.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
-"args": [ "DynamicTreeSE" ],
+"args": [ "SETrees" ],
 "method": "create_MagicEffects"
 }, {
-"args": [ "DynamicTreeSE" ],
+"args": [ "SETrees" ],
 "method": "upgradeTrees"
 } ]
 }
@@ -378,10 +378,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.3, 3.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
-"args": [ "DynamicTreeSO" ],
+"args": [ "SOTrees" ],
 "method": "create_MagicEffects"
 }, {
-"args": [ "DynamicTreeSO" ],
+"args": [ "SOTrees" ],
 "method": "upgradeTrees"
 } ]
 }
@@ -2216,7 +2216,7 @@ cell_size = Vector2( 32, 32 )
 collision_layer = 4
 collision_mask = 4
 format = 1
-tile_data = PoolIntArray( -1572880, 0, 0, -1441802, 0, 0, -1376278, 0, 0, -1441779, 0, 0, -1441778, 0, 0, -1310708, 0, 0, -1245157, 0, 0, -983065, 0, 0, -983033, 0, 0, -786467, 0, 0, -851962, 0, 0, -851953, 0, 0, -786416, 0, 0, -720868, 0, 0, -589846, 0, 0, -589831, 0, 0, -589798, 0, 0, -327693, 0, 0, -262179, 0, 0, 65505, 0, 0, 18, 0, 0, 458714, 0, 0, 458721, 0, 0, 458746, 0, 0, 524295, 0, 0, 524313, 0, 0, 524314, 0, 0, 655387, 0, 0, 786398, 0, 0, 786401, 0, 0, 917471, 0, 0, 917528, 0, 0, 1048549, 0, 0, 1048564, 0, 0, 1114101, 0, 0, 1179624, 0, 0, 1179635, 0, 0, 1179665, 0, 0, 1245195, 0, 0, 1310732, 0, 0, 1310745, 0, 0, 1376266, 0, 0, 1376281, 0, 0, 1376282, 0, 0, 1376289, 0, 0, 1507297, 0, 0, 1572853, 0, 0, 1572860, 0, 0, 1638368, 0, 0, 1638370, 0, 0 )
+tile_data = PoolIntArray( -1572880, 0, 0, -1441802, 0, 0, -1376278, 0, 0, -1441779, 0, 0, -1441778, 0, 0, -1310708, 0, 0, -1245157, 0, 0, -983065, 0, 0, -983033, 0, 0, -786467, 0, 0, -851962, 0, 0, -851953, 0, 0, -786416, 0, 0, -720868, 0, 0, -589846, 0, 0, -589831, 0, 0, -589798, 0, 0, -393230, 0, 0, -327695, 0, 0, -327693, 0, 0, -262179, 0, 0, 65505, 0, 0, 18, 0, 0, 458714, 0, 0, 458721, 0, 0, 458746, 0, 0, 524295, 0, 0, 524313, 0, 0, 524314, 0, 0, 655387, 0, 0, 786398, 0, 0, 786401, 0, 0, 917471, 0, 0, 917528, 0, 0, 1048549, 0, 0, 1048564, 0, 0, 1114101, 0, 0, 1179624, 0, 0, 1179635, 0, 0, 1179665, 0, 0, 1245195, 0, 0, 1310732, 0, 0, 1310745, 0, 0, 1376266, 0, 0, 1376281, 0, 0, 1376282, 0, 0, 1376289, 0, 0, 1507297, 0, 0, 1572853, 0, 0, 1572860, 0, 0, 1638368, 0, 0, 1638370, 0, 0 )
 
 [node name="TileMap" type="TileMap" parent="."]
 format = 1
@@ -2291,7 +2291,6 @@ volume_db = -0.052
 [connection signal="body_exited" from="SETrees/Area2D" to="." method="_on_Dinamic_area_body_exited"]
 [connection signal="body_entered" from="SOTrees/Area2D" to="." method="_on_Dinamic_area_body_entered"]
 [connection signal="body_exited" from="SOTrees/Area2D" to="." method="_on_Dinamic_area_body_exited"]
-[connection signal="animation_finished" from="CutsceneCam2D/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="CutsceneCam2D/AnimationPlayer" to="." method="_on_CutsceneAnimationPlayer_animation_finished" binds= [ "" ]]
 [connection signal="animation_finished" from="Hud/ColorRect/FadeInAnimation" to="." method="_on_FadeInAnimation_animation_finished"]
 [connection signal="animation_finished" from="Hud/DialogPopUp/Arrow/ArrowAnimation" to="." method="_on_ArrowAnimation_animation_finished"]
