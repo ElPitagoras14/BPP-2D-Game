@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Sprites/tilesets/decoraciones.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/InteractionManager/InteractionManager.tscn" type="PackedScene" id=2]
@@ -9,12 +9,6 @@
 [sub_resource type="StreamTexture" id=1]
 flags = 4
 load_path = "res://.import/inBase-2.png-0922122c78e128e1f5c00782345b5118.stex"
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 11.75, 71.5 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 11.5, 105.5 )
 
 [node name="main" type="Node2D"]
 script = ExtResource( 5 )
@@ -29,54 +23,38 @@ expand = true
 [node name="paredes" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="paredes"]
-polygon = PoolVector2Array( 259, 170, 565, 168, 565, 118, 247, 121, 250, 599, 871, 601, 871, 115, 569, 117, 566, 168, 865, 170, 861, 591, 642, 587, 634, 597, 447, 597, 442, 589, 257, 589 )
-
-[node name="palo1" type="CollisionShape2D" parent="paredes"]
-position = Vector2( 382.25, 180 )
-shape = SubResource( 2 )
-
-[node name="palo2" type="CollisionShape2D" parent="paredes"]
-position = Vector2( 743, 181 )
-shape = SubResource( 2 )
-
-[node name="palo3" type="CollisionShape2D" parent="paredes"]
-position = Vector2( 382.5, 409.5 )
-shape = SubResource( 3 )
-
-[node name="palo4" type="CollisionShape2D" parent="paredes"]
-position = Vector2( 744, 411 )
-shape = SubResource( 3 )
+polygon = PoolVector2Array( 345, 245, 563, 245, 565, 175, 319, 177, 331, 581, 792, 569, 798, 173, 570, 176, 568, 245, 784, 242, 784, 532, 640, 529, 640, 566, 489, 566, 491, 530, 345, 530 )
 
 [node name="decors" type="TileMap" parent="."]
-scale = Vector2( 2.5, 2.5 )
+scale = Vector2( 2, 2 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
+cell_size = Vector2( 8, 8 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( 196634, 11, 0, 196649, 50, 0, 589849, 48, 0 )
+tile_data = PoolIntArray( 852001, 11, 0, 983085, 123, 0, 1441824, 120, 0 )
 
 [node name="muebles" type="TileMap" parent="."]
-scale = Vector2( 2.5, 2.5 )
+scale = Vector2( 2, 2 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
+cell_size = Vector2( 8, 8 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( 262157, 19, 0, 589850, 15, 0, 655387, 4, 0, 2359335, 2, 0 )
+tile_data = PoolIntArray( 983063, 118, 0, 1441825, 15, 0, 1572898, 4, 0 )
 
 [node name="preMuebles" type="TileMap" parent="."]
-scale = Vector2( 2.5, 2.5 )
+scale = Vector2( 2, 2 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
+cell_size = Vector2( 8, 8 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( 262157, 72, 0, 589850, 82, 0, 655387, 25, 0, 2359335, 2, 0 )
+tile_data = PoolIntArray( 983079, 121, 0, 1048599, 119, 0, 1769494, 18, 0 )
 
 [node name="Jugador" parent="." instance=ExtResource( 3 )]
 position = Vector2( 548, 544 )
 scale = Vector2( 2, 2 )
 
 [node name="door" parent="." instance=ExtResource( 2 )]
-position = Vector2( 543, 597 )
+position = Vector2( 549, 581 )
 scale = Vector2( 9.8, 0.28 )
 script = ExtResource( 4 )
 targetScene = "res://hubinicial/Hub/GameHub2D.tscn"
