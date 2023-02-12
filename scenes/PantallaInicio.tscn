@@ -273,7 +273,6 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 18 )
 
 [node name="CargarPartida" type="Popup" parent="."]
-visible = true
 margin_left = -1.0
 margin_top = -3.0
 margin_right = 1035.0
