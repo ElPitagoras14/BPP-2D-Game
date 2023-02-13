@@ -35,7 +35,7 @@ func _ready():
 	_set_default_values()
 	_add_objects()
 	_fill_scene()
-	CavadoMaster.tool_act = "pico"
+	CavadoMaster.tool_act = "hacha"
 	get_parent().get_node("AudioStreamPlayer").play()
 	
 func _fill_scene():

@@ -8,9 +8,9 @@ var array_life = [0,0,0]
 var size
 
 var offset_x = 10
-var offset_y
-var life_size_x = 50
-var life_size_y = 45
+var offset_y = 30
+var life_size_x = 60
+var life_size_y = 35
 
 var base_path = "res://juego_cavado"
 var hud_path = "/assets/HUD"
@@ -32,7 +32,6 @@ func _fill_scene():
 
 func _get_info():
 	size = self.rect_size
-	offset_y = (size.y - life_size_y) / 2
 
 func _get_new_life(pos_x, pos_y):
 	var spr_life = Sprite.new()
