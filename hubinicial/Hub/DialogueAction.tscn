@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://hubinicial/Hub/DialogueAction.gd" type="Script" id=1]
-[ext_resource path="res://fonts/new_dynamicfont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/Righteous-Regular.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="Theme" id=2]
 
@@ -9,7 +9,20 @@
 flags = 4
 load_path = "res://.import/principal.png-372b37f94fa316f873a4f12a07283da3.stex"
 
+[sub_resource type="DynamicFont" id=3]
+size = 22
+outline_size = 1
+outline_color = Color( 0.0235294, 0.0235294, 0.0235294, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 22
+outline_size = 1
+outline_color = Color( 0.0235294, 0.0235294, 0.0235294, 1 )
+font_data = ExtResource( 2 )
+
 [node name="Popup" type="Popup"]
+visible = true
 margin_top = 8.0
 margin_right = 512.0
 margin_bottom = 192.0
@@ -29,7 +42,7 @@ margin_top = 41.0
 margin_right = 496.0
 margin_bottom = 169.0
 theme_type_variation = "Bold Font"
-custom_fonts/normal_font = ExtResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Contenido..."
 scroll_following = true
 
@@ -38,7 +51,7 @@ margin_left = 16.0
 margin_top = 18.0
 margin_right = 496.0
 margin_bottom = 41.0
-custom_fonts/normal_font = ExtResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 text = "Contenido..."
 scroll_active = false
 scroll_following = true

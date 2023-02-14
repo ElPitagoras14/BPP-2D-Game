@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://juegoreciclaje/trashcans/TrashCan.tscn" type="PackedScene" id=1]
-[ext_resource path="res://juegoreciclaje/trashcans/trashbinimages/yellowtrashbin.png" type="Texture" id=2]
+[ext_resource path="res://juegoreciclaje/trashcans/trashbinimages/boteAmarillo.png" type="Texture" id=2]
 
 [node name="YellowTrashCan" groups=["TrashCan", "yellow"] instance=ExtResource( 1 )]
 show_behind_parent = true
 
 [node name="Sprite" parent="." index="1"]
+scale = Vector2( 0.256522, 0.369565 )
 texture = ExtResource( 2 )

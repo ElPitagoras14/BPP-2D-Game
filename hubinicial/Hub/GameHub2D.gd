@@ -23,7 +23,9 @@ onready var store_menu = get_node('HudStore')
 onready var base=$Base
 onready var baseEntrance=$Base/BaseEntrance
 
-var user_objects = {'Arbol':"res://hubinicial/Store/Objects/Arbol.tscn",\
+var user_objects = {'ArbolA':"res://hubinicial/Store/Objects/ArbolA.tscn",\
+					'ArbolB':"res://hubinicial/Store/Objects/ArbolB.tscn",\
+					'ArbolC':"res://hubinicial/Store/Objects/ArbolC.tscn",\
 					'Wolf':"res://hubinicial/Store/Objects/Wolf.tscn"}
 
 var temp_user_objects = []
@@ -55,7 +57,7 @@ func loadBaseTexture(var level):
 	var baseBody=base.get_node("BaseBody")
 	if level==0:
 		base.remove_child(baseBody)
-		remove_child(baseEntrance)
+		base.remove_child(baseEntrance)
 		baseBody.queue_free()
 		baseEntrance.queue_free()
 	else:
@@ -89,18 +91,6 @@ func _ready():
 		activatePlayer()
 	loadBaseTexture(baseStats["level"])
 
-func _process(delta):
-	if is_freeCam_active:
-		
-		if Input.is_action_pressed("ui_down"):
-			freeCam.global_position.y += 5
-		elif Input.is_action_pressed("ui_up"):
-			freeCam.global_position.y -= 5
-		elif Input.is_action_pressed("ui_left"):
-			freeCam.global_position.x -= 5
-		elif Input.is_action_pressed("ui_right"):
-			freeCam.global_position.x += 5
-
 func _input(event):
 	
 	if event.is_action_pressed("ui_select") and dialog.dActive:
@@ -125,6 +115,17 @@ func _input(event):
 			HUD.stopControls = false
 			dialog.popup_exclusive = false
 			dialog.hide()
+			
+	if is_freeCam_active:
+		
+		if Input.is_action_just_pressed("ui_down"):
+			freeCam.global_position.y += 75
+		elif Input.is_action_just_pressed("ui_up"):
+			freeCam.global_position.y -= 75
+		elif Input.is_action_just_pressed("ui_left"):
+			freeCam.global_position.x -= 75
+		elif Input.is_action_just_pressed("ui_right"):
+			freeCam.global_position.x += 75
 
 func showHUD():
 	$Hud.visible = true
@@ -235,16 +236,16 @@ func check_mejoras():
 			var is_upgraded = GameManager.player['level']["Arboles"][key]
 			if(is_upgraded ):
 				if("NE" in key):
-					upgradeTrees("DynamicTreeNE")
+					upgradeTrees("NETrees")
 					count += 1
 				elif("NO" in key):
-					upgradeTrees("DynamicTreeNO")
+					upgradeTrees("NOTrees")
 					count += 1
 				elif("SO" in key):
-					upgradeTrees("DynamicTreeSO")
+					upgradeTrees("SOTrees")
 					count += 1
 				elif("SE" in key):
-					upgradeTrees("DynamicTreeSE")
+					upgradeTrees("SETrees")
 					count += 1
 		if count == len(arboles):
 			$LiveTreeBorder.visible = true

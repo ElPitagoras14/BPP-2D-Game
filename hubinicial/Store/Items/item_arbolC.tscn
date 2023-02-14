@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://hubinicial/Store/Objects/ArbolC.tscn" type="PackedScene" id=1]
+[ext_resource path="res://hubinicial/Store/Items/Texture.tscn" type="PackedScene" id=2]
+[ext_resource path="res://hubinicial/assets/arbol frondoso (3).png" type="Texture" id=3]
+
+[node name="item_arbolC" instance=ExtResource( 2 )]
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+this_scene = ExtResource( 1 )
+price = 1000

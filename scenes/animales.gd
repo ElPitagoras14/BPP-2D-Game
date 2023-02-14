@@ -63,3 +63,8 @@ func _on_TextureButton4_button_down():
 
 func _on_JUGAR_button_down():
 	get_tree().change_scene("res://juego_cavado/scenes/niveles.tscn")
+
+
+func _on_Cerrar_pressed():
+	get_node("Click").play()
+	$Ayuda.hide()

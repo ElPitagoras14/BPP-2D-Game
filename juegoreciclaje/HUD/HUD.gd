@@ -58,11 +58,10 @@ func _on_game_over():
 
 func _on_player_life_changed(life):
 	var corazon = get_node("Corazon"+str(life))
-	var image = Image.new()
-	image.load("res://assets/iconos/heart_border.png")
 	var texture = ImageTexture.new()
-	texture.create_from_image(image)
+	texture = load("res://juegoreciclaje/corazon.png")
 	corazon.set_texture(texture)
+
 
 func _on_Pausar_pressed():
 	Signals.emit_signal("pausePressed")

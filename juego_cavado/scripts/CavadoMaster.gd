@@ -33,7 +33,7 @@ var offset_figuras = [
 
 var nivel_actual = 0
 var block_size = 75 #Debe ser el tamaño por cuadricula (incluye objetos)
-var tool_act = "pico"
+var tool_act = "hacha"
 
 var act_life = 3
 var max_energy
