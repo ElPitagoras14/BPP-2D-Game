@@ -16,63 +16,67 @@ load_path = "res://.import/inBase-5.png-f2842a5052d0c379b835ccf335fdee12.stex"
 script = ExtResource( 5 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -228.0
-margin_top = -395.0
-margin_right = 1411.0
-margin_bottom = 597.0
+margin_left = -157.0
+margin_top = -786.0
+margin_right = 1043.0
+margin_bottom = 595.0
 texture = SubResource( 1 )
+expand = true
+stretch_mode = 5
 
 [node name="wallDecors" type="TileMap" parent="."]
 scale = Vector2( 2.5, 2.5 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
+cell_size = Vector2( 8, 8 )
 format = 1
-tile_data = PoolIntArray( 131096, 107, 0, 131123, 105, 0, 131126, 536870966, 0, 131131, 105, 0, 524328, 108, 0 )
+tile_data = PoolIntArray( 65532, 536871014, 0, 2, 536871015, 0, 26, 536871018, 0, 31, 536871017, 0, 41, 536871017, 0, 44, 536871019, 0, 458773, 536871020, 0 )
 
 [node name="preWallDecors" type="TileMap" parent="."]
 scale = Vector2( 2.5, 2.5 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
+cell_size = Vector2( 8, 8 )
 format = 1
-tile_data = PoolIntArray( 131106, 536870944, 0, 131116, 536870953, 0, 131134, 536870952, 0 )
-
-[node name="decors" type="TileMap" parent="."]
-scale = Vector2( 2.5, 2.5 )
-tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
-format = 1
-tile_data = PoolIntArray( -196616, 68, 0, -262142, 70, 0, 196619, 36, 0, 458803, 28, 0, 524331, 97, 0 )
-
-[node name="preDecors" type="TileMap" parent="."]
-scale = Vector2( 2.5, 2.5 )
-tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
-format = 1
-tile_data = PoolIntArray( -262132, 48, 0, 196629, 12, 0, 196651, 50, 0, 196675, 50, 0, 524315, 10, 0, 655370, 98, 0, 655427, 33, 0 )
+tile_data = PoolIntArray( 65534, 536870941, 0, 12, 536870953, 0, 34, 536870952, 0, 131134, 536870952, 0 )
 
 [node name="muebles" type="TileMap" parent="."]
 scale = Vector2( 2.5, 2.5 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
+cell_size = Vector2( 8, 8 )
+show_collision = true
 format = 1
-tile_data = PoolIntArray( 262190, 38, 0, 262197, 73, 0, 262206, 38, 0, 458762, 89, 0, 458817, 536871004, 0, 524315, 45, 0, 524317, 536870955, 0, 524321, 536870957, 0, 589854, 46, 0 )
+tile_data = PoolIntArray( 327714, 536870985, 0, 393245, 536870950, 0, 393257, 536870950, 0, 458777, 536871033, 0, 851963, 89, 0, 786478, 536871001, 0, 1048604, 536870956, 0, 1179675, 536870955, 0, 1245209, 45, 0, 1245215, 536870957, 0 )
 
 [node name="preMuebles" type="TileMap" parent="."]
 scale = Vector2( 2.5, 2.5 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
+cell_size = Vector2( 8, 8 )
+show_collision = true
 format = 1
-tile_data = PoolIntArray( 262197, 536870954, 0, 262206, 17, 0, 458762, 27, 0, 524315, 21, 0, 524317, 16, 0, 524321, 536870933, 0, 589854, 22, 0 )
+tile_data = PoolIntArray( 327714, 42, 0, 393257, 17, 0, 458777, 536871033, 0, 851963, 27, 0, 1048604, 536870932, 0, 1245209, 21, 0, 1245211, 16, 0, 1245215, 536870933, 0 )
+
+[node name="decors" type="TileMap" parent="."]
+scale = Vector2( 2.5, 2.5 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( -1245184, 536870980, 0, -1245171, 536870982, 0, -1245158, 536870988, 0, -1245145, 536870990, 0, 196650, 536870965, 0, 1179643, 536870948, 0, 1179675, 536871013, 0, 1310749, 536870963, 0 )
+
+[node name="preDecors" type="TileMap" parent="."]
+scale = Vector2( 2.5, 2.5 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 196635, 536871010, 0, 262156, 536870924, 0, 262169, 536870945, 0, 262191, 536871009, 0, 393217, 536871035, 0, 851972, 536871032, 0, 852001, 536870922, 0, 1114159, 536871009, 0, 1245201, 536870964, 0 )
 
 [node name="utility" type="TileMap" parent="."]
 scale = Vector2( 2.5, 2.5 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
+cell_size = Vector2( 8, 8 )
 format = 1
-tile_data = PoolIntArray( 196642, 13, 0 )
+tile_data = PoolIntArray( 262140, 536870925, 0 )
 
 [node name="utilityInteractionManager" parent="utility" instance=ExtResource( 4 )]
-position = Vector2( 288.4, 91.2 )
+position = Vector2( -16.4, 65.6 )
 scale = Vector2( 1.736, 0.328 )
 script = ExtResource( 9 )
 timeline = ""
@@ -80,19 +84,19 @@ timeline = ""
 [node name="preUtility" type="TileMap" parent="."]
 scale = Vector2( 2.5, 2.5 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
+cell_size = Vector2( 8, 8 )
 format = 1
-tile_data = PoolIntArray( 720917, 14, 0 )
+tile_data = PoolIntArray( 1245196, 536870926, 0 )
 
 [node name="trophy-r" type="TileMap" parent="."]
 scale = Vector2( 2.5, 2.5 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
+cell_size = Vector2( 8, 8 )
 format = 1
-tile_data = PoolIntArray( -524298, 65, 0, -524296, 63, 0, -524294, 62, 0, -458761, 66, 0 )
+tile_data = PoolIntArray( -2031617, 536870976, 0, -2097151, 536870977, 0, -2097149, 536870975, 0, -2097147, 536870974, 0, -1900543, 536870978, 0 )
 
 [node name="r-interactionManager" parent="trophy-r" instance=ExtResource( 4 )]
-position = Vector2( -56.4, -86.4 )
+position = Vector2( 22.8, -192 )
 scale = Vector2( 1.736, 0.328 )
 script = ExtResource( 6 )
 timeline = "r-trophyTimeline"
@@ -100,12 +104,12 @@ timeline = "r-trophyTimeline"
 [node name="trophy-c" type="TileMap" parent="."]
 scale = Vector2( 2.5, 2.5 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
+cell_size = Vector2( 8, 8 )
 format = 1
-tile_data = PoolIntArray( -589812, 55, 0, -589811, 8, 0 )
+tile_data = PoolIntArray( -2228223, 536870972, 0, -2228210, 536870970, 0, -2228208, 536870971, 0, -2228205, 536870968, 0, -2162677, 536870967, 0, -2097139, 536870920, 0, -2031597, 536870970, 0, -1966069, 536870969, 0, -1835009, 536870973, 0, -1900539, 536870973, 0 )
 
 [node name="c-interactionManager" parent="trophy-c" instance=ExtResource( 4 )]
-position = Vector2( 128, -76.4 )
+position = Vector2( 128.4, -191.6 )
 scale = Vector2( 2.296, 0.328 )
 script = ExtResource( 6 )
 timeline = "c-trophyTimeline"
@@ -113,12 +117,12 @@ timeline = "c-trophyTimeline"
 [node name="trophy-e" type="TileMap" parent="."]
 scale = Vector2( 2.5, 2.5 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
+cell_size = Vector2( 8, 8 )
 format = 1
-tile_data = PoolIntArray( -524289, 49, 0, -393218, 35, 0 )
+tile_data = PoolIntArray( -2162661, 49, 0, -1966055, 115, 0, -1966052, 116, 0, -1966049, 117, 0, -1769448, 113, 0, -1769446, 536870947, 0, -1769440, 114, 0 )
 
 [node name="e-interactionManager" parent="trophy-e" instance=ExtResource( 4 )]
-position = Vector2( 8, -85.2 )
+position = Vector2( 230.8, -192.8 )
 scale = Vector2( 2.19958, 0.392648 )
 script = ExtResource( 6 )
 timeline = "e-trophyTimeline"
@@ -126,36 +130,37 @@ timeline = "e-trophyTimeline"
 [node name="trophy-a" type="TileMap" parent="."]
 scale = Vector2( 2.5, 2.5 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
+cell_size = Vector2( 8, 8 )
 format = 1
-tile_data = PoolIntArray( -589818, 34, 0 )
+tile_data = PoolIntArray( -2162649, 104, 0, -2097115, 102, 0, -2097106, 102, 0, -2031576, 34, 0, -1769435, 126, 0, -1769427, 125, 0 )
 
 [node name="a-interactionManager" parent="trophy-a" instance=ExtResource( 4 )]
-position = Vector2( 64.8, -87.2 )
-scale = Vector2( 1.736, 0.328 )
+position = Vector2( 337.6, -188.4 )
+scale = Vector2( 4.232, 0.328 )
 script = ExtResource( 6 )
 timeline = "a-trophyTimeline"
 
 [node name="paredes" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="paredes" type="CollisionPolygon2D" parent="paredes"]
-polygon = PoolVector2Array( 211, 194, 273, 202, 276, -50, -177, -51, -202, -71, -201, -235, 80, -235, 87, -298, -227, -291, -228, -62, -185, -29, 254, -32, 251, 137, 182, 138, 182, 530, 205, 550, 302, 551, 301, 575, 316, 593, 392, 594, 402, 570, 400, 546, 766, 550, 783, 534, 781, 499, 833, 499, 836, 509, 870, 543, 1373, 544, 1415, 501, 1408, 129, 967, 134, 835, 139, 843, 379, 786, 379, 783, 145, 407, 143, 397, -305, 377, -304, 97, -300, 89, -236, 380, -230, 379, 197, 566, 201, 569, 261, 667, 258, 667, 201, 761, 204, 763, 441, 858, 442, 853, 205, 1381, 197, 1381, 497, 1366, 517, 879, 519, 855, 500, 853, 476, 765, 476, 760, 522, 378, 526, 379, 573, 329, 577, 326, 525, 209, 524, 200, 470 )
+polygon = PoolVector2Array( -99, 176, -66, 161, 85, 166, 92, -143, 84, -194, -97, -200, -96, -476, -67, -493, 354, -497, 357, -560, -117, -549, -124, -159, 63, -167, 58, 97, -121, 113, -118, 492, 58, 499, 61, 578, 224, 577, 231, 493, 406, 492, 416, 370, 469, 373, 470, 493, 1013, 493, 1007, -477, 1013, -568, 365, -559, 367, -494, 956, -493, 983, -477, 986, -200, 198, -196, 197, 158, 360, 159, 382, 181, 385, 267, 412, 287, 478, 287, 500, 267, 498, 178, 528, 166, 965, 169, 983, 176, 986, 458, 498, 461, 497, 340, 483, 323, 405, 325, 387, 340, 387, 462, 207, 468, 200, 544, 95, 541, 82, 463, -96, 456 )
 
 [node name="Jugador" parent="." instance=ExtResource( 3 )]
-position = Vector2( 355, 502 )
-scale = Vector2( 2, 2 )
+position = Vector2( 144, 502 )
+scale = Vector2( 2.5, 2.5 )
 
 [node name="Camera2D" type="Camera2D" parent="Jugador"]
 current = true
-limit_left = -236
-limit_top = -401
-limit_right = 1427
-limit_bottom = 603
+limit_left = -162
+limit_top = -900
+limit_right = 1049
+limit_bottom = 597
 smoothing_speed = 2.0
 editor_draw_limits = true
 
 [node name="door" parent="." instance=ExtResource( 4 )]
-position = Vector2( 356, 578 )
+position = Vector2( 141, 557 )
 scale = Vector2( 2.84, 0.28 )
 script = ExtResource( 2 )
 targetScene = "res://hubinicial/Hub/GameHub2D.tscn"

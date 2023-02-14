@@ -39,7 +39,7 @@ tile_set = ExtResource( 1 )
 cell_size = Vector2( 8, 8 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( 983063, 118, 0, 1441825, 15, 0, 1572898, 4, 0 )
+tile_data = PoolIntArray( 983063, 118, 0, 983079, 121, 0, 1441825, 15, 0, 1572898, 4, 0, 1769494, 18, 0 )
 
 [node name="preMuebles" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )

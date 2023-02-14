@@ -16,8 +16,8 @@ script = ExtResource( 5 )
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = 5.0
 margin_top = -3.0
-margin_right = 1170.0
-margin_bottom = 653.0
+margin_right = 1206.0
+margin_bottom = 675.0
 texture = SubResource( 1 )
 expand = true
 stretch_mode = 5
@@ -25,79 +25,78 @@ stretch_mode = 5
 [node name="wallDecors" type="TileMap" parent="."]
 scale = Vector2( 2.5, 2.5 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
+cell_size = Vector2( 8, 8 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( 131075, 30, 0, 131083, 41, 0, 131108, 31, 0, 131115, 40, 0 )
+tile_data = PoolIntArray( 262148, 536870942, 0, 262156, 536870953, 0, 262178, 31, 0, 262185, 536870952, 0 )
 
 [node name="preWallDecors" type="TileMap" parent="."]
 scale = Vector2( 2.5, 2.5 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
+cell_size = Vector2( 8, 8 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( 131098, 32, 0, 131124, 29, 0 )
+tile_data = PoolIntArray( 262167, 536870944, 0, 262196, 536870941, 0 )
 
 [node name="preMuebles" type="TileMap" parent="."]
 scale = Vector2( 2.5, 2.5 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
+cell_size = Vector2( 8, 8 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( 262146, 9, 0, 524290, 18, 0, 524307, 3, 0, 524309, 15, 0 )
+tile_data = PoolIntArray( 720899, 9, 0, 786451, 95, 0, 786453, 83, 0, 786457, 536871007, 0, 1114115, 18, 0, 1572867, 121, 0 )
 
 [node name="muebles" type="TileMap" parent="."]
 scale = Vector2( 2.5, 2.5 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
+cell_size = Vector2( 8, 8 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( 262146, 42, 0, 458805, 536870939, 0, 524307, 21, 0, 524309, 16, 0, 524313, 536870933, 0, 589846, 46, 0 )
+tile_data = PoolIntArray( 720899, 42, 0, 786451, 21, 0, 786453, 16, 0, 786457, 536870933, 0, 917526, 22, 0, 1048629, 536870939, 0, 1114115, 18, 0, 1572867, 536871033, 0 )
 
 [node name="preDecors" type="TileMap" parent="."]
 scale = Vector2( 2.5, 2.5 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
+cell_size = Vector2( 8, 8 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( 131107, 50, 0, 131121, 51, 0, 196620, 11, 0, 196636, 33, 0, 196658, 51, 0, 458775, 101, 0 )
+tile_data = PoolIntArray( 589836, 536870923, 0, 720929, 536871035, 0, 1179659, 536871032, 0, 1310723, 536871010, 0, 1376261, 536870945, 0 )
 
 [node name="decors" type="TileMap" parent="."]
 scale = Vector2( 2.5, 2.5 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
+cell_size = Vector2( 8, 8 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( 131127, 50, 0, 196619, 12, 0, 524298, 10, 0, 589879, 98, 0 )
+tile_data = PoolIntArray( 589835, 536870924, 0, 589878, 536871009, 0, 720919, 536871013, 0, 1376310, 536871009, 0, 1507361, 536870964, 0 )
 
 [node name="utility" type="TileMap" parent="."]
 scale = Vector2( 2.5, 2.5 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 16 )
+cell_size = Vector2( 8, 8 )
 format = 1
-tile_data = PoolIntArray( 262193, 14, 0, 458796, 47, 0 )
+tile_data = PoolIntArray( 786474, 536870926, 0, 1048616, 536870922, 0 )
 
 [node name="Jugador" parent="." instance=ExtResource( 2 )]
-position = Vector2( 190, 497 )
-scale = Vector2( 2, 2 )
+position = Vector2( 302, 582 )
+scale = Vector2( 2.5, 2.5 )
 
 [node name="Camera2D" type="Camera2D" parent="Jugador"]
 current = true
 limit_left = 0
 limit_top = 0
 limit_right = 1186
-limit_bottom = 603
+limit_bottom = 673
 smoothing_speed = 2.0
 editor_draw_limits = true
 
 [node name="paredes" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="paredes" type="CollisionPolygon2D" parent="paredes"]
-polygon = PoolVector2Array( 42, 180, 314, 180, 314, 117, 15, 115, 14, 491, 50, 535, 136, 533, 142, 568, 160, 585, 221, 585, 243, 569, 241, 536, 608, 536, 629, 523, 634, 491, 676, 491, 677, 523, 694, 536, 1130, 535, 1175, 493, 1172, 138, 674, 138, 677, 262, 622, 260, 621, 109, 322, 117, 322, 181, 406, 180, 409, 241, 506, 241, 506, 182, 600, 177, 605, 424, 701, 422, 700, 172, 1142, 181, 1142, 491, 1118, 513, 705, 507, 701, 464, 605, 464, 605, 508, 217, 512, 214, 564, 170, 561, 167, 511, 62, 512, 36, 488 )
+polygon = PoolVector2Array( 91, 252, 305, 252, 303, 204, 38, 201, 35, 578, 213, 584, 230, 652, 381, 656, 383, 584, 564, 577, 570, 449, 616, 455, 616, 566, 639, 583, 1139, 587, 1159, 566, 1154, 207, 306, 196, 315, 247, 513, 256, 539, 271, 542, 356, 566, 380, 622, 382, 646, 361, 654, 275, 676, 256, 1097, 250, 1123, 270, 1129, 554, 646, 551, 648, 428, 634, 415, 554, 415, 540, 424, 534, 550, 359, 551, 354, 628, 248, 631, 242, 550, 68, 539, 64, 268, 79, 268 )
 
 [node name="door" parent="." instance=ExtResource( 3 )]
-position = Vector2( 192, 567 )
+position = Vector2( 298, 639 )
 scale = Vector2( 2.84, 0.28 )
 script = ExtResource( 4 )
 targetScene = "res://hubinicial/Hub/GameHub2D.tscn"

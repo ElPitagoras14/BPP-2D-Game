@@ -14,15 +14,17 @@ load_path = "res://.import/inBase-3.png-0230760176f28f0f941020ce029d2d59.stex"
 script = ExtResource( 5 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 255.0
-margin_right = 805.0
-margin_bottom = 600.0
+margin_left = 59.0
+margin_top = 2.0
+margin_right = 939.0
+margin_bottom = 602.0
 texture = SubResource( 1 )
+expand = true
 
 [node name="paredes" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="paredes"]
-polygon = PoolVector2Array( 482, 186, 629, 186, 630, 248, 728, 244, 733, 188, 782, 190, 781, 507, 757, 527, 434, 524, 431, 572, 375, 572, 378, 527, 298, 524, 274, 503, 277, 182, 477, 185, 475, 152, 255, 153, 255, 513, 293, 551, 354, 552, 355, 580, 365, 597, 442, 597, 457, 575, 455, 548, 766, 551, 804, 511, 801, 146, 478, 152 )
+polygon = PoolVector2Array( 479, 228, 697, 227, 713, 243, 728, 245, 728, 491, 549, 495, 552, 555, 447, 558, 445, 494, 262, 486, 265, 241, 279, 243, 287, 227, 475, 228, 477, 177, 238, 183, 235, 502, 414, 522, 419, 580, 574, 576, 578, 518, 760, 518, 753, 177, 482, 179 )
 
 [node name="wallDecors" type="TileMap" parent="."]
 scale = Vector2( 2.5, 2.5 )
@@ -31,47 +33,46 @@ cell_size = Vector2( 8, 16 )
 format = 1
 tile_data = PoolIntArray( 131086, 32, 0, 131099, 29, 0 )
 
-[node name="muebles" type="TileMap" parent="."]
-scale = Vector2( 2.5, 2.5 )
-tile_set = ExtResource( 1 )
-cell_size = Vector2( 16, 8 )
-show_collision = true
-format = 1
-tile_data = PoolIntArray( 524295, 9, 0, 983047, 18, 0, 1048591, 3, 0, 1048592, 15, 0, 1179665, 4, 0, 2359335, 2, 0 )
-
-[node name="preMuebles" type="TileMap" parent="."]
-visible = false
-scale = Vector2( 2.5, 2.5 )
-tile_set = ExtResource( 1 )
-cell_size = Vector2( 16, 8 )
-show_collision = true
-format = 1
-tile_data = PoolIntArray( 524295, 19, 0, 1048591, 24, 0, 1048592, 82, 0, 2359335, 2, 0 )
-
 [node name="preDecors" type="TileMap" parent="."]
 scale = Vector2( 2.5, 2.5 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 16, 8 )
+cell_size = Vector2( 8, 8 )
 show_collision = true
 collision_use_kinematic = true
 format = 1
-tile_data = PoolIntArray( 393227, 11, 0, 1048586, 48, 0, 1114119, 50, 0 )
+tile_data = PoolIntArray( 524311, 11, 0, 655388, 123, 0, 1245214, 120, 0 )
+
+[node name="muebles" type="TileMap" parent="."]
+scale = Vector2( 2.5, 2.5 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 8 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 589837, 9, 0, 655392, 121, 0, 1048610, 94, 0, 1179661, 18, 0, 1245216, 83, 0, 1310750, 95, 0 )
+
+[node name="preMuebles" type="TileMap" parent="."]
+scale = Vector2( 2.5, 2.5 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 8 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 589837, 118, 0, 655392, 121, 0, 1179661, 18, 0, 1310750, 3, 0, 1310752, 15, 0 )
 
 [node name="decors" type="TileMap" parent="."]
 scale = Vector2( 2.5, 2.5 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 16, 8 )
+cell_size = Vector2( 8, 8 )
 show_collision = true
 collision_use_kinematic = true
 format = 1
-tile_data = PoolIntArray( 196615, 51, 0, 196616, 51, 0, 393230, 33, 0, 1048592, 101, 0 )
+tile_data = PoolIntArray( 393250, 98, 0, 458784, 33, 0 )
 
 [node name="door" parent="." instance=ExtResource( 3 )]
-position = Vector2( 406, 576 )
+position = Vector2( 494, 573 )
 scale = Vector2( 2.84, 0.28 )
 script = ExtResource( 4 )
 targetScene = "res://hubinicial/Hub/GameHub2D.tscn"
 
 [node name="Jugador" parent="." instance=ExtResource( 2 )]
-position = Vector2( 404, 520 )
+position = Vector2( 493, 520 )
 scale = Vector2( 2, 2 )

@@ -26,6 +26,13 @@ expand = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="paredes"]
 polygon = PoolVector2Array( 377, 245, 498, 248, 505, 161, 358, 166, 351, 583, 638, 588, 637, 531, 636, 197, 508, 160, 502, 248, 618, 249, 618, 527, 526, 528, 526, 564, 469, 563, 470, 528, 377, 527 )
 
+[node name="muebles" type="TileMap" parent="."]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 8 )
+format = 1
+tile_data = PoolIntArray( 983052, 121, 0, 1048593, 119, 0, 1507340, 18, 0 )
+
 [node name="Jugador" parent="." instance=ExtResource( 2 )]
 position = Vector2( 495, 529 )
 scale = Vector2( 2, 2 )
@@ -35,10 +42,3 @@ position = Vector2( 495, 580 )
 scale = Vector2( 6.8, 0.28 )
 script = ExtResource( 4 )
 targetScene = "res://hubinicial/Hub/GameHub2D.tscn"
-
-[node name="muebles" type="TileMap" parent="."]
-scale = Vector2( 2, 2 )
-tile_set = ExtResource( 1 )
-cell_size = Vector2( 16, 8 )
-format = 1
-tile_data = PoolIntArray( 983052, 121, 0, 1048593, 119, 0, 1507340, 18, 0 )
