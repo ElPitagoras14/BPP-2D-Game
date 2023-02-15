@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/semilla.png-8c521bd509be93bad769f4519ab05ef6.stex"
+path="res://.import/semilla.png-6dfa05ac405e097bd324ba72707d0888.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/niguito/semilla.png"
-dest_files=[ "res://.import/semilla.png-8c521bd509be93bad769f4519ab05ef6.stex" ]
+source_file="res://assets/cards/Niguito/semilla.png"
+dest_files=[ "res://.import/semilla.png-6dfa05ac405e097bd324ba72707d0888.stex" ]
 
 [params]
 

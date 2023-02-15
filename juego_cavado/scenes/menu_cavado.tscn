@@ -118,3 +118,4 @@ volume_db = -17.0
 
 [connection signal="button_down" from="HBoxContainer/TextureButton4" to="." method="_on_TextureButton4_button_down"]
 [connection signal="button_down" from="HBoxContainer/VBoxContainer/HBoxContainer/JUGAR" to="." method="_on_JUGAR_button_down"]
+[connection signal="button_down" from="HBoxContainer/TextureButton" to="." method="_on_TextureButton_button_down"]

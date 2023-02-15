@@ -35,7 +35,7 @@ var nivel_actual = 0
 var block_size = 75 #Debe ser el tamaño por cuadricula (incluye objetos)
 var tool_act = "hacha"
 
-var act_life = 3
+var act_life = 5
 var max_energy
 var actual_energy
 

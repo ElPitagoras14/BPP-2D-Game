@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arbol.png-2c96a4097764823d6fb96e485723d49a.stex"
+path="res://.import/arbol.png-381d9177c3be5a8215081f8552478d80.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/amarillo/arbol.png"
-dest_files=[ "res://.import/arbol.png-2c96a4097764823d6fb96e485723d49a.stex" ]
+source_file="res://assets/cards/Amarillo/arbol.png"
+dest_files=[ "res://.import/arbol.png-381d9177c3be5a8215081f8552478d80.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frutoSelected.png-f4955291f972ed77a2a36367046e5629.stex"
+path="res://.import/frutoSelected.png-f1edcdaa5ff10124b40636f1785dfa5f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/mora silvestre/frutoSelected.png"
-dest_files=[ "res://.import/frutoSelected.png-f4955291f972ed77a2a36367046e5629.stex" ]
+source_file="res://assets/cards/Mora silvestre/frutoSelected.png"
+dest_files=[ "res://.import/frutoSelected.png-f1edcdaa5ff10124b40636f1785dfa5f.stex" ]
 
 [params]
 

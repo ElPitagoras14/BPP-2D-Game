@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/semilla.png-d9e1d863d56fef10af069756382d8b4f.stex"
+path="res://.import/semilla.png-d3a42e69a4eb4d02d0969dcce5e15e52.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/ceibo/semilla.png"
-dest_files=[ "res://.import/semilla.png-d9e1d863d56fef10af069756382d8b4f.stex" ]
+source_file="res://assets/cards/Ceibo/semilla.png"
+dest_files=[ "res://.import/semilla.png-d3a42e69a4eb4d02d0969dcce5e15e52.stex" ]
 
 [params]
 
