@@ -57,6 +57,11 @@ func _win_game():
 	var nivel_actual = CavadoMaster.nivel_actual
 	CavadoMaster.unlocked_levels[nivel_actual + 1] = true
 	pass
+	
+func _input(event):
+	if (event is InputEventKey and event.scancode == KEY_ESCAPE):
+		yield(get_tree().create_timer(0.5), "timeout")
+		get_tree().change_scene(("res://juego_cavado/scenes/niveles.tscn"))
 
 func _change_to_level(i):
 	if CavadoMaster.unlocked_levels[i]:
