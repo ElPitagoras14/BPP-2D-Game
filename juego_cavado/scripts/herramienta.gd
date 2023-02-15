@@ -11,6 +11,9 @@ func _ready():
 
 func _input(event):
 	var offset = Vector2(30, -5)
+	if (event is InputEventKey and event.scancode == KEY_ESCAPE):
+		yield(get_tree().create_timer(0.5), "timeout")
+		get_tree().change_scene(("res://juego_cavado/scenes/niveles.tscn"))
 	if (event is InputEventMouseButton):
 		animated.play(CavadoMaster.tool_act)
 		hide()
