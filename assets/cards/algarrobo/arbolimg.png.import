@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arbolimg.png-acecdd3a7f2f0d2da02060de43eb2df7.stex"
+path="res://.import/arbolimg.png-ce5b34559d737a90cb781ad896e7eb1b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/algarrobo/arbolimg.png"
-dest_files=[ "res://.import/arbolimg.png-acecdd3a7f2f0d2da02060de43eb2df7.stex" ]
+source_file="res://assets/cards/Algarrobo/arbolimg.png"
+dest_files=[ "res://.import/arbolimg.png-ce5b34559d737a90cb781ad896e7eb1b.stex" ]
 
 [params]
 

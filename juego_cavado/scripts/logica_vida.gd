@@ -1,9 +1,9 @@
 extends Container
 signal update_energy
 
-var max_life = 3
-var act_life = 3
-var array_life = [0,0,0]
+var max_life = 5
+var act_life = 5
+var array_life = [0,0,0,0,0]
 
 var size
 

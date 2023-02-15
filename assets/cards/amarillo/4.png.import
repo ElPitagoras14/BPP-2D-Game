@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/4.png-4463f15ee649da7b64b57d9997843162.stex"
+path="res://.import/4.png-5961bf942f18c47bf8a2503c19eaa924.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/amarillo/4.png"
-dest_files=[ "res://.import/4.png-4463f15ee649da7b64b57d9997843162.stex" ]
+source_file="res://assets/cards/Amarillo/4.png"
+dest_files=[ "res://.import/4.png-5961bf942f18c47bf8a2503c19eaa924.stex" ]
 
 [params]
 

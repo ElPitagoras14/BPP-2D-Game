@@ -8,10 +8,6 @@ onready var x=0
 func _ready():
 	BGM.play()
 
-func _on_TextureButton4_pressed():
-	get_node("Click").play()
-	yield(get_tree().create_timer(.3),"timeout")
-	get_tree().change_scene("res://hubinicial/Hub/GameHub2D.tscn")
 
 func _on_TextureButton_pressed():
 	get_node("Click").play()
@@ -68,3 +64,8 @@ func _on_JUGAR_button_down():
 func _on_Cerrar_pressed():
 	get_node("Click").play()
 	$Ayuda.hide()
+
+
+func _on_TextureButton_button_down():
+	yield(get_tree().create_timer(.3),"timeout")
+	get_tree().change_scene("res://juego_cavado/scenes/cavado_controles.tscn")

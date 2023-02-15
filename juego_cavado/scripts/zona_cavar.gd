@@ -84,10 +84,10 @@ func _delete_block():
 	if tool_act == "pico":
 		if _delete_stack_block():
 			_delete_random_blocks(2)
-			_reduce_energy(3)
+			_reduce_energy(5)
 	elif tool_act == "hacha":
 		if _delete_single_block():
-			_reduce_energy(1)
+			_reduce_energy(2)
 	yield(get_tree().create_timer(0.2), "timeout")
 	CavadoMaster.game_state = 1
 	_check_final_state()
