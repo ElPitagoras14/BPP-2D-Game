@@ -36,7 +36,7 @@ scale = Vector2( 2.5, 2.5 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 8, 8 )
 format = 1
-tile_data = PoolIntArray( 65534, 536870941, 0, 12, 536870953, 0, 34, 536870952, 0, 131134, 536870952, 0 )
+tile_data = PoolIntArray( 65534, 536870941, 0, 12, 536870953, 0, 34, 536870952, 0 )
 
 [node name="muebles" type="TileMap" parent="."]
 scale = Vector2( 2.5, 2.5 )
@@ -47,6 +47,7 @@ format = 1
 tile_data = PoolIntArray( 327714, 536870985, 0, 393245, 536870950, 0, 393257, 536870950, 0, 458777, 536871033, 0, 851963, 89, 0, 786478, 536871001, 0, 1048604, 536870956, 0, 1179675, 536870955, 0, 1245209, 45, 0, 1245215, 536870957, 0 )
 
 [node name="preMuebles" type="TileMap" parent="."]
+visible = false
 scale = Vector2( 2.5, 2.5 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 8, 8 )
@@ -96,6 +97,7 @@ format = 1
 tile_data = PoolIntArray( -2031617, 536870976, 0, -2097151, 536870977, 0, -2097149, 536870975, 0, -2097147, 536870974, 0, -1900543, 536870978, 0 )
 
 [node name="r-interactionManager" parent="trophy-r" instance=ExtResource( 4 )]
+visible = false
 position = Vector2( 22.8, -192 )
 scale = Vector2( 1.736, 0.328 )
 script = ExtResource( 6 )
@@ -109,6 +111,7 @@ format = 1
 tile_data = PoolIntArray( -2228223, 536870972, 0, -2228210, 536870970, 0, -2228208, 536870971, 0, -2228205, 536870968, 0, -2162677, 536870967, 0, -2097139, 536870920, 0, -2031597, 536870970, 0, -1966069, 536870969, 0, -1835009, 536870973, 0, -1900539, 536870973, 0 )
 
 [node name="c-interactionManager" parent="trophy-c" instance=ExtResource( 4 )]
+visible = false
 position = Vector2( 128.4, -191.6 )
 scale = Vector2( 2.296, 0.328 )
 script = ExtResource( 6 )
@@ -122,6 +125,7 @@ format = 1
 tile_data = PoolIntArray( -2162661, 49, 0, -1966055, 115, 0, -1966052, 116, 0, -1966049, 117, 0, -1769448, 113, 0, -1769446, 536870947, 0, -1769440, 114, 0 )
 
 [node name="e-interactionManager" parent="trophy-e" instance=ExtResource( 4 )]
+visible = false
 position = Vector2( 230.8, -192.8 )
 scale = Vector2( 2.19958, 0.392648 )
 script = ExtResource( 6 )
@@ -135,6 +139,7 @@ format = 1
 tile_data = PoolIntArray( -2162649, 104, 0, -2097115, 102, 0, -2097106, 102, 0, -2031576, 34, 0, -1769435, 126, 0, -1769427, 125, 0 )
 
 [node name="a-interactionManager" parent="trophy-a" instance=ExtResource( 4 )]
+visible = false
 position = Vector2( 337.6, -188.4 )
 scale = Vector2( 4.232, 0.328 )
 script = ExtResource( 6 )
@@ -151,6 +156,7 @@ position = Vector2( 144, 502 )
 scale = Vector2( 2.5, 2.5 )
 
 [node name="Camera2D" type="Camera2D" parent="Jugador"]
+visible = false
 current = true
 limit_left = -162
 limit_top = -900
@@ -160,6 +166,7 @@ smoothing_speed = 2.0
 editor_draw_limits = true
 
 [node name="door" parent="." instance=ExtResource( 4 )]
+visible = false
 position = Vector2( 141, 557 )
 scale = Vector2( 2.84, 0.28 )
 script = ExtResource( 2 )
