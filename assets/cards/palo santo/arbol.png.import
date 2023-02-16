@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arbol.png-262f3bc19e40cc2c336d504b323dba3d.stex"
+path="res://.import/arbol.png-541dc17739a07b3d0515333e893c293d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/Palo santo/arbol.png"
-dest_files=[ "res://.import/arbol.png-262f3bc19e40cc2c336d504b323dba3d.stex" ]
+source_file="res://assets/cards/palo santo/arbol.png"
+dest_files=[ "res://.import/arbol.png-541dc17739a07b3d0515333e893c293d.stex" ]
 
 [params]
 

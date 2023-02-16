@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/semilla.png-04afa0a4e63dbe05641454d40bdf58ab.stex"
+path="res://.import/semilla.png-a56cfce52c096d02bcdc95532d6b5048.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/Mora silvestre/semilla.png"
-dest_files=[ "res://.import/semilla.png-04afa0a4e63dbe05641454d40bdf58ab.stex" ]
+source_file="res://assets/cards/mora silvestre/semilla.png"
+dest_files=[ "res://.import/semilla.png-a56cfce52c096d02bcdc95532d6b5048.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arbolimg.png-b5449bdc2bce0098bf4a84d0eb0f019a.stex"
+path="res://.import/arbolimg.png-b04f61595c6ffd20bd18a6644797c7bf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/Mora silvestre/arbolimg.png"
-dest_files=[ "res://.import/arbolimg.png-b5449bdc2bce0098bf4a84d0eb0f019a.stex" ]
+source_file="res://assets/cards/mora silvestre/arbolimg.png"
+dest_files=[ "res://.import/arbolimg.png-b04f61595c6ffd20bd18a6644797c7bf.stex" ]
 
 [params]
 

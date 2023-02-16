@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arbolSelected.png-97f9802b589e52887b3ff2d3482b72ed.stex"
+path="res://.import/arbolSelected.png-027fe9dc0af1fe0440093dc04170a040.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/Higueron/arbolSelected.png"
-dest_files=[ "res://.import/arbolSelected.png-97f9802b589e52887b3ff2d3482b72ed.stex" ]
+source_file="res://assets/cards/higueron/arbolSelected.png"
+dest_files=[ "res://.import/arbolSelected.png-027fe9dc0af1fe0440093dc04170a040.stex" ]
 
 [params]
 

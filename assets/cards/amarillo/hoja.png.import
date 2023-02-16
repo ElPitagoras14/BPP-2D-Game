@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hoja.png-6bd1924fca36cf943447b37d269d94d9.stex"
+path="res://.import/hoja.png-e320a079448908419fdce6617fba2a8c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/Amarillo/hoja.png"
-dest_files=[ "res://.import/hoja.png-6bd1924fca36cf943447b37d269d94d9.stex" ]
+source_file="res://assets/cards/amarillo/hoja.png"
+dest_files=[ "res://.import/hoja.png-e320a079448908419fdce6617fba2a8c.stex" ]
 
 [params]
 

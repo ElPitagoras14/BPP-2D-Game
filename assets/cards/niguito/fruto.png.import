@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fruto.png-ed523d08d8eb1761f1dcf8f415c72af2.stex"
+path="res://.import/fruto.png-fa6e9b2d55f718e6897c676030b53f30.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/Niguito/fruto.png"
-dest_files=[ "res://.import/fruto.png-ed523d08d8eb1761f1dcf8f415c72af2.stex" ]
+source_file="res://assets/cards/niguito/fruto.png"
+dest_files=[ "res://.import/fruto.png-fa6e9b2d55f718e6897c676030b53f30.stex" ]
 
 [params]
 

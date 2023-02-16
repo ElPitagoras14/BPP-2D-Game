@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frutoSelected.png-cf7ab3dd46d04cf1e60c0c0137d73762.stex"
+path="res://.import/frutoSelected.png-c7083c82572fb00e6167cc7dfe4b47df.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/Higueron/frutoSelected.png"
-dest_files=[ "res://.import/frutoSelected.png-cf7ab3dd46d04cf1e60c0c0137d73762.stex" ]
+source_file="res://assets/cards/higueron/frutoSelected.png"
+dest_files=[ "res://.import/frutoSelected.png-c7083c82572fb00e6167cc7dfe4b47df.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flor.png-e6895c84ed93e4746b847c29163561cc.stex"
+path="res://.import/flor.png-83bb14688c08a500503dfadf9915a6e4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/Amarillo/flor.png"
-dest_files=[ "res://.import/flor.png-e6895c84ed93e4746b847c29163561cc.stex" ]
+source_file="res://assets/cards/amarillo/flor.png"
+dest_files=[ "res://.import/flor.png-83bb14688c08a500503dfadf9915a6e4.stex" ]
 
 [params]
 

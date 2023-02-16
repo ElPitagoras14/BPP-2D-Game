@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hojaSelected.png-655449024c9eeb39d4517a5b496ff2e2.stex"
+path="res://.import/hojaSelected.png-a29bab75aea7897f9e652878875d6072.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/Ceibo/hojaSelected.png"
-dest_files=[ "res://.import/hojaSelected.png-655449024c9eeb39d4517a5b496ff2e2.stex" ]
+source_file="res://assets/cards/ceibo/hojaSelected.png"
+dest_files=[ "res://.import/hojaSelected.png-a29bab75aea7897f9e652878875d6072.stex" ]
 
 [params]
 

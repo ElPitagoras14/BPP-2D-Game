@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hojaSelected.png-a45180b9f1702d67dd41866d1fc6ba14.stex"
+path="res://.import/hojaSelected.png-b17d44555ed66b52898ac1196548147a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/Algarrobo/hojaSelected.png"
-dest_files=[ "res://.import/hojaSelected.png-a45180b9f1702d67dd41866d1fc6ba14.stex" ]
+source_file="res://assets/cards/algarrobo/hojaSelected.png"
+dest_files=[ "res://.import/hojaSelected.png-b17d44555ed66b52898ac1196548147a.stex" ]
 
 [params]
 

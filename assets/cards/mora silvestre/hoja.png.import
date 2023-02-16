@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hoja.png-906ac5c84b33b3a3a6b79b85bced6743.stex"
+path="res://.import/hoja.png-bf593fc53836da594dc2d229b2398250.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/Mora silvestre/hoja.png"
-dest_files=[ "res://.import/hoja.png-906ac5c84b33b3a3a6b79b85bced6743.stex" ]
+source_file="res://assets/cards/mora silvestre/hoja.png"
+dest_files=[ "res://.import/hoja.png-bf593fc53836da594dc2d229b2398250.stex" ]
 
 [params]
 

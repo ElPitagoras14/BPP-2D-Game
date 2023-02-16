@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flor.png-56a55bc2bc2eed5a0736351746927bc1.stex"
+path="res://.import/flor.png-2141c88962dfcc6b900637383e0d7be1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/Ceibo/flor.png"
-dest_files=[ "res://.import/flor.png-56a55bc2bc2eed5a0736351746927bc1.stex" ]
+source_file="res://assets/cards/ceibo/flor.png"
+dest_files=[ "res://.import/flor.png-2141c88962dfcc6b900637383e0d7be1.stex" ]
 
 [params]
 

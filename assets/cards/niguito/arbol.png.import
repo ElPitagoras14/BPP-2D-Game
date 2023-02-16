@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arbol.png-35d476123619512ff0c2b68058680a60.stex"
+path="res://.import/arbol.png-4f21ae7d06c9555cb024fc065d4a807a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/Niguito/arbol.png"
-dest_files=[ "res://.import/arbol.png-35d476123619512ff0c2b68058680a60.stex" ]
+source_file="res://assets/cards/niguito/arbol.png"
+dest_files=[ "res://.import/arbol.png-4f21ae7d06c9555cb024fc065d4a807a.stex" ]
 
 [params]
 

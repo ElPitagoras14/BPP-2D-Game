@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hoja.png-aef7bac44a5ae238f37300128d0d9a77.stex"
+path="res://.import/hoja.png-b3f66a56f3a9cf495b5c71051c9c438e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/Palo santo/hoja.png"
-dest_files=[ "res://.import/hoja.png-aef7bac44a5ae238f37300128d0d9a77.stex" ]
+source_file="res://assets/cards/palo santo/hoja.png"
+dest_files=[ "res://.import/hoja.png-b3f66a56f3a9cf495b5c71051c9c438e.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/semillaSelected.png-5611bfeadc688113ee04cca37138992c.stex"
+path="res://.import/semillaSelected.png-2309700889cdb0b45cd33c170fad6499.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/Pechiche/semillaSelected.png"
-dest_files=[ "res://.import/semillaSelected.png-5611bfeadc688113ee04cca37138992c.stex" ]
+source_file="res://assets/cards/pechiche/semillaSelected.png"
+dest_files=[ "res://.import/semillaSelected.png-2309700889cdb0b45cd33c170fad6499.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arbolSelected.png-226c5f1f06ff82bbd4e1a1cee6164e0a.stex"
+path="res://.import/arbolSelected.png-e0107761317b07094051b08f9e0769bc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/Ceibo/arbolSelected.png"
-dest_files=[ "res://.import/arbolSelected.png-226c5f1f06ff82bbd4e1a1cee6164e0a.stex" ]
+source_file="res://assets/cards/ceibo/arbolSelected.png"
+dest_files=[ "res://.import/arbolSelected.png-e0107761317b07094051b08f9e0769bc.stex" ]
 
 [params]
 
