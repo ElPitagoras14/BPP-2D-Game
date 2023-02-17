@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bronce.png-465bb2329fa282ac43928b33983bd948.stex"
+path="res://.import/Bronce.png-fde295bb9da29eb3eb6aa38e7abd4420.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Medallas/bronce.png"
-dest_files=[ "res://.import/bronce.png-465bb2329fa282ac43928b33983bd948.stex" ]
+source_file="res://assets/Medallas/Bronce.png"
+dest_files=[ "res://.import/Bronce.png-fde295bb9da29eb3eb6aa38e7abd4420.stex" ]
 
 [params]
 

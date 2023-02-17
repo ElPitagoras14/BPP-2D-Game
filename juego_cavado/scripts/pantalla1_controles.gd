@@ -6,4 +6,4 @@ func _ready():
 func _on_Cerrar_pressed():
 	get_node("Click").play()
 	yield(get_tree().create_timer(.3),"timeout")
-	get_tree().change_scene("res://scenes/Cartas-principal.tscn")
+	get_tree().change_scene("res://juego_cavado/scenes/zona_cavado.tscn")

@@ -224,7 +224,7 @@ func  _restart_level():
 	get_tree().reload_current_scene()
 	
 func _next_level():
-	get_tree().change_scene(("res://juego_cavado/scenes/zona_construir.tscn"))
+	get_tree().change_scene(("res://juego_cavado/scenes/pantalla2_controles.tscn"))
 
 func _on_ContinueButton_button_down():
 	yield(get_tree().create_timer(0.5), "timeout")

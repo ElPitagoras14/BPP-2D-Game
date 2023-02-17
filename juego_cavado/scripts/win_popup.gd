@@ -16,6 +16,12 @@ func _update_values():
 	var coins = floor(new_points / 10)
 	lbl_score.text = str(new_points)
 	lbl_coin.text = "x" + str(coins)
+	if new_points >= 500:
+		var baseStats = GameManager.getBaseStats()
+		if !baseStats["trophy-e"]:
+			$HBoxContainer2/VBoxContainer/Mensaje.text = "Ganaste una medalla!!!"
+		baseStats["trophy-e"] = true
+		GameManager.saveBaseStats(baseStats)
 	GameManager.savePlayerToJson("cavado", 0, new_points)
 	
 func _show():

@@ -100,7 +100,7 @@ margin_left = 884.0
 margin_top = 428.0
 margin_right = 1003.0
 margin_bottom = 475.0
-text = "Pico preciso"
+text = "Martillo preciso"
 
 [node name="Pico" type="Button" parent="HUD"]
 margin_left = 883.0
@@ -235,18 +235,23 @@ alignment = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="Win/HBoxContainer2"]
 margin_left = 414.0
 margin_right = 610.0
-margin_bottom = 198.0
+margin_bottom = 216.0
+
+[node name="Mensaje" type="Label" parent="Win/HBoxContainer2/VBoxContainer"]
+margin_right = 196.0
+margin_bottom = 14.0
 
 [node name="ContinueButton" type="TextureButton" parent="Win/HBoxContainer2/VBoxContainer"]
+margin_top = 18.0
 margin_right = 196.0
-margin_bottom = 97.0
+margin_bottom = 115.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 22 )
 
 [node name="TitleButton" type="TextureButton" parent="Win/HBoxContainer2/VBoxContainer"]
-margin_top = 101.0
+margin_top = 119.0
 margin_right = 196.0
-margin_bottom = 198.0
+margin_bottom = 216.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 17 )
 

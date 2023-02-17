@@ -23,7 +23,7 @@ func _change_to_level(i):
 func _change_to_play_scene():
 	CavadoMaster.max_energy = _get_max_energy(CavadoMaster.nivel_actual)
 	yield(get_tree().create_timer(0.5), "timeout")
-	get_tree().change_scene("res://juego_cavado/scenes/zona_cavado.tscn")
+	get_tree().change_scene("res://juego_cavado/scenes/pantalla1_controles.tscn")
 	
 func _get_max_energy(lvl):
 	var info = CavadoMaster.niveles[lvl]
