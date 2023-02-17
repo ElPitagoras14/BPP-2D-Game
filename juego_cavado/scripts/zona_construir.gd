@@ -77,7 +77,7 @@ func _get_max_energy(lvl):
 	var info = CavadoMaster.niveles[lvl]
 	var difficulty = float(100 - (lvl + 1) * 2) / 100
 	difficulty = max(0.8, difficulty)
-	var max_energy = info[0] * info[1] * (0.6 + (info[2] - 1) * 0.55) * difficulty
+	var max_energy = info[0] * info[1] * (0.75 + (info[2] - 1) * 0.55) * difficulty
 	return int(max_energy)
 
 func _on_TitleButton_button_down():
