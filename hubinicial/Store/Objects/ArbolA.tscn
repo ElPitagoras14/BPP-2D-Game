@@ -4,10 +4,10 @@
 [ext_resource path="res://hubinicial/Store/Objects/Arbol.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 33.8235, 42.6471 )
+extents = Vector2( 29.2647, 37.9412 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 9.55882, 2.37343 )
+extents = Vector2( 8.96568, 2.37343 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1.625, 1.875 )
@@ -17,11 +17,12 @@ scale = Vector2( 1.7, 1.7 )
 script = ExtResource( 2 )
 
 [node name="Area2Detection" parent="." index="0"]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 6
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2Detection" index="0"]
-position = Vector2( -0.294115, 7.5 )
+position = Vector2( 0.294121, 5 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" parent="." index="1"]

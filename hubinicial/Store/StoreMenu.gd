@@ -62,8 +62,8 @@ func _on_GuardarButton_pressed():
 func _on_RecicleButton_pressed():
 	show()
 	$TrashMenu.show()
-	var shovel_scene = load("res://hubinicial/Store/Objects/Shovel.tscn")
-	var instance = shovel_scene.instance()
+	var waterCan_scene = load("res://hubinicial/Store/Objects/WaterCan.tscn")
+	var instance = waterCan_scene.instance()
 	cleaner_object.get_node("Sprite").texture = instance.get_node("Sprite").texture
 	cleaner_object.get_node("Area2D").add_child(instance.get_node("Area2Detection/CollisionShape2D").duplicate())
 	cleaner_object.cleaning = true

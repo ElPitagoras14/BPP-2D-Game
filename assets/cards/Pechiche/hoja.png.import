@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hoja.png-35472654bca5d5fd681af7ed9fe7fe0e.stex"
+path="res://.import/hoja.png-7c5355e70644a0ea09d0581e4c0b7c17.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/pechiche/hoja.png"
-dest_files=[ "res://.import/hoja.png-35472654bca5d5fd681af7ed9fe7fe0e.stex" ]
+source_file="res://assets/cards/Pechiche/hoja.png"
+dest_files=[ "res://.import/hoja.png-7c5355e70644a0ea09d0581e4c0b7c17.stex" ]
 
 [params]
 

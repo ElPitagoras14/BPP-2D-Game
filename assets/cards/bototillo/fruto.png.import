@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fruto.png-96f8da2d78a95f7b50242a91a476e8ef.stex"
+path="res://.import/fruto.png-64938b2933c848385827dd901f3a50fb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/bototillo/fruto.png"
-dest_files=[ "res://.import/fruto.png-96f8da2d78a95f7b50242a91a476e8ef.stex" ]
+source_file="res://assets/cards/Bototillo/fruto.png"
+dest_files=[ "res://.import/fruto.png-64938b2933c848385827dd901f3a50fb.stex" ]
 
 [params]
 

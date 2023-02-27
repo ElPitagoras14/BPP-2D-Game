@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fruto.png-eaced2363da33002a9630124df6ae716.stex"
+path="res://.import/fruto.png-fab36909e3ff94baf8be42d198c85d4c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/palo santo/fruto.png"
-dest_files=[ "res://.import/fruto.png-eaced2363da33002a9630124df6ae716.stex" ]
+source_file="res://assets/cards/Palo santo/fruto.png"
+dest_files=[ "res://.import/fruto.png-fab36909e3ff94baf8be42d198c85d4c.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arbol.png-6016922696423a5bc8a1db6803b2cc7b.stex"
+path="res://.import/arbol.png-f167a1e2e22161dfe52270b6df5d432f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/pechiche/arbol.png"
-dest_files=[ "res://.import/arbol.png-6016922696423a5bc8a1db6803b2cc7b.stex" ]
+source_file="res://assets/cards/Pechiche/arbol.png"
+dest_files=[ "res://.import/arbol.png-f167a1e2e22161dfe52270b6df5d432f.stex" ]
 
 [params]
 

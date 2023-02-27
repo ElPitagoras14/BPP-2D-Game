@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/semillaSelected.png-1841d7cf5bd0dd65b9b15333cafd8425.stex"
+path="res://.import/semillaSelected.png-7b9acde5394dc0f6596f9ea5f9de0f95.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/palo santo/semillaSelected.png"
-dest_files=[ "res://.import/semillaSelected.png-1841d7cf5bd0dd65b9b15333cafd8425.stex" ]
+source_file="res://assets/cards/Palo santo/semillaSelected.png"
+dest_files=[ "res://.import/semillaSelected.png-7b9acde5394dc0f6596f9ea5f9de0f95.stex" ]
 
 [params]
 

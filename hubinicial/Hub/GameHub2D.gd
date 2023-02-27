@@ -26,6 +26,10 @@ onready var baseEntrance=$Base/BaseEntrance
 var user_objects = {'ArbolA':"res://hubinicial/Store/Objects/ArbolA.tscn",\
 					'ArbolB':"res://hubinicial/Store/Objects/ArbolB.tscn",\
 					'ArbolC':"res://hubinicial/Store/Objects/ArbolC.tscn",\
+					'FlorA':"res://hubinicial/Store/Objects/FlorA.tscn",\
+					'FlorB':"res://hubinicial/Store/Objects/FlorB.tscn",\
+					'FlorR':"res://hubinicial/Store/Objects/FlorR.tscn",\
+					'FlorW':"res://hubinicial/Store/Objects/FlorW.tscn",\
 					'Wolf':"res://hubinicial/Store/Objects/Wolf.tscn"}
 
 var temp_user_objects = []
@@ -162,8 +166,8 @@ func save_user_map():
 		var data_array = []
 		for child in childs:
 			var data = {"name":clean_name(child.name),
-			 "pos_x": child.position.x,
-			 "pos_y" : child.position.y}
+			 "x": child.position.x,
+			 "y" : child.position.y}
 			data_array.append(data)
 		GameManager.save_user_level(data_array)
 		GameManager.savePlayerMonedas(store_menu.monedas_temp)
@@ -191,7 +195,7 @@ func cancelar_upgrades():
 func cancelar_reciclaje():
 	reset_Cleaner_Object()
 	for tile_cords in temp_deleted_tiles:
-		$Trash.set_cell(tile_cords.x,tile_cords.y,0)
+		$Flowers.set_cell(tile_cords.x,tile_cords.y,0)
 	showHUD()
 	temp_deleted_tiles = []
 
@@ -201,17 +205,17 @@ func load_user_map():
 		GameManager.loadPlayer(GameManager.currentPlayer)
 		if(GameManager.player.level):
 			var upgrade_dic = GameManager.player.level.duplicate()
-			var deleted_trash = upgrade_dic.get("Trash")
-			for trash_cords in deleted_trash:
-				$Trash.set_cell(trash_cords.x,trash_cords.y,-1)
-			upgrade_dic.erase('Trash')
+			var watered_flowers = upgrade_dic.get("Flowers")
+			for flower_cords in  watered_flowers:
+				$Flowers.set_cell(flower_cords.x,flower_cords.y,-1)
+			upgrade_dic.erase('Flowers')
 
 			for obj in upgrade_dic['Upgrades']:
 				var instance_path = user_objects.get(obj.name)
 				if instance_path:
 					var new_obj = load(instance_path).instance()
-					new_obj.position.x = obj.pos_x
-					new_obj.position.y = obj.pos_y
+					new_obj.position.x = obj.x
+					new_obj.position.y = obj.y
 					user_level.add_child(new_obj)
 			
 		

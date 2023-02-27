@@ -5,10 +5,11 @@
 [node name="ArbolB" instance=ExtResource( 1 )]
 
 [node name="CollisionShape2D" parent="Area2Detection" index="0"]
-position = Vector2( -0.588238, 7.35295 )
+position = Vector2( -2.79412, 7.35295 )
 
 [node name="AnimatedSprite" parent="." index="1"]
 animation = "ArbolFrondoso2"
 
 [node name="CollisionShape2D" parent="Area2D_Front" index="0"]
-position = Vector2( 0.764701, -4.17911 )
+position = Vector2( -1.0147, -4.17911 )
+scale = Vector2( 3, 3 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frutoSelected.png-ecacbad70b46632060fc4c61ee916085.stex"
+path="res://.import/frutoSelected.png-e49e2bd650b427d3e1c63dbf83205615.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/pechiche/frutoSelected.png"
-dest_files=[ "res://.import/frutoSelected.png-ecacbad70b46632060fc4c61ee916085.stex" ]
+source_file="res://assets/cards/Pechiche/frutoSelected.png"
+dest_files=[ "res://.import/frutoSelected.png-e49e2bd650b427d3e1c63dbf83205615.stex" ]
 
 [params]
 

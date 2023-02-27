@@ -40,6 +40,7 @@ func _process(delta):
 		var new_item = current_item.instance()
 		sprite.scale = new_item.scale
 		buildArea.add_child(new_item.get_node("Area2Detection/CollisionShape2D").duplicate())
+		
 		new_selection = false
 		check_enough_currency()
 
