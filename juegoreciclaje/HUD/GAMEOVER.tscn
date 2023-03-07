@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://juegoreciclaje/HUD/GAMEOVER.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Righteous-Regular.ttf" type="DynamicFontData" id=2]
@@ -14,6 +14,13 @@ size = 74
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://fonts/Righteous-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 26
+font_data = SubResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 32
@@ -48,11 +55,21 @@ stretch_mode = 4
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -512.0
-margin_top = 99.0
+margin_top = 44.0
 margin_right = 512.0
-margin_bottom = 191.0
+margin_bottom = 136.0
 custom_fonts/font = SubResource( 1 )
 text = "FIN DEL JUEGO"
+align = 1
+valign = 1
+
+[node name="message" type="Label" parent="."]
+margin_left = 243.0
+margin_top = 139.0
+margin_right = 818.0
+margin_bottom = 172.0
+custom_fonts/font = SubResource( 5 )
+text = "¡Has desbloqueado el trofeo de este minijuego!"
 align = 1
 valign = 1
 

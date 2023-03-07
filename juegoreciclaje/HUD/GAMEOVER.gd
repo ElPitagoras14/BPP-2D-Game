@@ -12,6 +12,8 @@ func init(score: int, maxCombo: int):
 	coinsLabel.text = str("x", money)
 	if score >= 600 or maxCombo >= 50:
 		var baseStats=GameManager.getBaseStats()
+		if !baseStats["trophy-r"]:
+			$message.show()
 		baseStats["trophy-r"]=true
 		GameManager.saveBaseStats(baseStats)
 		medalla.texture = load("res://assets/Medallas/diamante.png")
