@@ -283,6 +283,8 @@ func _on_End_about_to_show():
 	if puntaje >= 900:
 		medalla.texture = load("res://assets/Medallas/Diamante.png")
 		var baseStats=GameManager.getBaseStats()
+		if !baseStats["trophy-a"]:
+			$End/message.show()
 		baseStats["trophy-a"]=true
 		GameManager.saveBaseStats(baseStats)
 		m=4

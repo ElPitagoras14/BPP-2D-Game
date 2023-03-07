@@ -206,6 +206,8 @@ func menuFinal():
 		medallas = 3
 	elif puntaje >= 800:
 		var baseStats=GameManager.getBaseStats()
+		if !baseStats["trophy-c"]:
+			$Final/Background/CenterContainer/VBoxContainer/message.show()
 		baseStats["trophy-c"]=true
 		GameManager.saveBaseStats(baseStats)
 		medallas = 4
