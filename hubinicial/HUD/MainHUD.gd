@@ -2,12 +2,15 @@ extends Control
 
 var FAST_TRAVEL_COORDS = {"reciclaje" : {"x" : 300,"y": 0}}
 export var stopControls:bool = false
+onready var userIcon = $ProfileButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GameManager.loadJson()
 	if GameManager.currentPlayer:
 		$NombreJugador.text = str(GameManager.currentPlayer)
+		var path = "res://assets/iconos/user"+ str(GameManager.player["sprite"]) +"-icon.png"
+		userIcon.texture_normal = load(path)
 
 func _input(ev):
 	if ($HBoxContainer.visible and Input.is_action_pressed("ui_cancel") and not ev.is_echo() and not stopControls):

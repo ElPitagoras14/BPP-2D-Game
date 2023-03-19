@@ -151,7 +151,7 @@ func save_trash_map():
 				"x":trash_cords.x,
 				"y":trash_cords.y}
 			data_array.append(data)
-		GameManager.save_trash_level(data_array)
+		GameManager.save_flower_level(data_array)
 		GameManager.savePlayerMonedas(store_menu.monedas_temp)
 		showHUD()
 	else:

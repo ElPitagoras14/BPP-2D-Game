@@ -12,4 +12,3 @@ animation = "ArbolFrondoso2"
 
 [node name="CollisionShape2D" parent="Area2D_Front" index="0"]
 position = Vector2( -1.0147, -4.17911 )
-scale = Vector2( 3, 3 )

@@ -99,8 +99,8 @@ func getMoney():
 	else:
 		return allPlayers[currentPlayer]["monedas"]
 
-func save_trash_level(data_array:Array):
-	allPlayers[currentPlayer]['level']['Trash'] = data_array
+func save_flower_level(data_array:Array):
+	allPlayers[currentPlayer]['level']['Flowers'] = data_array
 	saveJson(allPlayers)
 
 func save_user_level(var data_array:Array):
@@ -145,7 +145,7 @@ func addPlayer(var Nombre, var sprite):
 		"6": false,
 		"7": false
 	},
-	'level':{'Trash':[],
+	'level':{'Flowers':[],
 		'Upgrades':[], 
 		"Arboles": { "NETrees": false,
 		 "NOTrees": false,
